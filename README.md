@@ -1,191 +1,262 @@
 # Perfect Pitch Deck Kit
 
-Author and ship a 23-slide pitch deck with sales psychology baked in — branded to your business, content tailored from a single brief, deployed to a live Cloudflare Pages URL — in under 60 minutes, without writing a single line of code.
-
-Built for [Claude Code](https://claude.com/claude-code).
-
-**Live demo:** the deck this repo ships with. Run `npm run dev` to see it locally.
+Pitch decks that close, without you ever touching Figma.
 
 ---
 
-## What's in the box
+## WHY THIS EXISTS
 
-- **23 strategically sequenced slides** built on Hormozi-style offer framing + sales psychology. Cover → icebreaker → problem → agitate → promise → outcomes → mechanism → objections → proof → testimonials → differentiator → team → future → offer → inclusions → pricing → bonus → guarantee → urgency → close.
-- **One-knob rebranding.** Paste your accent hex; the whole deck reskins via OKLCH-derived tints. `/brand` walks you through it.
-- **Brief-driven copy.** Write `brief.yaml` once (or talk to `/brief` in plain English); `/fill-deck` authors every slide from it with hard char limits that protect the layout.
-- **Speaker notes that present themselves.** Every slide has a Beat / Say / Watch out script tailored to your offer. Press `S` in the deck to open speaker view.
-- **Live CTA form OR static close.** Slide 23 captures choices to GoHighLevel via a Cloudflare Pages Function, or — if you set `cta.url` in the brief — renders as a static "Book a call" button instead. No GHL? No problem.
-- **Optional passphrase gate.** `staticrypt` wraps the whole deck behind a passphrase. Independent passphrase available for speaker notes too.
+I spent ten years in Figma. Pushing pixels around. Like a craftsman.
+
+Then Claude Code happened.
+
+The Figma version of this kit helped people close real deals. First deals. Bigger deals. More deals. I'm proud of that.
+
+But every user hit the same wall… Figma is hard if you're not a designer. Even with templates.
+
+So I killed the Figma kit and resurrected it in code. Same proven structure. New shell. No Figma. No CSS to wrestle with.
+
+You paste your offer into a brief. You hit `/fill-deck`. You ship a branded 23-slide pitch to a live URL.
+
+I built a full deck with it in 15 minutes. So can you.
 
 ---
 
-## Zero to live in an hour
+## WHAT'S IN THE BOX
 
-Prerequisites: Node 20+, [Claude Code](https://claude.com/claude-code), [GitHub CLI](https://cli.github.com/), and [Wrangler](https://developers.cloudflare.com/workers/wrangler/) (`brew install gh && npm install -g wrangler`).
+→ 23 strategically sequenced slides with sales psychology baked in
+→ One-knob rebranding from a pasted hex (or "make it Stripe blue")
+→ Brief-driven copy authoring with hard character budgets so nothing breaks the layout
+→ Speaker notes that ONLY show on your screen when you present (optionally passphrase-protected)
+→ Final CTA slide that syncs leads to GoHighLevel… or a static "book a call" button if you'd rather skip the form
+→ Optional passphrase gate on the whole deck
+→ One command to ship the whole thing to a live Cloudflare Pages URL
+
+---
+
+## HOW IT ALL FITS TOGETHER
+
+Never touched code before? No worries. Here's every piece and how they connect.
+
+```mermaid
+flowchart TD
+    subgraph BUILD["WHAT YOU WORK WITH"]
+        direction TB
+        CC["Claude Code … your AI builder"]
+        BRIEF["brief.yaml … your offer in one file"]
+        BRAND["BRAND.md … one hex, one knob"]
+        CC -->|"runs /brief, /brand, /fill-deck"| BRIEF
+        CC --- BRAND
+    end
+
+    subgraph DECK["WHAT GETS BUILT"]
+        direction TB
+        INDEX["index.html … 23 slides, single file"]
+        NOTES["notes/slide-NN.html … presenter scripts"]
+        SKILLS["skills/slide-NN … per-slide authoring guides"]
+        SKILLS -->|"fill-deck reads"| INDEX
+        SKILLS -->|"writes"| NOTES
+    end
+
+    subgraph SHIP["HOW IT GOES LIVE"]
+        direction TB
+        GH["GitHub … your private fork"]
+        CF["Cloudflare Pages … free hosting + SSL"]
+        GH -->|"wrangler deploy"| CF
+    end
+
+    subgraph LEADS["WHERE LEADS GO (OPTIONAL)"]
+        direction TB
+        API["/api/lead … Cloudflare Pages Function"]
+        GHL["GoHighLevel … CRM + tags + notes"]
+        API -->|"upsert + tag"| GHL
+    end
+
+    BRIEF -->|"author copy"| SKILLS
+    BRAND -->|"theme tokens"| INDEX
+    INDEX -->|"build → dist"| GH
+    CF -->|"serves the deck to"| AUDIENCE["Your prospect"]
+    AUDIENCE -->|"clicks I'm in / question / out"| API
+```
+
+---
+
+## ZERO TO LIVE IN AN HOUR
+
+What you need: Node 20+, [Claude Code](https://claude.com/claude-code), [GitHub CLI](https://cli.github.com), and [Wrangler](https://developers.cloudflare.com/workers/wrangler/) (`brew install gh && npm install -g wrangler`).
 
 ```bash
 # 1. Fork + clone (30s)
 gh auth login
 gh repo fork stvbutlr/perfect-pitch-deck --clone && cd perfect-pitch-deck
 npm install
-npm run dev        # http://localhost:8765 — the demo deck
+npm run dev                  # http://localhost:8765 — the demo deck
 
-# 2. Inside Claude Code (in your terminal: `claude`)
-> /brand           # paste your hex / screenshot / Figma share / "make it Stripe blue"
-> /brief           # paste a paragraph about your offer (Claude classifies into brief.yaml)
-> /fill-deck       # writes copy for all 23 slides + per-slide speaker notes
-> /check           # validates brand tokens + slot budgets
+# 2. Open Claude Code in your terminal
+claude
 
-# 3. Optional — wire up the slide-23 form to GoHighLevel
-> /ghl-setup       # walks API token + Location ID + .env + smoke-test
+# Then, inside Claude Code:
+> /brand                     # paste your hex, screenshot, Figma URL, or "make it Stripe"
+> /brief                     # paste a paragraph about your offer
+> /fill-deck                 # authors copy for all 23 slides + speaker notes
+> /check                     # validates brand tokens and slot budgets
+
+# 3. (Optional) wire the slide-23 form to GoHighLevel
+> /ghl-setup                 # API token + Location ID + .env + smoke test
 
 # 4. Ship it
-> /deploy          # wrangler login, create project, secret put, build, deploy
-                   # prints https://<your-project>.pages.dev
+> /deploy                    # wrangler login, project create, build, deploy
+                             # prints https://<your-project>.pages.dev
 ```
 
-That's it. Your deck is live.
+Done. Send the URL.
 
 ---
 
-## The slash commands
-
-All commands live in `.claude/commands/`. Each is a long-form spec Claude follows verbatim.
+## THE SLASH COMMANDS
 
 | Command | What it does |
 | --- | --- |
-| `/brand` | Rebrand the deck from any input — hex, screenshot, Figma URL, plain-English description, pasted SVGs. Themifies brand SVGs to `currentColor`, runs contrast checks on `--text-inverse` over your accent, validates. |
-| `/brief` | Build `brief.yaml` from any input — paragraph dump, screenshots, Notion paste, partial YAML, voice-memo transcript. Echoes a readable summary for verification. |
-| `/fill-deck` | Author copy for all 23 slides from `brief.yaml`. Resumable via `_qa/fill-deck-report.md`. Per-slide hard char limits enforced. |
-| `/fill-slide N — <hint>` | Re-author one slide. Shows before/after diff, waits for confirmation. |
-| `/ghl-setup` | Wire slide 23's form to your GoHighLevel account. Optional — skip for static CTA mode. |
-| `/deploy` | Ship to Cloudflare Pages. First run creates the project; subsequent runs update it. |
-| `/check` | Run `validate-brand` + `validate-deck` + `ghl-ping`. Combined report with remediation hints. |
+| `/brand` | Rebrand from any input. Hex code. Screenshot. Figma URL. Plain English. Pasted SVGs. Themifies your logo to `currentColor`, runs a contrast check on white-on-accent. |
+| `/brief` | Builds `brief.yaml` from any input. Paragraph dump. Screenshots. Notion paste. Partial YAML. Voice memo. Echoes a readable summary for verification. |
+| `/fill-deck` | Authors copy for all 23 slides. Resumable via `_qa/fill-deck-report.md`. Hard char limits so copy never breaks the layout. |
+| `/fill-slide N — <hint>` | Re-author one slide. Shows before/after diff. Waits for confirmation. |
+| `/ghl-setup` | Wires slide 23's form to your GoHighLevel account. Optional. Skip for static-CTA mode. |
+| `/deploy` | Ships to Cloudflare Pages. First run creates the project. Later runs update it. |
+| `/check` | Runs the validators and prints a combined report with fix suggestions. |
 
 ---
 
-## How to brief Claude (the ideal one-shot)
+## HOW TO BRIEF CLAUDE (THE IDEAL ONE-SHOT)
 
-If you want `/fill-deck` to nail the deck in a single pass, tell `/brief` (in any order, in any format):
+The kit will run on rough input. It runs better on this:
 
-1. Your **company name** + a short memorable **pitch name** (e.g. "The 30-Day Sprint")
-2. Who you're pitching to — their first name helps
-3. Your **offer**: name, dream outcome, timeframe, price
-4. The **biggest problem** your customer has right now, in their words
-5. Your **unique mechanism** — the "because" that makes the promise believable
-6. Your **guarantee** or risk-reversal
-7. **1-3 customer testimonials** with quote, name, and a metric
-8. Up to **12 customer logos** you've worked with
-9. Where you want them to click next (URL + button label)
-10. (Optional) Bonuses, urgency/scarcity, pricing tiers, team
+→ Your **company name** plus a short memorable **pitch name** ("The 30-Day Sprint")
+→ Who you're pitching to (first name helps)
+→ Your **offer**… name, dream outcome, timeframe, price
+→ The **biggest problem** your customer has right now, in their words
+→ Your **unique mechanism**… the "because" that makes the promise believable
+→ Your **guarantee** or risk-reversal
+→ **1-3 customer testimonials**… quote, name, metric
+→ Up to **12 customer logos** you've worked with
+→ Where you want them to click next (URL plus button label)
+→ Optional: bonuses, urgency, pricing tiers, team
 
-The kit also works with rougher input — paste in everything you have and `/brief` will pull what it can, then ask follow-ups. See `brief.example.yaml` and `brief.yaml.template`.
+`brief.example.yaml` shows what this looks like in a finished file. `brief.yaml.template` is a blank version with field-by-field comments.
 
 ---
 
-## Customising the deck
+## CUSTOMISING
 
-| What you want to change | Where it lives | How to edit |
+| What you want to change | Where | How |
 | --- | --- | --- |
 | Brand accent colour | `:root --accent` in `index.html` | `/brand` |
-| Logo mark / wordmark | `assets/brand/{mark,wordmark}.svg` | `/brand` (themifies SVGs to `currentColor`) |
-| Fonts | `--font-display` / `--font-body` in `:root` + Google Fonts `<link>` | `/brand` |
-| Per-slide copy | The Nth `<section>` under `<div class="slides">` in `index.html` + `notes/slide-NN.html` | `/fill-deck` or `/fill-slide N` |
-| Strategic intent for a slide | `notes/slide-NN.html` (full strategy reference) | hand-edit, then `node scripts/inject-notes.mjs` |
+| Logo / wordmark | `assets/brand/{mark,wordmark}.svg` | `/brand` (themifies SVGs to `currentColor`) |
+| Fonts | `--font-display` / `--font-body` plus Google Fonts `<link>` | `/brand` |
+| Per-slide copy | The Nth `<section>` plus `notes/slide-NN.html` | `/fill-deck` or `/fill-slide N` |
+| Strategic notes | `notes/slide-NN.html` | hand-edit, then `node scripts/inject-notes.mjs` |
 | Slot char budgets | `slides/schema.json` | hand-edit OR `node scripts/calibrate-slots.mjs` to remeasure |
-| GHL integration | `functions/api/lead.js` + `.env` | `/ghl-setup` |
-| Slide order | `slides/manifest.json` + reorder `<section>` blocks in `index.html` | `node scripts/reorder-sections.mjs` |
-| Add a new slide | `skills/slide-24-<slug>/SKILL.md` + `slides/{manifest,schema}.json` + new `<section>` | hand-craft, then `node scripts/build-skills.mjs` |
+| GHL integration | `functions/api/lead.js` plus `.env` | `/ghl-setup` |
 
-The CLAUDE.md file at the repo root tells Claude exactly what's safe to touch and what's locked. Read it.
+`CLAUDE.md` at the repo root tells Claude exactly what's safe to touch and what's locked. Read it once.
 
 ---
 
-## Anatomy
+## REPO ANATOMY
 
 ```
 perfect-pitch-deck/
-├─ index.html                  # the deck (single-file Reveal.js, all 23 sections)
-├─ brief.yaml                  # your offer — written by /brief, consumed by /fill-deck
-├─ brief.example.yaml          # the demo brief (kit pitching itself)
-├─ brief.yaml.template         # blank template with field-by-field comments
-├─ deck.config.json            # site name, allowed origins, CF project name
-├─ BRAND.md                    # token catalogue + allowed contrast pairs
-├─ CLAUDE.md                   # guardrails (Golden Rules + Copy Balance + file-touch matrix)
-├─ .env.example                # GHL keys + deck/notes passphrases + CF project
+├─ index.html                  the deck (single-file Reveal.js, 23 sections)
+├─ brief.yaml                  your offer (written by /brief)
+├─ brief.example.yaml          the demo brief
+├─ brief.yaml.template         blank template with comments
+├─ deck.config.json            site name, allowed origins, CF project
+├─ BRAND.md                    token catalogue plus allowed contrast pairs
+├─ CLAUDE.md                   guardrails for Claude
+├─ .env.example                secrets template
 │
-├─ .claude/commands/           # 7 slash commands
+├─ .claude/commands/           the 7 slash commands
 ├─ skills/
-│   ├─ fill-deck/SKILL.md      # orchestration (1→23)
-│   ├─ fill-slide/SKILL.md     # single-slide retry
-│   └─ slide-NN-<slug>/SKILL.md  # per-slide authoring guide (× 23)
-├─ notes/slide-NN.html         # full strategic reference per slide (× 23)
+│   ├─ fill-deck/SKILL.md      orchestration (1 → 23)
+│   ├─ fill-slide/SKILL.md     single-slide retry
+│   └─ slide-NN-<slug>/        per-slide authoring guide (× 23)
+├─ notes/slide-NN.html         full strategic reference per slide (× 23)
 ├─ slides/
-│   ├─ manifest.json           # slide index → slug → archetype
-│   └─ schema.json             # per-slot specs (selector, maxChars, hardLimit, fragility)
+│   ├─ manifest.json           slide index → slug → archetype
+│   └─ schema.json             per-slot specs (selector, max chars, fragility)
 ├─ assets/
-│   ├─ brand/                  # mark.svg, wordmark.svg, og-image.png, favicon.png
-│   └─ speaker-view.html       # self-hosted Reveal speaker view (survives refresh)
-├─ functions/api/lead.js       # Cloudflare Pages Function — GHL upsert + tag + note
+│   ├─ brand/                  mark, wordmark, og-image, favicon
+│   └─ speaker-view.html       self-hosted speaker view (survives refresh)
+├─ functions/api/lead.js       Cloudflare Pages Function (GHL upsert)
 ├─ scripts/
-│   ├─ build.mjs               # validate + (notes / staticrypt) + dist assembly
-│   ├─ build-skills.mjs        # regenerate skills/ from schema + notes + manifest
-│   ├─ inject-notes.mjs        # splice notes/*.html into index.html aside blocks
-│   ├─ validate-brand.mjs      # token-leak + asset-manifest check
-│   ├─ validate-deck.mjs       # slot-completeness + char-budget check
-│   ├─ calibrate-slots.mjs     # binary-search per-slot maxChars (DOM-accurate)
-│   ├─ ghl-ping.mjs            # smoke-test GHL credentials
-│   ├─ qa-screenshots.mjs      # puppeteer thumbnails of every slide
-│   └─ reorder-sections.mjs    # shuffle <section> blocks if you re-order slides
-└─ staticrypt-template.html    # passphrase gate page (used when DECK_PASSWORD set)
+│   ├─ build.mjs               validate plus assemble dist
+│   ├─ build-skills.mjs        regenerate skill files from schema plus notes
+│   ├─ inject-notes.mjs        splice notes into the deck
+│   ├─ validate-brand.mjs      token-leak plus asset-manifest check
+│   ├─ validate-deck.mjs       slot completeness plus char-budget check
+│   ├─ calibrate-slots.mjs     binary-search per-slot maxChars in real DOM
+│   ├─ ghl-ping.mjs            smoke-test GHL credentials
+│   ├─ qa-screenshots.mjs      puppeteer thumbnails of every slide
+│   └─ reorder-sections.mjs    reshuffle <section> blocks if you reorder
+└─ staticrypt-template.html    passphrase gate page (when DECK_PASSWORD set)
 ```
 
 ---
 
-## Build & deploy modes
+## BUILD AND DEPLOY MODES
 
-The build pipeline is `node scripts/build.mjs`. Behavior is env-driven:
+`scripts/build.mjs` reads env vars:
 
 | Env var | Effect |
 | --- | --- |
-| `DECK_PASSWORD=<pp>` | Wrap published `dist/index.html` in staticrypt with passphrase `pp`. Viewers see a passphrase prompt. |
-| `DECK_REMEMBER_DAYS=N` | Days staticrypt remembers the unlock in localStorage (default 30; `0` = always re-prompt). |
-| `NOTES_PASSWORD=<pp>` | AES-encrypt speaker notes. Pressing `S` then prompts for the notes passphrase. Independent of `DECK_PASSWORD`. |
-| `INCLUDE_NOTES=false` | Strip speaker notes from `dist/` entirely (use for public marketing decks). |
+| `DECK_PASSWORD=<pp>` | Staticrypt the whole deck. Viewers see a passphrase prompt first. |
+| `DECK_REMEMBER_DAYS=N` | How many days staticrypt remembers the unlock (default 30). `0` to force every visit. |
+| `NOTES_PASSWORD=<pp>` | AES-encrypt the speaker notes. Pressing `S` then prompts for the notes passphrase. Independent of `DECK_PASSWORD`. |
+| `INCLUDE_NOTES=false` | Strip speaker notes from `dist/` entirely. Use for public marketing decks. |
 | `CF_PROJECT=<name>` | Cloudflare Pages project name for `npm run deploy`. |
 
 Examples:
 
 ```bash
-# Public deck, notes stripped, no gate
-INCLUDE_NOTES=false npm run ship
+# Public deck, no gate, notes ship inline
+npm run ship
 
-# Public deck, notes encrypted, no deck gate
+# Public deck, speaker notes encrypted separately
 NOTES_PASSWORD='presenter-only' npm run ship
 
-# Gated deck + encrypted notes (different passphrases)
+# Gated deck plus encrypted notes (two different passphrases)
 DECK_PASSWORD='deck-pass' NOTES_PASSWORD='notes-pass' npm run ship
 ```
 
 ---
 
-## Keyboard shortcuts (in the deck)
+## KEYBOARD SHORTCUTS
 
-- `→` / `←` — navigate
-- `Esc` — overview
-- `F` — fullscreen
-- `S` — speaker notes (prompts for passphrase if `NOTES_PASSWORD` was set)
-
----
-
-## Speaker notes
-
-Each slide has presenter notes in `notes/slide-NN.html`. Press `S` while presenting to open the speaker window — current slide, next slide, notes, and a timer. The window has a real URL (`/assets/speaker-view.html`) so refreshing it works.
-
-When `NOTES_PASSWORD` is set, the speaker-notes button in the HUD shows a 🔒 icon. Click or press `S` → enter the passphrase → notes decrypt in the browser, speaker view opens. The unlock is cached in localStorage for 30 days; clear via DevTools `localStorage.removeItem('ppd-notes-unlock')` to test the locked flow.
+→ `→` / `←`… navigate
+→ `Esc`… overview
+→ `F`… fullscreen
+→ `S`… open speaker notes (prompts for passphrase if `NOTES_PASSWORD` is set)
 
 ---
 
-## License
+## SPEAKER NOTES
 
-MIT. Fork freely. Built by [Steve Butler](https://github.com/stvbutlr) with [Claude Code](https://claude.com/claude-code).
+Every slide ships with presenter notes in `notes/slide-NN.html`. Press `S` while presenting to open the speaker window… current slide, next slide, notes, timer. The window has a real URL (`/assets/speaker-view.html`) so refreshing it works.
+
+When `NOTES_PASSWORD` is set, the speaker-notes button in the HUD shows a 🔒. Click or press `S`, enter the passphrase, notes decrypt in your browser, speaker view opens. The unlock is cached locally for 30 days. To test the locked flow again, clear `localStorage` for the deck domain.
+
+---
+
+## CREDIT
+
+This kit is the successor to my [Perfect Pitch Deck Figma template](https://www.figma.com/community/file/1430528713594279249). Same slide structure. Same sales psychology. New shell.
+
+If Figma is your thing, the original is still up. If code-shipped landing-page energy is your thing… you're in the right repo.
+
+---
+
+## LICENSE
+
+See `LICENSE`. Short version: use it for your own business or client work, modify it however you want, don't resell it as a template.
+
+– Steve
