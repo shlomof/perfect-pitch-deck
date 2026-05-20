@@ -6,7 +6,7 @@ Pitch decks that close, without you ever touching Figma.
 
 ## WHY THIS EXISTS
 
-I spent ten years in Figma. Pushing pixels around. Like a craftsman.
+I spent ten years in Figma. Pushing pixels around. Like a chump.
 
 Then Claude Code happened.
 
