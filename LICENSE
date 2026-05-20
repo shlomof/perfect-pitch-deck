@@ -21,6 +21,29 @@ structure, sales-psychology sequencing, and copy guidance carry over from that
 template. If you remix the original Figma file, follow the terms set by Figma
 Community on that file's page.
 
+THIRD-PARTY NOTICES:
+
+This kit redistributes / embeds the following open-source components. Their
+copyright notices and license terms are preserved in the relevant files.
+
+  Reveal.js — Copyright (C) 2011-2026 Hakim El Hattab and contributors
+  https://github.com/hakimel/reveal.js — MIT License
+  Used at runtime (loaded via CDN) AND verbatim in `assets/speaker-view.html`,
+  which is a self-hosted copy of reveal.js's speaker-view template.
+
+  intl-tel-input — Copyright (C) Jack O'Connor and contributors
+  https://github.com/jackocnr/intl-tel-input — MIT License
+  Used at runtime (loaded via CDN) on slide 23's phone-number field.
+
+  staticrypt — Copyright (C) Robin Moisson
+  https://github.com/robinmoisson/staticrypt — MIT License
+  Used as a build-time dependency to gate the deck behind a passphrase.
+  The kit's `staticrypt-template.html` is a customised version of staticrypt's
+  default password template.
+
+  Fonts (Inter, Mona Sans, JetBrains Mono)
+  Loaded from Google Fonts under the SIL Open Font License v1.1.
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
