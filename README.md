@@ -1,6 +1,12 @@
+<p align="center">
+  <img src="docs/hero.png" alt="Perfect Pitch Deck — a template for a personalised pitch that sets you up to close the deal." width="900" />
+</p>
+
 # Perfect Pitch Deck Kit
 
 Pitch decks that close, without you ever touching Figma.
+
+**Live demo →** [perfect-pitch-deck.pages.dev](https://perfect-pitch-deck.pages.dev)
 
 ---
 

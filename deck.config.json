@@ -2,7 +2,7 @@
   "$schema": "./scripts/deck.config.schema.json",
   "name": "Perfect Pitch Deck Creator",
   "tagline": "A template for a personalised pitch that sets you up to close the deal",
-  "url": "https://example.pages.dev",
+  "url": "https://perfect-pitch-deck.pages.dev",
   "allowed_origins": [
     "http://localhost:8765",
     "http://localhost:8788",
