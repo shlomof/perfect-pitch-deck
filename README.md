@@ -81,7 +81,7 @@ flowchart TD
 
 ---
 
-## ZERO TO LIVE IN AN HOUR
+## ZERO TO LIVE IN AN HOUR (OR LESS)
 
 What you need: Node 20+, [Claude Code](https://claude.com/claude-code), [GitHub CLI](https://cli.github.com), and [Wrangler](https://developers.cloudflare.com/workers/wrangler/) (`brew install gh && npm install -g wrangler`).
 
