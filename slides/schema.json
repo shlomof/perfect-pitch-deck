@@ -1,0 +1,384 @@
+{
+  "_comment": "Per-slot copy schema. maxChars is the HARD layout limit; soft slots (body/bullets) get +10% leeway in validate-deck. Run `node scripts/calibrate-slots.mjs` to refine maxChars empirically. v1.0 Phase 1: critical slots calibrated via Spike B; remaining slots seeded from Agent 3's static-read estimate and will be refined as SKILL.md files are authored.",
+  "version": "0.1.0",
+  "slides": [
+    {
+      "index": 1,
+      "slug": "cover",
+      "archetype": "cover",
+      "slots": [
+        { "name": "title", "selector": ".ppd-cover .title", "type": "headline", "maxChars": 20, "hardLimit": true, "required": true, "calibrated": true, "fragility": "nowrap at 92px — overflows column above 21 chars" },
+        { "name": "lede", "selector": ".ppd-cover .lede", "type": "body", "maxChars": 90, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "check_1", "selector": ".ppd-cover .ppd-check-list li:nth-child(1)", "type": "list_item", "maxChars": 55, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "check_2", "selector": ".ppd-cover .ppd-check-list li:nth-child(2)", "type": "list_item", "maxChars": 40, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "check_3", "selector": ".ppd-cover .ppd-check-list li:nth-child(3)", "type": "list_item", "maxChars": 40, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "cta_label", "selector": ".ppd-cover .ppd-pill-cta", "type": "cta_label", "maxChars": 35, "hardLimit": true, "required": true, "calibrated": false, "fragility": "pill CTA wraps to 2 lines above ~36 chars; breaks cover column rhythm" }
+      ]
+    },
+    {
+      "index": 2,
+      "slug": "nice-to-meet-you",
+      "archetype": "hero-dark",
+      "slots": [
+        { "name": "headline", "selector": ".intro-slide h1", "type": "headline", "maxChars": 35, "hardLimit": true, "required": true, "calibrated": false, "fragility": "144px hero type with explicit <br/> breaks; third line wraps below grid above ~12 chars/line" },
+        { "name": "subhead", "selector": ".intro-slide .subhead", "type": "body", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "32px subhead on single line; wraps above ~24 chars" },
+        { "name": "corner_brand", "selector": ".intro-brand span", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false, "fragility": "inline next to sparkle; wraps above ~18 chars" }
+      ]
+    },
+    {
+      "index": 3,
+      "slug": "big-problem-quote",
+      "archetype": "quote",
+      "slots": [
+        { "name": "quote", "selector": ".quote-slide.tint .quote", "type": "quote", "maxChars": 120, "hardLimit": true, "required": true, "calibrated": false, "fragility": "120px tint quote; collides with footer above ~120 chars" },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false, "fragility": "footer cell — long company names push mid cell" },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false, "fragility": "centered cell — overflow pushes right cell off-canvas" },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false, "fragility": "inline with sparkle; wraps above ~18 chars" }
+      ]
+    },
+    {
+      "index": 4,
+      "slug": "problem-agitators",
+      "archetype": "grid-3",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 30, "hardLimit": true, "required": true, "calibrated": false, "fragility": "eyebrow line wraps and pushes grid down above ~28 chars" },
+        { "name": "card_1_title", "selector": ".agitators-grid > div:nth-child(1) .ppd-headline-md", "type": "card_title", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "64px headline-md at 360px max-width; rows desync above ~22 chars" },
+        { "name": "card_1_body", "selector": ".agitators-grid > div:nth-child(1) p", "type": "card_body", "maxChars": 120, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_2_title", "selector": ".agitators-grid > div:nth-child(2) .ppd-headline-md", "type": "card_title", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "64px headline-md at 360px max-width; rows desync above ~22 chars" },
+        { "name": "card_2_body", "selector": ".agitators-grid > div:nth-child(2) p", "type": "card_body", "maxChars": 120, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_3_title", "selector": ".agitators-grid > div:nth-child(3) .ppd-headline-md", "type": "card_title", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "64px headline-md at 360px max-width; rows desync above ~22 chars" },
+        { "name": "card_3_body", "selector": ".agitators-grid > div:nth-child(3) p", "type": "card_body", "maxChars": 120, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 5,
+      "slug": "big-blue-promise",
+      "archetype": "quote",
+      "slots": [
+        { "name": "quote", "selector": ".quote-slide .quote", "type": "quote", "maxChars": 235, "hardLimit": true, "required": true, "calibrated": true, "fragility": "104px on full blue; collides with footer above 241 chars" },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 6,
+      "slug": "key-outcomes-blue",
+      "archetype": "grid-3",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 20, "hardLimit": true, "required": true, "calibrated": false, "fragility": "white-on-blue eyebrow; wraps above ~18 chars and crowds grid" },
+        { "name": "card_1_title", "selector": ".outcomes-cols > div:nth-child(1) .ppd-headline-md", "type": "card_title", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "60px headline-md inverted; rows desync above ~22 chars" },
+        { "name": "card_1_body", "selector": ".outcomes-cols > div:nth-child(1) p", "type": "card_body", "maxChars": 135, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_2_title", "selector": ".outcomes-cols > div:nth-child(2) .ppd-headline-md", "type": "card_title", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "60px headline-md inverted; rows desync above ~22 chars" },
+        { "name": "card_2_body", "selector": ".outcomes-cols > div:nth-child(2) p", "type": "card_body", "maxChars": 135, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_3_title", "selector": ".outcomes-cols > div:nth-child(3) .ppd-headline-md", "type": "card_title", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "60px headline-md inverted; rows desync above ~22 chars" },
+        { "name": "card_3_body", "selector": ".outcomes-cols > div:nth-child(3) p", "type": "card_body", "maxChars": 110, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 7,
+      "slug": "key-outcomes-split",
+      "archetype": "split-text-image",
+      "slots": [
+        { "name": "eyebrow", "selector": ".outcomes-split .left .ppd-eyebrow", "type": "eyebrow", "maxChars": 20, "hardLimit": true, "required": true, "calibrated": false, "fragility": "56px eyebrow in left rail; wraps above ~18 chars and crowds first msg" },
+        { "name": "card_1_title", "selector": ".outcomes-split .left .msg:nth-of-type(1) .ppd-headline-sm", "type": "card_title", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "44px headline-sm at 480px max-width; second line crowds body" },
+        { "name": "card_1_body", "selector": ".outcomes-split .left .msg:nth-of-type(1) .body", "type": "card_body", "maxChars": 130, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_2_title", "selector": ".outcomes-split .left .msg:nth-of-type(2) .ppd-headline-sm", "type": "card_title", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "44px headline-sm at 480px max-width; second line crowds body" },
+        { "name": "card_2_body", "selector": ".outcomes-split .left .msg:nth-of-type(2) .body", "type": "card_body", "maxChars": 135, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_3_title", "selector": ".outcomes-split .left .msg:nth-of-type(3) .ppd-headline-sm", "type": "card_title", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "44px headline-sm at 480px max-width; second line crowds body" },
+        { "name": "card_3_body", "selector": ".outcomes-split .left .msg:nth-of-type(3) .body", "type": "card_body", "maxChars": 115, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 8,
+      "slug": "how-it-works-split",
+      "archetype": "split-text-image",
+      "slots": [
+        { "name": "eyebrow", "selector": ".howitworks-split .left .ppd-eyebrow", "type": "eyebrow", "maxChars": 20, "hardLimit": true, "required": true, "calibrated": false, "fragility": "56px eyebrow on left rail; wraps above ~18 chars" },
+        { "name": "headline", "selector": ".howitworks-split .left h3", "type": "headline", "maxChars": 30, "hardLimit": true, "required": true, "calibrated": false, "fragility": "88px h3 at 680px max-width; third line collides with bullets" },
+        { "name": "body", "selector": ".howitworks-split .left p", "type": "body", "maxChars": 220, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "bullet_1", "selector": ".howitworks-split .left ul li:nth-child(1)", "type": "list_item", "maxChars": 30, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "bullet_2", "selector": ".howitworks-split .left ul li:nth-child(2)", "type": "list_item", "maxChars": 35, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "bullet_3", "selector": ".howitworks-split .left ul li:nth-child(3)", "type": "list_item", "maxChars": 55, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "footer_mini", "selector": ".howitworks-split .left .ppd-footer-mini", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "corner_brand", "selector": ".howitworks-split .right .corner-brand", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false, "fragility": "inline with sparkle in image corner; wraps above ~18 chars" }
+      ]
+    },
+    {
+      "index": 9,
+      "slug": "how-it-works",
+      "archetype": "split-text-image",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 20, "hardLimit": true, "required": true, "calibrated": false, "fragility": "blue eyebrow at top; wraps above ~18 chars" },
+        { "name": "headline", "selector": ".howitworks .left h3", "type": "headline", "maxChars": 60, "hardLimit": true, "required": true, "calibrated": false, "fragility": "68px h3 in left column; wraps below 2 lines above ~52 chars" },
+        { "name": "body", "selector": ".howitworks .left p", "type": "body", "maxChars": 220, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "bullet_1", "selector": ".howitworks .left ul li:nth-child(1)", "type": "list_item", "maxChars": 30, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "bullet_2", "selector": ".howitworks .left ul li:nth-child(2)", "type": "list_item", "maxChars": 35, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "bullet_3", "selector": ".howitworks .left ul li:nth-child(3)", "type": "list_item", "maxChars": 55, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 10,
+      "slug": "you-might-be-thinking",
+      "archetype": "grid-3",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 30, "hardLimit": true, "required": true, "calibrated": false, "fragility": "blue eyebrow; wraps above ~28 chars" },
+        { "name": "card_1_title", "selector": ".objections-grid .ppd-card:nth-child(1) .ppd-headline-sm", "type": "card_title", "maxChars": 30, "hardLimit": true, "required": true, "calibrated": false, "fragility": "52px headline-sm in card; rows desync above ~26 chars" },
+        { "name": "card_1_body", "selector": ".objections-grid .ppd-card:nth-child(1) p", "type": "card_body", "maxChars": 50, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_2_title", "selector": ".objections-grid .ppd-card:nth-child(2) .ppd-headline-sm", "type": "card_title", "maxChars": 30, "hardLimit": true, "required": true, "calibrated": false, "fragility": "52px headline-sm in card; rows desync above ~26 chars" },
+        { "name": "card_2_body", "selector": ".objections-grid .ppd-card:nth-child(2) p", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_3_title", "selector": ".objections-grid .ppd-card:nth-child(3) .ppd-headline-sm", "type": "card_title", "maxChars": 30, "hardLimit": true, "required": true, "calibrated": false, "fragility": "52px headline-sm in card; rows desync above ~26 chars" },
+        { "name": "card_3_body", "selector": ".objections-grid .ppd-card:nth-child(3) p", "type": "card_body", "maxChars": 70, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 11,
+      "slug": "customer-wins",
+      "archetype": "grid-3",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "blue eyebrow above grid; wraps above ~22 chars" },
+        { "name": "card_1_stat", "selector": ".wins-grid .ppd-card:nth-child(1) .stat", "type": "metric", "maxChars": 12, "hardLimit": true, "required": true, "calibrated": true, "fragility": "48px breaks centre above 17 chars" },
+        { "name": "card_1_label", "selector": ".wins-grid .ppd-card:nth-child(1) .label", "type": "card_meta", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "label below stat — wraps and breaks card rhythm above ~14 chars" },
+        { "name": "card_1_body", "selector": ".wins-grid .ppd-card:nth-child(1) .body", "type": "card_body", "maxChars": 90, "hardLimit": false, "required": true, "calibrated": true },
+        { "name": "card_1_proof_name", "selector": ".wins-grid .ppd-card:nth-child(1) .proof-name", "type": "attribution", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false, "fragility": "single line below logo; wraps above ~28 chars" },
+        { "name": "card_2_stat", "selector": ".wins-grid .ppd-card:nth-child(2) .stat", "type": "metric", "maxChars": 12, "hardLimit": true, "required": true, "calibrated": false, "fragility": "48px breaks centre above 17 chars" },
+        { "name": "card_2_label", "selector": ".wins-grid .ppd-card:nth-child(2) .label", "type": "card_meta", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "label below stat; wraps and breaks card rhythm above ~14 chars" },
+        { "name": "card_2_body", "selector": ".wins-grid .ppd-card:nth-child(2) .body", "type": "card_body", "maxChars": 65, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_2_proof_name", "selector": ".wins-grid .ppd-card:nth-child(2) .proof-name", "type": "attribution", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false, "fragility": "single line below logo; wraps above ~28 chars" },
+        { "name": "card_3_stat", "selector": ".wins-grid .ppd-card:nth-child(3) .stat", "type": "metric", "maxChars": 12, "hardLimit": true, "required": true, "calibrated": false, "fragility": "48px breaks centre above 17 chars" },
+        { "name": "card_3_label", "selector": ".wins-grid .ppd-card:nth-child(3) .label", "type": "card_meta", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "label below stat; wraps and breaks card rhythm above ~14 chars" },
+        { "name": "card_3_body", "selector": ".wins-grid .ppd-card:nth-child(3) .body", "type": "card_body", "maxChars": 65, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_3_proof_name", "selector": ".wins-grid .ppd-card:nth-child(3) .proof-name", "type": "attribution", "maxChars": 35, "hardLimit": true, "required": false, "calibrated": false, "fragility": "single line below avatar; wraps above ~28 chars" },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 12,
+      "slug": "customer-quote-blue",
+      "archetype": "quote",
+      "slots": [
+        { "name": "quote", "selector": ".quote-slide .quote", "type": "quote", "maxChars": 60, "hardLimit": true, "required": true, "calibrated": false, "fragility": "120px blue testimonial quote; collides with attribution below ~75 chars" },
+        { "name": "attribution", "selector": ".quote-slide .quote-author .meta", "type": "attribution", "maxChars": 35, "hardLimit": true, "required": true, "calibrated": false, "fragility": "two-line attribution next to avatar; wraps below avatar above ~32 chars" },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 13,
+      "slug": "our-customers",
+      "archetype": "logo-grid",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "blue eyebrow above headline; wraps above ~22 chars" },
+        { "name": "headline", "selector": ".customers-headline .ppd-headline-md", "type": "headline", "maxChars": 130, "hardLimit": true, "required": true, "calibrated": false, "fragility": "headline-md spans 2 lines above logo grid; pushes logos into footer above ~120 chars" },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 14,
+      "slug": "why-company-dark",
+      "archetype": "hero-dark",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "white-on-dark eyebrow; wraps above ~22 chars" },
+        { "name": "headline", "selector": ".why-hero .ppd-headline-md", "type": "headline", "maxChars": 130, "hardLimit": true, "required": true, "calibrated": false, "fragility": "headline-md inverted; collides with body above ~125 chars" },
+        { "name": "body", "selector": ".why-hero p", "type": "body", "maxChars": 220, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 15,
+      "slug": "team-dark",
+      "archetype": "team-5",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 20, "hardLimit": true, "required": true, "calibrated": false, "fragility": "white-on-dark eyebrow; wraps above ~18 chars" },
+        { "name": "person_1_name", "selector": ".team-grid .person:nth-child(1) .name", "type": "card_title", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "uppercase 18px; wraps above ~14 chars and breaks 5-up alignment" },
+        { "name": "person_1_role", "selector": ".team-grid .person:nth-child(1) .role", "type": "card_meta", "maxChars": 10, "hardLimit": true, "required": true, "calibrated": false, "fragility": "uppercase 18px; wraps above ~9 chars and pushes bio down" },
+        { "name": "person_1_bio", "selector": ".team-grid .person:nth-child(1) p", "type": "card_body", "maxChars": 110, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "person_2_name", "selector": ".team-grid .person:nth-child(2) .name", "type": "card_title", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "uppercase 18px; wraps above ~14 chars" },
+        { "name": "person_2_role", "selector": ".team-grid .person:nth-child(2) .role", "type": "card_meta", "maxChars": 10, "hardLimit": true, "required": true, "calibrated": false, "fragility": "uppercase 18px; wraps above ~9 chars" },
+        { "name": "person_2_bio", "selector": ".team-grid .person:nth-child(2) p", "type": "card_body", "maxChars": 110, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "person_3_name", "selector": ".team-grid .person:nth-child(3) .name", "type": "card_title", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "uppercase 18px; wraps above ~14 chars" },
+        { "name": "person_3_role", "selector": ".team-grid .person:nth-child(3) .role", "type": "card_meta", "maxChars": 10, "hardLimit": true, "required": true, "calibrated": false, "fragility": "uppercase 18px; wraps above ~9 chars" },
+        { "name": "person_3_bio", "selector": ".team-grid .person:nth-child(3) p", "type": "card_body", "maxChars": 110, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "person_4_name", "selector": ".team-grid .person:nth-child(4) .name", "type": "card_title", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "uppercase 18px; wraps above ~14 chars" },
+        { "name": "person_4_role", "selector": ".team-grid .person:nth-child(4) .role", "type": "card_meta", "maxChars": 10, "hardLimit": true, "required": true, "calibrated": false, "fragility": "uppercase 18px; wraps above ~9 chars" },
+        { "name": "person_4_bio", "selector": ".team-grid .person:nth-child(4) p", "type": "card_body", "maxChars": 110, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "person_5_name", "selector": ".team-grid .person:nth-child(5) .name", "type": "card_title", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "uppercase 18px; wraps above ~14 chars" },
+        { "name": "person_5_role", "selector": ".team-grid .person:nth-child(5) .role", "type": "card_meta", "maxChars": 10, "hardLimit": true, "required": true, "calibrated": false, "fragility": "uppercase 18px; wraps above ~9 chars" },
+        { "name": "person_5_bio", "selector": ".team-grid .person:nth-child(5) p", "type": "card_body", "maxChars": 110, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 16,
+      "slug": "future-together",
+      "archetype": "split-text-image",
+      "slots": [
+        { "name": "headline", "selector": ".future-split .left h1", "type": "headline", "maxChars": 35, "hardLimit": true, "required": true, "calibrated": false, "fragility": "hero h1 with explicit <br/> breaks across 4 lines; fifth line overflows left rail above ~10 chars/line" },
+        { "name": "body", "selector": ".future-split .right p", "type": "body", "maxChars": 160, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "footer_mini", "selector": ".future-split .left .ppd-footer-mini", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "corner_brand", "selector": ".future-split .right .corner-brand", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false, "fragility": "inline with sparkle in image corner; wraps above ~18 chars" }
+      ]
+    },
+    {
+      "index": 17,
+      "slug": "todays-offer",
+      "archetype": "hero-card",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 40, "hardLimit": true, "required": true, "calibrated": false, "fragility": "blue eyebrow with offer name; wraps above ~35 chars" },
+        { "name": "headline", "selector": ".todays-offer h3", "type": "headline", "maxChars": 100, "hardLimit": true, "required": true, "calibrated": false, "fragility": "44px h3 over body; collides with closer above ~90 chars" },
+        { "name": "body", "selector": ".todays-offer p:not(.closer)", "type": "body", "maxChars": 175, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "closer", "selector": ".todays-offer p.closer", "type": "body", "maxChars": 100, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 18,
+      "slug": "whats-included",
+      "archetype": "grid-2x2",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "blue eyebrow above 4x3 grid; wraps above ~22 chars" },
+        { "name": "card_1_title", "selector": ".inclusions-grid .ppd-card:nth-child(1) .ppd-headline-sm", "type": "card_title", "maxChars": 12, "hardLimit": true, "required": true, "calibrated": true, "fragility": "40px in 4-up cell; wraps at 18 chars" },
+        { "name": "card_1_body", "selector": ".inclusions-grid .ppd-card:nth-child(1) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_2_title", "selector": ".inclusions-grid .ppd-card:nth-child(2) .ppd-headline-sm", "type": "card_title", "maxChars": 12, "hardLimit": true, "required": true, "calibrated": false, "fragility": "40px in 4-up cell; wraps at 18 chars" },
+        { "name": "card_2_body", "selector": ".inclusions-grid .ppd-card:nth-child(2) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_3_title", "selector": ".inclusions-grid .ppd-card:nth-child(3) .ppd-headline-sm", "type": "card_title", "maxChars": 12, "hardLimit": true, "required": true, "calibrated": false, "fragility": "40px in 4-up cell; wraps at 18 chars" },
+        { "name": "card_3_body", "selector": ".inclusions-grid .ppd-card:nth-child(3) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_4_title", "selector": ".inclusions-grid .ppd-card:nth-child(4) .ppd-headline-sm", "type": "card_title", "maxChars": 12, "hardLimit": true, "required": true, "calibrated": false, "fragility": "40px in 4-up cell; wraps at 18 chars" },
+        { "name": "card_4_body", "selector": ".inclusions-grid .ppd-card:nth-child(4) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_5_title", "selector": ".inclusions-grid .ppd-card:nth-child(5) .ppd-headline-sm", "type": "card_title", "maxChars": 12, "hardLimit": true, "required": false, "calibrated": false, "fragility": "40px in 4-up cell; wraps at 18 chars" },
+        { "name": "card_5_body", "selector": ".inclusions-grid .ppd-card:nth-child(5) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "card_6_title", "selector": ".inclusions-grid .ppd-card:nth-child(6) .ppd-headline-sm", "type": "card_title", "maxChars": 12, "hardLimit": true, "required": false, "calibrated": false, "fragility": "40px in 4-up cell; wraps at 18 chars" },
+        { "name": "card_6_body", "selector": ".inclusions-grid .ppd-card:nth-child(6) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "card_7_title", "selector": ".inclusions-grid .ppd-card:nth-child(7) .ppd-headline-sm", "type": "card_title", "maxChars": 12, "hardLimit": true, "required": false, "calibrated": false, "fragility": "40px in 4-up cell; wraps at 18 chars" },
+        { "name": "card_7_body", "selector": ".inclusions-grid .ppd-card:nth-child(7) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "card_8_title", "selector": ".inclusions-grid .ppd-card:nth-child(8) .ppd-headline-sm", "type": "card_title", "maxChars": 12, "hardLimit": true, "required": false, "calibrated": false, "fragility": "40px in 4-up cell; wraps at 18 chars" },
+        { "name": "card_8_body", "selector": ".inclusions-grid .ppd-card:nth-child(8) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "card_9_title", "selector": ".inclusions-grid .ppd-card:nth-child(9) .ppd-headline-sm", "type": "card_title", "maxChars": 12, "hardLimit": true, "required": false, "calibrated": false, "fragility": "40px in 4-up cell; wraps at 18 chars" },
+        { "name": "card_9_body", "selector": ".inclusions-grid .ppd-card:nth-child(9) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "card_10_title", "selector": ".inclusions-grid .ppd-card:nth-child(10) .ppd-headline-sm", "type": "card_title", "maxChars": 12, "hardLimit": true, "required": false, "calibrated": false, "fragility": "40px in 4-up cell; wraps at 18 chars" },
+        { "name": "card_10_body", "selector": ".inclusions-grid .ppd-card:nth-child(10) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "card_11_title", "selector": ".inclusions-grid .ppd-card:nth-child(11) .ppd-headline-sm", "type": "card_title", "maxChars": 12, "hardLimit": true, "required": false, "calibrated": false, "fragility": "40px in 4-up cell; wraps at 18 chars" },
+        { "name": "card_11_body", "selector": ".inclusions-grid .ppd-card:nth-child(11) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "card_12_title", "selector": ".inclusions-grid .ppd-card:nth-child(12) .ppd-headline-sm", "type": "card_title", "maxChars": 12, "hardLimit": true, "required": false, "calibrated": false, "fragility": "40px in 4-up cell; wraps at 18 chars" },
+        { "name": "card_12_body", "selector": ".inclusions-grid .ppd-card:nth-child(12) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 19,
+      "slug": "plans-on-offer",
+      "archetype": "pricing-3",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 25, "hardLimit": true, "required": true, "calibrated": false, "fragility": "blue eyebrow above 3-column grid; wraps above ~22 chars" },
+        { "name": "plan_1_name", "selector": ".plans-grid .plan:nth-child(1) .plan-title", "type": "card_title", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "42px plan title; wraps above ~14 chars and breaks card heights" },
+        { "name": "plan_1_result", "selector": ".plans-grid .plan:nth-child(1) .plan-result", "type": "headline", "maxChars": 70, "hardLimit": true, "required": true, "calibrated": false, "fragility": "32px result line; collides with price above ~60 chars" },
+        { "name": "plan_1_price", "selector": ".plans-grid .plan:nth-child(1) .plan-price", "type": "price", "maxChars": 10, "hardLimit": true, "required": true, "calibrated": false, "fragility": "56px price; wraps and breaks card alignment above ~8 chars" },
+        { "name": "plan_1_bullets", "selector": ".plans-grid .plan:nth-child(1) > ul", "type": "list_item", "maxChars": 200, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "plan_2_name", "selector": ".plans-grid .plan:nth-child(2) .plan-title", "type": "card_title", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "42px plan title; wraps above ~14 chars" },
+        { "name": "plan_2_result", "selector": ".plans-grid .plan:nth-child(2) .plan-result", "type": "headline", "maxChars": 55, "hardLimit": true, "required": true, "calibrated": false, "fragility": "32px result line; collides with price above ~60 chars" },
+        { "name": "plan_2_price", "selector": ".plans-grid .plan:nth-child(2) .plan-price", "type": "price", "maxChars": 10, "hardLimit": true, "required": true, "calibrated": false, "fragility": "56px price; wraps above ~8 chars" },
+        { "name": "plan_2_bullets", "selector": ".plans-grid .plan:nth-child(2) > ul", "type": "list_item", "maxChars": 175, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "plan_3_name", "selector": ".plans-grid .plan:nth-child(3) .plan-title", "type": "card_title", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "42px plan title; wraps above ~14 chars" },
+        { "name": "plan_3_result", "selector": ".plans-grid .plan:nth-child(3) .plan-result", "type": "headline", "maxChars": 55, "hardLimit": true, "required": true, "calibrated": false, "fragility": "32px result line; collides with price above ~60 chars" },
+        { "name": "plan_3_price", "selector": ".plans-grid .plan:nth-child(3) .plan-price", "type": "price", "maxChars": 10, "hardLimit": true, "required": true, "calibrated": false, "fragility": "56px price; wraps above ~8 chars" },
+        { "name": "plan_3_bullets", "selector": ".plans-grid .plan:nth-child(3) > ul", "type": "list_item", "maxChars": 185, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 20,
+      "slug": "bonus-offer",
+      "archetype": "grid-3",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 35, "hardLimit": true, "required": true, "calibrated": false, "fragility": "blue eyebrow with gift emoji; wraps above ~30 chars" },
+        { "name": "card_1_title", "selector": ".bonus-grid .ppd-card:nth-child(1) .ppd-headline-sm", "type": "card_title", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "52px headline-sm in card; rows desync above ~14 chars" },
+        { "name": "card_1_body", "selector": ".bonus-grid .ppd-card:nth-child(1) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_2_title", "selector": ".bonus-grid .ppd-card:nth-child(2) .ppd-headline-sm", "type": "card_title", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "52px headline-sm in card; rows desync above ~14 chars" },
+        { "name": "card_2_body", "selector": ".bonus-grid .ppd-card:nth-child(2) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "card_3_title", "selector": ".bonus-grid .ppd-card:nth-child(3) .ppd-headline-sm", "type": "card_title", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "52px headline-sm in card; rows desync above ~14 chars" },
+        { "name": "card_3_body", "selector": ".bonus-grid .ppd-card:nth-child(3) .body", "type": "card_body", "maxChars": 60, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 21,
+      "slug": "our-guarantee",
+      "archetype": "hero-light",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 20, "hardLimit": true, "required": true, "calibrated": false, "fragility": "blue eyebrow above hero; wraps above ~18 chars" },
+        { "name": "headline", "selector": ".guarantee-hero .ppd-headline-md", "type": "headline", "maxChars": 90, "hardLimit": true, "required": true, "calibrated": false, "fragility": "headline-md centered hero; collides with body above ~85 chars" },
+        { "name": "body", "selector": ".guarantee-hero p.body", "type": "body", "maxChars": 290, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "fine_print", "selector": ".guarantee-hero p.fine", "type": "body", "maxChars": 280, "hardLimit": false, "required": false, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 22,
+      "slug": "special-offer",
+      "archetype": "hero-card",
+      "slots": [
+        { "name": "eyebrow", "selector": ".ppd-eyebrow", "type": "eyebrow", "maxChars": 20, "hardLimit": true, "required": true, "calibrated": false, "fragility": "blue eyebrow above offer card; wraps above ~18 chars" },
+        { "name": "price", "selector": ".offer-card .price", "type": "price", "maxChars": 50, "hardLimit": true, "required": true, "calibrated": false, "fragility": "56px price with strike+discount inline; wraps and breaks card above ~45 chars" },
+        { "name": "spots", "selector": ".offer-card .spots", "type": "card_meta", "maxChars": 30, "hardLimit": true, "required": true, "calibrated": false, "fragility": "28px scarcity line; wraps above ~28 chars" },
+        { "name": "body_1", "selector": ".offer-card p:nth-of-type(1)", "type": "body", "maxChars": 80, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "body_2", "selector": ".offer-card p:nth-of-type(2)", "type": "body", "maxChars": 95, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "body_3", "selector": ".offer-card p:nth-of-type(3)", "type": "body", "maxChars": 130, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "body_4", "selector": ".offer-card p:nth-of-type(4)", "type": "body", "maxChars": 165, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "footer_left", "selector": ".ppd-footer .ppd-footer-left", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_mid", "selector": ".ppd-footer .ppd-footer-mid", "type": "footer_brand", "maxChars": 30, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "footer_right_brand", "selector": ".ppd-footer .ppd-footer-right", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false }
+      ]
+    },
+    {
+      "index": 23,
+      "slug": "next-steps-split",
+      "archetype": "split-text-image",
+      "slots": [
+        { "name": "eyebrow", "selector": ".nextsteps-split .left .ppd-eyebrow", "type": "eyebrow", "maxChars": 20, "hardLimit": true, "required": true, "calibrated": false, "fragility": "56px eyebrow with 220px bottom margin; wraps above ~18 chars and collapses the gap to headline" },
+        { "name": "headline", "selector": ".nextsteps-split .left h3", "type": "headline", "maxChars": 70, "hardLimit": true, "required": true, "calibrated": true, "fragility": "76px on 680px max-width; body falls into footer above 76 chars" },
+        { "name": "body", "selector": ".nextsteps-split .left p", "type": "body", "maxChars": 175, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "footer_mini", "selector": ".nextsteps-split .left .ppd-footer-mini", "type": "footer_brand", "maxChars": 25, "hardLimit": true, "required": false, "calibrated": false },
+        { "name": "cta_title", "selector": ".nextsteps-split .cta-card .title", "type": "card_title", "maxChars": 20, "hardLimit": true, "required": true, "calibrated": false, "fragility": "22px CTA card title; wraps above ~18 chars and pushes choices down" },
+        { "name": "choice_in_label", "selector": ".nextsteps-split .cta-card .choice-btn[data-choice=\"in\"] span:first-child", "type": "cta_label", "maxChars": 30, "hardLimit": true, "required": true, "calibrated": false, "fragility": "single-line pill choice; check icon clips above ~28 chars" },
+        { "name": "choice_question_label", "selector": ".nextsteps-split .cta-card .choice-btn[data-choice=\"question\"] span:first-child", "type": "cta_label", "maxChars": 40, "hardLimit": true, "required": true, "calibrated": false, "fragility": "single-line pill choice; check icon clips above ~36 chars" },
+        { "name": "choice_out_label", "selector": ".nextsteps-split .cta-card .choice-btn[data-choice=\"out\"] span:first-child", "type": "cta_label", "maxChars": 35, "hardLimit": true, "required": true, "calibrated": false, "fragility": "single-line pill choice; check icon clips above ~32 chars" },
+        { "name": "submit_label", "selector": ".nextsteps-split .cta-card button.submit", "type": "cta_label", "maxChars": 15, "hardLimit": true, "required": true, "calibrated": false, "fragility": "submit button — wraps and unbalances form above ~12 chars" },
+        { "name": "success_title", "selector": ".nextsteps-split .cta-card [data-success-title]", "type": "card_title", "maxChars": 40, "hardLimit": true, "required": true, "calibrated": false, "fragility": "post-submit confirmation headline; wraps above ~36 chars" },
+        { "name": "success_body", "selector": ".nextsteps-split .cta-card [data-success-body]", "type": "body", "maxChars": 60, "hardLimit": false, "required": true, "calibrated": false },
+        { "name": "corner_brand", "selector": ".nextsteps-split .right .corner-brand", "type": "footer_brand", "maxChars": 20, "hardLimit": true, "required": false, "calibrated": false, "fragility": "inline with sparkle in right column corner; wraps above ~18 chars" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# QA scratch + intermediate working dirs
+_qa/
+_pdf-ref/
+_figma/
+.index.staged.html
+.index.no-notes.html
+
+# secrets — never commit
+.env
+.env.*
+!.env.example
+.dev.vars
+
+# user's own brief — only the example + template ship
+brief.yaml
+
+# editor / OS
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# logs
+*.log
+npm-debug.log*
+
+# the old planning doc from chassis-donor days
+PLAN.md
+
+# wrangler local state
+.wrangler/
+
+# staticrypt generates this per build with a hashed salt — not source
+.staticrypt.json

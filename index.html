@@ -1,0 +1,2253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<script>
+  // Tag the document when loaded inside Reveal's speaker-view iframes so CSS
+  // can hide presenter chrome (HUD on the upcoming preview) and keep the
+  // shortcut bar on a single line in the smaller current preview.
+  (function () {
+    var s = location.search;
+    if (s.indexOf('receiver') < 0) return;
+    document.documentElement.classList.add('is-receiver');
+    if (s.indexOf('controls=false') >= 0) {
+      document.documentElement.classList.add('is-upcoming');
+    } else {
+      document.documentElement.classList.add('is-current');
+    }
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+<!-- ─── SEO / Open Graph ───────────────────────────────────────────────
+     Customise these for your deck. When deployed in public mode (no
+     DECK_PASSWORD), search crawlers and social cards will pick these up. -->
+<title>Perfect Pitch Deck — A template for a personalised pitch</title>
+<meta name="description" content="A 23-slide pitch-deck template that sets you up to close the deal. Packed with sales psychology and Hormozi-style offer framing." />
+<link rel="canonical" href="https://example.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Perfect Pitch Deck" />
+<meta property="og:description" content="A template for a personalised pitch that sets you up to close the deal." />
+<meta property="og:url" content="https://example.com/" />
+<meta property="og:image" content="https://example.com/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Perfect Pitch Deck" />
+<meta name="twitter:description" content="A template for a personalised pitch that sets you up to close the deal." />
+<meta name="twitter:image" content="https://example.com/assets/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Mona+Sans:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@28.1.0/dist/css/intlTelInput.css" />
+<style>
+:root {
+  /* === BRAND KNOBS — only edit these for a rebrand =========================
+     Paste your brand hex into --accent. /brand will compute --brand-hue from it.
+     Most users leave --brand-hue-secondary alone (defaults to match primary). */
+  --accent: #1F5EFF;                  /* primary brand colour — paste your hex */
+  --brand-hue: 263.74;                /* OKLCH hue of --accent (auto-set by /brand) */
+  --brand-hue-secondary: var(--brand-hue);  /* optional second hue for gradient surfaces */
+
+  /* === DERIVED ACCENT FAMILY — do not edit; matches defaults at dE <1.5 === */
+  --accent-soft: oklch(89% calc(0.247 * 0.22) var(--brand-hue));    /* ≈ #C7DCFF — dark-bg accent text */
+  --accent-tint: oklch(92.5% calc(0.247 * 0.18) var(--brand-hue));  /* ≈ #D9E8FF — page-tint background */
+
+  /* === NEUTRALS — palette baseline, same for every brand =================== */
+  --bg-light: #F5F5F5;
+  --bg-dark: #000000;
+  --surface: #FFFFFF;
+  --text-primary: #000000;
+  --text-inverse: #FFFFFF;
+  --text-muted: rgba(0,0,0,0.65);
+  --text-muted-inverse: rgba(255,255,255,0.85);
+  --border-card: rgba(0,0,0,0.06);
+  --warn: #C0271F;
+
+  /* === LEGACY ALIASES — keep existing selectors working ==================== */
+  --bg-blue: var(--accent);
+  --bg-blue-tint: var(--accent-tint);
+  --accent-blue: var(--accent);
+  --accent-blue-soft: var(--accent-soft);
+
+  /* === TYPE RAMP (10 named steps — locked) ================================ */
+  --type-display-xl: 152px;
+  --type-display-lg: 124px;
+  --type-display-md: 92px;
+  --type-headline-lg: 76px;
+  --type-headline-md: 56px;
+  --type-headline-sm: 44px;
+  --type-body-lg: 32px;
+  --type-body-md: 24px;
+  --type-body-sm: 18px;
+  --type-eyebrow: 16px;
+
+  /* === FONTS ============================================================== */
+  --font-display: 'Mona Sans', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* === SPACING & SHAPE — locked scales ==================================== */
+  --canvas-w: 1920px;
+  --canvas-h: 1080px;
+  --gutter: 80px;
+  --radius-card: 10px;
+  --radius-button: 999px;
+  --padding-slide: 80px;
+}
+
+html, body { background: var(--bg-light); }
+
+.reveal {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text-primary);
+}
+.reveal .slides { text-align: left; }
+.reveal section { padding: 0 !important; height: 1080px !important; width: 1920px !important; box-sizing: border-box; }
+
+.reveal .controls {
+  display: block !important;
+  color: var(--text-primary);
+  mix-blend-mode: difference;
+}
+.reveal .controls button {
+  color: var(--text-primary) !important;
+  opacity: 0.45;
+  transition: opacity 0.15s ease;
+}
+.reveal .controls button:hover { opacity: 1; }
+.reveal .controls button.enabled:focus,
+.reveal .controls button.enabled { opacity: 0.55; }
+
+.reveal .progress {
+  display: block !important;
+  height: 3px;
+  color: var(--accent-blue);
+  background: rgba(0,0,0,0.08);
+}
+
+/* Keyboard shortcut HUD */
+.deck-hud {
+  position: fixed;
+  left: 50%; transform: translateX(-50%);
+  bottom: 10px;
+  z-index: 50;
+  display: flex; align-items: center; gap: 10px;
+  padding: 5px 12px;
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.deck-hud.show { opacity: 0.85; }
+.deck-hud kbd {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 14px; height: 14px;
+  padding: 0 4px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 9px;
+  color: var(--accent-blue-soft);
+  margin: 0 1px;
+}
+.deck-hud .hud-sep { opacity: 0.30; margin: 0 2px; }
+
+/* Reveal speaker-view iframes load this page in receiver mode. */
+/* Upcoming slide preview: hide the HUD entirely (redundant chrome). */
+html.is-upcoming .deck-hud,
+html.is-upcoming .notes-lock,
+html.is-upcoming .rotate-hint { display: none !important; }
+/* Current slide preview: keep the HUD visible but force one line so it */
+/* doesn't wrap in the narrower preview pane. */
+html.is-current .deck-hud { white-space: nowrap; flex-wrap: nowrap; }
+html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
+
+/* Lock icon inside the HUD when speaker notes are encrypted */
+.deck-hud [data-notes-shortcut] .lock-ico {
+  display: inline-block;
+  margin-right: 4px;
+  font-size: 10px;
+  line-height: 1;
+  opacity: 0.9;
+  color: var(--accent-blue-soft);
+}
+.deck-hud [data-notes-shortcut] .lock-ico[hidden] { display: none; }
+
+/* Notes passphrase modal */
+.notes-lock {
+  display: none;
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.78);
+  align-items: center; justify-content: center;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+}
+.notes-lock.open { display: flex; }
+.notes-lock .panel {
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 28px 28px 22px;
+  width: 360px;
+  text-align: center;
+}
+.notes-lock h2 { margin: 0 0 6px; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+.notes-lock p { margin: 0 0 18px; font-size: 13px; opacity: 0.65; line-height: 1.5; }
+.notes-lock input {
+  width: 100%;
+  padding: 10px 12px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  font: inherit; font-size: 14px;
+  color: #fff;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+.notes-lock .actions { display: flex; gap: 8px; }
+.notes-lock button {
+  flex: 1;
+  padding: 10px 12px;
+  background: var(--accent-blue);
+  border: 0; border-radius: 8px;
+  font: inherit; font-size: 13px; font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+.notes-lock button.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.8);
+}
+.notes-lock .err { display: none; font-size: 12px; color: #ff7a7a; margin: -4px 0 12px; }
+.notes-lock.invalid .err { display: block; }
+
+/* Rotate-for-best-view hint */
+.rotate-hint {
+  display: none;
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(0,0,0,0.92);
+  color: var(--text-inverse);
+  align-items: center; justify-content: center;
+  text-align: center; padding: 32px;
+  font-family: 'Inter', sans-serif;
+}
+.rotate-hint .ico {
+  font-size: 56px; line-height: 1; margin-bottom: 18px;
+  color: var(--accent-blue);
+  animation: rotateNudge 2.4s ease-in-out infinite;
+  display: inline-block;
+}
+@keyframes rotateNudge {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-90deg); }
+}
+.rotate-hint h2 { margin: 0 0 8px; font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+.rotate-hint p { margin: 0 0 22px; opacity: 0.75; font-size: 14px; line-height: 1.5; max-width: 320px; }
+.rotate-hint button {
+  background: var(--accent-blue); color: var(--text-inverse);
+  border: 0; border-radius: 8px;
+  padding: 10px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  cursor: pointer;
+}
+@media (max-width: 768px) and (orientation: portrait) {
+  .rotate-hint:not(.dismissed) { display: flex; }
+  .deck-hud { font-size: 10px; padding: 6px 10px; gap: 8px; }
+  .deck-hud .hud-shortcut.hide-on-mobile { display: none; }
+}
+
+/* Fragment animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal .present .anim-fade { animation: fadeUp 0.6s 0.2s both ease-out; }
+.reveal .present .anim-fade-2 { animation: fadeUp 0.6s 0.4s both ease-out; }
+.reveal .present .anim-fade-3 { animation: fadeUp 0.6s 0.6s both ease-out; }
+.reveal .present .anim-fade-4 { animation: fadeUp 0.6s 0.8s both ease-out; }
+
+/* ─── Perfect Pitch Deck — slide system ─────────────────────────────── */
+
+.ppd-slide {
+  position: relative;
+  width: 1920px; height: 1080px;
+  overflow: hidden;
+  padding: var(--padding-slide);
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+.ppd-slide.bg-light { background: var(--bg-light); color: var(--text-primary); }
+.ppd-slide.bg-dark  { background: var(--bg-dark);  color: var(--text-inverse); }
+.ppd-slide.bg-blue  { background: var(--bg-blue);  color: var(--text-inverse); }
+.ppd-slide.bg-blue-tint { background: var(--bg-blue-tint); color: var(--accent-blue); }
+.ppd-slide.bg-white { background: var(--surface); color: var(--text-primary); }
+
+.ppd-eyebrow {
+  font-family: 'Inter', sans-serif; font-weight: 800;
+  font-size: 36px; line-height: 1.2;
+  letter-spacing: -0.012em;
+}
+
+.ppd-footer {
+  position: absolute; left: 0; right: 0; bottom: 32px;
+  display: flex; align-items: center;
+  padding: 0 var(--padding-slide);
+  font-family: 'Inter', sans-serif; font-weight: 600;
+  font-size: 18px; color: inherit;
+}
+.ppd-footer .ppd-footer-left  { flex: 1 1 0; text-align: left; }
+.ppd-footer .ppd-footer-mid   { flex: 1 1 0; text-align: center; }
+.ppd-footer .ppd-footer-right { flex: 1 1 0; display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
+.ppd-sparkle-icon {
+  display: inline-block;
+  width: 22px; height: 22px;
+  vertical-align: middle;
+  color: inherit;
+}
+
+/* Headline sizes */
+.ppd-headline-xl { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 120px; line-height: 1.05; letter-spacing: -0.03em; }
+.ppd-headline-lg { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 92px;  line-height: 1.08; letter-spacing: -0.025em; }
+.ppd-headline-md { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 56px;  line-height: 1.15; letter-spacing: -0.018em; }
+.ppd-headline-sm { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 40px;  line-height: 1.2;  letter-spacing: -0.015em; }
+.ppd-headline-xs { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 32px;  line-height: 1.2;  letter-spacing: -0.01em; }
+
+.ppd-body-lg { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 32px; line-height: 1.45; }
+.ppd-body-md { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 24px; line-height: 1.5; }
+.ppd-body-sm { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; line-height: 1.55; }
+.ppd-body-xs { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.5; }
+.ppd-italic  { font-style: italic; }
+.ppd-muted   { color: var(--text-muted); }
+.ppd-muted-inv { color: var(--text-muted-inverse); }
+.ppd-strike  { text-decoration: line-through; text-decoration-thickness: 4px; }
+.ppd-accent  { color: var(--accent-blue); }
+
+/* Card */
+.ppd-card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-card);
+  padding: 40px 36px;
+  box-sizing: border-box;
+}
+
+/* Pill CTA */
+.ppd-pill-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent-blue); color: var(--text-inverse);
+  font-family: 'Inter', sans-serif; font-weight: 700;
+  font-size: 30px; line-height: 1;
+  padding: 24px 56px;
+  border-radius: var(--radius-button);
+  text-decoration: underline; text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+/* Check bullet (slide 1) */
+.ppd-check-list { list-style: none; margin: 0; padding: 0; }
+.ppd-check-list li {
+  display: flex; align-items: flex-start;
+  gap: 14px; margin: 14px 0;
+  font-family: 'Inter', sans-serif; font-weight: 500;
+  font-size: 28px; line-height: 1.4;
+}
+.ppd-check-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 30px; height: 30px;
+  margin-top: 4px;
+  background: var(--accent-blue) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="5 12 10 17 19 8"/></svg>') center/16px no-repeat;
+  border-radius: 999px;
+}
+
+/* Layout helpers */
+.ppd-stack { display: flex; flex-direction: column; }
+.ppd-row   { display: flex; }
+.ppd-grid  { display: grid; }
+.ppd-center{ display: flex; align-items: center; justify-content: center; }
+
+/* Per-slide overrides ──────────────────────────────────────────────── */
+
+/* Slide 1 — Cover (matches Figma node 1-838: poster 528x798, right col 878px) */
+.ppd-cover {
+  position: absolute; inset: 0;
+  display: grid; grid-template-columns: 528px 878px; column-gap: 161px;
+  align-items: start;
+  padding: 141px 160px 0;
+  box-sizing: border-box;
+}
+.ppd-cover .poster {
+  width: 528px; height: 798px;
+  display: flex; align-items: center; justify-content: center;
+}
+.ppd-cover .poster img { width: 100%; height: 100%; object-fit: contain; }
+.ppd-cover .content { padding-top: 50px; }
+.ppd-cover .title {
+  font-family: 'Mona Sans', 'Inter', sans-serif;
+  font-size: 92px; font-weight: 800; line-height: 1.0; letter-spacing: -0.035em;
+  margin: 0; white-space: nowrap;
+}
+.ppd-cover .lede {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px; font-weight: 400; line-height: 1.05;
+  color: #545454; margin: 24px 0 48px;
+}
+.ppd-cover .ppd-check-list { display: flex; flex-direction: column; gap: 16px; margin: 0; }
+.ppd-cover .ppd-check-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px; font-weight: 400; line-height: 1.15;
+  color: #545454; gap: 10px; margin: 0;
+  align-items: center;
+}
+.ppd-cover .ppd-check-list li::before {
+  width: 32px; height: 32px; margin: 0;
+  background: #0b66c2 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="5 12 10 17 19 8"/></svg>') center/18px no-repeat;
+}
+.ppd-cover .ppd-cta-row { margin-top: 48px; }
+.ppd-cover .ppd-pill-cta {
+  background: #0b66c2;
+  font-size: 40px; font-weight: 700; line-height: 1;
+  padding: 16px 56px;
+  border-radius: 100px;
+  text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 3px;
+}
+.cover-branding {
+  position: absolute; right: 40px; bottom: 24px;
+  display: flex; align-items: center;
+}
+.cover-branding img { height: 35px; width: auto; }
+
+/* Slide 2 — Our Guarantee */
+.guarantee-hero {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1000px; text-align: left;
+}
+.guarantee-hero h2 { margin: 0 0 28px; }
+.guarantee-hero p.body { margin: 0 0 28px; }
+.guarantee-hero p.fine { font-style: italic; font-size: 18px; line-height: 1.55; color: var(--text-primary); margin: 0; }
+
+/* Slide 3 — What's Included? (4x3 grid) */
+.inclusions-grid {
+  position: absolute; left: 80px; right: 80px; top: 200px; bottom: 100px;
+  display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr);
+  gap: 24px;
+}
+.inclusions-grid .ppd-card {
+  display: flex; flex-direction: column; justify-content: center;
+  text-align: center;
+  padding: 40px 32px;
+}
+.inclusions-grid .ppd-card .ppd-headline-sm { margin: 0 0 12px; }
+.inclusions-grid .ppd-card .body { margin: 0; }
+
+/* Slide 4 — Why {Company Name}? (dark) */
+.why-hero {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1100px; text-align: left;
+}
+.why-hero h2 { margin: 0 0 28px; }
+.why-hero p { margin: 0; }
+
+/* Slide 22 — Special Offer (pricing card) */
+.offer-card {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 740px;
+  background: var(--surface);
+  padding: 64px 56px;
+  text-align: center;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-card);
+}
+.offer-card .price { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 56px; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 14px; }
+.offer-card .spots { font-size: 28px; font-weight: 400; margin: 0 0 36px; }
+.offer-card p { font-size: 18px; line-height: 1.5; margin: 18px 0; }
+
+/* Slide 6 — Our Customers (logo grid) */
+.customers-headline {
+  position: absolute; left: 80px; top: 200px; max-width: 900px;
+}
+.customers-grid {
+  position: absolute; left: 80px; right: 80px; top: 520px;
+  display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(2, 1fr);
+  gap: 40px 60px;
+}
+.customers-grid .logo-circle {
+  width: 180px; height: 180px; border-radius: 999px;
+  background: var(--bg-dark);
+  margin: 0 auto;
+}
+
+/* Slide 5 (big-blue-promise) / Slide 12 (customer-quote-blue) / Slide 3 (big-problem-quote tint) */
+.quote-slide {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+  padding: 80px 120px 120px;
+  box-sizing: border-box;
+}
+.quote-slide.tint { justify-content: center; padding: 80px 120px 120px; }
+.quote-slide .quote {
+  font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800;
+  font-size: 104px; line-height: 1.04; letter-spacing: -0.03em;
+  color: var(--accent-blue-soft);
+  margin: 0;
+}
+.quote-slide.tint .quote { color: var(--accent-blue); font-size: 120px; }
+.quote-slide .quote-author {
+  display: flex; align-items: center; gap: 18px;
+  margin-top: 48px;
+  font-family: 'Inter', sans-serif;
+}
+.quote-slide .quote-author img { width: 72px; height: 72px; border-radius: 999px; }
+.quote-slide .quote-author .meta { font-size: 28px; line-height: 1.25; font-weight: 600; color: var(--text-inverse); }
+
+/* Slide 7 — Key Outcomes split (blue left ~1/3, image grid right ~2/3) */
+.outcomes-split {
+  display: grid; grid-template-columns: 620px 1fr; height: 1080px;
+}
+.outcomes-split .left {
+  background: var(--accent-blue);
+  color: var(--text-inverse);
+  padding: 80px 60px 80px 80px;
+  display: flex; flex-direction: column;
+}
+.outcomes-split .left .ppd-eyebrow { color: var(--text-inverse); font-size: 56px; font-weight: 800; letter-spacing: -0.015em; margin: 0 0 100px; }
+.outcomes-split .left .msg { margin-bottom: 56px; }
+.outcomes-split .left .msg:last-child { margin-bottom: 0; }
+.outcomes-split .left .msg .ppd-headline-sm { margin: 0 0 12px; color: var(--text-inverse); font-size: 44px; font-weight: 800; line-height: 1.1; letter-spacing: -0.018em; }
+.outcomes-split .left .msg .body { margin: 0; font-size: 20px; line-height: 1.5; color: rgba(255,255,255,0.95); max-width: 480px; }
+.outcomes-split .right {
+  background: var(--accent-blue);
+  padding: 80px 80px 80px 0;
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+  gap: 12px;
+}
+.outcomes-split .right .ph {
+  background:
+    repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/40px 40px;
+  border-radius: 2px;
+}
+
+/* Slide 9 — Plans On Offer (3 cards) */
+.plans-grid {
+  position: absolute; left: 80px; right: 80px; top: 180px; bottom: 100px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.plans-grid .plan {
+  background: var(--surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 60px 40px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.plans-grid .plan .plan-title { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 42px; line-height: 1.1; margin: 0 0 32px; }
+.plans-grid .plan .plan-result { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 32px; line-height: 1.2; letter-spacing: -0.012em; margin: 0 0 32px; }
+.plans-grid .plan .plan-price { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 56px; line-height: 1.1; margin: 0 0 36px; }
+.plans-grid .plan ul { list-style: disc; padding-left: 22px; margin: 0; font-size: 20px; line-height: 1.7; text-align: left; }
+.plans-grid .plan ul ul { list-style: disc; padding-left: 22px; margin: 4px 0 0; }
+
+/* Slide 17 — Today's Offer (single card) */
+.todays-offer {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 740px;
+  background: var(--surface);
+  padding: 64px 56px;
+  text-align: center;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-card);
+}
+.todays-offer h3 { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 44px; line-height: 1.18; margin: 0 0 28px; letter-spacing: -0.015em; }
+.todays-offer p { font-size: 22px; line-height: 1.5; margin: 0 0 28px; }
+.todays-offer .closer { font-style: italic; font-weight: 700; color: var(--accent-blue); }
+
+/* Slide 9 — How It Works (text left + wide landscape image right) */
+.bg-white > .ppd-eyebrow,
+.bg-light > .ppd-eyebrow {
+  position: absolute; left: 80px; top: 80px;
+  font-size: 56px; font-weight: 800; letter-spacing: -0.015em;
+}
+.howitworks {
+  display: grid; grid-template-columns: 800px 1fr; gap: 80px;
+  position: absolute; left: 80px; right: 80px;
+  top: 50%; transform: translateY(-50%);
+  align-items: center;
+}
+.howitworks .left h3 { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 68px; line-height: 1.04; letter-spacing: -0.025em; margin: 0 0 44px; }
+.howitworks .left p { font-size: 24px; line-height: 1.5; margin: 0 0 32px; }
+.howitworks .left ul { font-size: 24px; line-height: 1.7; padding-left: 22px; margin: 0; }
+.howitworks .right.ph {
+  height: 720px;
+  background:
+    repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/40px 40px;
+  border-radius: 2px;
+}
+
+/* Slide 4 (problem-agitators) light blue tint */
+.bg-blue-tint .ppd-eyebrow { color: var(--accent-blue); }
+.bg-blue-tint > .ppd-eyebrow {
+  position: absolute; left: 80px; top: 80px;
+  font-size: 56px; font-weight: 800; letter-spacing: -0.015em;
+}
+.agitators-grid {
+  position: absolute; left: 80px; right: 80px; top: 50%;
+  transform: translateY(-50%);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 80px;
+  text-align: center;
+  color: var(--accent-blue);
+}
+.agitators-grid .ppd-headline-md { color: var(--accent-blue); margin: 0 0 24px; font-size: 64px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; max-width: 360px; margin-left: auto; margin-right: auto; }
+.agitators-grid p { color: var(--accent-blue); font-size: 22px; line-height: 1.5; margin: 0 auto; max-width: 380px; }
+
+/* Slide 15 — Team (dark, 5 portraits) */
+.team-grid {
+  position: absolute; left: 80px; right: 80px; top: 50%;
+  transform: translateY(-50%);
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px;
+  text-align: center;
+}
+.team-grid .person .avatar {
+  width: 220px; height: 220px; border-radius: 999px; margin: 0 auto 24px;
+  background:
+    repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/30px 30px;
+}
+.team-grid .person .name { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; margin: 0; }
+.team-grid .person .role { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 22px; }
+.team-grid .person p { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; line-height: 1.5; margin: 0 auto; max-width: 260px; color: rgba(255,255,255,0.95); }
+
+/* Slide 2 — Nice to meet you (dark intro) */
+.intro-slide {
+  position: absolute; inset: 0;
+  padding: 110px 100px 80px;
+  box-sizing: border-box;
+}
+.intro-slide h1 {
+  font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800;
+  font-size: 152px; line-height: 1.0; letter-spacing: -0.035em;
+  margin: 0; max-width: 1300px;
+}
+.intro-slide .subhead { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 32px; margin: 48px 0 0; }
+.intro-brand {
+  position: absolute; right: 80px; bottom: 32px;
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px;
+}
+.intro-brand .ppd-sparkle-icon { width: 22px; height: 22px; }
+
+/* Slide 8 — How It Works split (text left / blue right) */
+.howitworks-split {
+  position: absolute; inset: 0;
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.howitworks-split .left {
+  background: var(--bg-light);
+  padding: 80px;
+  display: flex; flex-direction: column;
+  box-sizing: border-box;
+}
+.howitworks-split .left .ppd-eyebrow { font-size: 56px; font-weight: 800; letter-spacing: -0.015em; margin: 0; }
+.howitworks-split .left h3 { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 88px; line-height: 1.02; margin: auto 0 44px; letter-spacing: -0.025em; max-width: 680px; }
+.howitworks-split .left p { font-size: 24px; line-height: 1.5; margin: 0 0 36px; max-width: 720px; }
+.howitworks-split .left ul { font-size: 24px; line-height: 1.7; padding-left: 22px; margin: 0 0 auto; max-width: 720px; }
+.howitworks-split .right {
+  background: var(--accent-blue);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.howitworks-split .right .ph {
+  width: 600px; height: 760px;
+  background:
+    repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/40px 40px;
+  border-radius: 2px;
+}
+.howitworks-split .right .corner-brand {
+  position: absolute; right: 80px; bottom: 32px;
+  color: var(--text-inverse);
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px;
+}
+.howitworks-split .right .corner-brand svg { width: 22px; height: 22px; }
+.howitworks-split .left .ppd-footer-mini {
+  position: absolute; bottom: 32px; left: 80px;
+  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; color: var(--text-primary);
+}
+
+/* Slide 20 — 48-Hour Bonus Offer (3 cards) */
+.bonus-grid {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid; grid-template-columns: repeat(3, 460px); gap: 36px;
+}
+.bonus-grid .ppd-card {
+  text-align: center; padding: 64px 40px;
+  display: flex; flex-direction: column; align-items: center; gap: 28px;
+}
+.bonus-grid .ppd-card .ppd-headline-sm { margin: 0; font-size: 52px; font-weight: 800; line-height: 1.08; letter-spacing: -0.018em; }
+.bonus-grid .ppd-card .body { margin: 0; font-size: 22px; line-height: 1.45; }
+
+/* Slide 6 — Key Outcomes full blue (3 col) */
+.bg-blue > .ppd-eyebrow {
+  position: absolute; left: 80px; top: 80px;
+  color: var(--text-inverse); font-size: 56px; font-weight: 800; letter-spacing: -0.015em;
+}
+.outcomes-cols {
+  position: absolute; left: 80px; right: 80px; top: 50%;
+  transform: translateY(-50%);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 80px;
+  text-align: center;
+  color: var(--text-inverse);
+}
+.outcomes-cols .ppd-headline-md { color: var(--text-inverse); margin: 0 0 24px; font-size: 60px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
+.outcomes-cols p { color: var(--text-inverse); font-size: 22px; line-height: 1.5; margin: 0 auto; max-width: 380px; opacity: 0.95; }
+
+/* Slide 19 reuses .quote-slide with tint variant */
+.quote-slide.tint .quote {
+  color: var(--accent-blue);
+  font-size: 124px;
+}
+
+/* Slide 10 — You Might Be Thinking (3 cards) */
+.objections-grid {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid; grid-template-columns: repeat(3, 480px); gap: 36px;
+}
+.objections-grid .ppd-card {
+  text-align: center; padding: 80px 48px;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-card);
+}
+.objections-grid .ppd-card .ppd-headline-sm { margin: 0 0 36px; font-size: 52px; font-weight: 800; line-height: 1.08; letter-spacing: -0.018em; }
+.objections-grid .ppd-card p { margin: 0; font-size: 24px; line-height: 1.45; }
+
+/* Slide 11 — Customer Wins (Figma node 1-969: 450px cards, 132px circles) */
+.wins-grid {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid; grid-template-columns: repeat(3, 450px); gap: 18px;
+}
+.wins-grid .ppd-card {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 48px 32px;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-card);
+  gap: 32px;
+}
+.wins-grid .stat,
+.wins-grid .label {
+  font-family: 'Inter', sans-serif; font-weight: 600;
+  font-size: 48px; line-height: 1.2;
+  letter-spacing: -0.02em; color: var(--text-primary);
+  margin: 0;
+}
+.wins-grid .stat + .label { margin-top: -8px; }
+.wins-grid .body { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 400; line-height: 1.4; margin: 0; max-width: 357px; }
+.wins-grid .proof-circle {
+  width: 132px; height: 132px; border-radius: 999px;
+  background: var(--surface); border: 1px solid #F7F7F7;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0;
+  overflow: hidden;
+}
+.wins-grid .proof-circle img { width: 100px; height: auto; }
+.wins-grid .proof-avatar {
+  width: 132px; height: 132px; border-radius: 999px;
+  object-fit: cover; margin: 0;
+  border: 1px solid #F7F7F7;
+}
+.wins-grid .proof-name {
+  font-family: 'Inter', sans-serif; font-weight: 500;
+  font-size: 22px; letter-spacing: -0.03em; line-height: 1;
+  color: var(--text-primary);
+}
+
+/* Slide 23 — Next steps split (light left / black right with poll mock) */
+.nextsteps-split {
+  position: absolute; inset: 0;
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.nextsteps-split .left { background: var(--bg-light); padding: 80px; position: relative; }
+.nextsteps-split .left .ppd-eyebrow { font-size: 56px; font-weight: 800; letter-spacing: -0.015em; margin: 0 0 220px; }
+.nextsteps-split .left h3 { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 76px; line-height: 1.04; margin: 0 0 44px; letter-spacing: -0.025em; max-width: 680px; }
+.nextsteps-split .left p { font-size: 24px; line-height: 1.5; margin: 0; max-width: 680px; }
+.nextsteps-split .right {
+  background: var(--bg-dark); position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.nextsteps-split .right .corner-brand {
+  position: absolute; right: 80px; bottom: 32px;
+  color: var(--text-inverse);
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px;
+}
+.nextsteps-split .right .corner-brand svg { width: 22px; height: 22px; }
+.nextsteps-split .left .ppd-footer-mini {
+  position: absolute; bottom: 32px; left: 80px;
+  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; color: var(--text-primary);
+}
+/* Slide 23 — CTA card (replaces the static poll-mock with a live form) */
+.cta-card {
+  width: 720px; background: var(--surface); border-radius: 16px;
+  padding: 36px 40px 32px; font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+}
+.cta-card .title { font-weight: 700; font-size: 22px; margin: 0 0 20px; }
+.cta-card .choices { display: flex; flex-direction: column; gap: 10px; }
+.cta-card .choice-btn {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; text-align: left;
+  background: var(--surface); border: 1px solid #E4E4E4; border-radius: 12px;
+  padding: 16px 20px; font: inherit; font-size: 18px; color: var(--text-primary);
+  cursor: pointer; transition: border-color .15s, background .15s;
+}
+.cta-card .choice-btn:hover { border-color: var(--accent-blue); }
+.cta-card .choice-btn[aria-pressed="true"] {
+  border-color: var(--accent-blue); background: #F0F5FF; font-weight: 600;
+}
+.cta-card .choice-btn .check {
+  width: 22px; height: 22px; border-radius: 999px;
+  border: 2px solid #C8C8C8; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: transparent; font-size: 12px;
+}
+.cta-card .choice-btn[aria-pressed="true"] .check {
+  background: var(--accent-blue); border-color: var(--accent-blue); color: #FFF;
+}
+.cta-card .form { margin-top: 20px; display: none; }
+.cta-card.is-active .form { display: block; }
+.cta-card .field { margin: 12px 0 0; }
+.cta-card .field label {
+  display: block; font-size: 13px; font-weight: 600; color: #545454;
+  margin-bottom: 4px; letter-spacing: 0.01em;
+}
+.cta-card .field input,
+.cta-card .field textarea {
+  width: 100%; box-sizing: border-box;
+  border: 1px solid #D8D8D8; border-radius: 8px;
+  padding: 11px 12px; font: inherit; font-size: 16px; color: var(--text-primary);
+  background: #FFF;
+}
+.cta-card .field textarea { resize: vertical; min-height: 84px; }
+.cta-card .field input:focus,
+.cta-card .field textarea:focus { outline: 2px solid var(--accent-blue); outline-offset: 1px; border-color: var(--accent-blue); }
+.cta-card .field .err { display: none; color: #C0271F; font-size: 12px; margin-top: 4px; }
+.cta-card .field.has-error input,
+.cta-card .field.has-error textarea { border-color: #C0271F; }
+.cta-card .field.has-error .err { display: block; }
+
+/* intl-tel-input — minimal theme integration; library owns layout */
+.cta-card .iti { width: 100%; display: block; }
+.cta-card .iti__tel-input {
+  width: 100%; box-sizing: border-box;
+  border: 1px solid #D8D8D8; border-radius: 8px;
+  padding: 11px 12px; font: inherit; font-size: 16px;
+  color: var(--text-primary); background: #FFF;
+}
+.cta-card .iti__tel-input:focus { outline: 2px solid var(--accent-blue); outline-offset: 1px; border-color: var(--accent-blue); }
+.cta-card .field.has-error .iti__tel-input { border-color: #C0271F; }
+.cta-card .iti--separate-dial-code .iti__selected-dial-code { color: var(--text-primary); font-weight: 500; }
+
+/* Country dropdown styling — kept inside the slide so it scales naturally
+   with Reveal's transform. */
+.cta-card .iti__dropdown-content {
+  /* Library freezes an inline height on open; override so the popover
+     shrinks when the search filters the list. */
+  height: auto !important;
+  max-height: 320px;
+}
+.cta-card .iti__country-list {
+  max-height: 280px;
+  min-width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+  border: 1px solid #E1E1E1;
+  background: #FFF;
+  font-size: 14px;
+  overflow-y: auto;
+}
+.cta-card .iti__country { padding: 8px 12px; }
+.cta-card .iti__country:hover, .cta-card .iti__country.iti__highlight { background: #F4F6FA; }
+.cta-card .iti__search-icon { display: none !important; }
+.cta-card .iti__search-input {
+  padding: 10px 12px;
+  border-bottom: 1px solid #EEE;
+  font-size: 14px;
+  width: 100%; box-sizing: border-box;
+}
+.cta-card .submit {
+  margin-top: 18px; width: 100%;
+  background: var(--accent-blue); color: #FFF;
+  border: 0; border-radius: 999px;
+  padding: 14px 24px; font: inherit; font-weight: 700; font-size: 17px;
+  cursor: pointer; transition: background .15s, opacity .15s;
+}
+.cta-card .submit:hover { background: #1750D9; }
+.cta-card .submit:disabled { opacity: 0.6; cursor: wait; }
+.cta-card .form-message {
+  margin-top: 12px; font-size: 14px; min-height: 20px;
+}
+.cta-card .form-message.error { color: #C0271F; }
+.cta-card .success {
+  display: none; padding: 24px 0;
+  text-align: center;
+}
+.cta-card.is-success .choices,
+.cta-card.is-success .form { display: none; }
+.cta-card.is-success .success { display: block; }
+.cta-card .success .tick {
+  width: 56px; height: 56px; margin: 0 auto 12px; border-radius: 999px;
+  background: var(--accent-blue); color: #FFF;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; font-weight: 700;
+}
+.cta-card .success h4 { margin: 0 0 6px; font-size: 22px; font-weight: 700; }
+.cta-card .success p { margin: 0; font-size: 16px; color: #545454; }
+
+/* Static CTA mode (no GHL): hide form, click choice → success with primary button */
+.cta-card[data-mode="static"] .form { display: none !important; }
+.cta-card[data-mode="static"] .field,
+.cta-card[data-mode="static"] .submit,
+.cta-card[data-mode="static"] .form-message { display: none !important; }
+.cta-card .static-cta {
+  display: none; margin-top: 18px;
+  background: var(--accent-blue); color: #FFF;
+  border-radius: 999px; padding: 14px 28px;
+  font: inherit; font-weight: 700; font-size: 17px;
+  text-decoration: none; text-align: center;
+}
+.cta-card .static-cta:hover { background: #1750D9; }
+.cta-card.is-success .static-cta[href] { display: inline-block; }
+
+/* Slide 23 — Future split (black left / white right) */
+.future-split {
+  position: absolute; inset: 0;
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.future-split .left {
+  background: var(--bg-dark); color: var(--text-inverse);
+  padding: 80px;
+  display: flex; align-items: center;
+  position: relative;
+}
+.future-split .left h1 {
+  font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800;
+  font-size: 124px; line-height: 1.0; letter-spacing: -0.035em;
+  margin: 0;
+}
+.future-split .right {
+  background: var(--surface); color: var(--text-primary);
+  padding: 80px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.future-split .right p { font-size: 32px; line-height: 1.4; margin: 0; max-width: 560px; }
+.future-split .right .corner-brand {
+  position: absolute; right: 80px; bottom: 32px;
+  color: var(--text-primary);
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px;
+}
+.future-split .right .corner-brand svg { width: 22px; height: 22px; }
+.future-split .left .ppd-footer-mini {
+  position: absolute; bottom: 32px; left: 80px;
+  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; color: var(--text-inverse);
+}
+
+</style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-bg-token="surface">
+      <div class="ppd-slide bg-white">
+        <div class="ppd-cover">
+          <div class="poster">
+            <img src="assets/99-problems-poster.png" alt="99 Problems But A Pitch Ain&#8217;t One!" />
+          </div>
+          <div class="content">
+            <h1 class="title">Perfect Pitch Deck</h1>
+            <p class="lede">A template for a personalised pitch that sets you up to close the deal.</p>
+            <ul class="ppd-check-list">
+              <li>First time selling? No problem, we got you.</li>
+              <li>Packed with sales psychology.</li>
+              <li>&#8216;Hormozi&#8217; style offer format.</li>
+            </ul>
+            <div class="ppd-cta-row">
+              <a class="ppd-pill-cta" href="#/1">Click Here For Instructions</a>
+            </div>
+          </div>
+        </div>
+        <div class="cover-branding">
+          <img src="assets/slide-1-logo.svg" alt="" />
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p>Dear Selling Enthusiast,</p>
+        <p>If you're reading this, I'm excited for you.</p>
+        <p>Why?</p>
+        <p>When you add this pitch deck to your sales process, you're going to take a lot of people's money.</p>
+        <p>Sincerely,<br>Perfect Pitch Deck Creator</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-dark">
+      <div class="ppd-slide bg-dark">
+        <div class="intro-slide">
+          <h1>Nice to<br/>meet you<br/>{Client Name}!</h1>
+          <div class="subhead">{Company Name}</div>
+        </div>
+        <div class="intro-brand">
+          <svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>
+          <span>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>Authoritative Storytelling (Icebreaker)</strong></p>
+        <p><strong>Purpose:</strong> Build rapport and establish credibility right off the bat through storytelling. Talk about a real client, how you've been helping them, the results they're getting and how you're excited about it. Even better if you can name drop.</p>
+        <p><strong>Example:</strong> "I just got off a call with [client name] who's like you with [client common-ground]. They were dealing with [problem], and we've been working with them for [time] with [service] to get ahead of it. It's exciting to see how things are shaping up for them with [specific outcome] – I'm pumped."</p>
+        <p><strong>Why:</strong> This sets the stage by subtly showing you're experienced in their space and are actively helping others, making them more open to discussing their challenges.</p>
+        <p><strong>What not to do:</strong> Avoid small talk! Don't talk about the weather, or a restaurant you went to in the city they're from. Be memorable. Be valuable.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="accent-tint">
+      <div class="ppd-slide bg-blue-tint">
+        <div class="quote-slide tint">
+          <p class="quote">&#8220;The big problem your clients want fixed, framed to remind them of their deepest fears.&#8221;</p>
+        </div>
+        <div class="ppd-footer" style="color: var(--accent-blue);">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>Cold Hard Truth (Problem)</strong></p>
+        <p><strong>Purpose:</strong> Highlight the prospect's biggest problem to create urgency and remind them of their deepest fears.</p>
+        <p><strong>Example:</strong> "I've been seeing companies in [industry] struggle with [specific problem], and it's really affecting [desired outcome]—some of them have been close to [deepest fear]."</p>
+        <p><strong>Why:</strong> Directly addressing their pain points invites them to open up about their challenges, making the conversation more relevant and urgent.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="accent-tint">
+      <div class="ppd-slide bg-blue-tint">
+        <div class="ppd-eyebrow">And To Make Things Worse&#8230;</div>
+        <div class="agitators-grid">
+          <div>
+            <div class="ppd-headline-md">Problem Agitator #1.</div>
+            <p>Add a quick description of each agitator&#8212;process pain points, product problems, etc.</p>
+          </div>
+          <div>
+            <div class="ppd-headline-md">Problem Agitator #2.</div>
+            <p>Highlight things they&#8217;ve shared with you, so they know you&#8217;re listening to what they need.</p>
+          </div>
+          <div>
+            <div class="ppd-headline-md">Problem Agitator #3.</div>
+            <p>Take this chance to show them that you understand their problems, and you&#8217;re here to help.</p>
+          </div>
+        </div>
+        <div class="ppd-footer" style="color: var(--accent-blue);">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>Hit Them Where It Hurts (Agitate Problem)</strong></p>
+        <p><strong>Purpose:</strong> Focus on the inefficiencies, delays, or frustrations in the way the prospect currently operates. Highlight how these are slowing them down or causing bottlenecks that lead to bigger issues.</p>
+        <p><strong>Example:</strong> "These issues don't just hurt your [business/operations/life]; it's likely costing you [specific loss or missed opportunity] every day, and unless you do something, it's only going to get worse."</p>
+        <p><strong>Why:</strong> By focusing on the ongoing pain and consequences, the prospect begins to feel the urgency to act. Agitating the problem builds tension, driving them to seek out and consider a solution—your solution.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="accent">
+      <div class="ppd-slide bg-blue">
+        <div class="quote-slide">
+          <p class="quote">&#8220;This is a big, bold promise that makes your solution feel reliable and positions your offer as an easy, no-brainer decision.&#8221;</p>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>The Big Promise (Solution)</strong></p>
+        <p><strong>Purpose:</strong> Position your offer, solution, and value as the clear answer to their problems, in a simple and memorable way that also serves as a promise. Giving the prospect a clear and powerful reason to believe in your offer.</p>
+        <p><strong>Example:</strong> "We guarantee you'll see a complete turnaround in [problem] within [timeframe], or we'll work with you until you do."</p>
+        <p><strong>Why:</strong> A bold promise stands out by showing your absolute belief in the solution's effectiveness. It leaves a lasting impression and positions your offer as a no-brainer for prospects looking for real results. Sets the expectation that your solution is both reliable and effective, making it easier for them to see the value.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="accent">
+      <div class="ppd-slide bg-blue">
+        <div class="ppd-eyebrow">Key Outcomes</div>
+        <div class="outcomes-cols">
+          <div>
+            <div class="ppd-headline-md">Key Message #1.</div>
+            <p>What makes your solution valuable? What you offer that your competitors don&#8217;t. (Or better yet, can&#8217;t.)</p>
+          </div>
+          <div>
+            <div class="ppd-headline-md">Key Message #2.</div>
+            <p>If you don&#8217;t have images use this slide. If you have images to show off you can use the next slide instead.</p>
+          </div>
+          <div>
+            <div class="ppd-headline-md">Key Message #3.</div>
+            <p>Make sure these tie back to solving the customers problems and pain points.</p>
+          </div>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>SLIDE OPTION — NO IMAGE</strong></p>
+        <p><strong>Ease The Pain (Key Messages)</strong></p>
+        <p><strong>Purpose:</strong> Clearly highlight how your solution directly addresses their biggest problems and pain points. Key messages should focus on the benefits that make your solution stand out—like accelerating workflows, eliminating delays, or removing their most frustrating obstacles. Make it obvious how your solution creates tangible improvements that they can feel and measure.</p>
+        <p><strong>Why:</strong> Key messages must be simple, powerful, and trustworthy. When you clearly show how your solution solves their problems and delivers real, noticeable results, it's obvious why they can't go without it. Your message becomes the bridge between their pain and your solution.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="accent">
+      <div class="ppd-slide" style="padding:0;">
+        <div class="outcomes-split">
+          <div class="left">
+            <div class="ppd-eyebrow">Key Outcomes</div>
+            <div class="msg">
+              <div class="ppd-headline-sm">Key Message #1.</div>
+              <p class="body">What makes your product different? What you offer that your competitors don&#8217;t. (Or better yet, can&#8217;t.)</p>
+            </div>
+            <div class="msg">
+              <div class="ppd-headline-sm">Key Message #2.</div>
+              <p class="body">Pair these points with images on the right that demonstrate what you mean, like screenshots of specific features.</p>
+            </div>
+            <div class="msg">
+              <div class="ppd-headline-sm">Key Message #3.</div>
+              <p class="body">Make sure these tie back to the customers&#8217; challenges to make sure they really hit home.</p>
+            </div>
+          </div>
+          <div class="right">
+            <div class="ph"></div>
+            <div class="ph"></div>
+            <div class="ph"></div>
+            <div class="ph"></div>
+          </div>
+        </div>
+        <div class="ppd-footer" style="color: var(--text-inverse);">
+          <span class="ppd-footer-left">{Company Name}</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>SLIDE OPTION — WITH IMAGES</strong></p>
+        <p><strong>Ease The Pain (Key Messages)</strong></p>
+        <p><strong>Purpose:</strong> Clearly highlight how your solution directly addresses their biggest problems and pain points. Key messages should focus on the benefits that make your solution stand out—like accelerating workflows, eliminating delays, or removing their most frustrating obstacles. Make it obvious how your solution creates tangible improvements that they can feel and measure.</p>
+        <p><strong>Why:</strong> Key messages must be simple, powerful, and trustworthy. When you clearly show how your solution solves their problems and delivers real, noticeable results, it's obvious why they can't go without it. Your message becomes the bridge between their pain and your solution.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light">
+      <div class="ppd-slide" style="padding:0;">
+        <div class="howitworks-split">
+          <div class="left">
+            <div class="ppd-eyebrow">How It Works</div>
+            <h3>How Your Solution Works.</h3>
+            <p>This is an optional slide to explain how you deliver the solution. Duplicate if needed. Segue into a Notion doc, portfolio of work, or other relevant files.</p>
+            <ul>
+              <li>Use bullets.</li>
+              <li>Keep text to a minimum.</li>
+              <li>Google the &#8216;Rule of 3&#8217; if you don&#8217;t know it.</li>
+            </ul>
+            <div class="ppd-footer-mini">{Company Name}</div>
+          </div>
+          <div class="right">
+            <div class="ph"></div>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</div>
+          </div>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>SLIDE OPTION — 1</strong></p>
+        <p><strong>Service Delivery (who/what/where/when/why/how)</strong></p>
+        <p><strong>Purpose:</strong> After laying out your big promise and key messages, it's time to explain exactly how you deliver. Break down who's involved, what steps are taken, where and when things happen, and how you back up your claims. This is where you show off your expertise and prove you're the real deal.</p>
+        <p><strong>Why?</strong> Without a clear understanding of your process and expertise, doubts creep in. People need to see how you make the magic happen, so they trust you can deliver on your promises.</p>
+        <p><strong>Pro-tip:</strong> Skip the info dump in your slides. Use real work you've already developed to explain and sell trust. Show your process, results, and past projects to back up what you're saying. When people see the awesome stuff you've already created, it's easier for them to trust that you'll deliver the same quality for them. Let your work prove the value.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">How It Works</div>
+        <div class="howitworks">
+          <div class="left">
+            <h3>Show Off Your Demos, Process, Portfolio etc.</h3>
+            <p>This is an optional slide to explain how you deliver the solution. Duplicate if needed. Segue into a Notion doc, portfolio of work, or other relevant files.</p>
+            <ul>
+              <li>Use bullets.</li>
+              <li>Keep text to a minimum.</li>
+              <li>Google the &#8216;Rule of 3&#8217; if you don&#8217;t know it.</li>
+            </ul>
+          </div>
+          <div class="right ph"></div>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>SLIDE OPTION — 2</strong></p>
+        <p><strong>Service Delivery (who/what/where/when/why/how)</strong></p>
+        <p><strong>Purpose:</strong> After laying out your big promise and key messages, it's time to explain exactly how you deliver. Break down who's involved, what steps are taken, where and when things happen, and how you back up your claims. This is where you show off your expertise and prove you're the real deal.</p>
+        <p><strong>Why?</strong> Without a clear understanding of your process and expertise, doubts creep in. People need to see how you make the magic happen, so they trust you can deliver on your promises.</p>
+        <p><strong>Pro-tip:</strong> Skip the info dump in your slides. Use real work you've already developed to explain and sell trust. Show your process, results, and past projects to back up what you're saying. When people see the awesome stuff you've already created, it's easier for them to trust that you'll deliver the same quality for them. Let your work prove the value.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">You Might Be Thinking&#8230;</div>
+        <div class="objections-grid">
+          <div class="ppd-card">
+            <div class="ppd-headline-sm">Preemptive Objection #1</div>
+            <p>Preemptively address common objections.</p>
+          </div>
+          <div class="ppd-card">
+            <div class="ppd-headline-sm">Preemptive Objection #2</div>
+            <p>Dissolve doubts and keeps the prospect engaged.</p>
+          </div>
+          <div class="ppd-card">
+            <div class="ppd-headline-sm">Preemptive Objection #3</div>
+            <p>Opens up for your &#8216;unique delivery mechanism&#8217; and proof.</p>
+          </div>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>Objection Crusher (Preemptive Objection Handling)</strong></p>
+        <p><strong>Purpose:</strong> Preemptively address common objections to reduce resistance. Alley-oop for the proof points in upcoming slides to drive trust hard to the hoop.</p>
+        <p><strong>Example:</strong> "You might be thinking, 'We've tried similar solutions before, and they didn't work.' I hear that a lot."</p>
+        <p><strong>Why:</strong> Handling objections head-on right after presenting your solution dissolves doubts and keeps the prospect engaged. It makes them more open to trusting what's next.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">Customer Wins</div>
+        <div class="wins-grid">
+          <div class="ppd-card">
+            <div class="stat">+$XX</div>
+            <div class="label">Revenue</div>
+            <p class="body">Highlight customer wins to back up objection handling.</p>
+            <div class="proof-circle"><img src="assets/skool-wordmark.svg" alt="Skool" /></div>
+            <div class="proof-name">Skool</div>
+          </div>
+          <div class="ppd-card">
+            <div class="stat">+XX%</div>
+            <div class="label">Profits</div>
+            <p class="body">Each metric should also reinforce your key messages.</p>
+            <div class="proof-circle"><img src="assets/skool-wordmark.svg" alt="Skool" /></div>
+            <div class="proof-name">Skool</div>
+          </div>
+          <div class="ppd-card">
+            <div class="stat">&#8722;$XX</div>
+            <div class="label">Costs</div>
+            <p class="body">Replace the circles below with customer logos or people.</p>
+            <img class="proof-avatar" src="assets/steve.webp" alt="Steve Butler" />
+            <div class="proof-name">Steve Butler @ LinkNinja</div>
+          </div>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>Irrefutable Proof (Trust)</strong></p>
+        <p><strong>Purpose:</strong> Back up your solution with real success stories that directly address the objections from the previous slide.</p>
+        <p><strong>Example:</strong> "[Client] had the same concern and still achieved [Result] in just [Timeframe]. Seeing their transformation has been incredible."</p>
+        <p><strong>Why:</strong> Showing real results from clients with the same objections makes your claims believable and builds trust quickly.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="accent">
+      <div class="ppd-slide bg-blue">
+        <div class="quote-slide">
+          <p class="quote">&#8220;This is a short, memorable quote from a customer.&#8221;</p>
+          <div class="quote-author">
+            <img src="assets/steve.webp" alt="Steve Butler" />
+            <div class="meta">Steve Butler<br/>@ LinkNinja</div>
+          </div>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong><em>OPTIONAL SLIDE — CUSTOMER TESTIMONIAL</em></strong></p>
+        <p><strong>Story Time (Trust)</strong></p>
+        <p><strong>Purpose:</strong> More proof. Keep the quote short, driving home the core message. Tell a quick story about a transformation.</p>
+        <p><strong>Why:</strong> Build trust.</p>
+        <p><strong>Pro-tip:</strong> Don't just read the quote. Your client can read. Tell them what they don't know – use story telling to talk about behind the scenes of this quote and how you got to the outcome.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">Our Customers</div>
+        <div class="customers-headline">
+          <h2 class="ppd-headline-md">Name-Drop, Share a Story, and Explain How You&#8217;ve Solved Problems for Similar Customers.</h2>
+        </div>
+        <div class="customers-grid">
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong><em>OPTIONAL SLIDE — CUSTOMER LOGOS</em></strong></p>
+        <p><strong>Story Time (Trust)</strong></p>
+        <p><strong>Purpose:</strong> More proof. Keep the quote short, driving home the core message. Tell a quick story about a transformation.</p>
+        <p><strong>Why:</strong> Build trust.</p>
+        <p><strong>Pro-tip:</strong> Don't just say we work with company name, company name, company name...pick one and tell a memorable story about a transformation. Then they'll just assume all the other companies had the same experience.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-dark">
+      <div class="ppd-slide bg-dark">
+        <div class="ppd-eyebrow">Why {Company Name}?</div>
+        <div class="why-hero">
+          <h2 class="ppd-headline-md">Unique Value and Differentiation That Clearly Shows Why You&#8217;re the Best&#8212;and Only&#8212;Choice.</h2>
+          <p class="ppd-body-lg ppd-muted-inv">The difference is [unique differentiation], proven by [proof point] backed up by [proof point]. This approach solves [problem] with [secret sauce], delivering [specific result] that you won&#8217;t find anywhere else.</p>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>Unique Mechanism (What Sets You Apart?)</strong></p>
+        <p><strong>Purpose:</strong> Highlight what makes your solution different and why it's the only real choice.</p>
+        <p><strong>Example:</strong> "What sets you apart is your [secret sauce]. It's built to tackle [problem] by [specifics], and that's how it delivers such great results."</p>
+        <p><strong>Why:</strong> When done right, it makes you feel like the only option that can truly solve their problem.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-dark">
+      <div class="ppd-slide bg-dark">
+        <div class="ppd-eyebrow">The Team</div>
+        <div class="team-grid">
+          <div class="person">
+            <div class="avatar"></div>
+            <div class="name">FULL NAME</div>
+            <div class="role">ROLE</div>
+            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
+          </div>
+          <div class="person">
+            <div class="avatar"></div>
+            <div class="name">FULL NAME</div>
+            <div class="role">ROLE</div>
+            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
+          </div>
+          <div class="person">
+            <div class="avatar"></div>
+            <div class="name">FULL NAME</div>
+            <div class="role">ROLE</div>
+            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
+          </div>
+          <div class="person">
+            <div class="avatar"></div>
+            <div class="name">FULL NAME</div>
+            <div class="role">ROLE</div>
+            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
+          </div>
+          <div class="person">
+            <div class="avatar"></div>
+            <div class="name">FULL NAME</div>
+            <div class="role">ROLE</div>
+            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
+          </div>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>OPTIONAL SLIDE</strong></p>
+        <p><strong>Purpose:</strong> Highlight YOU, or EPIC team members. Only use this if it genuinely adds trust or fits well with your offer and service.</p>
+        <p><strong>Why:</strong> For high-ticket offers or big projects, or other scenarios, it can build trust by showing there's a team of specialists who won't let you down.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="surface">
+      <div class="ppd-slide" style="padding:0;">
+        <div class="future-split">
+          <div class="left">
+            <h1>The<br/>Future If<br/>We Work<br/>Together.</h1>
+            <div class="ppd-footer-mini">{Company Name}</div>
+          </div>
+          <div class="right">
+            <p>Imagine where you and your business can be [x] months from now, with [problem] solved and [desired outcome] achieved.</p>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</div>
+          </div>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>Vision of the Future (Future Pacing)</strong></p>
+        <p><strong>Purpose:</strong> Help the prospect visualise the positive impact of your solution on their life!</p>
+        <p><strong>Example:</strong> "Imagine where your business could be six months from now, with [Problem] solved and [Desired Outcome] achieved. I'm going to help you get there."</p>
+        <p><strong>Why:</strong> Future pacing makes the benefits of your solution feel more real and immediate, motivating the prospect to take action.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">Today&#8217;s Offer - [Offer name]</div>
+        <div class="todays-offer">
+          <h3>Get [Result] Without [Biggest Pain Point] &#8211; In Just [Timeframe], All for [Price].</h3>
+          <p>If you&#8217;re tired of dealing with [pain or frustration] and ready for [result], this is exactly what you need. It&#8217;s [benefit], [benefit], and [benefit].</p>
+          <p class="closer">Stick with me, and I&#8217;ll walk you through everything you get in the next slides.</p>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>Insane Value Stack (The Offer)</strong></p>
+        <p><strong>Purpose:</strong> Present a compelling, value-packed offer with specific outcomes that build the hype for the next slides.</p>
+        <p><strong>Pro-Tip:</strong> Read Alex Hormozi's $100M Offers: How To Make Offers So Good People Feel Stupid Saying No</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">What&#8217;s Included?</div>
+        <div class="inclusions-grid">
+          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #1</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #2</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #3</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #4</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #5</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #6</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #7</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #8</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #9</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #10</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #11</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #12</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>Inclusions (The Offer)</strong></p>
+        <p><strong>Purpose:</strong> Lay out the core inclusions of the offer to make it crystal clear what the prospect is getting.</p>
+        <p><strong>Pro-Tip:</strong> 3-5 solid inclusions make the offer easy to grasp without overwhelming. But if more are needed, this template is designed to handle many.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">Plans On Offer</div>
+        <div class="plans-grid">
+          <div class="plan">
+            <div class="plan-title">Plan 1</div>
+            <div class="plan-result">Get [Result] Without [Biggest Pain] &#8211; In Just [Timeframe]</div>
+            <div class="plan-price">$XX</div>
+            <ul>
+              <li>INCLUSION</li>
+              <li>INCLUSION</li>
+              <li>INCLUSION</li>
+              <li>INCLUSION</li>
+            </ul>
+          </div>
+          <div class="plan">
+            <div class="plan-title">Plan 2</div>
+            <div class="plan-result">Get [Additional Value] &#8211; In Just [Timeframe]</div>
+            <div class="plan-price">$XX</div>
+            <ul>
+              <li>Everything in Plan 1 plus:
+                <ul>
+                  <li>INCLUSION</li>
+                  <li>INCLUSION</li>
+                  <li>INCLUSION</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="plan">
+            <div class="plan-title">Plan 3</div>
+            <div class="plan-result">Get [Additional Value] &#8211; In Just [Timeframe]</div>
+            <div class="plan-price">$XX</div>
+            <ul>
+              <li>Everything in Plan 1 &amp; Plan 2 plus:
+                <ul>
+                  <li>INCLUSION</li>
+                  <li>INCLUSION</li>
+                  <li>INCLUSION</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>ALTERNATIVE SLIDE OPTION FOR TIERED PRICING</strong></p>
+        <p><strong>Tiered Pricing (The Offer)</strong></p>
+        <p><strong>Purpose:</strong> Present tiered, value-packed offers with clear outcomes and inclusions for each pricing option.</p>
+        <p><strong>Pro-Tip:</strong> Use decoy pricing to make the ideal tier appear like the best value by design.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">48-Hour Bonus Offer &#127873;</div>
+        <div class="bonus-grid">
+          <div class="ppd-card">
+            <div class="ppd-headline-sm">Bonus #1</div>
+            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
+          </div>
+          <div class="ppd-card">
+            <div class="ppd-headline-sm">Bonus #2</div>
+            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
+          </div>
+          <div class="ppd-card">
+            <div class="ppd-headline-sm">Bonus #3</div>
+            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
+          </div>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>But That's Not All... (Bonus Inclusions)</strong></p>
+        <p><strong>Purpose:</strong> Add extra value to the offer and create urgency.</p>
+        <p><strong>Example:</strong> "To help you get started fast, we're including [Bonus], which has helped other clients with [outcome]. This bonus is available for the next 48 hours."</p>
+        <p><strong>Why:</strong> Bonuses increase perceived value and urgency. This way, you don't have to feel 'pushy'—the structure of the deal naturally handles it, so you come off as confident, not pushy.</p>
+        <p><strong>Pro-Tip:</strong> Read Alex Hormozi's $100M Offers: How To Make Offers So Good People Feel Stupid Saying No</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">Our Guarantee</div>
+        <div class="guarantee-hero">
+          <h2 class="ppd-headline-md">A program we stand behind with a 90-day money-back guarantee</h2>
+          <p class="body ppd-body-lg">If you implement the system for 90 days, making sure you create your offer, make an effort to join the calls, and do everything our program show you to do, and you&#8217;re not happy, I&#8217;ll give you your money back.</p>
+          <p class="fine">Small print: The only catch is that you&#8217;ll have to jump on a 10 min call because it&#8217;d be weird if it didn&#8217;t work, and I&#8217;d be curious to know what went wrong, and why you couldn&#8217;t acheive your goals.</p>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>Drop The Mic (Guarantees)</strong></p>
+        <p><strong>Purpose:</strong> Eliminate any remaining hesitation by reducing perceived risk.</p>
+        <p><strong>Example:</strong> "We're confident in our approach, which is why we offer a full money-back guarantee if you don't see the results we've discussed. We want you to feel completely secure in moving forward."</p>
+        <p><strong>Why:</strong> A strong guarantee makes the decision easier by removing the fear of making a wrong choice.</p>
+        <p><strong>Pro-Tip:</strong> Read Alex Hormozi's $100M Offers: How To Make Offers So Good People Feel Stupid Saying No</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">Special Offer</div>
+        <div class="offer-card">
+          <div class="price">[Expiration time]:<br/><span class="ppd-strike">[$price]</span>[$discounted price]</div>
+          <div class="spots">7 <span class="ppd-strike">10</span> spots left</div>
+          <p>Here&#8217;s what I&#8217;m doing with the [offer name] in [month]:</p>
+          <p>The outcome is simple: To get you to [outcome], getting [outcome], and [outcome].</p>
+          <p>I&#8217;m only working with [total spots] [ICP], to help them with [success milestone] over a [timeline].</p>
+          <p>We&#8217;ll do it with the perfect mix of [inclusion], [inclusion] and [inclusion] with deep involvement from me and my team.</p>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>Drop The Mic Again (Urgency &amp; Scarcity)</strong></p>
+        <p><strong>Purpose:</strong> Push for immediate action by emphasising limited availability and/or time-sensitive pricing.</p>
+        <p><strong>Example:</strong> "We're only taking on a few more clients this month to ensure everyone gets the attention they deserve, and the current offer price is only available for a short time. If this sounds like the right fit, secure your spot and lock in the special price before we fill up."</p>
+        <p><strong>Why:</strong> Combining real scarcity with a limited-time offer makes the deal feel exclusive, urgent, and too good to miss.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-dark">
+      <div class="ppd-slide" style="padding:0;">
+        <div class="nextsteps-split">
+          <div class="left">
+            <div class="ppd-eyebrow">Next steps&#8230;</div>
+            <h3>Insert your closing tactic and make the ask.</h3>
+            <p>Give additional context and information about next steps, what they need to do and how you make it easy. Make the ask and stop talking.</p>
+            <div class="ppd-footer-mini">{Company Name}</div>
+          </div>
+          <div class="right">
+            <div class="cta-card" id="ppd-cta-card" data-endpoint="/api/lead">
+              <p class="title">Ready to Buy?</p>
+              <div class="choices" role="radiogroup" aria-label="Your response">
+                <button type="button" class="choice-btn" data-choice="in" aria-pressed="false">
+                  <span>I&#8217;m in! Let&#8217;s go.</span><span class="check">&#10003;</span>
+                </button>
+                <button type="button" class="choice-btn" data-choice="question" aria-pressed="false">
+                  <span>Got a question, but looks good!</span><span class="check">&#10003;</span>
+                </button>
+                <button type="button" class="choice-btn" data-choice="out" aria-pressed="false">
+                  <span>I&#8217;m out. Let&#8217;s not waste time.</span><span class="check">&#10003;</span>
+                </button>
+              </div>
+              <form class="form" novalidate>
+                <div class="field" data-field="name">
+                  <label for="ppd-name">Name</label>
+                  <input id="ppd-name" name="name" type="text" autocomplete="name" required maxlength="100">
+                  <div class="err">Please enter your name.</div>
+                </div>
+                <div class="field" data-field="email">
+                  <label for="ppd-email">Email</label>
+                  <input id="ppd-email" name="email" type="email" autocomplete="email" required maxlength="254">
+                  <div class="err">Please enter a valid email.</div>
+                </div>
+                <div class="field" data-field="phone">
+                  <label for="ppd-phone">Phone</label>
+                  <input id="ppd-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+1 555 123 4567" maxlength="20">
+                  <div class="err">Please enter a valid phone number (with country code).</div>
+                </div>
+                <div class="field" data-field="message" hidden>
+                  <label for="ppd-message"><span data-message-label>Anything to add? (optional)</span></label>
+                  <textarea id="ppd-message" name="message" maxlength="2000" rows="3"></textarea>
+                  <div class="err">Please share a bit more so we can help.</div>
+                </div>
+                <button type="submit" class="submit">Send</button>
+                <div class="form-message" role="status" aria-live="polite"></div>
+              </form>
+              <div class="success" role="status">
+                <div class="tick">&#10003;</div>
+                <h4 data-success-title>Thanks — you&#8217;re on the list.</h4>
+                <p data-success-body>We&#8217;ll be in touch shortly.</p>
+                <a class="static-cta" data-static-cta>Book a call</a>
+              </div>
+            </div>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</div>
+          </div>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>Clear Next Step (The Close)</strong></p>
+        <p><strong>Purpose:</strong> Lay out a clear, simple path for the prospect to take the next step and make your ask.</p>
+        <p><strong>Slide Design Strategy:</strong> The layout is strategically designed to clearly outline the next steps. The slide also leverages Figma Slides' poll functionality, but during a call, it prompts a verbal commitment – yes, no, or maybe.</p>
+        <p><strong>Closing Tactic:</strong> Select the right closing tactic for your offer by following the steps in this worksheet: <a href="https://pebble-glasses-ebe.notion.site/Closing-Tactic-832c5065a1d84d58af585b6c6704a046" target="_blank" rel="noopener noreferrer">Closing Tactic worksheet</a>.</p>
+      </aside>
+    </section>
+  </div>
+</div>
+
+<!-- Keyboard shortcut HUD -->
+<div class="deck-hud" aria-hidden="true">
+  <span class="hud-shortcut"><kbd>&larr;</kbd><kbd>&rarr;</kbd> navigate</span>
+  <span class="hud-sep">&middot;</span>
+  <span class="hud-shortcut hide-on-mobile"><kbd>ESC</kbd> overview</span>
+  <span class="hud-sep hide-on-mobile">&middot;</span>
+  <span class="hud-shortcut hide-on-mobile"><kbd>F</kbd> fullscreen</span>
+  <span class="hud-sep hide-on-mobile">&middot;</span>
+  <span class="hud-shortcut hide-on-mobile" data-notes-shortcut>
+    <span class="lock-ico" data-locked-icon hidden>&#128274;</span><kbd>S</kbd> speaker notes
+  </span>
+</div>
+
+<!-- Passphrase modal (used only when notes are encrypted) -->
+<div class="notes-lock" role="dialog" aria-modal="true" aria-label="Speaker notes locked">
+  <div class="panel">
+    <h2>Speaker notes are locked</h2>
+    <p>Enter the passphrase to unlock presenter notes for this deck.</p>
+    <input type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Passphrase" />
+    <div class="err">Wrong passphrase &mdash; try again.</div>
+    <div class="actions">
+      <button type="button" class="ghost" data-action="cancel">Cancel</button>
+      <button type="button" data-action="unlock">Unlock</button>
+    </div>
+  </div>
+</div>
+
+<!-- Portrait-phone rotate hint -->
+<div class="rotate-hint" role="dialog" aria-label="Rotate device for best view">
+  <div>
+    <div class="ico">&#10227;</div>
+    <h2>Rotate for the best view</h2>
+    <p>This deck is designed widescreen. Turn your phone sideways, or tap below to continue in portrait.</p>
+    <button type="button">Continue anyway</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@28.1.0/dist/js/intlTelInputWithUtils.min.js"></script>
+<script>
+  // Brand-token → data-background-color resolver
+  // Reveal parses data-background-color as a literal colour (var() and raw
+  // oklch() with calc() don't survive its parser), so we resolve each token
+  // to a concrete rgb() string via a probe element and stamp that on each
+  // section. Re-runs the active --accent every load — that's the rebrand knob.
+  (function resolveBgTokens() {
+    const probe = document.createElement('div');
+    probe.style.position = 'fixed'; probe.style.top = '-1000px';
+    document.body.appendChild(probe);
+    const resolved = {};
+    function resolve(token) {
+      if (resolved[token]) return resolved[token];
+      probe.style.color = '';
+      probe.style.color = `var(--${token})`;
+      const v = getComputedStyle(probe).color;
+      resolved[token] = (v && v !== 'rgba(0, 0, 0, 0)') ? v : null;
+      return resolved[token];
+    }
+    document.querySelectorAll('[data-bg-token]').forEach((el) => {
+      const tok = el.dataset.bgToken;
+      const colour = resolve(tok);
+      if (colour) el.setAttribute('data-background-color', colour);
+    });
+    probe.remove();
+  })();
+
+  Reveal.initialize({
+    width: 1920, height: 1080, margin: 0, minScale: 0.05, maxScale: 2.0,
+    controls: true, controlsTutorial: false, controlsLayout: 'edges',
+    progress: true, hash: true, center: false,
+    touch: true,
+    transition: 'fade', backgroundTransition: 'fade',
+    plugins: [ RevealNotes ]
+  });
+
+  (function() {
+    const hud = document.querySelector('.deck-hud');
+    if (!hud) return;
+    let t;
+    function poke() {
+      hud.classList.add('show');
+      clearTimeout(t);
+      t = setTimeout(() => hud.classList.remove('show'), 2500);
+    }
+    hud.classList.add('show');
+    setTimeout(() => hud.classList.remove('show'), 5000);
+    ['mousemove','keydown','touchstart','click'].forEach(e =>
+      document.addEventListener(e, poke, { passive: true })
+    );
+  })();
+
+  document.querySelectorAll('.rotate-hint button').forEach(b =>
+    b.addEventListener('click', () => b.closest('.rotate-hint').classList.add('dismissed'))
+  );
+
+  // ── Speaker-notes passphrase gate ──────────────────────────────────
+  // The encrypted-notes JSON blob is injected just after <body>, so it's
+  // already in DOM when this script runs (even under staticrypt's
+  // document.write unlock). The "S" key handler defers lookup to interaction
+  // time so we don't care about gate-page → deck transitions either.
+  function setupNotesGate() {
+    // Skip inside Reveal's speaker-view iframes — no S handler, no modal.
+    if (document.documentElement.classList.contains('is-receiver')) return;
+
+    const STORAGE_KEY = 'ppd-notes-unlock';
+    const REMEMBER_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
+
+    const slides = () => Array.from(document.querySelectorAll('.reveal .slides > section'));
+    const hudLockIco = document.querySelector('.deck-hud [data-locked-icon]');
+    const hudShortcut = document.querySelector('.deck-hud [data-notes-shortcut]');
+    const hasAnyNotes = document.querySelector('.reveal .slides aside.notes') !== null;
+    if (!hasAnyNotes) {
+      if (hudShortcut) hudShortcut.hidden = true;
+      return;
+    }
+
+    const encryptedNode = document.getElementById('ppd-notes-encrypted');
+    const isLocked = encryptedNode !== null;
+    let unlocked = !isLocked;
+
+    if (isLocked && hudLockIco) hudLockIco.hidden = false;
+
+    const modal = document.querySelector('.notes-lock');
+    const input = modal && modal.querySelector('input');
+    const cancelBtn = modal && modal.querySelector('[data-action="cancel"]');
+    const unlockBtn = modal && modal.querySelector('[data-action="unlock"]');
+
+    // Track the popup so we can reconnect after the user refreshes it.
+    let speakerPopup = null;
+    let connectTimer = null;
+
+    function stopConnecting() {
+      if (connectTimer) { clearInterval(connectTimer); connectTimer = null; }
+    }
+    function startConnecting(popup) {
+      stopConnecting();
+      const send = () => {
+        if (!popup || popup.closed) { stopConnecting(); return; }
+        try {
+          popup.postMessage(JSON.stringify({
+            namespace: 'reveal-notes',
+            type: 'connect',
+            state: Reveal.getState(),
+            url: window.location.href,
+          }), '*');
+        } catch (e) { stopConnecting(); }
+      };
+      send();
+      connectTimer = setInterval(send, 500);
+    }
+
+    function openSpeakerView() {
+      if (speakerPopup && !speakerPopup.closed) {
+        speakerPopup.focus();
+        return;
+      }
+      const plugin = Reveal.getPlugin && Reveal.getPlugin('notes');
+      if (!plugin || typeof plugin.open !== 'function') return;
+      // Reveal's bundled plugin opens the popup at about:blank and writes the
+      // speaker view via document.write. We patch window.open just for this
+      // call so the popup has a real URL — refreshing the popup then reloads
+      // our hosted copy of speaker-view.html instead of going to about:blank.
+      const origOpen = window.open;
+      window.open = function (url, name, features) {
+        const target = url === 'about:blank' && name === 'reveal.js - Notes'
+          ? 'assets/speaker-view.html'
+          : url;
+        const popup = origOpen.call(window, target, name, features);
+        speakerPopup = popup;
+        return popup;
+      };
+      try { plugin.open(); } finally { window.open = origOpen; }
+    }
+
+    // Supplemental message listener: when the popup is refreshed it sends
+    // heartbeats but Reveal's plugin ignores them once it already has a
+    // popup reference. We resend connect messages so the popup can rebuild
+    // its iframes. Also stops the connect spam once the popup confirms.
+    window.addEventListener('message', (event) => {
+      let data;
+      if (typeof event.data !== 'string') return;
+      try { data = JSON.parse(event.data); } catch { return; }
+      if (!data || data.namespace !== 'reveal-notes') return;
+      if (!speakerPopup || speakerPopup.closed) return;
+      if (data.type === 'heartbeat') {
+        // A heartbeat from our popup after a refresh — re-arm connect spam
+        if (!connectTimer) startConnecting(speakerPopup);
+      } else if (data.type === 'connected') {
+        stopConnecting();
+      }
+    });
+
+    function b64ToBytes(s) {
+      return Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+    }
+
+    async function decryptAll(password) {
+      const data = JSON.parse(encryptedNode.textContent);
+      const km = await crypto.subtle.importKey(
+        'raw', new TextEncoder().encode(password),
+        { name: 'PBKDF2' }, false, ['deriveKey']
+      );
+      const key = await crypto.subtle.deriveKey(
+        { name: 'PBKDF2', salt: b64ToBytes(data.salt), iterations: 100000, hash: 'SHA-256' },
+        km, { name: 'AES-GCM', length: 256 }, false, ['decrypt']
+      );
+      const sectionList = slides();
+      for (let i = 0; i < data.blocks.length; i++) {
+        const block = data.blocks[i];
+        const aside = sectionList[i] && sectionList[i].querySelector('aside.notes');
+        if (!aside) continue;
+        const pt = await crypto.subtle.decrypt(
+          { name: 'AES-GCM', iv: b64ToBytes(block.iv) },
+          key,
+          b64ToBytes(block.ct)
+        );
+        aside.innerHTML = new TextDecoder().decode(pt);
+        aside.removeAttribute('data-locked');
+      }
+    }
+
+    function rememberPassword(pw) {
+      try {
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify({ pw, exp: Date.now() + REMEMBER_MS })
+        );
+      } catch (e) { /* localStorage may be disabled — silently degrade */ }
+    }
+
+    function forgetPassword() {
+      try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    }
+
+    function loadRememberedPassword() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return null;
+        const { pw, exp } = JSON.parse(raw);
+        if (!pw || typeof exp !== 'number' || exp < Date.now()) {
+          localStorage.removeItem(STORAGE_KEY);
+          return null;
+        }
+        return pw;
+      } catch (e) { return null; }
+    }
+
+    async function attemptUnlock() {
+      if (!input || !input.value) return;
+      modal.classList.remove('invalid');
+      try {
+        await decryptAll(input.value);
+        rememberPassword(input.value);
+        unlocked = true;
+        modal.classList.remove('open');
+        if (hudLockIco) hudLockIco.hidden = true;
+        setTimeout(openSpeakerView, 60);
+      } catch (e) {
+        modal.classList.add('invalid');
+        input.select();
+      }
+    }
+
+    // If notes are locked but we have a cached passphrase, try to auto-unlock
+    // so refresh / re-opening the deck doesn't re-prompt. A failing decrypt
+    // (e.g. passphrase rotated by a fresh build) just clears the cache.
+    if (isLocked) {
+      const cached = loadRememberedPassword();
+      if (cached) {
+        decryptAll(cached).then(() => {
+          unlocked = true;
+          if (hudLockIco) hudLockIco.hidden = true;
+        }).catch(() => {
+          forgetPassword();
+        });
+      }
+    }
+
+    function requestNotes() {
+      if (!unlocked) {
+        if (!modal) return;
+        modal.classList.add('open');
+        modal.classList.remove('invalid');
+        if (input) {
+          input.value = '';
+          setTimeout(() => input.focus(), 50);
+        }
+      } else {
+        openSpeakerView();
+      }
+    }
+
+    // Intercept S in capture phase when locked so Reveal's plugin doesn't
+    // open an empty notes window before unlock.
+    document.addEventListener('keydown', (e) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.key !== 's' && e.key !== 'S') return;
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (!unlocked) {
+        e.preventDefault();
+        e.stopPropagation();
+        requestNotes();
+      }
+    }, true);
+
+    if (modal) {
+      cancelBtn.addEventListener('click', () => modal.classList.remove('open'));
+      unlockBtn.addEventListener('click', attemptUnlock);
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') { e.preventDefault(); attemptUnlock(); }
+        else if (e.key === 'Escape') { modal.classList.remove('open'); }
+      });
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupNotesGate);
+  } else {
+    setupNotesGate();
+  }
+
+  // ── Slide 23 CTA form ──────────────────────────────────────────────
+  (function ctaForm() {
+    const card = document.getElementById('ppd-cta-card');
+    if (!card) return;
+
+    const endpoint = card.dataset.endpoint || '/api/lead';
+    const staticCtaEl = card.querySelector('[data-static-cta]');
+    // Read mode/cta URL lazily on each click so build-time injection AND
+    // dynamic changes both work.
+    const isStatic = () => card.dataset.mode === 'static';
+    const form = card.querySelector('form');
+    const choiceButtons = card.querySelectorAll('.choice-btn');
+    const fields = {
+      name: card.querySelector('[data-field="name"]'),
+      email: card.querySelector('[data-field="email"]'),
+      phone: card.querySelector('[data-field="phone"]'),
+      message: card.querySelector('[data-field="message"]'),
+    };
+    const messageLabel = card.querySelector('[data-message-label]');
+    const messageInput = card.querySelector('#ppd-message');
+    const phoneInput = card.querySelector('#ppd-phone');
+    const submitBtn = card.querySelector('.submit');
+    const formMessage = card.querySelector('.form-message');
+    const successTitle = card.querySelector('[data-success-title]');
+    const successBody = card.querySelector('[data-success-body]');
+
+    // Initialise the intl-tel-input country dropdown. Body-portal the
+    // dropdown so it isn't trapped inside Reveal's CSS transform — that was
+    // causing the dropdown to render fullscreen / misaligned. Auto-placeholder
+    // and format-as-you-type handle the placeholder/overlap issues for free.
+    let iti = null;
+    if (window.intlTelInput && phoneInput) {
+      iti = window.intlTelInput(phoneInput, {
+        initialCountry: 'us',
+        separateDialCode: true,
+        countrySearch: true,
+        formatAsYouType: true,
+        useFullscreenPopup: false,
+        fixDropdownWidth: false,
+        placeholderNumberType: 'MOBILE',
+      });
+    }
+
+    // Each choice declares which fields are visible/required.
+    const COPY = {
+      in: {
+        fields: { name: true, email: true, phone: true, message: false },
+        successTitle: "Locked in — let's go.",
+        successBody: "We'll be in touch with next steps shortly.",
+      },
+      question: {
+        fields: { name: true, email: true, phone: true, message: true },
+        messageLabel: "What's your question?",
+        messageRequired: true,
+        successTitle: 'Question received.',
+        successBody: "We'll get back to you with a clear answer.",
+      },
+      out: {
+        fields: { name: false, email: true, phone: false, message: true },
+        messageLabel: 'Mind sharing why? (optional)',
+        messageRequired: false,
+        successTitle: 'Thanks for the honesty.',
+        successBody: 'Your feedback helps us sharpen the pitch.',
+      },
+    };
+
+    let currentChoice = null;
+
+    function showError(field, msg) {
+      if (!field) return;
+      field.classList.add('has-error');
+      const err = field.querySelector('.err');
+      if (msg && err) err.textContent = msg;
+    }
+    function clearError(field) {
+      if (field) field.classList.remove('has-error');
+    }
+
+    function applyChoice(choice) {
+      const copy = COPY[choice];
+
+      Object.entries(fields).forEach(([key, el]) => {
+        if (!el) return;
+        const visible = !!copy.fields[key];
+        el.hidden = !visible;
+        const input = el.querySelector('input, textarea');
+        if (input && !visible) input.value = '';
+        if (input) input.required = visible && key !== 'message';
+      });
+
+      if (copy.fields.message) {
+        messageLabel.textContent = copy.messageLabel;
+        messageInput.required = !!copy.messageRequired;
+      }
+
+      Object.values(fields).forEach(clearError);
+      formMessage.textContent = '';
+      formMessage.classList.remove('error');
+    }
+
+    choiceButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const choice = btn.dataset.choice;
+        currentChoice = choice;
+        choiceButtons.forEach((b) =>
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false')
+        );
+        card.classList.add('is-active');
+
+        // Static mode: skip form, jump straight to success with the per-choice
+        // copy + optional CTA button. No network call.
+        if (isStatic()) {
+          const copy = COPY[choice];
+          if (successTitle) successTitle.textContent = copy.successTitle;
+          if (successBody) successBody.textContent = copy.successBody;
+          const url = card.dataset.ctaUrl;
+          const label = card.dataset.ctaLabel || 'Book a call';
+          if (staticCtaEl && url) {
+            staticCtaEl.href = url;
+            staticCtaEl.textContent = label;
+          }
+          card.classList.add('is-success');
+          return;
+        }
+
+        applyChoice(choice);
+      });
+    });
+
+    function readPhone() {
+      if (iti) {
+        return {
+          value: iti.getNumber() || '',
+          valid: phoneInput.value.trim() === '' ? false : iti.isValidNumber(),
+        };
+      }
+      const raw = phoneInput.value.trim().replace(/[\s()-]/g, '');
+      return { value: raw, valid: /^\+?[1-9]\d{1,14}$/.test(raw) };
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!currentChoice) return;
+
+      const copy = COPY[currentChoice];
+      const need = copy.fields;
+
+      const name = need.name ? form.elements.name.value.trim() : '';
+      const email = form.elements.email.value.trim();
+      const phone = need.phone ? readPhone() : { value: '', valid: true };
+      const message = need.message ? form.elements.message.value.trim() : '';
+
+      Object.values(fields).forEach(clearError);
+
+      let hasError = false;
+      if (need.name && !name) { showError(fields.name); hasError = true; }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError(fields.email); hasError = true; }
+      if (need.phone && !phone.valid) { showError(fields.phone); hasError = true; }
+      if (need.message && copy.messageRequired && !message) { showError(fields.message); hasError = true; }
+      if (hasError) return;
+
+      submitBtn.disabled = true;
+      const originalLabel = submitBtn.textContent;
+      submitBtn.textContent = 'Sending…';
+      formMessage.classList.remove('error');
+      formMessage.textContent = '';
+
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name || undefined,
+            email,
+            phone: phone.value || undefined,
+            choice: currentChoice,
+            message: message || undefined,
+          }),
+        });
+        const result = await res.json().catch(() => ({}));
+        if (res.ok && result.success) {
+          if (successTitle) successTitle.textContent = copy.successTitle;
+          if (successBody) successBody.textContent = copy.successBody;
+          card.classList.add('is-success');
+        } else {
+          formMessage.classList.add('error');
+          formMessage.textContent = result.message || 'Something went wrong. Please try again.';
+        }
+      } catch {
+        formMessage.classList.add('error');
+        formMessage.textContent = 'Network error. Please try again.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
+    });
+  })();
+</script>
+</body>
+</html>

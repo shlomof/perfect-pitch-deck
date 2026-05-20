@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 540" fill="none" aria-hidden="true">
+  <rect x="32" y="18" width="320" height="500" fill="none" stroke="#000" stroke-width="3"/>
+  <rect x="14" y="36" width="320" height="500" fill="#FFFFFF" stroke="#000" stroke-width="3"/>
+  <g font-family="'Cooper Std', 'Georgia', serif" font-weight="900" fill="#000" text-anchor="middle">
+    <text x="174" y="160" font-size="64">99</text>
+    <text x="174" y="232" font-size="54">PROBLEMS</text>
+    <text x="174" y="296" font-size="54">BUT A</text>
+    <text x="174" y="362" font-size="54">PITCH</text>
+    <text x="174" y="428" font-size="48">AIN&#8217;T ONE!</text>
+  </g>
+</svg>

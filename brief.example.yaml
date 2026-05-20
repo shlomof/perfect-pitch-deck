@@ -1,0 +1,83 @@
+# brief.example.yaml — Perfect Pitch Deck Kit demo
+#
+# This is the brief that produced the LIVE demo deck — it pitches the kit
+# itself ("Perfect Pitch Deck Creator") to a deck-buying customer.
+#
+# Copy this file to `brief.yaml`, edit for your offer, then run `/fill-deck`.
+# See `brief.yaml.template` for a blank version with comments on every field.
+
+# ─── IDENTITY (required) ────────────────────────────────────────────────
+company: "Perfect Pitch Deck Creator"      # your company name
+pitch_name: "The 23-Slide Closer"          # short memorable name for this pitch
+client_name: "Selling Enthusiast"          # who you're pitching to (slide 2)
+
+# ─── OFFER (required) ───────────────────────────────────────────────────
+offer:
+  name: "Perfect Pitch Deck"
+  dream_outcome: "close more deals with a deck that does the persuasion for you"
+  timeframe: "your next sales call"
+  problem: "spending hours building decks that still don't close"
+  unique_mechanism: "23 strategically sequenced slides built on Hormozi-style offer framing and sales psychology"
+  price: "Free template"
+  guarantee: "If you don't close more deals with it, keep using your current one — no harm done"
+
+# ─── PROOF (required — at least one testimonial OR one logo) ────────────
+proof_points:
+  testimonials:
+    - quote: "Closed three deals in the first week using this exact structure."
+      author: "Steve Butler"
+      handle: "@stvbutlr"
+      metric: "+3 deals in 7 days"
+    - quote: "Stopped writing decks from scratch. My close rate went up."
+      author: "A Real Customer"
+      handle: "@arealperson"
+      metric: "+30% close rate"
+  logos:
+    - "loom"
+    - "linear"
+    - "framer"
+    - "vercel"
+    - "notion"
+    - "skool"
+
+# ─── CTA (required) ─────────────────────────────────────────────────────
+# Setting `cta.url` flips slide 23 into STATIC mode (no GHL needed). Leave
+# unset and configure GHL via `/ghl-setup` to use the live form instead.
+cta:
+  url: "https://github.com/stvbutlr/perfect-pitch-deck"
+  label: "Get the kit"
+
+# ─── OPTIONAL ───────────────────────────────────────────────────────────
+# Any of these can be omitted — the corresponding slide will be skipped or
+# left with placeholder copy if its required field is absent.
+
+team:
+  - name: "Steve Butler"
+    role: "Maker"
+    bio: "Built this kit so you never have to draft another pitch deck from scratch."
+
+bonus:
+  - title: "Speaker Notes"
+    body: "Every slide ships with a Beat / Say / Watch out script you can read out loud."
+  - title: "Live Form Sync"
+    body: "Slide 23 captures choices into GoHighLevel — zero infrastructure to set up."
+  - title: "One-Knob Rebrand"
+    body: "Paste your hex into --accent; the whole deck reskins in seconds."
+
+urgency:
+  text: "First 100 forks get one free Claude Code session of pitch-coaching"
+  expires_at: "2026-06-30T17:00:00-07:00"
+
+plans: []   # leave empty if your offer has a single price (slide 19 will be skipped)
+
+# ─── ANYTHING ELSE ──────────────────────────────────────────────────────
+# Use `extra` for one-off facts that don't fit the schema but should land
+# on a specific slide. Keyed by slot name from slides/schema.json.
+extra: {}
+
+# ─── ORCHESTRATION FLAGS ────────────────────────────────────────────────
+# Read by skills/fill-deck/SKILL.md.
+config:
+  replace_footer_placeholders: true   # substitute {Company Name} → brief.company
+  strict_char_limits: true             # halt on hard-limit overruns (default)
+  dry_run: false                       # produce report only, don't patch

@@ -1,0 +1,27 @@
+{
+  "$schema": "./scripts/deck.config.schema.json",
+  "name": "Perfect Pitch Deck Creator",
+  "tagline": "A template for a personalised pitch that sets you up to close the deal",
+  "url": "https://example.pages.dev",
+  "allowed_origins": [
+    "http://localhost:8765",
+    "http://localhost:8788",
+    "http://127.0.0.1:8765",
+    "http://127.0.0.1:8788",
+    "http://127.0.0.1:8800"
+  ],
+  "cloudflare": {
+    "project_name": "perfect-pitch-deck",
+    "production_branch": "main"
+  },
+  "ghl": {
+    "enabled": false,
+    "comment": "Set to true after running /ghl-setup and adding GHL_API_KEY + GHL_LOCATION_ID to .env. When false, slide 23 auto-falls-back to static CTA mode using brief.cta.url."
+  },
+  "build": {
+    "include_notes": true,
+    "notes_password": null,
+    "deck_password": null,
+    "remember_days": 30
+  }
+}

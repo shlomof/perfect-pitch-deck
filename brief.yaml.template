@@ -1,0 +1,113 @@
+# brief.yaml — Perfect Pitch Deck Kit input
+#
+# Copy this file to `brief.yaml` and fill in the fields. Then run `/fill-deck`
+# in Claude Code to author copy for all 23 slides from this brief.
+#
+# You can also describe everything in plain English to Claude via `/brief` —
+# it will populate this file for you. This template is the long-form path
+# for users who prefer YAML.
+
+# ─── IDENTITY (required) ────────────────────────────────────────────────
+
+# Your company name. Appears in every footer + slides 1, 2, 14, 15.
+company: ""
+
+# A short memorable name for THIS pitch (not your company name). Appears
+# in the footer of most slides. Example: "The 30-Day Sprint" / "Founding Cohort"
+pitch_name: ""
+
+# Who you're pitching to. First name is fine. Appears in slide 2's headline.
+client_name: ""
+
+# ─── OFFER (required) ───────────────────────────────────────────────────
+
+offer:
+  # The product / service name you're selling.
+  name: ""
+
+  # The result your customer ends up with. Drives slides 5, 6, 7, 16, 17.
+  # Phrase it from THEIR perspective: "your first 10 paying customers" not
+  # "we deliver 10 customers".
+  dream_outcome: ""
+
+  # By when. "30 days" / "12 weeks" / "by Q2".
+  timeframe: ""
+
+  # The biggest single pain your customer has right now. Drives slides 3, 4.
+  # One sentence, in their words.
+  problem: ""
+
+  # The "because" that makes the dream_outcome believable. Drives slides 9, 14.
+  # What makes you different from everyone else?
+  unique_mechanism: ""
+
+  # The price. Used on slides 19, 22. "$1,997" / "$1,997/mo" / "From $97/mo"
+  price: ""
+
+  # Your guarantee / risk reversal. Drives slide 21. The bolder the better.
+  guarantee: ""
+
+# ─── PROOF (required — at least one testimonial OR one logo) ────────────
+
+proof_points:
+  # Drives slides 11 (metric cards) and 12 (pull-quote). Best with 2-3.
+  testimonials:
+    - quote: ""
+      author: ""
+      handle: ""        # @username or company
+      metric: ""        # the headline result. "+14 customers in 21 days"
+  # Drives slide 13. Use 6-12 customer logos. Lowercase names matched against
+  # assets/logos/<name>.svg — `/brand` walks you through adding these.
+  logos: []
+
+# ─── CTA (required) ─────────────────────────────────────────────────────
+# Setting `cta.url` flips slide 23 into STATIC mode — no GHL form, just a
+# button that takes the visitor to that URL. Leave `cta.url` empty AND set
+# up GHL via `/ghl-setup` to use the live form instead.
+
+cta:
+  url: ""              # e.g. "https://yoursite.com/apply"
+  label: ""            # e.g. "Apply for the cohort"
+
+# ─── OPTIONAL ───────────────────────────────────────────────────────────
+# Any of these can be omitted — the matching slide will be skipped or
+# left with placeholder copy.
+
+# Drives slide 15. Up to 5 people. Omit for solo founders.
+team: []
+#   - name: ""
+#     role: ""
+#     bio: ""           # 1-2 sentences
+
+# Drives slide 20. Up to 3.
+bonus: []
+#   - title: ""
+#     body: ""
+
+# Drives slides 20 and 22.
+urgency: {}
+#   text: "Doors close Friday 5pm PT"
+#   expires_at: "2026-05-23T17:00:00-07:00"
+
+# Drives slide 19 (replaces the default single-price layout with a 3-tier
+# pricing comparison). Up to 3 plans.
+plans: []
+#   - name: ""
+#     price: ""
+#     results: ""
+#     bullets: []
+
+# ─── ANYTHING ELSE ──────────────────────────────────────────────────────
+# Use `extra` for one-off facts that don't fit the schema but should land
+# on a specific slide. Keyed by slot name from slides/schema.json.
+# Example:
+#   extra:
+#     slide_22_body_5: "Partnered with X for an exclusive cohort bonus."
+extra: {}
+
+# ─── ORCHESTRATION FLAGS ────────────────────────────────────────────────
+# Read by skills/fill-deck/SKILL.md.
+config:
+  replace_footer_placeholders: true   # substitute {Company Name} → brief.company
+  strict_char_limits: true             # halt on hard-limit overruns
+  dry_run: false
