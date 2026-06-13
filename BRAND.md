@@ -8,8 +8,8 @@ All brand tokens live in the `:root` block at the top of `index.html`'s `<style>
 
 | Knob | Default | What it controls |
 | --- | --- | --- |
-| `--accent` | `#1F5EFF` | **Paste your brand hex here.** Drives the accent family on every slide. |
-| `--brand-hue` | `263.74` | OKLCH hue of `--accent`. Used to derive matching tints. **Auto-set by `/brand`** when you paste a new `--accent`. |
+| `--accent` | `#E97731` | **Asset Bolt brand orange.** Drives the accent family on every slide. |
+| `--brand-hue` | `48.45` | OKLCH hue of `--accent`. Used to derive matching tints. **Auto-set by `/brand`** when you paste a new `--accent`. |
 | `--brand-hue-secondary` | `var(--brand-hue)` | Optional second hue for gradient surfaces (progress bar, slide 16). Default = match primary — most users leave this alone. |
 | `--font-display` | `'Mona Sans', 'Inter', sans-serif` | Headline / display font |
 | `--font-body` | `'Inter', system-ui, sans-serif` | Body / UI font |
@@ -31,14 +31,14 @@ These reproduce the current deck's `#C7DCFF` / `#D9E8FF` at **deltaE < 1.5 (impe
 
 | Token | Value | Role |
 | --- | --- | --- |
-| `--bg-light` | `#F5F5F5` | Default light-slide background |
-| `--bg-dark` | `#000000` | Black-slide background |
-| `--surface` | `#FFFFFF` | Cards, panels, white slides |
-| `--text-primary` | `#000000` | Primary text on light bg |
-| `--text-inverse` | `#FFFFFF` | Primary text on dark / accent bg |
-| `--text-muted` | `rgba(0,0,0,0.65)` | Body copy, captions on light |
-| `--text-muted-inverse` | `rgba(255,255,255,0.85)` | Body copy, captions on dark |
-| `--border-card` | `rgba(0,0,0,0.06)` | Subtle card edges |
+| `--bg-light` | `#111111` | Near-black main background (matches Judy deck dark grey) |
+| `--bg-dark` | `#000000` | Pure black — darkest slides |
+| `--surface` | `#1C1C1E` | Dark grey — cards and panels |
+| `--text-primary` | `#FFFFFF` | White text on dark |
+| `--text-inverse` | `#FFFFFF` | White on black / orange |
+| `--text-muted` | `rgba(255,255,255,0.60)` | Muted body copy on dark |
+| `--text-muted-inverse` | `rgba(255,255,255,0.85)` | Body copy on pure black/orange |
+| `--border-card` | `rgba(255,255,255,0.10)` | Subtle light card edges on dark |
 | `--warn` | `#C0271F` | Form validation errors |
 
 ## Allowed contrast pairs
@@ -49,9 +49,9 @@ These reproduce the current deck's `#C7DCFF` / `#D9E8FF` at **deltaE < 1.5 (impe
 | --- | --- | --- | --- |
 | `--text-primary` (#000) | `--bg-light` (#F5F5F5) | AAA | most slides |
 | `--text-primary` (#000) | `--surface` (#FFF) | AAA | cards |
-| `--text-primary` (#000) | `--accent` (default: #1F5EFF as it stands, but assumes brand-hex stays in light blue range) | needs check per brand | accent pill, choice-btn |
+| `--text-primary` (#000) | `--accent` (#E97731) | AA (7.15:1) | accent pill, choice-btn |
 | `--text-inverse` (#FFF) | `--bg-dark` (#000) | AAA | dark slides |
-| `--text-inverse` (#FFF) | `--accent` | AAA at default; **`/brand` runs a contrast check on user's hex** | full-bleed accent slides |
+| `--text-inverse` (#FFF) | `--accent` (#E97731) | **2.94:1 — barely below AA-large (3.0); check slides 5,6,7,12 visually** | full-bleed accent slides |
 | `--text-primary` (#000) | `--accent-tint` | AAA | tinted slides (3, 4) |
 | `--accent-soft` (#C7DCFF) | `--accent` (#1F5EFF) | AA-large | soft quote text inside accent slides |
 | `--text-muted` | `--bg-light` / `--surface` | AA | body copy |

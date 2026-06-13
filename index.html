@@ -22,7 +22,7 @@
 <!-- ─── SEO / Open Graph ───────────────────────────────────────────────
      Customise these for your deck. When deployed in public mode (no
      DECK_PASSWORD), search crawlers and social cards will pick these up. -->
-<title>Perfect Pitch Deck — A template for a personalised pitch</title>
+<title>Asset Bolt</title>
 <meta name="description" content="A 23-slide pitch-deck template that sets you up to close the deal. Packed with sales psychology and Hormozi-style offer framing." />
 <link rel="canonical" href="https://example.com/" />
 
@@ -49,23 +49,23 @@
   /* === BRAND KNOBS — only edit these for a rebrand =========================
      Paste your brand hex into --accent. /brand will compute --brand-hue from it.
      Most users leave --brand-hue-secondary alone (defaults to match primary). */
-  --accent: #1F5EFF;                  /* primary brand colour — paste your hex */
-  --brand-hue: 263.74;                /* OKLCH hue of --accent (auto-set by /brand) */
+  --accent: #E97731;                  /* primary brand colour — paste your hex */
+  --brand-hue: 48.45;                 /* OKLCH hue of --accent (auto-set by /brand) */
   --brand-hue-secondary: var(--brand-hue);  /* optional second hue for gradient surfaces */
 
-  /* === DERIVED ACCENT FAMILY — do not edit; matches defaults at dE <1.5 === */
-  --accent-soft: oklch(89% calc(0.247 * 0.22) var(--brand-hue));    /* ≈ #C7DCFF — dark-bg accent text */
-  --accent-tint: oklch(92.5% calc(0.247 * 0.18) var(--brand-hue));  /* ≈ #D9E8FF — page-tint background */
+  /* === DERIVED ACCENT FAMILY ================================================ */
+  --accent-soft: oklch(78% calc(0.247 * 0.42) var(--brand-hue));    /* bright orange — text on dark bg */
+  --accent-tint: #111111;       /* same as bg-light — kills orange tint on slides 3-4 */
 
-  /* === NEUTRALS — palette baseline, same for every brand =================== */
-  --bg-light: #F5F5F5;
-  --bg-dark: #000000;
-  --surface: #FFFFFF;
-  --text-primary: #000000;
-  --text-inverse: #FFFFFF;
-  --text-muted: rgba(0,0,0,0.65);
+  /* === NEUTRALS — Asset Bolt: dark base, white text, orange accent ========= */
+  --bg-light: #111111;          /* near-black main background */
+  --bg-dark: #000000;           /* pure black — darkest slides */
+  --surface: #1C1C1E;           /* dark grey — cards, panels */
+  --text-primary: #FFFFFF;      /* white text */
+  --text-inverse: #FFFFFF;      /* white on black / orange */
+  --text-muted: rgba(255,255,255,0.60);
   --text-muted-inverse: rgba(255,255,255,0.85);
-  --border-card: rgba(0,0,0,0.06);
+  --border-card: rgba(255,255,255,0.10);
   --warn: #C0271F;
 
   /* === LEGACY ALIASES — keep existing selectors working ==================== */
@@ -395,10 +395,13 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   box-sizing: border-box;
 }
 .ppd-cover .poster {
-  width: 528px; height: 798px;
+  width: 528px; height: 340px;
   display: flex; align-items: center; justify-content: center;
+  align-self: center;
+  border-radius: 8px; overflow: hidden;
+  background: var(--surface);
 }
-.ppd-cover .poster img { width: 100%; height: 100%; object-fit: contain; }
+.ppd-cover .poster img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .ppd-cover .content { padding-top: 50px; }
 .ppd-cover .title {
   font-family: 'Mona Sans', 'Inter', sans-serif;
@@ -408,7 +411,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .ppd-cover .lede {
   font-family: 'Inter', sans-serif;
   font-size: 48px; font-weight: 400; line-height: 1.05;
-  color: #545454; margin: 24px 0 48px;
+  color: var(--text-muted); margin: 24px 0 48px;
 }
 .ppd-cover .ppd-check-list { display: flex; flex-direction: column; gap: 16px; margin: 0; }
 .ppd-cover .ppd-check-list li {
@@ -419,11 +422,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 }
 .ppd-cover .ppd-check-list li::before {
   width: 32px; height: 32px; margin: 0;
-  background: #0b66c2 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="5 12 10 17 19 8"/></svg>') center/18px no-repeat;
+  background: var(--accent) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="5 12 10 17 19 8"/></svg>') center/18px no-repeat;
 }
 .ppd-cover .ppd-cta-row { margin-top: 48px; }
 .ppd-cover .ppd-pill-cta {
-  background: #0b66c2;
+  background: var(--accent);
   font-size: 40px; font-weight: 700; line-height: 1;
   padding: 16px 56px;
   border-radius: 100px;
@@ -459,7 +462,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .inclusions-grid .ppd-card .ppd-headline-sm { margin: 0 0 12px; }
 .inclusions-grid .ppd-card .body { margin: 0; }
 
-/* Slide 4 — Why {Company Name}? (dark) */
+/* Slide 4 — Why Asset Bolt? (dark) */
 .why-hero {
   position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -50%);
@@ -617,7 +620,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   color: var(--accent-blue);
 }
 .agitators-grid .ppd-headline-md { color: var(--accent-blue); margin: 0 0 24px; font-size: 64px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; max-width: 360px; margin-left: auto; margin-right: auto; }
-.agitators-grid p { color: var(--accent-blue); font-size: 22px; line-height: 1.5; margin: 0 auto; max-width: 380px; }
+.agitators-grid p { color: var(--text-primary); font-size: 22px; line-height: 1.5; margin: 0 auto; max-width: 380px; }
 
 /* Slide 15 — Team (dark, 5 portraits) */
 .team-grid {
@@ -941,6 +944,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .cta-card .static-cta:hover { background: #1750D9; }
 .cta-card.is-success .static-cta[href] { display: inline-block; }
 
+/* ── Asset Bolt brand overrides: black + white + orange ──────────────── */
+/* Quote text on full-orange slides (5, 12) must be white, not orange-on-orange */
+.quote-slide:not(.tint) .quote { color: var(--text-inverse); }
+/* All footers, mini-footers, corner brands: orange on every slide */
+.ppd-footer { color: var(--accent-blue); }
+.ppd-footer-mini { color: var(--accent-blue); }
+.intro-brand { color: var(--accent-blue); }
+.corner-brand { color: var(--accent-blue); }
+/* ── Slide 23 — Future split (black left / white right) ─────────────── */
 /* Slide 23 — Future split (black left / white right) */
 .future-split {
   position: absolute; inset: 0;
@@ -986,73 +998,67 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-white">
         <div class="ppd-cover">
           <div class="poster">
-            <img src="assets/99-problems-poster.png" alt="99 Problems But A Pitch Ain&#8217;t One!" />
+            <img src="assets/brand/RM%20question%20data%201.png" alt="Subscriber qualification data" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#1c1c1e;" />
           </div>
           <div class="content">
-            <h1 class="title">Perfect Pitch Deck</h1>
-            <p class="lede">A template for a personalised pitch that sets you up to close the deal.</p>
+            <h1 class="title">Asset Bolt</h1>
+            <p class="lede">Turn every subscriber your book brings in into a profiled prospect &#8212; automatically.</p>
             <ul class="ppd-check-list">
-              <li>First time selling? No problem, we got you.</li>
-              <li>Packed with sales psychology.</li>
-              <li>&#8216;Hormozi&#8217; style offer format.</li>
+              <li>Every new subscriber profiled automatically</li>
+              <li>Prospect list ready within 6 weeks</li>
+              <li>Know who to reach before you pitch</li>
             </ul>
             <div class="ppd-cta-row">
-              <a class="ppd-pill-cta" href="#/1">Click Here For Instructions</a>
+              <a class="ppd-pill-cta" href="#/1">See what&#8217;s inside</a>
             </div>
           </div>
         </div>
         <div class="cover-branding">
-          <img src="assets/slide-1-logo.svg" alt="" />
+          <img src="assets/brand/asset_bolt_logo.jpg" alt="Asset Bolt" style="height:44px;width:44px;border-radius:10px;" />
         </div>
       </div>
-    
       <aside class="notes">
-        <p>Dear Selling Enthusiast,</p>
-        <p>If you're reading this, I'm excited for you.</p>
-        <p>Why?</p>
-        <p>When you add this pitch deck to your sales process, you're going to take a lot of people's money.</p>
-        <p>Sincerely,<br>Perfect Pitch Deck Creator</p>
+        <p><strong>Before you open the deck:</strong> You're on a second call with Peter Winik — Founder of Thought Leadership Leverage. He has 7,000 newsletter subscribers at a 52% open rate, 35,000 LinkedIn followers, and a book coming. He has no systematic way to know who among his subscribers is ready to hire his consultancy. Your job today is to show him the system and close.</p>
+        <p><strong>His situation from call 1 — in his own words:</strong> "The best outbound we do is still manual signal-hunting." The book is coming and he wants to know who's ready before it drops. He has already bought into the problem — this call is about the solution and the price.</p>
+        <p><strong>Goal for this call:</strong> Get a yes on $4,500 setup + $2,500/month. Next call is scheduled 2026-06-17 at 9AM ET. PayPal link is on slide 23.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-dark">
       <div class="ppd-slide bg-dark">
         <div class="intro-slide">
-          <h1>Nice to<br/>meet you<br/>{Client Name}!</h1>
-          <div class="subhead">{Company Name}</div>
+          <h1>Nice to<br/>meet you,<br/>Peter!</h1>
+          <div class="subhead">Asset Bolt</div>
         </div>
         <div class="intro-brand">
-          <svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>
-          <span>Acme Corp</span>
+          <svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>
+          <span>Asset Bolt</span>
+          <!-- intro-brand: already updated -->
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>Authoritative Storytelling (Icebreaker)</strong></p>
-        <p><strong>Purpose:</strong> Build rapport and establish credibility right off the bat through storytelling. Talk about a real client, how you've been helping them, the results they're getting and how you're excited about it. Even better if you can name drop.</p>
-        <p><strong>Example:</strong> "I just got off a call with [client name] who's like you with [client common-ground]. They were dealing with [problem], and we've been working with them for [time] with [service] to get ahead of it. It's exciting to see how things are shaping up for them with [specific outcome] – I'm pumped."</p>
-        <p><strong>Why:</strong> This sets the stage by subtly showing you're experienced in their space and are actively helping others, making them more open to discussing their challenges.</p>
-        <p><strong>What not to do:</strong> Avoid small talk! Don't talk about the weather, or a restaurant you went to in the city they're from. Be memorable. Be valuable.</p>
+        <p><strong>Open by leading with Jeff — name-drop immediately:</strong></p>
+        <p><em>"Before I walk you through this, I want to tell you about someone I worked with recently — Jeff Bettinger. Former CHRO at three publicly traded companies, won Talent Acquisition Executive of the Year. He runs a career coaching practice at myjobsjump.com — coaches executives and senior leaders through career transitions. We built his full Kit and RightMessage qualification system from scratch. After we finished, he said: 'He is the best I have seen.' That's the kind of work I want to do for you today."</em></p>
+        <p><strong>Why this works for Peter:</strong> Jeff is a thought leader coaching senior executives — mirrors Peter's business model and client profile exactly. It signals you've already done this for someone who looks like his buyers.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent-tint">
       <div class="ppd-slide bg-blue-tint">
         <div class="quote-slide tint">
-          <p class="quote">&#8220;The big problem your clients want fixed, framed to remind them of their deepest fears.&#8221;</p>
+          <p class="quote">&#8220;Your book will bring readers who already trust you &#8212; and you still won&#8217;t know which ones are ready to hire you.&#8221;</p>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>Cold Hard Truth (Problem)</strong></p>
-        <p><strong>Purpose:</strong> Highlight the prospect's biggest problem to create urgency and remind them of their deepest fears.</p>
-        <p><strong>Example:</strong> "I've been seeing companies in [industry] struggle with [specific problem], and it's really affecting [desired outcome]—some of them have been close to [deepest fear]."</p>
-        <p><strong>Why:</strong> Directly addressing their pain points invites them to open up about their challenges, making the conversation more relevant and urgent.</p>
+        <p><strong>Let this slide sit. Don't rush it.</strong></p>
+        <p>Ask: <em>"Peter — when your book drops and someone reads it, likes it, and subscribes to your newsletter — what happens next? Do you know who that person is? What they do? Whether they're a consulting prospect or just a curious reader?"</em></p>
+        <p>He doesn't. That's the point. Let the silence land. Then say: <em>"That's the gap. You're building an audience of people who trust you — 7,000 already, more coming with the book. But there's no layer underneath telling you which ones are ready to hire you and which ones never will be."</em></p>
+        <p>He said it himself: the best outbound is still manual signal-hunting. You're mirroring his own words back at him.</p>
       </aside>
     </section>
 
@@ -1061,50 +1067,48 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">And To Make Things Worse&#8230;</div>
         <div class="agitators-grid">
           <div>
-            <div class="ppd-headline-md">Problem Agitator #1.</div>
-            <p>Add a quick description of each agitator&#8212;process pain points, product problems, etc.</p>
+            <div class="ppd-headline-md">The Book Is Coming.</div>
+            <p>Your book brings new readers every week. Without a system live, every one lands without a profile &#8212; invisible to your pipeline.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Problem Agitator #2.</div>
-            <p>Highlight things they&#8217;ve shared with you, so they know you&#8217;re listening to what they need.</p>
+            <div class="ppd-headline-md">Manual Signal-Hunting.</div>
+            <p>Scanning LinkedIn for signals manually &#8212; checking who got promoted or mentioned a challenge. It won&#8217;t scale when the book drops.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Problem Agitator #3.</div>
-            <p>Take this chance to show them that you understand their problems, and you&#8217;re here to help.</p>
+            <div class="ppd-headline-md">Signals Going Cold.</div>
+            <p>Every newsletter you send leaves no qualification data behind. The warmest prospects in your list are cooling every week you wait.</p>
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>Hit Them Where It Hurts (Agitate Problem)</strong></p>
-        <p><strong>Purpose:</strong> Focus on the inefficiencies, delays, or frustrations in the way the prospect currently operates. Highlight how these are slowing them down or causing bottlenecks that lead to bigger issues.</p>
-        <p><strong>Example:</strong> "These issues don't just hurt your [business/operations/life]; it's likely costing you [specific loss or missed opportunity] every day, and unless you do something, it's only going to get worse."</p>
-        <p><strong>Why:</strong> By focusing on the ongoing pain and consequences, the prospect begins to feel the urgency to act. Agitating the problem builds tension, driving them to seek out and consider a solution—your solution.</p>
+        <p><strong>Problem Agitators — Slide 4</strong></p>
+        <p><strong>Beat:</strong> Three separate reasons why doing nothing gets worse, not better.</p>
+        <p><strong>Say:</strong> "Card one — the book is coming. It's going to bring new readers into your list every week. Without a system live first, every one of them arrives without a profile. You'll never know who among them is a consulting prospect. Card two — your best outbound is still manual. You said it yourself: scanning LinkedIn for who got promoted or mentioned a challenge. That doesn't scale once the book amplifies your visibility. Card three — warm signals going cold. Every newsletter you send is generating goodwill and intent but leaving no qualification data behind. The people closest to hiring you are cooling every week you wait."</p>
+        <p><strong>Watch out:</strong> Don't hint at the solution here. Let the pain land. The promise comes on the next slide.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;This is a big, bold promise that makes your solution feel reliable and positions your offer as an easy, no-brainer decision.&#8221;</p>
+          <p class="quote">&#8220;Know exactly which subscribers your book brings in are ready to hire a thought leadership consultancy &#8212; and have personalized messages going to them automatically from the moment they sign up.&#8221;</p>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>The Big Promise (Solution)</strong></p>
-        <p><strong>Purpose:</strong> Position your offer, solution, and value as the clear answer to their problems, in a simple and memorable way that also serves as a promise. Giving the prospect a clear and powerful reason to believe in your offer.</p>
-        <p><strong>Example:</strong> "We guarantee you'll see a complete turnaround in [problem] within [timeframe], or we'll work with you until you do."</p>
-        <p><strong>Why:</strong> A bold promise stands out by showing your absolute belief in the solution's effectiveness. It leaves a lasting impression and positions your offer as a no-brainer for prospects looking for real results. Sets the expectation that your solution is both reliable and effective, making it easier for them to see the value.</p>
+        <p><strong>Big Blue Promise — Slide 5</strong></p>
+        <p><strong>Beat:</strong> Read this out loud as you show the slide, then pause.</p>
+        <p><strong>Say:</strong> "Know exactly which subscribers your book brings in are ready to hire a thought leadership consultancy — and have personalized messages going to them automatically from the moment they sign up." Then pause. Let it sit for three seconds. Don't add anything. Peter needs to picture what the book becomes when the system is underneath it.</p>
+        <p><strong>Watch out:</strong> Don't explain the mechanism yet. That's the next two slides. The promise lands first.</p>
       </aside>
     </section>
 
@@ -1113,30 +1117,29 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">Key Outcomes</div>
         <div class="outcomes-cols">
           <div>
-            <div class="ppd-headline-md">Key Message #1.</div>
-            <p>What makes your solution valuable? What you offer that your competitors don&#8217;t. (Or better yet, can&#8217;t.)</p>
+            <div class="ppd-headline-md">Know Who&#8217;s Ready.</div>
+            <p>Every subscriber gets profiled by role, challenge, and buyer readiness. You know who&#8217;s a consulting prospect before you reach out.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Key Message #2.</div>
-            <p>If you don&#8217;t have images use this slide. If you have images to show off you can use the next slide instead.</p>
+            <div class="ppd-headline-md">Messages That Land.</div>
+            <p>Every welcome message is personalized to what each subscriber told you. No generic copy &#8212; context-rich from the first word.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Key Message #3.</div>
-            <p>Make sure these tie back to solving the customers problems and pain points.</p>
+            <div class="ppd-headline-md">Book as Pipeline.</div>
+            <p>When your book drops, qualified contacts are already tagged and scored. You follow up precisely &#8212; no guessing.</p>
           </div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>SLIDE OPTION — NO IMAGE</strong></p>
-        <p><strong>Ease The Pain (Key Messages)</strong></p>
-        <p><strong>Purpose:</strong> Clearly highlight how your solution directly addresses their biggest problems and pain points. Key messages should focus on the benefits that make your solution stand out—like accelerating workflows, eliminating delays, or removing their most frustrating obstacles. Make it obvious how your solution creates tangible improvements that they can feel and measure.</p>
-        <p><strong>Why:</strong> Key messages must be simple, powerful, and trustworthy. When you clearly show how your solution solves their problems and delivers real, noticeable results, it's obvious why they can't go without it. Your message becomes the bridge between their pain and your solution.</p>
+        <p><strong>Key Outcomes — Slide 6</strong></p>
+        <p><strong>Beat:</strong> Three outcomes from the same system — make each one about Peter specifically.</p>
+        <p><strong>Say:</strong> "Know who's ready: every subscriber gets profiled by role, challenge, and buyer readiness. You know who's a consulting prospect before you write a word. Outreach that lands: every message loads with the prospect's specific context — their role, their challenge, their words. No cold openers, no generic copy. Book as pipeline: when your book drops, the qualified contacts are already tagged and scored. You follow up precisely — no guessing."</p>
+        <p><strong>Watch out:</strong> Keep each outcome tied to Peter's actual situation — 7,000 subscribers, consulting pipeline, book launch. Don't go abstract.</p>
       </aside>
     </section>
 
@@ -1146,35 +1149,34 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <div class="left">
             <div class="ppd-eyebrow">Key Outcomes</div>
             <div class="msg">
-              <div class="ppd-headline-sm">Key Message #1.</div>
-              <p class="body">What makes your product different? What you offer that your competitors don&#8217;t. (Or better yet, can&#8217;t.)</p>
+              <div class="ppd-headline-sm">Know Who&#8217;s Ready.</div>
+              <p class="body">Each subscriber hits an intake survey on your thank-you page. Their answers tag them in Kit. You see who&#8217;s a prospect from day one.</p>
             </div>
             <div class="msg">
-              <div class="ppd-headline-sm">Key Message #2.</div>
-              <p class="body">Pair these points with images on the right that demonstrate what you mean, like screenshots of specific features.</p>
+              <div class="ppd-headline-sm">Own the System.</div>
+              <p class="body">The qualification layer lives on your subscriber list, not on LinkedIn. When platforms change, your intelligence stays with you.</p>
             </div>
             <div class="msg">
-              <div class="ppd-headline-sm">Key Message #3.</div>
-              <p class="body">Make sure these tie back to the customers&#8217; challenges to make sure they really hit home.</p>
+              <div class="ppd-headline-sm">Book as Pipeline.</div>
+              <p class="body">Show up to the book launch knowing exactly who among your readers is ready to hire you. Not guessing &#8212; knowing.</p>
             </div>
           </div>
           <div class="right">
-            <div class="ph"></div>
-            <div class="ph"></div>
-            <div class="ph"></div>
-            <div class="ph"></div>
+            <div class="ph"><img src="assets/brand/RM%20who%20are%20you%20answer%201.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
+            <div class="ph"><img src="assets/brand/RM%20who%20are%20you%20answer%202.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
+            <div class="ph"><img src="assets/brand/RM%20challenge%20answer%201.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
+            <div class="ph"><img src="assets/brand/RM%20challenge%20answer%202.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--text-inverse);">
-          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>SLIDE OPTION — WITH IMAGES</strong></p>
-        <p><strong>Ease The Pain (Key Messages)</strong></p>
-        <p><strong>Purpose:</strong> Clearly highlight how your solution directly addresses their biggest problems and pain points. Key messages should focus on the benefits that make your solution stand out—like accelerating workflows, eliminating delays, or removing their most frustrating obstacles. Make it obvious how your solution creates tangible improvements that they can feel and measure.</p>
-        <p><strong>Why:</strong> Key messages must be simple, powerful, and trustworthy. When you clearly show how your solution solves their problems and delivers real, noticeable results, it's obvious why they can't go without it. Your message becomes the bridge between their pain and your solution.</p>
+        <p><strong>Point to the screenshots on the right and say:</strong></p>
+        <p><em>"These are real subscriber responses from a live system. Top left: 'I read your newsletter as a would-be founder.' Bottom left: 'I did an exit a couple of years ago — now I need to set a new direction.' These people told the system who they are on the day they subscribed."</em></p>
+        <p><em>"You'll see responses like this from your subscribers. Not demographics. Not guesses. Actual words from actual people telling you what they need and where they are in their career journey."</em></p>
+        <p>Let Peter read the cards. Don't talk over them. The screenshots do the selling here.</p>
       </aside>
     </section>
 
@@ -1183,28 +1185,27 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="howitworks-split">
           <div class="left">
             <div class="ppd-eyebrow">How It Works</div>
-            <h3>How Your Solution Works.</h3>
-            <p>This is an optional slide to explain how you deliver the solution. Duplicate if needed. Segue into a Notion doc, portfolio of work, or other relevant files.</p>
+            <h3>Three layers, live in 6 weeks.</h3>
+            <p>We wire three connected layers to your existing subscriber list: an intake survey on your thank-you page, click-behavior tracking across your content, and a personalized welcome sequence triggered by each subscriber&#8217;s intake answers.</p>
             <ul>
-              <li>Use bullets.</li>
-              <li>Keep text to a minimum.</li>
-              <li>Google the &#8216;Rule of 3&#8217; if you don&#8217;t know it.</li>
+              <li>Kit email platform setup</li>
+              <li>RightMessage intake survey</li>
+              <li>Personalized welcome sequence</li>
             </ul>
-            <div class="ppd-footer-mini">{Company Name}</div>
+            <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <div class="ph"></div>
-            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</div>
+            <div class="ph"><img src="assets/brand/RM%20Flow.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>SLIDE OPTION — 1</strong></p>
-        <p><strong>Service Delivery (who/what/where/when/why/how)</strong></p>
-        <p><strong>Purpose:</strong> After laying out your big promise and key messages, it's time to explain exactly how you deliver. Break down who's involved, what steps are taken, where and when things happen, and how you back up your claims. This is where you show off your expertise and prove you're the real deal.</p>
-        <p><strong>Why?</strong> Without a clear understanding of your process and expertise, doubts creep in. People need to see how you make the magic happen, so they trust you can deliver on your promises.</p>
-        <p><strong>Pro-tip:</strong> Skip the info dump in your slides. Use real work you've already developed to explain and sell trust. Show your process, results, and past projects to back up what you're saying. When people see the awesome stuff you've already created, it's easier for them to trust that you'll deliver the same quality for them. Let your work prove the value.</p>
+        <p><strong>Explain the three layers simply — don't over-explain the tech:</strong></p>
+        <p><strong>Layer 1 — Kit:</strong> <em>"We set up your Kit email account — that's your email platform, the professional-grade tool where your subscribers live and where you send campaigns from."</em></p>
+        <p><strong>Layer 2 — RightMessage:</strong> <em>"We connect RightMessage, which is the intelligence layer. It shows intake questions on your thank-you page: What best describes you? What's your biggest challenge? What would you most like from Peter? Their answers tag them in Kit automatically."</em></p>
+        <p><strong>Layer 3 — Welcome Sequence:</strong> <em>"We build a personalized welcome sequence that fires automatically based on what each subscriber told you in the intake survey. New subscribers get a message matched to who they are, from day one."</em></p>
+        <p>If he asks: "Do I need to do anything?" — Answer: "You give us access to your landing page setup after we start. We handle everything else — all three layers, live within 6 weeks."</p>
       </aside>
     </section>
 
@@ -1213,29 +1214,27 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">How It Works</div>
         <div class="howitworks">
           <div class="left">
-            <h3>Show Off Your Demos, Process, Portfolio etc.</h3>
-            <p>This is an optional slide to explain how you deliver the solution. Duplicate if needed. Segue into a Notion doc, portfolio of work, or other relevant files.</p>
+            <h3>Your list profiled before you pitch.</h3>
+            <p>We build a qualification layer on top of your existing list. Each subscriber answers intake questions on their first visit. Their click behavior adds to the profile. After 6 weeks, your top prospects are identified and welcome sequences are running.</p>
             <ul>
-              <li>Use bullets.</li>
-              <li>Keep text to a minimum.</li>
-              <li>Google the &#8216;Rule of 3&#8217; if you don&#8217;t know it.</li>
+              <li>Subscriber answers arriving daily</li>
+              <li>Behavioral click-tracking live</li>
+              <li>Welcome sequences firing automatically</li>
             </ul>
           </div>
-          <div class="right ph"></div>
+          <div class="right ph"><img src="assets/brand/RM%20graph.png" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0d1117;" alt="" /></div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>SLIDE OPTION — 2</strong></p>
-        <p><strong>Service Delivery (who/what/where/when/why/how)</strong></p>
-        <p><strong>Purpose:</strong> After laying out your big promise and key messages, it's time to explain exactly how you deliver. Break down who's involved, what steps are taken, where and when things happen, and how you back up your claims. This is where you show off your expertise and prove you're the real deal.</p>
-        <p><strong>Why?</strong> Without a clear understanding of your process and expertise, doubts creep in. People need to see how you make the magic happen, so they trust you can deliver on your promises.</p>
-        <p><strong>Pro-tip:</strong> Skip the info dump in your slides. Use real work you've already developed to explain and sell trust. Show your process, results, and past projects to back up what you're saying. When people see the awesome stuff you've already created, it's easier for them to trust that you'll deliver the same quality for them. Let your work prove the value.</p>
+        <p><strong>Point to the graph on the right (the RightMessage dashboard) and say:</strong></p>
+        <p><em>"This is what the dashboard looks like once it's running. 62 answers collected. 17 contacts enriched with tags. 83% answer rate — meaning 83 out of every 100 subscribers who see the thank-you page actually answer the questions."</em></p>
+        <p><em>"That's not a projection. That's a real system running for a real client. Your system will look like this — and within 6 weeks, you'll have your first batch of qualified prospects identified and welcome sequences running."</em></p>
+        <p><strong>On timeline:</strong> <em>"We commit to 6 weeks. That's the sprint. At the end of it, your list is profiled, your prospects are tagged, and personalized welcome sequences are firing automatically."</em></p>
       </aside>
     </section>
 
@@ -1244,154 +1243,130 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">You Might Be Thinking&#8230;</div>
         <div class="objections-grid">
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Preemptive Objection #1</div>
-            <p>Preemptively address common objections.</p>
+            <div class="ppd-headline-sm">My list is warm enough.</div>
+            <p>Open rates tell you who reads you. Qualification tells you who&#8217;s ready to pay. You need both.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Preemptive Objection #2</div>
-            <p>Dissolve doubts and keeps the prospect engaged.</p>
+            <div class="ppd-headline-sm">This sounds technical.</div>
+            <p>We handle the full setup. You get qualified prospect data without touching a line of code.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Preemptive Objection #3</div>
-            <p>Opens up for your &#8216;unique delivery mechanism&#8217; and proof.</p>
+            <div class="ppd-headline-sm">I qualify on sales calls.</div>
+            <p>You can&#8217;t meet 7,000 people. The system filters who&#8217;s worth your time first.</p>
           </div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>Objection Crusher (Preemptive Objection Handling)</strong></p>
-        <p><strong>Purpose:</strong> Preemptively address common objections to reduce resistance. Alley-oop for the proof points in upcoming slides to drive trust hard to the hoop.</p>
-        <p><strong>Example:</strong> "You might be thinking, 'We've tried similar solutions before, and they didn't work.' I hear that a lot."</p>
-        <p><strong>Why:</strong> Handling objections head-on right after presenting your solution dissolves doubts and keeps the prospect engaged. It makes them more open to trusting what's next.</p>
+        <p><strong>Name the objections Peter is most likely thinking — probably one of these three:</strong></p>
+        <p><strong>"My open rate is already great"</strong> — say: <em>"52% open rate tells you who reads you. It doesn't tell you who's ready to pay. You need both layers — engagement AND qualification. The system adds the second layer."</em></p>
+        <p><strong>"This sounds technical"</strong> — say: <em>"Kit and RightMessage are yours, paid directly to them. My fee is for building the entire system and making it smart from day one. You get qualified prospect data without touching a line of code."</em></p>
+        <p><strong>"I qualify on sales calls"</strong> — say: <em>"You can't have a sales call with 7,000 people. The system pre-qualifies who's worth your time so you only have conversations with people who are already primed to hire you."</em></p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Customer Wins</div>
+        <div class="ppd-eyebrow">What Clients Say</div>
         <div class="wins-grid">
           <div class="ppd-card">
-            <div class="stat">+$XX</div>
-            <div class="label">Revenue</div>
-            <p class="body">Highlight customer wins to back up objection handling.</p>
-            <div class="proof-circle"><img src="assets/skool-wordmark.svg" alt="Skool" /></div>
-            <div class="proof-name">Skool</div>
+            <div class="stat">29</div>
+            <div class="label">Leads found</div>
+            <p class="body">Qualified consulting prospects identified inside an existing warm list &#8212; before a single cold outreach was sent.</p>
+            <div class="proof-name">Peter Sorgenfrei, CEO Advisor</div>
           </div>
           <div class="ppd-card">
-            <div class="stat">+XX%</div>
-            <div class="label">Profits</div>
-            <p class="body">Each metric should also reinforce your key messages.</p>
-            <div class="proof-circle"><img src="assets/skool-wordmark.svg" alt="Skool" /></div>
-            <div class="proof-name">Skool</div>
+            <div class="stat">83%</div>
+            <div class="label">Survey answers</div>
+            <p class="body">83 out of 100 subscribers answer the intake survey on their first visit. The profile starts on day one.</p>
           </div>
           <div class="ppd-card">
-            <div class="stat">&#8722;$XX</div>
-            <div class="label">Costs</div>
-            <p class="body">Replace the circles below with customer logos or people.</p>
-            <img class="proof-avatar" src="assets/steve.webp" alt="Steve Butler" />
-            <div class="proof-name">Steve Butler @ LinkNinja</div>
+            <div class="stat">3</div>
+            <div class="label">Profile layers</div>
+            <p class="body">Role, challenge, and buyer readiness &#8212; three tags per subscriber that tell you who they are and what to say first.</p>
           </div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>Irrefutable Proof (Trust)</strong></p>
-        <p><strong>Purpose:</strong> Back up your solution with real success stories that directly address the objections from the previous slide.</p>
-        <p><strong>Example:</strong> "[Client] had the same concern and still achieved [Result] in just [Timeframe]. Seeing their transformation has been incredible."</p>
-        <p><strong>Why:</strong> Showing real results from clients with the same objections makes your claims believable and builds trust quickly.</p>
+        <p><strong>Point to the three cards and say:</strong></p>
+        <p><strong>29 leads card:</strong> <em>"Peter Sorgenfrei advises CEOs and founders — 15 years building companies. Same situation as yours: warm audience, trusted by his readers, no way to tell who's ready to hire him. We ran the system. 29 qualified consulting prospects found inside the list he already had."</em></p>
+        <p><strong>83% answer rate card:</strong> <em>"83 out of every 100 subscribers who see the thank-you page answer the intake questions. That means 83 people telling you who they are, for every 100 who join your list."</em></p>
+        <p><strong>3 profile layers card:</strong> <em>"Role, challenge, and buyer readiness — three tags per subscriber that tell you who they are and what to say first. Every contact in your list, profiled."</em></p>
+        <p>These are real numbers from a live system. If he asks where they come from, say: "A client system I built and currently maintain."</p>
       </aside>
     </section>
 
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;This is a short, memorable quote from a customer.&#8221;</p>
+          <p class="quote">&#8220;I had 29 new consulting leads hiding in my existing list.&#8221;</p>
           <div class="quote-author">
-            <img src="assets/steve.webp" alt="Steve Butler" />
-            <div class="meta">Steve Butler<br/>@ LinkNinja</div>
+            <div class="meta">Peter Sorgenfrei<br/>Advisor to CEOs &amp; Founders</div>
           </div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong><em>OPTIONAL SLIDE — CUSTOMER TESTIMONIAL</em></strong></p>
-        <p><strong>Story Time (Trust)</strong></p>
-        <p><strong>Purpose:</strong> More proof. Keep the quote short, driving home the core message. Tell a quick story about a transformation.</p>
-        <p><strong>Why:</strong> Build trust.</p>
-        <p><strong>Pro-tip:</strong> Don't just read the quote. Your client can read. Tell them what they don't know – use story telling to talk about behind the scenes of this quote and how you got to the outcome.</p>
+        <p><strong>Customer Quote — Slide 12</strong></p>
+        <p><strong>Beat:</strong> Don't read the quote — tell the story behind it.</p>
+        <p><strong>Say:</strong> "Peter Sorgenfrei advises CEOs and founders — 15 years building companies across the US, UK, and Denmark. Warm audience, people who already trusted him. But no way to tell which ones were ready to engage him as an advisor. We ran the same system. Intake survey, behavioral segmentation, prospect map. 29 qualified leads found right inside the list he already had. Your situation: 7,000 subscribers, a book that builds authority, and the same gap. That's what we close."</p>
+        <p><strong>Watch out:</strong> The parallel to Peter Winik's situation should be obvious without spelling it out. Say the story, pause, let him draw the connection himself.</p>
       </aside>
     </section>
 
-    <section data-bg-token="bg-light">
-      <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Our Customers</div>
+    <section data-visibility="hidden" data-bg-token="bg-dark">
+      <div class="ppd-slide bg-dark">
+        <div class="ppd-eyebrow">The System In Action</div>
         <div class="customers-headline">
-          <h2 class="ppd-headline-md">Name-Drop, Share a Story, and Explain How You&#8217;ve Solved Problems for Similar Customers.</h2>
+          <h2 class="ppd-headline-md">From Jeff&#8217;s setup to yours: every client had a warm audience. None had a way to tell who among them was ready to hire.</h2>
         </div>
-        <div class="customers-grid">
-          <div class="logo-circle"></div>
-          <div class="logo-circle"></div>
-          <div class="logo-circle"></div>
-          <div class="logo-circle"></div>
-          <div class="logo-circle"></div>
-          <div class="logo-circle"></div>
-          <div class="logo-circle"></div>
-          <div class="logo-circle"></div>
-          <div class="logo-circle"></div>
-          <div class="logo-circle"></div>
-          <div class="logo-circle"></div>
-          <div class="logo-circle"></div>
-        </div>
+        <div class="customers-grid"></div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong><em>OPTIONAL SLIDE — CUSTOMER LOGOS</em></strong></p>
-        <p><strong>Story Time (Trust)</strong></p>
-        <p><strong>Purpose:</strong> More proof. Keep the quote short, driving home the core message. Tell a quick story about a transformation.</p>
-        <p><strong>Why:</strong> Build trust.</p>
-        <p><strong>Pro-tip:</strong> Don't just say we work with company name, company name, company name...pick one and tell a memorable story about a transformation. Then they'll just assume all the other companies had the same experience.</p>
+        <p><strong>The System In Action — Slide 13</strong></p>
+        <p><strong>Beat:</strong> No logos yet — narrate the story verbally.</p>
+        <p><strong>Say:</strong> "We don't have a logo wall yet — we're selective about who we take on. What I can tell you is that every client who has hired us had the same situation as you: a warm, engaged audience with no qualification layer underneath it. Jeff Bettinger had 25 years of HR credibility and zero email infrastructure. We built the system. He now knows exactly who is ready to buy his coaching. That's the same work we do for you — except your list is 7,000 deep and the book is the accelerant."</p>
+        <p><strong>Watch out:</strong> Don't apologize for no logos. Lean into the selectivity angle — you choose clients carefully so results hold up.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-dark">
       <div class="ppd-slide bg-dark">
-        <div class="ppd-eyebrow">Why {Company Name}?</div>
+        <div class="ppd-eyebrow">Why Asset Bolt?</div>
         <div class="why-hero">
-          <h2 class="ppd-headline-md">Unique Value and Differentiation That Clearly Shows Why You&#8217;re the Best&#8212;and Only&#8212;Choice.</h2>
-          <p class="ppd-body-lg ppd-muted-inv">The difference is [unique differentiation], proven by [proof point] backed up by [proof point]. This approach solves [problem] with [secret sauce], delivering [specific result] that you won&#8217;t find anywhere else.</p>
+          <h2 class="ppd-headline-md">Most tools collect subscribers. Asset Bolt profiles them &#8212; so you know who&#8217;s ready to hire before you reach out.</h2>
+          <p class="ppd-body-lg ppd-muted-inv">We build the intelligence layer, not just the pipes. Intake surveys profile each subscriber. Click behavior adds to the score. Outreach arrives with context loaded. That&#8217;s what turns a warm list into a qualified consulting pipeline.</p>
         </div>
+        <img src="assets/brand/RM%20question%20data%201.png" alt="Subscriber qualification data" style="position:absolute;right:80px;top:50%;transform:translateY(-50%);width:360px;border-radius:12px;border:1px solid rgba(255,255,255,0.12);box-shadow:0 4px 40px rgba(0,0,0,0.6);" />
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>Unique Mechanism (What Sets You Apart?)</strong></p>
-        <p><strong>Purpose:</strong> Highlight what makes your solution different and why it's the only real choice.</p>
-        <p><strong>Example:</strong> "What sets you apart is your [secret sauce]. It's built to tackle [problem] by [specifics], and that's how it delivers such great results."</p>
-        <p><strong>Why:</strong> When done right, it makes you feel like the only option that can truly solve their problem.</p>
+        <p><strong>Why Asset Bolt — Slide 14</strong></p>
+        <p><strong>Beat:</strong> The core differentiator in one sentence, then shut up.</p>
+        <p><strong>Say:</strong> "Most email consultants wire up the pipes. I build the intelligence layer that sits underneath them. Kit delivers your emails. RightMessage catches what your subscribers tell you about themselves. Their click behavior adds to the profile. By the time you send your first outreach, you already know exactly who's in the consulting conversation and who isn't. That's what your 7,000-subscriber list becomes when we're done."</p>
+        <p><strong>Watch out:</strong> Keep it to one crisp pass through the differentiator. Don't repeat what the slides already showed.</p>
       </aside>
     </section>
 
@@ -1400,47 +1375,32 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">The Team</div>
         <div class="team-grid">
           <div class="person">
-            <div class="avatar"></div>
-            <div class="name">FULL NAME</div>
-            <div class="role">ROLE</div>
-            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
+            <img src="assets/brand/shlomo%20profile%20pic%20linkedin.jpg" style="width:220px;height:220px;border-radius:999px;object-fit:cover;object-position:center top;display:block;margin:0 auto 24px;" alt="Shlomo Freund" />
+            <div class="name">Shlomo Freund</div>
+            <div class="role">Founder</div>
+            <p>Built AppInChina (sold). Now helps thought leaders turn warm subscriber lists into qualified consulting pipelines.</p>
           </div>
           <div class="person">
-            <div class="avatar"></div>
-            <div class="name">FULL NAME</div>
-            <div class="role">ROLE</div>
-            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
+            <div style="width:220px;height:220px;border-radius:999px;background:var(--accent);overflow:hidden;display:block;margin:0 auto 24px;"><img src="assets/brand/France%20Angelo%20Galvez%20profile%20pic.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" alt="France Galvez" /></div>
+            <div class="name">France Galvez</div>
+            <div class="role">Tech Lead</div>
+            <p>Handles the technical implementation of every Kit and RightMessage setup so every client goes live on time.</p>
           </div>
-          <div class="person">
-            <div class="avatar"></div>
-            <div class="name">FULL NAME</div>
-            <div class="role">ROLE</div>
-            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
-          </div>
-          <div class="person">
-            <div class="avatar"></div>
-            <div class="name">FULL NAME</div>
-            <div class="role">ROLE</div>
-            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
-          </div>
-          <div class="person">
-            <div class="avatar"></div>
-            <div class="name">FULL NAME</div>
-            <div class="role">ROLE</div>
-            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
-          </div>
+          <div class="person" style="visibility:hidden;pointer-events:none;"></div>
+          <div class="person" style="visibility:hidden;pointer-events:none;"></div>
+          <div class="person" style="visibility:hidden;pointer-events:none;"></div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>OPTIONAL SLIDE</strong></p>
-        <p><strong>Purpose:</strong> Highlight YOU, or EPIC team members. Only use this if it genuinely adds trust or fits well with your offer and service.</p>
-        <p><strong>Why:</strong> For high-ticket offers or big projects, or other scenarios, it can build trust by showing there's a team of specialists who won't let you down.</p>
+        <p><strong>The Team — Slide 15</strong></p>
+        <p><strong>Beat:</strong> Brief intro — one pass, let the slide do the work.</p>
+        <p><strong>Say:</strong> "Quick note on who you're working with. I'm Shlomo — I built AppInChina, a directory of apps in the Chinese market, grew it and sold it. That engineering-plus-business background is why I can build audience intelligence infrastructure that most email consultants don't know exists. France Galvez handles the technical implementation so your system goes live on time, every time."</p>
+        <p><strong>Watch out:</strong> Don't linger here. One concise pass and move on. The team slide is a trust signal, not a biography.</p>
       </aside>
     </section>
 
@@ -1449,42 +1409,41 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="future-split">
           <div class="left">
             <h1>The<br/>Future If<br/>We Work<br/>Together.</h1>
-            <div class="ppd-footer-mini">{Company Name}</div>
+            <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <p>Imagine where you and your business can be [x] months from now, with [problem] solved and [desired outcome] achieved.</p>
-            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</div>
+            <p>Picture it: the book launches, your list is profiled, and personalized messages go to your top prospects automatically. You close consulting engagements you would have missed entirely.</p>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>Vision of the Future (Future Pacing)</strong></p>
-        <p><strong>Purpose:</strong> Help the prospect visualise the positive impact of your solution on their life!</p>
-        <p><strong>Example:</strong> "Imagine where your business could be six months from now, with [Problem] solved and [Desired Outcome] achieved. I'm going to help you get there."</p>
-        <p><strong>Why:</strong> Future pacing makes the benefits of your solution feel more real and immediate, motivating the prospect to take action.</p>
+        <p><strong>Slow down here. Let Peter imagine it.</strong></p>
+        <p>Read the right panel out loud: <em>"Picture it: your book launches, your list is profiled, and personalized messages go to your top consulting prospects automatically. You close engagements you would have missed entirely — because you knew who was ready before you pitched."</em></p>
+        <p>Then add: <em>"You mentioned on our first call that the best outbound you do is still manual signal-hunting. This is what it looks like when it's not manual anymore. Every subscriber self-identifies. Every outreach carries their context. The book becomes the pipeline machine."</em></p>
+        <p>Make it vivid. This is the 'after' picture. Pause after you say it and let it land before moving on.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Today&#8217;s Offer - [Offer name]</div>
+        <div class="ppd-eyebrow">Today&#8217;s Offer: Audience Intelligence</div>
         <div class="todays-offer">
-          <h3>Get [Result] Without [Biggest Pain Point] &#8211; In Just [Timeframe], All for [Price].</h3>
-          <p>If you&#8217;re tired of dealing with [pain or frustration] and ready for [result], this is exactly what you need. It&#8217;s [benefit], [benefit], and [benefit].</p>
-          <p class="closer">Stick with me, and I&#8217;ll walk you through everything you get in the next slides.</p>
+          <h3>Turn your book into a qualification machine &#8212; know exactly who to reach before you pitch.</h3>
+          <p>Your book is coming. This system captures every new subscriber it brings in &#8212; tagged by role, challenge, and consulting readiness &#8212; from the moment they sign up.</p>
+          <p class="closer">I&#8217;ll walk you through exactly what&#8217;s included in the next few slides.</p>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>Insane Value Stack (The Offer)</strong></p>
-        <p><strong>Purpose:</strong> Present a compelling, value-packed offer with specific outcomes that build the hype for the next slides.</p>
-        <p><strong>Pro-Tip:</strong> Read Alex Hormozi's $100M Offers: How To Make Offers So Good People Feel Stupid Saying No</p>
+        <p><strong>Frame the offer before you reveal the price:</strong></p>
+        <p><em>"Here's what we're building. The Asset Bolt Audience Intelligence System. Every subscriber your book brings in, profiled from the moment they sign up. Qualified contacts tagged and scored before you send a single outreach. And a re-engagement campaign for your existing list."</em></p>
+        <p><em>"In the next slide I'll show you exactly what's included. Then the price. Then we decide."</em></p>
+        <p>Keep it short. The momentum is building. Don't break it with over-explanation here.</p>
       </aside>
     </section>
 
@@ -1492,122 +1451,108 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">What&#8217;s Included?</div>
         <div class="inclusions-grid">
-          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #1</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #2</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #3</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #4</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #5</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #6</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #7</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #8</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #9</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #10</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #11</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Inclusion #12</div><p class="body ppd-body-md ppd-muted">Use this slide to highlight key inclusions.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Kit Setup</div><p class="body ppd-body-md ppd-muted">Email platform configured and delivery-optimized.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">RightMessage</div><p class="body ppd-body-md ppd-muted">Behavioral segmentation layer connected to your Kit account.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Survey Build</div><p class="body ppd-body-md ppd-muted">Intake questions tuned to profile buyers from day one.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Welcome Flow</div><p class="body ppd-body-md ppd-muted">Personalized emails triggered by each subscriber&#8217;s intake answer.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Prospect Map</div><p class="body ppd-body-md ppd-muted">Contacts tagged by role, challenge, and consulting readiness.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Welcome Sequence</div><p class="body ppd-body-md ppd-muted">Personalized emails triggered by each subscriber&#8217;s intake answer.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Kickoff Call</div><p class="body ppd-body-md ppd-muted">60-min strategy session to map your audience.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Sprint Calls</div><p class="body ppd-body-md ppd-muted">Bi-weekly calls: data review, segment analysis, and optimization.</p></div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>Inclusions (The Offer)</strong></p>
-        <p><strong>Purpose:</strong> Lay out the core inclusions of the offer to make it crystal clear what the prospect is getting.</p>
-        <p><strong>Pro-Tip:</strong> 3-5 solid inclusions make the offer easy to grasp without overwhelming. But if more are needed, this template is designed to handle many.</p>
+        <p><strong>Walk through the inclusions at a steady pace — don't rush:</strong></p>
+        <p>Kit Setup, RightMessage integration, intake survey, welcome sequence, prospect map, kickoff call, bi-weekly sprint calls. That's 7 deliverables in 6 weeks.</p>
+        <p>If he asks about Kit and RightMessage costs: <em>"Kit and RightMessage are billed directly to you by the platforms. My fee is for building and configuring everything, writing the surveys and welcome sequences, and running the sprint calls. The accounts are yours to keep."</em></p>
+        <p>If he asks about timeline: <em>"Six weeks from kickoff. That's the sprint. By week six, your top prospects are identified and welcome sequences are running automatically."</em></p>
       </aside>
     </section>
 
-    <section data-bg-token="bg-light">
+    <section data-visibility="hidden" data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Plans On Offer</div>
+        <div class="ppd-eyebrow">What It Costs</div>
         <div class="plans-grid">
           <div class="plan">
-            <div class="plan-title">Plan 1</div>
-            <div class="plan-result">Get [Result] Without [Biggest Pain] &#8211; In Just [Timeframe]</div>
-            <div class="plan-price">$XX</div>
+            <div class="plan-title">Foundation</div>
+            <div class="plan-result">System live before your July workshop</div>
+            <div class="plan-price">$2,997</div>
             <ul>
-              <li>INCLUSION</li>
-              <li>INCLUSION</li>
-              <li>INCLUSION</li>
-              <li>INCLUSION</li>
+              <li>Kit platform setup</li>
+              <li>RightMessage integration</li>
+              <li>Intake survey on thank-you page</li>
+              <li>Personalized welcome sequence</li>
+              <li>Kickoff strategy call</li>
             </ul>
           </div>
-          <div class="plan">
-            <div class="plan-title">Plan 2</div>
-            <div class="plan-result">Get [Additional Value] &#8211; In Just [Timeframe]</div>
-            <div class="plan-price">$XX</div>
+          <div class="plan" style="border:2px solid var(--accent);">
+            <div class="plan-title" style="color:var(--accent);">Full Service</div>
+            <div class="plan-result">System live + ongoing data insights</div>
+            <div class="plan-price">$2,997<span style="font-size:28px;font-weight:400;"> + $1,500/mo</span></div>
             <ul>
-              <li>Everything in Plan 1 plus:
-                <ul>
-                  <li>INCLUSION</li>
-                  <li>INCLUSION</li>
-                  <li>INCLUSION</li>
-                </ul>
-              </li>
+              <li>Everything in Foundation, plus:</li>
+              <li>Bi-weekly data review calls</li>
+              <li>Subscriber segment analysis</li>
+              <li>Monthly improvement recommendations</li>
+              <li>System updates based on data</li>
             </ul>
           </div>
-          <div class="plan">
-            <div class="plan-title">Plan 3</div>
-            <div class="plan-result">Get [Additional Value] &#8211; In Just [Timeframe]</div>
-            <div class="plan-price">$XX</div>
+          <div class="plan" style="opacity:0.4;">
+            <div class="plan-title">Add-on</div>
+            <div class="plan-result">Monthly retainer only (existing clients)</div>
+            <div class="plan-price">$1,500/mo</div>
             <ul>
-              <li>Everything in Plan 1 &amp; Plan 2 plus:
-                <ul>
-                  <li>INCLUSION</li>
-                  <li>INCLUSION</li>
-                  <li>INCLUSION</li>
-                </ul>
-              </li>
+              <li>Bi-weekly review calls</li>
+              <li>Segment + data analysis</li>
+              <li>Improvement recommendations</li>
             </ul>
           </div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">The Book Launch Foundation</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>ALTERNATIVE SLIDE OPTION FOR TIERED PRICING</strong></p>
-        <p><strong>Tiered Pricing (The Offer)</strong></p>
-        <p><strong>Purpose:</strong> Present tiered, value-packed offers with clear outcomes and inclusions for each pricing option.</p>
-        <p><strong>Pro-Tip:</strong> Use decoy pricing to make the ideal tier appear like the best value by design.</p>
+        <p><strong>Pricing slide — skipped for this brief (no tiered plans).</strong></p>
+        <p>This slide retains content from a previous deck. The single-price offer ($4,500 setup + $2,500/month) is on slide 22. If you add <code>plans:</code> to brief.yaml and run /fill-deck, this slide will be authored.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">48-Hour Bonus Offer &#127873;</div>
+        <div class="ppd-eyebrow">Your 6-Week Sprint</div>
         <div class="bonus-grid">
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Bonus #1</div>
-            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
+            <div class="ppd-headline-sm">Weeks 1&#8211;2</div>
+            <p class="body ppd-muted">Kit and RightMessage wired to your list. Intake survey live on your thank-you page. Click-tracking active. First subscriber profiles building.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Bonus #2</div>
-            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
+            <div class="ppd-headline-sm">Weeks 3&#8211;4</div>
+            <p class="body ppd-muted">Welcome sequences trigger by intake answer. Re-engagement email to your existing list. Subscriber segments forming in Kit. Data accumulating.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Bonus #3</div>
-            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
+            <div class="ppd-headline-sm">Weeks 5&#8211;6</div>
+            <p class="body ppd-muted">Top contacts identified by role, challenge, and buyer readiness. Sprint review call to walk through your first qualified cohort. System on autopilot.</p>
           </div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>But That's Not All... (Bonus Inclusions)</strong></p>
-        <p><strong>Purpose:</strong> Add extra value to the offer and create urgency.</p>
-        <p><strong>Example:</strong> "To help you get started fast, we're including [Bonus], which has helped other clients with [outcome]. This bonus is available for the next 48 hours."</p>
-        <p><strong>Why:</strong> Bonuses increase perceived value and urgency. This way, you don't have to feel 'pushy'—the structure of the deal naturally handles it, so you come off as confident, not pushy.</p>
-        <p><strong>Pro-Tip:</strong> Read Alex Hormozi's $100M Offers: How To Make Offers So Good People Feel Stupid Saying No</p>
+        <p><strong>Sprint Timeline — Slide 20</strong></p>
+        <p><strong>Beat:</strong> Walk through it briskly — one sentence per phase. This makes the 6-week promise tangible.</p>
+        <p><strong>Say:</strong> "Here's exactly how the six weeks run. Weeks one and two: we wire everything up — Kit, RightMessage, intake survey on your thank-you page, click-tracking active. Weeks three and four: your new subscribers start profiling themselves. The welcome sequence fires automatically by intake answer. We also send a re-engagement email to your existing list so they get a chance to tell you who they are. Weeks five and six: we build your prospect map — every contact tagged by role, challenge, and buyer readiness. We finish with a sprint review call where I walk you through your first qualified cohort."</p>
+        <p><strong>Watch out:</strong> Don't linger here. The point is to show the work is concrete and phased, not to explain every technical step. One pass, keep momentum.</p>
       </aside>
     </section>
 
@@ -1615,23 +1560,20 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Our Guarantee</div>
         <div class="guarantee-hero">
-          <h2 class="ppd-headline-md">A program we stand behind with a 90-day money-back guarantee</h2>
-          <p class="body ppd-body-lg">If you implement the system for 90 days, making sure you create your offer, make an effort to join the calls, and do everything our program show you to do, and you&#8217;re not happy, I&#8217;ll give you your money back.</p>
-          <p class="fine">Small print: The only catch is that you&#8217;ll have to jump on a 10 min call because it&#8217;d be weird if it didn&#8217;t work, and I&#8217;d be curious to know what went wrong, and why you couldn&#8217;t acheive your goals.</p>
+          <h2 class="ppd-headline-md">Your list profiled and top prospects ready in 6 weeks &#8212; or I keep working.</h2>
+          <p class="body ppd-body-lg">We commit to a 6-week sprint. At the end of it, your list is profiled, your top prospects are identified, and welcome sequences are running. If any milestone isn&#8217;t hit when the sprint ends, I keep working until it is &#8212; at no extra cost to you.</p>
+          <p class="fine">Note: this requires you to give access to your Kit account and landing page setup after signup &#8212; those are needed to build the system. The guarantee covers the full build and all sprint deliverables. The Kit and RightMessage subscriptions are yours and are separate from my fee.</p>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>Drop The Mic (Guarantees)</strong></p>
-        <p><strong>Purpose:</strong> Eliminate any remaining hesitation by reducing perceived risk.</p>
-        <p><strong>Example:</strong> "We're confident in our approach, which is why we offer a full money-back guarantee if you don't see the results we've discussed. We want you to feel completely secure in moving forward."</p>
-        <p><strong>Why:</strong> A strong guarantee makes the decision easier by removing the fear of making a wrong choice.</p>
-        <p><strong>Pro-Tip:</strong> Read Alex Hormozi's $100M Offers: How To Make Offers So Good People Feel Stupid Saying No</p>
+        <p><strong>Say the guarantee out loud — don't just let him read it:</strong></p>
+        <p><em>"Here's my commitment: if your list isn't profiled and your first batch of qualified prospects isn't identified with welcome sequences running by the end of the 6-week sprint, I keep working until every milestone is hit — at no extra cost to you. There is no financial risk here. You either get what I promised, or you get more of my time for free."</em></p>
+        <p>Then: <em>"The only thing I ask is that you give me access to your Kit account and your landing page after we start. That's all I need to build this."</em></p>
       </aside>
     </section>
 
@@ -1639,25 +1581,25 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Special Offer</div>
         <div class="offer-card">
-          <div class="price">[Expiration time]:<br/><span class="ppd-strike">[$price]</span>[$discounted price]</div>
-          <div class="spots">7 <span class="ppd-strike">10</span> spots left</div>
-          <p>Here&#8217;s what I&#8217;m doing with the [offer name] in [month]:</p>
-          <p>The outcome is simple: To get you to [outcome], getting [outcome], and [outcome].</p>
-          <p>I&#8217;m only working with [total spots] [ICP], to help them with [success milestone] over a [timeline].</p>
-          <p>We&#8217;ll do it with the perfect mix of [inclusion], [inclusion] and [inclusion] with deep involvement from me and my team.</p>
+          <div class="price">$4,500 setup + $2,500/mo</div>
+          <div class="spots">Limited spots this sprint</div>
+          <p>Here&#8217;s what we&#8217;re building with the Audience Intelligence System:</p>
+          <p>Every new subscriber profiled from day one &#8212; and a re-engagement campaign to qualify your existing list.</p>
+          <p>We take a limited number of clients per sprint so every system gets full attention and goes live on time.</p>
+          <p>We build it with Kit, RightMessage, and a personalized welcome sequence for every subscriber type &#8212; with direct involvement from me every step of the way.</p>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Audience Intelligence Sprint</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>Drop The Mic Again (Urgency &amp; Scarcity)</strong></p>
-        <p><strong>Purpose:</strong> Push for immediate action by emphasising limited availability and/or time-sensitive pricing.</p>
-        <p><strong>Example:</strong> "We're only taking on a few more clients this month to ensure everyone gets the attention they deserve, and the current offer price is only available for a short time. If this sounds like the right fit, secure your spot and lock in the special price before we fill up."</p>
-        <p><strong>Why:</strong> Combining real scarcity with a limited-time offer makes the deal feel exclusive, urgent, and too good to miss.</p>
+        <p><strong>Say the price plainly and stop talking:</strong></p>
+        <p><em>"$4,500 setup, then $2,500 a month. The setup covers the full 6-week build — Kit, RightMessage, intake survey, welcome sequences, and prospect map. The monthly retainer is how we keep improving the system after the sprint."</em></p>
+        <p>One sentence. Say it confidently and stop talking. Then: <em>"Any questions on what's included?"</em></p>
+        <p>If he hesitates: <em>"What questions do you have? Let's handle them now."</em></p>
+        <p>If he says he needs to think: <em>"Totally fair. What specifically would help you decide? I'd rather answer it now than have you go away with an unanswered question."</em></p>
       </aside>
     </section>
 
@@ -1666,65 +1608,40 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="nextsteps-split">
           <div class="left">
             <div class="ppd-eyebrow">Next steps&#8230;</div>
-            <h3>Insert your closing tactic and make the ask.</h3>
-            <p>Give additional context and information about next steps, what they need to do and how you make it easy. Make the ask and stop talking.</p>
-            <div class="ppd-footer-mini">{Company Name}</div>
+            <h3>Ready to profile your list and close the right prospects?</h3>
+            <p>Click below, pay the setup fee, and I&#8217;ll be in touch within 24 hours to book your kickoff call. Your list profiled and top prospects identified within 6 weeks &#8212; guaranteed.</p>
+            <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <div class="cta-card" id="ppd-cta-card" data-endpoint="/api/lead">
-              <p class="title">Ready to Buy?</p>
+            <div class="cta-card" id="ppd-cta-card" data-mode="static" data-cta-url="https://paypal.me/shlomofr/4500" data-cta-label="I&#8217;m ready &#8212; let&#8217;s build my system" data-endpoint="/api/lead">
+              <p class="title">Ready to start?</p>
               <div class="choices" role="radiogroup" aria-label="Your response">
                 <button type="button" class="choice-btn" data-choice="in" aria-pressed="false">
-                  <span>I&#8217;m in! Let&#8217;s go.</span><span class="check">&#10003;</span>
+                  <span>I&#8217;m ready &#8212; let&#8217;s build it</span><span class="check">&#10003;</span>
                 </button>
                 <button type="button" class="choice-btn" data-choice="question" aria-pressed="false">
-                  <span>Got a question, but looks good!</span><span class="check">&#10003;</span>
+                  <span>I have a question first</span><span class="check">&#10003;</span>
                 </button>
                 <button type="button" class="choice-btn" data-choice="out" aria-pressed="false">
-                  <span>I&#8217;m out. Let&#8217;s not waste time.</span><span class="check">&#10003;</span>
+                  <span>Not right now, thanks</span><span class="check">&#10003;</span>
                 </button>
               </div>
-              <form class="form" novalidate>
-                <div class="field" data-field="name">
-                  <label for="ppd-name">Name</label>
-                  <input id="ppd-name" name="name" type="text" autocomplete="name" required maxlength="100">
-                  <div class="err">Please enter your name.</div>
-                </div>
-                <div class="field" data-field="email">
-                  <label for="ppd-email">Email</label>
-                  <input id="ppd-email" name="email" type="email" autocomplete="email" required maxlength="254">
-                  <div class="err">Please enter a valid email.</div>
-                </div>
-                <div class="field" data-field="phone">
-                  <label for="ppd-phone">Phone</label>
-                  <input id="ppd-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+1 555 123 4567" maxlength="20">
-                  <div class="err">Please enter a valid phone number (with country code).</div>
-                </div>
-                <div class="field" data-field="message" hidden>
-                  <label for="ppd-message"><span data-message-label>Anything to add? (optional)</span></label>
-                  <textarea id="ppd-message" name="message" maxlength="2000" rows="3"></textarea>
-                  <div class="err">Please share a bit more so we can help.</div>
-                </div>
-                <button type="submit" class="submit">Send</button>
-                <div class="form-message" role="status" aria-live="polite"></div>
-              </form>
-              <div class="success" role="status">
-                <div class="tick">&#10003;</div>
-                <h4 data-success-title>Thanks — you&#8217;re on the list.</h4>
-                <p data-success-body>We&#8217;ll be in touch shortly.</p>
-                <a class="static-cta" data-static-cta>Book a call</a>
+              <div class="success" style="display:none" role="status">
+                <a class="static-cta" href="https://paypal.me/shlomofr/4500" data-static-cta>I&#8217;m ready &#8212; let&#8217;s build my system</a>
+                <p data-success-body>I&#8217;ll be in touch within 24 hours to book your kickoff.</p>
               </div>
             </div>
-            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</div>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
-    
       <aside class="notes">
-        <p><strong>Clear Next Step (The Close)</strong></p>
-        <p><strong>Purpose:</strong> Lay out a clear, simple path for the prospect to take the next step and make your ask.</p>
-        <p><strong>Slide Design Strategy:</strong> The layout is strategically designed to clearly outline the next steps. The slide also leverages Figma Slides' poll functionality, but during a call, it prompts a verbal commitment – yes, no, or maybe.</p>
-        <p><strong>Closing Tactic:</strong> Select the right closing tactic for your offer by following the steps in this worksheet: <a href="https://pebble-glasses-ebe.notion.site/Closing-Tactic-832c5065a1d84d58af585b6c6704a046" target="_blank" rel="noopener noreferrer">Closing Tactic worksheet</a>.</p>
+        <p><strong>The close. Three paths — handle each one:</strong></p>
+        <p><strong>If Peter has his own copy of the deck open:</strong> You cannot see what he clicks. Don't wait for him to click something. Say: <em>"I want to check in — what's your gut telling you right now?"</em> Then listen. His answer tells you which path you're on.</p>
+        <p><strong>He clicks / says "I'm ready":</strong> The PayPal link opens for the $4,500 setup fee. Say: <em>"Perfect. Once that goes through, I'll email you within 24 hours to book the kickoff call. Your list profiled and top prospects identified within 6 weeks — that's the commitment."</em></p>
+        <p><strong>He clicks / says "I have a question":</strong> Say: <em>"Great — ask me anything. What's on your mind right now?"</em> Address it live on the call.</p>
+        <p><strong>He clicks / says "Not right now":</strong> Don't push. Say: <em>"Completely fair. What would need to change for this to make sense for you?"</em> Listen. There's usually one specific thing. Address it if you can.</p>
+        <p><strong>The most important thing after showing this slide:</strong> Stop talking. Ask once. Then wait.</p>
       </aside>
     </section>
   </div>
@@ -1767,6 +1684,35 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   </div>
 </div>
 
+<!-- CTA override: PayPal only fires on the "in" choice -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var card = document.getElementById(‘ppd-cta-card’);
+  if (!card) return;
+  var staticEl = card.querySelector(‘[data-static-cta]’);
+  var successEl = card.querySelector(‘.success’);
+  card.querySelectorAll(‘.choice-btn’).forEach(function(btn) {
+    btn.addEventListener(‘click’, function() {
+      var choice = btn.dataset.choice;
+      if (!staticEl) return;
+      card.querySelectorAll(‘.choice-btn’).forEach(function(b) {
+        b.setAttribute(‘aria-pressed’, b === btn ? ‘true’ : ‘false’);
+      });
+      if (choice === ‘in’) {
+        staticEl.href = ‘https://paypal.me/shlomofr/4500’;
+        staticEl.textContent = "I’m ready — pay $4,500 setup fee";
+        if (successEl) successEl.style.display = ‘block’;
+      } else if (choice === ‘question’) {
+        staticEl.href = ‘mailto:shlomo@assetbolt.com?subject=Question about the Audience Intelligence System’;
+        staticEl.textContent = ‘Email Shlomo your question’;
+        if (successEl) successEl.style.display = ‘block’;
+      } else {
+        if (successEl) successEl.style.display = ‘none’;
+      }
+    });
+  });
+});
+</script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@28.1.0/dist/js/intlTelInputWithUtils.min.js"></script>

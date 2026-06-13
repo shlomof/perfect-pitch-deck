@@ -158,7 +158,7 @@ if (sourceModified) {
 try {
   if (password) {
     console.log('→ Gated mode (DECK_PASSWORD set) — running staticrypt');
-    const title = process.env.DECK_TITLE ?? 'Perfect Pitch Deck';
+    const title = process.env.DECK_TITLE ?? 'Asset Bolt';
     const instructions =
       process.env.DECK_INSTRUCTIONS ?? 'Enter the passphrase to unlock the deck.';
     // staticrypt's --remember N enables the "Remember me" checkbox; the unlock

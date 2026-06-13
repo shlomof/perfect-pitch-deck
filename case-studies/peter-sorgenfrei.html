@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Peter Sorgenfrei — Case Study — Asset Bolt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    @page { size: 1080px 1080px; margin: 0; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:  #E97731;
+      --bg:      #0f0d0b;
+      --bg2:     #181310;
+      --text:    #f0ebe4;
+      --muted:   #6e6258;
+      --border:  #2a231c;
+      --serif:   'Libre Baskerville', Georgia, serif;
+      --sans:    'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      background: #1a1410;
+      margin: 0;
+      padding: 0;
+      font-family: var(--sans);
+    }
+
+    /* Shown in browser, hidden when printing */
+    .print-note {
+      background: #fffbe6;
+      padding: 14px 24px;
+      font-family: sans-serif;
+      font-size: 14px;
+      text-align: center;
+      border-bottom: 3px solid #E97731;
+    }
+    @media print { .print-note { display: none !important; } }
+
+    /* ── Each slide = one PDF page ── */
+    .slide {
+      width: 1080px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      background-color: var(--bg);
+      color: var(--text);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact;
+      page-break-after: always;
+      page-break-inside: avoid;
+      break-after: page;
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+
+    /* Shared label */
+    .label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ──────────────────────────────
+       Slide 1 — Cover
+    ────────────────────────────── */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 56px 72px 60px;
+    }
+
+    .cover-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-wrap img { width: 34px; height: 34px; }
+    .logo-name {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+
+    .cover-body {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      flex: 1;
+      padding: 36px 0;
+    }
+
+    .cover-photo {
+      width: 296px;
+      height: 296px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      flex-shrink: 0;
+      border: 3px solid var(--accent);
+    }
+
+    .cover-headline {
+      font-family: var(--serif);
+      font-size: 62px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+    .cover-headline em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .cover-meta strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .cover-meta {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .cover-footer {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ──────────────────────────────
+       Slide 2 — The Problem
+    ────────────────────────────── */
+    .problem {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 88px;
+    }
+    .problem .label { margin-bottom: 48px; }
+
+    .problem-headline {
+      font-family: var(--serif);
+      font-size: 74px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .problem-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 52px;
+      font-weight: 400;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    /* ──────────────────────────────
+       Slide 3 — What We Built
+    ────────────────────────────── */
+    .howto {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 88px;
+    }
+    .howto .label { margin-bottom: 44px; }
+
+    .howto-headline {
+      font-family: var(--serif);
+      font-size: 54px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 52px;
+    }
+
+    .questions {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .questions li {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 32px;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+    .questions li::before {
+      content: '→';
+      color: var(--accent);
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    /* ──────────────────────────────
+       Slide 4 — The Data
+    ────────────────────────────── */
+    .data-slide {
+      display: flex;
+      flex-direction: column;
+      padding: 56px 80px 48px;
+    }
+    .data-slide .label { margin-bottom: 18px; }
+
+    .data-headline {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 22px;
+    }
+
+    .data-imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      flex: 1;
+      min-height: 0;
+    }
+    .img-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: top center;
+      display: block;
+    }
+
+    /* ──────────────────────────────
+       Slide 5 — The Result
+    ────────────────────────────── */
+    .result {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px;
+      background-color: var(--bg2);
+    }
+    .result .label {
+      margin-bottom: 32px;
+      justify-content: center;
+    }
+    .result .label::before { display: none; }
+    .result .label::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .result-number {
+      font-family: var(--serif);
+      font-size: 240px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 0.85;
+      margin-bottom: 36px;
+    }
+
+    .result-label {
+      font-size: 34px;
+      font-weight: 500;
+      line-height: 1.4;
+      max-width: 620px;
+    }
+
+    .result-sub {
+      margin-top: 18px;
+      font-size: 22px;
+      color: var(--muted);
+    }
+
+    /* ──────────────────────────────
+       Slide 6 — Quote
+    ────────────────────────────── */
+    .quote-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 88px;
+    }
+
+    .quote-mark {
+      font-family: var(--serif);
+      font-size: 110px;
+      color: var(--accent);
+      line-height: 0.8;
+      margin-bottom: 4px;
+    }
+
+    .quote-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 36px;
+      line-height: 1.6;
+      margin-bottom: 52px;
+    }
+
+    .quote-author {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .quote-author img {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid var(--accent);
+    }
+    .quote-name {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+    .quote-title {
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    /* ──────────────────────────────
+       Slide 7 — CTA
+    ────────────────────────────── */
+    .cta-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px;
+    }
+
+    .cta-headline {
+      font-family: var(--serif);
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      max-width: 720px;
+    }
+
+    .cta-sub {
+      font-size: 24px;
+      color: var(--muted);
+      margin-bottom: 60px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 24px;
+      padding: 22px 56px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      margin-bottom: 28px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .cta-url {
+      font-size: 16px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .cta-logo {
+      position: absolute;
+      bottom: 48px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    .cta-logo img { width: 26px; height: 26px; }
+    .cta-logo span {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<div class="print-note">
+  To export as PDF: <strong>File → Print → More settings → check &#8220;Background graphics&#8221;</strong> → Destination: Save as PDF
+</div>
+
+<!-- ── Slide 1: Cover ── -->
+<div class="slide cover">
+  <div class="cover-header">
+    <div class="logo-wrap">
+      <img src="../assets/brand/mark.svg" alt="Asset Bolt">
+      <span class="logo-name">ASSET BOLT</span>
+    </div>
+    <span class="badge">Case Study</span>
+  </div>
+
+  <div class="cover-body">
+    <img class="cover-photo"
+         src="https://cdn.prod.website-files.com/62729ca9393e4e7139e2d68a/62b42ab5a08ac70ea088b31c_PeterSorgenfrei_01.jpg"
+         alt="Peter Sorgenfrei">
+    <div>
+      <div class="cover-headline">70,000 followers.<br><em>29 hidden buyers.</em></div>
+      <div class="cover-meta">
+        <strong>Peter Sorgenfrei</strong>
+        Advisor to CEOs &amp; Founders
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">assetbolt.com</div>
+</div>
+
+<!-- ── Slide 2: The Problem ── -->
+<div class="slide problem">
+  <div class="label">The Challenge</div>
+  <div class="problem-headline">He had 70,000<br>LinkedIn followers.</div>
+  <div class="problem-sub">And no idea which ones<br>were ready to hire him.</div>
+</div>
+
+<!-- ── Slide 3: What We Built ── -->
+<div class="slide howto">
+  <div class="label">What We Built</div>
+  <div class="howto-headline">Three questions.<br>Every subscriber.<br>Routed automatically.</div>
+  <ul class="questions">
+    <li>Who are you?</li>
+    <li>What&#8217;s your challenge?</li>
+    <li>How big is your company?</li>
+  </ul>
+</div>
+
+<!-- ── Slide 4: The Data ── -->
+<div class="slide data-slide">
+  <div class="label">Inside the Data</div>
+  <div class="data-headline">Real people. Real challenges.<br>In their own words.</div>
+  <div class="data-imgs">
+    <div class="img-wrap">
+      <img src="../assets/brand/RM challenge answer 1 full email blur.png" alt="Subscriber challenge responses">
+    </div>
+    <div class="img-wrap">
+      <img src="../assets/brand/RM challenge answer 2 full email blur.png" alt="Subscriber challenge responses">
+    </div>
+  </div>
+</div>
+
+<!-- ── Slide 5: The Result ── -->
+<div class="slide result">
+  <div class="label">The Result</div>
+  <div class="result-number">29</div>
+  <div class="result-label">qualified consulting prospects<br>found hiding in his existing list</div>
+  <div class="result-sub">Before a single cold message was sent.</div>
+</div>
+
+<!-- ── Slide 6: Quote ── -->
+<div class="slide quote-slide">
+  <div class="quote-mark">&#8220;</div>
+  <div class="quote-text">We asked my list three simple questions. Twenty-nine people came back &#8212; right challenge, right-sized company, exactly who I&#8217;m looking for. I had no idea they were sitting there.</div>
+  <div class="quote-author">
+    <img src="https://cdn.prod.website-files.com/62729ca9393e4e7139e2d68a/62b42ab5a08ac70ea088b31c_PeterSorgenfrei_01.jpg"
+         alt="Peter Sorgenfrei">
+    <div>
+      <div class="quote-name">Peter Sorgenfrei</div>
+      <div class="quote-title">Advisor to CEOs &amp; Founders</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Slide 7: CTA ── -->
+<div class="slide cta-slide">
+  <div class="cta-headline">Want to know who&#8217;s hiding in your list?</div>
+  <div class="cta-sub">30 minutes. We&#8217;ll map it together.</div>
+  <a class="cta-btn" href="https://tidycal.com/shlomofreund/30-minute-meeting">Book a free call &#8594;</a>
+  <div class="cta-url">tidycal.com/shlomofreund/30-minute-meeting</div>
+
+  <div class="cta-logo">
+    <img src="../assets/brand/mark.svg" alt="">
+    <span>ASSET BOLT</span>
+  </div>
+</div>
+
+</body>
+</html>

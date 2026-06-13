@@ -4,7 +4,7 @@
   "private": true,
   "description": "Reveal.js pitch-deck template with optional staticrypt gate, GHL form integration, and Cloudflare Pages deploy.",
   "scripts": {
-    "dev": "python3 -m http.server 8765",
+    "dev": "python3 -m http.server 8765 --directory dist",
     "build": "node scripts/build.mjs",
     "setup-cf": "npx wrangler pages project create \"${CF_PROJECT:?CF_PROJECT is not set}\" --production-branch=main",
     "deploy": "npx wrangler pages deploy dist --project-name \"${CF_PROJECT:?CF_PROJECT is not set}\" --commit-dirty=true --branch=main",

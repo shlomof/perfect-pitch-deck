@@ -12,7 +12,10 @@ const INDEX = path.join(ROOT, 'index.html');
 const html = fs.readFileSync(INDEX, 'utf8');
 
 const slidesOpen = html.indexOf('<div class="slides">');
-const slidesClose = html.indexOf('</div>\n</div>\n\n<!-- Keyboard');
+// Support both LF and CRLF line endings (CRLF is common on Windows)
+const slidesClose = html.indexOf('</div>\r\n</div>\r\n\r\n<!-- Keyboard') >= 0
+  ? html.indexOf('</div>\r\n</div>\r\n\r\n<!-- Keyboard')
+  : html.indexOf('</div>\n</div>\n\n<!-- Keyboard');
 if (slidesOpen < 0 || slidesClose < 0) throw new Error('Could not locate slides region');
 
 const head = html.slice(0, slidesOpen + '<div class="slides">'.length);

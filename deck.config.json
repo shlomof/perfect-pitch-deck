@@ -1,7 +1,7 @@
 {
   "$schema": "./scripts/deck.config.schema.json",
-  "name": "Perfect Pitch Deck Creator",
-  "tagline": "A template for a personalised pitch that sets you up to close the deal",
+  "name": "Asset Bolt",
+  "tagline": "Turn email subscribers into buyers — from setup to first sale in 72 hours",
   "url": "https://perfect-pitch-deck.pages.dev",
   "allowed_origins": [
     "http://localhost:8765",
