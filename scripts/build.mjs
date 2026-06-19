@@ -34,6 +34,39 @@ const SKIP_VALIDATE = process.argv.includes('--skip-validate');
 
 const NOTES_RE = /\s*<aside class="notes">([\s\S]*?)<\/aside>/g;
 
+// Reveal's hash-based deep-linking (hash: true) can jump straight to any
+// <section> by index regardless of data-visibility="hidden" — that attribute
+// only skips a slide in arrow-key navigation and the overview, it does NOT
+// remove it from the DOM or the URL space. So "hidden" slides must be cut
+// out of the shipped HTML entirely, not just flagged, or a viewer poking at
+// the URL bar can land directly on leftover/wrong content.
+function stripHiddenSlides(html) {
+  let out = '';
+  let i = 0;
+  let removed = 0;
+  while (true) {
+    const openIdx = html.indexOf('<section', i);
+    if (openIdx < 0) {
+      out += html.slice(i);
+      break;
+    }
+    const tagEnd = html.indexOf('>', openIdx);
+    const openTag = html.slice(openIdx, tagEnd + 1);
+    const closeIdx = html.indexOf('</section>', openIdx);
+    if (closeIdx < 0) throw new Error('stripHiddenSlides: unclosed <section>');
+    const sectionEnd = closeIdx + '</section>'.length;
+    if (/data-visibility=["']hidden["']/.test(openTag)) {
+      out += html.slice(i, openIdx);
+      removed++;
+    } else {
+      out += html.slice(i, sectionEnd);
+    }
+    i = sectionEnd;
+  }
+  if (removed) console.log(`→ Stripped ${removed} hidden slide(s) — they will not exist in the shipped deck`);
+  return out;
+}
+
 function escapeHtmlAttr(s) {
   return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
@@ -114,6 +147,30 @@ mkdirSync(DIST, { recursive: true });
 const password = process.env.DECK_PASSWORD;
 const includeNotes = process.env.INCLUDE_NOTES !== 'false';
 const notesPassword = process.env.NOTES_PASSWORD;
+const allowPublic = process.env.ALLOW_PUBLIC_DECK === 'true';
+const allowPublicNotes = process.env.ALLOW_PUBLIC_NOTES === 'true';
+
+// Refuse to silently ship an unprotected deck. A client pitch deck going
+// out with no gate is a leak, not a feature — require an explicit opt-in.
+if (!password && !allowPublic) {
+  console.error(
+    '\n✗ DECK_PASSWORD is not set. Refusing to build an unprotected deck.\n' +
+      '  Set DECK_PASSWORD in .env, or set ALLOW_PUBLIC_DECK=true to ship intentionally public.'
+  );
+  process.exit(1);
+}
+
+// Same logic for speaker notes: if they're shipping inline (not stripped),
+// they need their own gate so deck viewers (e.g. the prospect) can't read
+// the presenter's internal strategy notes just because they unlocked the deck.
+if (includeNotes && !notesPassword && !allowPublicNotes) {
+  console.error(
+    '\n✗ NOTES_PASSWORD is not set. Refusing to ship speaker notes unprotected.\n' +
+      '  Set NOTES_PASSWORD in .env, set INCLUDE_NOTES=false to strip notes entirely,\n' +
+      '  or set ALLOW_PUBLIC_NOTES=true to ship notes intentionally public.'
+  );
+  process.exit(1);
+}
 
 // Read brief.yaml if present — drives CTA static-mode stamping
 let brief = null;
@@ -126,6 +183,11 @@ if (existsSync(BRIEF)) {
 }
 
 let sourceText = readFileSync(INDEX, 'utf8');
+
+// Cut hidden slides out of the HTML before anything else touches it — must
+// happen before notes encryption so the per-slide block indices embedded in
+// the decrypt script line up with the sections that actually ship.
+sourceText = stripHiddenSlides(sourceText);
 
 // Stamp CTA static mode from brief BEFORE any other source mutation
 const beforeStamp = sourceText;

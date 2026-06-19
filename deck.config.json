@@ -2,7 +2,7 @@
   "$schema": "./scripts/deck.config.schema.json",
   "name": "Asset Bolt",
   "tagline": "Turn email subscribers into buyers — from setup to first sale in 72 hours",
-  "url": "https://perfect-pitch-deck.pages.dev",
+  "url": "https://winick-assetbolt.pages.dev",
   "allowed_origins": [
     "http://localhost:8765",
     "http://localhost:8788",
@@ -11,7 +11,7 @@
     "http://127.0.0.1:8800"
   ],
   "cloudflare": {
-    "project_name": "perfect-pitch-deck",
+    "project_name": "winick-assetbolt",
     "production_branch": "main"
   },
   "ghl": {

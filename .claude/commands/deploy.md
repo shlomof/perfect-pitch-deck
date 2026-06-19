@@ -14,6 +14,10 @@ If either fails, fix or punt back to the user. Don't deploy a deck that fails va
 
 Read `deck.config.json` for `cloudflare.project_name` (defaults to `perfect-pitch-deck`).
 
+Check `.env` for `DECK_PASSWORD`. If it's missing or empty, stop and ask the user to confirm: do they want this deck password-protected (set `DECK_PASSWORD` in `.env`) or are they intentionally shipping it public (`ALLOW_PUBLIC_DECK=true`)? `scripts/build.mjs` enforces this — the build fails by default with no password set, so don't try to work around it silently.
+
+Same check for speaker notes: if `INCLUDE_NOTES` isn't `false`, `.env` must also have `NOTES_PASSWORD` set — otherwise anyone who unlocks the deck (e.g. the prospect) can read the presenter's internal strategy notes. `scripts/build.mjs` enforces this too (fails unless `NOTES_PASSWORD` is set, `INCLUDE_NOTES=false`, or `ALLOW_PUBLIC_NOTES=true`). Don't bypass it — surface the missing password to the user instead.
+
 ## Step 1 — Wrangler login
 
 Run `npx wrangler whoami` to check if the user is logged in. If not:

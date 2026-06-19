@@ -941,6 +941,21 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   font: inherit; font-weight: 700; font-size: 17px;
   text-decoration: none; text-align: center;
 }
+.cta-card .cta-direct {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; box-sizing: border-box;
+  border-radius: 12px; padding: 16px 20px;
+  font: inherit; font-size: 18px; font-weight: 600;
+  text-decoration: none; text-align: center;
+  transition: opacity .15s, border-color .15s;
+}
+.cta-card .cta-direct.primary { background: var(--accent-blue); color: #FFF; border: 0; }
+.cta-card .cta-direct.primary:hover { opacity: 0.92; }
+.cta-card .cta-direct.secondary {
+  background: var(--surface); color: var(--text-primary);
+  border: 1px solid #E4E4E4; font-weight: 500;
+}
+.cta-card .cta-direct.secondary:hover { border-color: var(--accent-blue); }
 .cta-card .static-cta:hover { background: #1750D9; }
 .cta-card.is-success .static-cta[href] { display: inline-block; }
 
@@ -998,14 +1013,14 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-white">
         <div class="ppd-cover">
           <div class="poster">
-            <img src="assets/brand/RM%20question%20data%201.png" alt="Subscriber qualification data" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#1c1c1e;" />
+            <img src="assets/brand/RM%20graph.png" alt="Live audience intelligence dashboard — answers collected, contacts enriched, CTA conversions" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0d1117;" />
           </div>
           <div class="content">
             <h1 class="title">Asset Bolt</h1>
-            <p class="lede">Turn every subscriber your book brings in into a profiled prospect &#8212; automatically.</p>
+            <p class="lede">Turn your entire list into profiled, ready-to-close prospects &#8212; automatically.</p>
             <ul class="ppd-check-list">
-              <li>Every new subscriber profiled automatically</li>
-              <li>Prospect list ready within 6 weeks</li>
+              <li>Every subscriber on your list profiled automatically</li>
+              <li>Prospect list ready within 3 weeks</li>
               <li>Know who to reach before you pitch</li>
             </ul>
             <div class="ppd-cta-row">
@@ -1018,9 +1033,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Before you open the deck:</strong> You're on a second call with Peter Winik — Founder of Thought Leadership Leverage. He has 7,000 newsletter subscribers at a 52% open rate, 35,000 LinkedIn followers, and a book coming. He has no systematic way to know who among his subscribers is ready to hire his consultancy. Your job today is to show him the system and close.</p>
-        <p><strong>His situation from call 1 — in his own words:</strong> "The best outbound we do is still manual signal-hunting." The book is coming and he wants to know who's ready before it drops. He has already bought into the problem — this call is about the solution and the price.</p>
-        <p><strong>Goal for this call:</strong> Get a yes on $4,500 setup + $2,500/month. Next call is scheduled 2026-06-17 at 9AM ET. PayPal link is on slide 23.</p>
+        <p><strong>Before you open the deck:</strong> You're on a second call with Peter Winik — Founder of Thought Leadership Leverage. He has 7,000 newsletter subscribers at a 52% open rate, 35,000 LinkedIn followers, and a book launching July 21, 2026 (confirmed directly with him). He has no systematic way to know who among his subscribers is ready to hire his consultancy — across any of his channels, not just the book.</p>
+        <p><strong>On timeline:</strong> The deck commits to a 3-week sprint. From today (June 18) to July 21 is 33 days — about 4.7 weeks — so 3 weeks leaves comfortable room. If it's useful, frame it as "3 weeks, with about a week of buffer before your launch."</p>
+        <p><strong>His situation from call 1 — in his own words:</strong> "We don't funnel people." His best outbound is still manual signal-hunting, across inbound, targeted outbound, and referrals. He's already bought into the problem — this call is about the solution and the price.</p>
+        <p><strong>Goal for this call:</strong> This is the walkthrough call itself, scheduled 2026-06-18. Get a yes on $4,500 setup + $2,500/month. PayPal link is on slide 23.</p>
       </aside>
     </section>
 
@@ -1037,16 +1053,17 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Open by leading with Jeff — name-drop immediately:</strong></p>
-        <p><em>"Before I walk you through this, I want to tell you about someone I worked with recently — Jeff Bettinger. Former CHRO at three publicly traded companies, won Talent Acquisition Executive of the Year. He runs a career coaching practice at myjobsjump.com — coaches executives and senior leaders through career transitions. We built his full Kit and RightMessage qualification system from scratch. After we finished, he said: 'He is the best I have seen.' That's the kind of work I want to do for you today."</em></p>
-        <p><strong>Why this works for Peter:</strong> Jeff is a thought leader coaching senior executives — mirrors Peter's business model and client profile exactly. It signals you've already done this for someone who looks like his buyers.</p>
+        <p><strong>Open with a callback to call 1 — not a cold name-drop:</strong></p>
+        <p><em>"Before I walk you through this — remember the executive coach I mentioned last time, with around 70,000 LinkedIn followers? That's Peter Sorgenfrei, advisor to CEOs and founders. Same situation as you: warm audience, no way to tell who's ready to hire him. We ran the system on his list. Let me show you exactly what that looked like — then we'll build yours."</em></p>
+        <p><strong>Why this works:</strong> You already referenced this case live on call 1 and he responded well ("got it"). Opening with the callback (not a brand-new name) builds continuity and shows you remembered the conversation.</p>
+        <p><strong>If there's room later for a second proof point:</strong> Jeff Bettinger — former CHRO, career coaching at myjobsjump.com, built his full email-platform + RightMessage system, said "He is the best I have seen." Useful as a quick aside to show the system works outside B2B consulting too — not the opener.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent-tint">
       <div class="ppd-slide bg-blue-tint">
         <div class="quote-slide tint">
-          <p class="quote">&#8220;Your book will bring readers who already trust you &#8212; and you still won&#8217;t know which ones are ready to hire you.&#8221;</p>
+          <p class="quote">&#8220;Your book will bring you new subscribers &#8212; and you still won&#8217;t know which ones are ready to hire you.&#8221;</p>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1056,9 +1073,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Let this slide sit. Don't rush it.</strong></p>
-        <p>Ask: <em>"Peter — when your book drops and someone reads it, likes it, and subscribes to your newsletter — what happens next? Do you know who that person is? What they do? Whether they're a consulting prospect or just a curious reader?"</em></p>
+        <p>Ask: <em>"Peter — when your book drops and someone subscribes to your newsletter because of it — what happens next? Do you know who that person is? What they do? Whether they're a consulting prospect or just a curious reader?"</em></p>
         <p>He doesn't. That's the point. Let the silence land. Then say: <em>"That's the gap. You're building an audience of people who trust you — 7,000 already, more coming with the book. But there's no layer underneath telling you which ones are ready to hire you and which ones never will be."</em></p>
         <p>He said it himself: the best outbound is still manual signal-hunting. You're mirroring his own words back at him.</p>
+        <p><strong>Watch out:</strong> Keep this about subscribers, not readers. The system only sees people who join the list — a book buyer or reader who never subscribes is invisible to it. If Peter asks about tracking readers generally, be direct: this only works for the newsletter.</p>
       </aside>
     </section>
 
@@ -1067,16 +1085,16 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">And To Make Things Worse&#8230;</div>
         <div class="agitators-grid">
           <div>
-            <div class="ppd-headline-md">The Book Is Coming.</div>
-            <p>Your book brings new readers every week. Without a system live, every one lands without a profile &#8212; invisible to your pipeline.</p>
+            <div class="ppd-headline-md">Growing List, No Profile</div>
+            <p>New subscribers &#8212; from the newsletter, LinkedIn, and soon the book &#8212; all land with zero profile data.</p>
           </div>
           <div>
             <div class="ppd-headline-md">Manual Signal-Hunting.</div>
-            <p>Scanning LinkedIn for signals manually &#8212; checking who got promoted or mentioned a challenge. It won&#8217;t scale when the book drops.</p>
+            <p>Scanning LinkedIn for signals manually &#8212; checking promotions and challenges. It won&#8217;t scale as your list grows.</p>
           </div>
           <div>
             <div class="ppd-headline-md">Signals Going Cold.</div>
-            <p>Every newsletter you send leaves no qualification data behind. The warmest prospects in your list are cooling every week you wait.</p>
+            <p>Every newsletter and LinkedIn post leaves no qualification data behind &#8212; warm prospects cool weekly.</p>
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
@@ -1088,15 +1106,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Problem Agitators — Slide 4</strong></p>
         <p><strong>Beat:</strong> Three separate reasons why doing nothing gets worse, not better.</p>
-        <p><strong>Say:</strong> "Card one — the book is coming. It's going to bring new readers into your list every week. Without a system live first, every one of them arrives without a profile. You'll never know who among them is a consulting prospect. Card two — your best outbound is still manual. You said it yourself: scanning LinkedIn for who got promoted or mentioned a challenge. That doesn't scale once the book amplifies your visibility. Card three — warm signals going cold. Every newsletter you send is generating goodwill and intent but leaving no qualification data behind. The people closest to hiring you are cooling every week you wait."</p>
-        <p><strong>Watch out:</strong> Don't hint at the solution here. Let the pain land. The promise comes on the next slide.</p>
+        <p><strong>Say:</strong> "Card one — your list keeps growing, from the newsletter, LinkedIn, and soon the book — but every new name lands with zero profile data. Card two — your best outbound is still manual. You said it yourself: scanning LinkedIn for who got promoted or mentioned a challenge. That doesn't scale as the list grows. Card three — warm signals going cold. Every newsletter and LinkedIn post you send generates goodwill and intent but leaves no qualification data behind. The people closest to hiring you are cooling every week you wait."</p>
+        <p><strong>Watch out:</strong> Don't hint at the solution here. Let the pain land. The promise comes on the next slide. Don't make this only about the book — it's every channel he already has.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;Know exactly which subscribers your book brings in are ready to hire a thought leadership consultancy &#8212; and have personalized messages going to them automatically from the moment they sign up.&#8221;</p>
+          <p class="quote">&#8220;Know exactly who on your list is ready to hire a thought leadership consultancy &#8212; tagged the moment they raise their hand, so you can reach out first.&#8221;</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1106,9 +1124,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Big Blue Promise — Slide 5</strong></p>
+        <p><strong>Bridge in:</strong> This slide has no title — it's the quote on its own. Don't click into it cold off the last agitator card. Say one pivot line first: <em>"But it doesn't have to stay that way."</em> Then click and read the quote.</p>
         <p><strong>Beat:</strong> Read this out loud as you show the slide, then pause.</p>
-        <p><strong>Say:</strong> "Know exactly which subscribers your book brings in are ready to hire a thought leadership consultancy — and have personalized messages going to them automatically from the moment they sign up." Then pause. Let it sit for three seconds. Don't add anything. Peter needs to picture what the book becomes when the system is underneath it.</p>
-        <p><strong>Watch out:</strong> Don't explain the mechanism yet. That's the next two slides. The promise lands first.</p>
+        <p><strong>Say:</strong> "Know exactly who on your list is ready to hire a thought leadership consultancy — tagged the moment they raise their hand, so you can reach out first." Then pause. Let it sit for three seconds. Don't add anything.</p>
+        <p><strong>Watch out:</strong> Don't explain the mechanism yet. That's the next two slides. The promise lands first. Keep it about his whole list — the book is one input, not the premise. Also: this is a profiling + tagging system, not an autonomous outreach-sending system — that's a separate, bigger build (the one in progress for Peter Sorgenfrei). Don't let "automatically" drift toward implying Peter Winik's outreach gets sent without him. He gets flagged, ready-to-contact prospects with context loaded; he still does the sending (except for the day-1 welcome sequence, which is the one piece that fires on its own).</p>
       </aside>
     </section>
 
@@ -1125,8 +1144,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <p>Every welcome message is personalized to what each subscriber told you. No generic copy &#8212; context-rich from the first word.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Book as Pipeline.</div>
-            <p>When your book drops, qualified contacts are already tagged and scored. You follow up precisely &#8212; no guessing.</p>
+            <div class="ppd-headline-md">Every Channel, Profiled.</div>
+            <p>New subscribers &#8212; from the newsletter, LinkedIn, or the book &#8212; all feed one system, scored the moment they sign up.</p>
           </div>
         </div>
         <div class="ppd-footer">
@@ -1138,8 +1157,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Key Outcomes — Slide 6</strong></p>
         <p><strong>Beat:</strong> Three outcomes from the same system — make each one about Peter specifically.</p>
-        <p><strong>Say:</strong> "Know who's ready: every subscriber gets profiled by role, challenge, and buyer readiness. You know who's a consulting prospect before you write a word. Outreach that lands: every message loads with the prospect's specific context — their role, their challenge, their words. No cold openers, no generic copy. Book as pipeline: when your book drops, the qualified contacts are already tagged and scored. You follow up precisely — no guessing."</p>
-        <p><strong>Watch out:</strong> Keep each outcome tied to Peter's actual situation — 7,000 subscribers, consulting pipeline, book launch. Don't go abstract.</p>
+        <p><strong>Say:</strong> "Know who's ready: every subscriber gets profiled by role, challenge, and buyer readiness. You know who's a consulting prospect before you write a word. Messages that land: every message loads with the prospect's specific context — their role, their challenge, their words. No cold openers, no generic copy. Every channel, profiled: new subscribers from newsletter, LinkedIn, or book signups all feed the same system — qualified contacts tagged and scored the moment they join."</p>
+        <p><strong>Watch out:</strong> Keep each outcome tied to Peter's actual situation — 7,000 subscribers, three business channels, consulting pipeline. The book is one source feeding the system, not the whole story.</p>
       </aside>
     </section>
 
@@ -1150,15 +1169,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <div class="ppd-eyebrow">Key Outcomes</div>
             <div class="msg">
               <div class="ppd-headline-sm">Know Who&#8217;s Ready.</div>
-              <p class="body">Each subscriber hits an intake survey on your thank-you page. Their answers tag them in Kit. You see who&#8217;s a prospect from day one.</p>
+              <p class="body">Each subscriber hits an intake survey on your thank-you page. Their answers tag them in your email platform automatically.</p>
             </div>
             <div class="msg">
               <div class="ppd-headline-sm">Own the System.</div>
               <p class="body">The qualification layer lives on your subscriber list, not on LinkedIn. When platforms change, your intelligence stays with you.</p>
             </div>
             <div class="msg">
-              <div class="ppd-headline-sm">Book as Pipeline.</div>
-              <p class="body">Show up to the book launch knowing exactly who among your readers is ready to hire you. Not guessing &#8212; knowing.</p>
+              <div class="ppd-headline-sm">Every Source, One System.</div>
+              <p class="body">Newsletter, LinkedIn, and the book &#8212; every new subscriber routed through one qualification layer, profiled the same way.</p>
             </div>
           </div>
           <div class="right">
@@ -1175,7 +1194,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Point to the screenshots on the right and say:</strong></p>
         <p><em>"These are real subscriber responses from a live system. Top left: 'I read your newsletter as a would-be founder.' Bottom left: 'I did an exit a couple of years ago — now I need to set a new direction.' These people told the system who they are on the day they subscribed."</em></p>
-        <p><em>"You'll see responses like this from your subscribers. Not demographics. Not guesses. Actual words from actual people telling you what they need and where they are in their career journey."</em></p>
+        <p><em>"You'll see responses like this from your subscribers. Not demographics. Not guesses. Actual words from actual people telling you what they need and where they are in their journey."</em></p>
         <p>Let Peter read the cards. Don't talk over them. The screenshots do the selling here.</p>
       </aside>
     </section>
@@ -1185,10 +1204,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="howitworks-split">
           <div class="left">
             <div class="ppd-eyebrow">How It Works</div>
-            <h3>Three layers, live in 6 weeks.</h3>
+            <h3>Three layers, live in 3 weeks.</h3>
             <p>We wire three connected layers to your existing subscriber list: an intake survey on your thank-you page, click-behavior tracking across your content, and a personalized welcome sequence triggered by each subscriber&#8217;s intake answers.</p>
             <ul>
-              <li>Kit email platform setup</li>
+              <li>Existing platform connected</li>
               <li>RightMessage intake survey</li>
               <li>Personalized welcome sequence</li>
             </ul>
@@ -1202,10 +1221,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Explain the three layers simply — don't over-explain the tech:</strong></p>
-        <p><strong>Layer 1 — Kit:</strong> <em>"We set up your Kit email account — that's your email platform, the professional-grade tool where your subscribers live and where you send campaigns from."</em></p>
-        <p><strong>Layer 2 — RightMessage:</strong> <em>"We connect RightMessage, which is the intelligence layer. It shows intake questions on your thank-you page: What best describes you? What's your biggest challenge? What would you most like from Peter? Their answers tag them in Kit automatically."</em></p>
+        <p><strong>Before this slide, confirm his platform:</strong> <em>"Quick check — what are you sending your newsletter from right now? Kit, HubSpot, something else?"</em> We've assumed Kit in passing on past calls, but this was never confirmed. RightMessage natively supports both Kit and HubSpot, so either answer is in scope — adjust "Layer 1" to name whatever he says. If he names something outside RightMessage's native integration list (check rightmessage.com/integrations live if unsure), stop and flag it honestly: that's a platform migration, a separate scope and price from this sprint — don't promise it's covered in the $4,500 + $2,500/mo.</p>
+        <p><strong>Layer 1 — Email Platform:</strong> <em>"We work with whatever you're already sending from — that's where your subscribers live and where campaigns go out."</em></p>
+        <p><strong>Layer 2 — RightMessage:</strong> <em>"We connect RightMessage, which is the intelligence layer. It shows intake questions on your thank-you page: What best describes you? What's your biggest challenge? What would you most like from Peter? Their answers tag them in your email platform automatically."</em></p>
         <p><strong>Layer 3 — Welcome Sequence:</strong> <em>"We build a personalized welcome sequence that fires automatically based on what each subscriber told you in the intake survey. New subscribers get a message matched to who they are, from day one."</em></p>
-        <p>If he asks: "Do I need to do anything?" — Answer: "You give us access to your landing page setup after we start. We handle everything else — all three layers, live within 6 weeks."</p>
+        <p>If he asks: "Do I need to do anything?" — Answer: "You give us access to your landing page setup after we start. We handle everything else — all three layers, live within 3 weeks."</p>
       </aside>
     </section>
 
@@ -1215,7 +1235,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="howitworks">
           <div class="left">
             <h3>Your list profiled before you pitch.</h3>
-            <p>We build a qualification layer on top of your existing list. Each subscriber answers intake questions on their first visit. Their click behavior adds to the profile. After 6 weeks, your top prospects are identified and welcome sequences are running.</p>
+            <p>We build a qualification layer on top of your existing list. Each subscriber answers intake questions on their first visit. Their click behavior adds to the profile. After 3 weeks, your top prospects are identified and welcome sequences are running.</p>
             <ul>
               <li>Subscriber answers arriving daily</li>
               <li>Behavioral click-tracking live</li>
@@ -1233,8 +1253,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Point to the graph on the right (the RightMessage dashboard) and say:</strong></p>
         <p><em>"This is what the dashboard looks like once it's running. 62 answers collected. 17 contacts enriched with tags. 83% answer rate — meaning 83 out of every 100 subscribers who see the thank-you page actually answer the questions."</em></p>
-        <p><em>"That's not a projection. That's a real system running for a real client. Your system will look like this — and within 6 weeks, you'll have your first batch of qualified prospects identified and welcome sequences running."</em></p>
-        <p><strong>On timeline:</strong> <em>"We commit to 6 weeks. That's the sprint. At the end of it, your list is profiled, your prospects are tagged, and personalized welcome sequences are firing automatically."</em></p>
+        <p><em>"That's not a projection. That's a real system running for a real client. Your system will look like this — and within 3 weeks, you'll have your first batch of qualified prospects identified and welcome sequences running."</em></p>
+        <p><strong>On timeline:</strong> <em>"We commit to 3 weeks. That's the sprint. At the end of it, your list is profiled, your prospects are tagged, and personalized welcome sequences are firing automatically. That leaves you about a week of buffer before your July 21st launch — not cutting it close."</em></p>
       </aside>
     </section>
 
@@ -1264,7 +1284,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Name the objections Peter is most likely thinking — probably one of these three:</strong></p>
         <p><strong>"My open rate is already great"</strong> — say: <em>"52% open rate tells you who reads you. It doesn't tell you who's ready to pay. You need both layers — engagement AND qualification. The system adds the second layer."</em></p>
-        <p><strong>"This sounds technical"</strong> — say: <em>"Kit and RightMessage are yours, paid directly to them. My fee is for building the entire system and making it smart from day one. You get qualified prospect data without touching a line of code."</em></p>
+        <p><strong>"This sounds technical"</strong> — say: <em>"Your email platform and RightMessage are yours, paid directly to them. My fee is for building the entire system and making it smart from day one. You get qualified prospect data without touching a line of code."</em></p>
         <p><strong>"I qualify on sales calls"</strong> — say: <em>"You can't have a sales call with 7,000 people. The system pre-qualifies who's worth your time so you only have conversations with people who are already primed to hire you."</em></p>
       </aside>
     </section>
@@ -1282,7 +1302,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <div class="ppd-card">
             <div class="stat">83%</div>
             <div class="label">Survey answers</div>
-            <p class="body">83 out of 100 subscribers answer the intake survey on their first visit. The profile starts on day one.</p>
+            <p class="body">83 of 100 of Peter's subscribers answered the survey instantly.</p>
           </div>
           <div class="ppd-card">
             <div class="stat">3</div>
@@ -1299,16 +1319,16 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Point to the three cards and say:</strong></p>
         <p><strong>29 leads card:</strong> <em>"Peter Sorgenfrei advises CEOs and founders — 15 years building companies. Same situation as yours: warm audience, trusted by his readers, no way to tell who's ready to hire him. We ran the system. 29 qualified consulting prospects found inside the list he already had."</em></p>
-        <p><strong>83% answer rate card:</strong> <em>"83 out of every 100 subscribers who see the thank-you page answer the intake questions. That means 83 people telling you who they are, for every 100 who join your list."</em></p>
+        <p><strong>83% answer rate card:</strong> <em>"Same system, same list — 83 out of every 100 of Peter's subscribers answered the intake questions instantly. That means 83 people telling you who they are, for every 100 who join your list."</em></p>
         <p><strong>3 profile layers card:</strong> <em>"Role, challenge, and buyer readiness — three tags per subscriber that tell you who they are and what to say first. Every contact in your list, profiled."</em></p>
-        <p>These are real numbers from a live system. If he asks where they come from, say: "A client system I built and currently maintain."</p>
+        <p>These are real numbers from a live, public case study. If he asks where they come from, say: "Peter Sorgenfrei — I can send you the full case study after this call."</p>
       </aside>
     </section>
 
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;I had 29 new consulting leads hiding in my existing list.&#8221;</p>
+          <p class="quote">&#8220;I had no idea they were sitting there.&#8221;</p>
           <div class="quote-author">
             <div class="meta">Peter Sorgenfrei<br/>Advisor to CEOs &amp; Founders</div>
           </div>
@@ -1321,9 +1341,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Customer Quote — Slide 12</strong></p>
-        <p><strong>Beat:</strong> Don't read the quote — tell the story behind it.</p>
-        <p><strong>Say:</strong> "Peter Sorgenfrei advises CEOs and founders — 15 years building companies across the US, UK, and Denmark. Warm audience, people who already trusted him. But no way to tell which ones were ready to engage him as an advisor. We ran the same system. Intake survey, behavioral segmentation, prospect map. 29 qualified leads found right inside the list he already had. Your situation: 7,000 subscribers, a book that builds authority, and the same gap. That's what we close."</p>
-        <p><strong>Watch out:</strong> The parallel to Peter Winik's situation should be obvious without spelling it out. Say the story, pause, let him draw the connection himself.</p>
+        <p><strong>Beat:</strong> You already told the full Sorgenfrei story one slide ago. This slide is the quote landing, not a second telling.</p>
+        <p><strong>Say:</strong> Read the quote, then pause for a beat. If it needs an anchor: "That's the same Peter Sorgenfrei — the 29 leads I just showed you." Nothing more.</p>
+        <p><strong>Watch out:</strong> Don't re-explain who Sorgenfrei is or restate the 29-leads number — you just covered both on the previous slide. Repeating it here kills the moment instead of letting it land. Let him draw the parallel to his own 7,000 subscribers himself.</p>
       </aside>
     </section>
 
@@ -1341,10 +1361,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>The System In Action — Slide 13</strong></p>
-        <p><strong>Beat:</strong> No logos yet — narrate the story verbally.</p>
-        <p><strong>Say:</strong> "We don't have a logo wall yet — we're selective about who we take on. What I can tell you is that every client who has hired us had the same situation as you: a warm, engaged audience with no qualification layer underneath it. Jeff Bettinger had 25 years of HR credibility and zero email infrastructure. We built the system. He now knows exactly who is ready to buy his coaching. That's the same work we do for you — except your list is 7,000 deep and the book is the accelerant."</p>
-        <p><strong>Watch out:</strong> Don't apologize for no logos. Lean into the selectivity angle — you choose clients carefully so results hold up.</p>
+        <p><strong>If you ever land here (direct link, browser back/forward) — this slide is blank, no logos loaded.</strong> Say: "Wrong slide, one sec" and click forward immediately. Nothing to present here.</p>
       </aside>
     </section>
 
@@ -1365,7 +1382,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Why Asset Bolt — Slide 14</strong></p>
         <p><strong>Beat:</strong> The core differentiator in one sentence, then shut up.</p>
-        <p><strong>Say:</strong> "Most email consultants wire up the pipes. I build the intelligence layer that sits underneath them. Kit delivers your emails. RightMessage catches what your subscribers tell you about themselves. Their click behavior adds to the profile. By the time you send your first outreach, you already know exactly who's in the consulting conversation and who isn't. That's what your 7,000-subscriber list becomes when we're done."</p>
+        <p><strong>Say:</strong> "Most email consultants wire up the pipes. I build the intelligence layer that sits underneath them. Your email platform delivers your emails. RightMessage catches what your subscribers tell you about themselves. Their click behavior adds to the profile. By the time you send your first outreach, you already know exactly who's in the consulting conversation and who isn't. That's what your 7,000-subscriber list becomes when we're done."</p>
         <p><strong>Watch out:</strong> Keep it to one crisp pass through the differentiator. Don't repeat what the slides already showed.</p>
       </aside>
     </section>
@@ -1384,7 +1401,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <div style="width:220px;height:220px;border-radius:999px;background:var(--accent);overflow:hidden;display:block;margin:0 auto 24px;"><img src="assets/brand/France%20Angelo%20Galvez%20profile%20pic.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" alt="France Galvez" /></div>
             <div class="name">France Galvez</div>
             <div class="role">Tech Lead</div>
-            <p>Handles the technical implementation of every Kit and RightMessage setup so every client goes live on time.</p>
+            <p>Handles the technical setup behind every email platform and RightMessage integration we build.</p>
           </div>
           <div class="person" style="visibility:hidden;pointer-events:none;"></div>
           <div class="person" style="visibility:hidden;pointer-events:none;"></div>
@@ -1412,15 +1429,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <p>Picture it: the book launches, your list is profiled, and personalized messages go to your top prospects automatically. You close consulting engagements you would have missed entirely.</p>
+            <p>Picture it: your whole list is profiled, your top prospects are flagged and ready &#8212; you reach out knowing exactly who they are. The book just adds more of them.</p>
             <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
       <aside class="notes">
         <p><strong>Slow down here. Let Peter imagine it.</strong></p>
-        <p>Read the right panel out loud: <em>"Picture it: your book launches, your list is profiled, and personalized messages go to your top consulting prospects automatically. You close engagements you would have missed entirely — because you knew who was ready before you pitched."</em></p>
-        <p>Then add: <em>"You mentioned on our first call that the best outbound you do is still manual signal-hunting. This is what it looks like when it's not manual anymore. Every subscriber self-identifies. Every outreach carries their context. The book becomes the pipeline machine."</em></p>
+        <p>Read the right panel out loud: <em>"Picture it: your whole list is profiled, your top prospects are flagged and ready — you reach out knowing exactly who they are. The book just adds more of them."</em></p>
+        <p>Then add: <em>"You mentioned on our first call that the best outbound you do is still manual signal-hunting. This is what it looks like when it's not manual anymore. Every subscriber self-identifies. Every message carries their context. Newsletter, LinkedIn, referrals, every book signup — all the same system underneath."</em></p>
         <p>Make it vivid. This is the 'after' picture. Pause after you say it and let it land before moving on.</p>
       </aside>
     </section>
@@ -1429,8 +1446,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Today&#8217;s Offer: Audience Intelligence</div>
         <div class="todays-offer">
-          <h3>Turn your book into a qualification machine &#8212; know exactly who to reach before you pitch.</h3>
-          <p>Your book is coming. This system captures every new subscriber it brings in &#8212; tagged by role, challenge, and consulting readiness &#8212; from the moment they sign up.</p>
+          <h3>Turn your whole list into a qualification machine &#8212; know exactly who to reach before you pitch.</h3>
+          <p>Newsletter, LinkedIn, referrals, and the book &#8212; every new subscriber gets tagged by role, challenge, and consulting readiness from the moment they sign up.</p>
           <p class="closer">I&#8217;ll walk you through exactly what&#8217;s included in the next few slides.</p>
         </div>
         <div class="ppd-footer">
@@ -1441,7 +1458,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Frame the offer before you reveal the price:</strong></p>
-        <p><em>"Here's what we're building. The Asset Bolt Audience Intelligence System. Every subscriber your book brings in, profiled from the moment they sign up. Qualified contacts tagged and scored before you send a single outreach. And a re-engagement campaign for your existing list."</em></p>
+        <p><em>"Here's what we're building. The Asset Bolt Audience Intelligence System. Every subscriber across your channels — newsletter, LinkedIn, referrals, and the book — profiled from the moment they sign up. Qualified contacts tagged and scored before you send a single outreach. And a re-engagement campaign for your existing list."</em></p>
         <p><em>"In the next slide I'll show you exactly what's included. Then the price. Then we decide."</em></p>
         <p>Keep it short. The momentum is building. Don't break it with over-explanation here.</p>
       </aside>
@@ -1451,12 +1468,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">What&#8217;s Included?</div>
         <div class="inclusions-grid">
-          <div class="ppd-card"><div class="ppd-headline-sm">Kit Setup</div><p class="body ppd-body-md ppd-muted">Email platform configured and delivery-optimized.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">RightMessage</div><p class="body ppd-body-md ppd-muted">Behavioral segmentation layer connected to your Kit account.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Re-Engage</div><p class="body ppd-body-md ppd-muted">Re-profiles your existing 7,000 subscribers in one campaign.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">RightMessage</div><p class="body ppd-body-md ppd-muted">Behavioral layer connected to your email platform.</p></div>
           <div class="ppd-card"><div class="ppd-headline-sm">Survey Build</div><p class="body ppd-body-md ppd-muted">Intake questions tuned to profile buyers from day one.</p></div>
           <div class="ppd-card"><div class="ppd-headline-sm">Welcome Flow</div><p class="body ppd-body-md ppd-muted">Personalized emails triggered by each subscriber&#8217;s intake answer.</p></div>
           <div class="ppd-card"><div class="ppd-headline-sm">Prospect Map</div><p class="body ppd-body-md ppd-muted">Contacts tagged by role, challenge, and consulting readiness.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Welcome Sequence</div><p class="body ppd-body-md ppd-muted">Personalized emails triggered by each subscriber&#8217;s intake answer.</p></div>
           <div class="ppd-card"><div class="ppd-headline-sm">Kickoff Call</div><p class="body ppd-body-md ppd-muted">60-min strategy session to map your audience.</p></div>
           <div class="ppd-card"><div class="ppd-headline-sm">Sprint Calls</div><p class="body ppd-body-md ppd-muted">Bi-weekly calls: data review, segment analysis, and optimization.</p></div>
         </div>
@@ -1468,9 +1484,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Walk through the inclusions at a steady pace — don't rush:</strong></p>
-        <p>Kit Setup, RightMessage integration, intake survey, welcome sequence, prospect map, kickoff call, bi-weekly sprint calls. That's 7 deliverables in 6 weeks.</p>
-        <p>If he asks about Kit and RightMessage costs: <em>"Kit and RightMessage are billed directly to you by the platforms. My fee is for building and configuring everything, writing the surveys and welcome sequences, and running the sprint calls. The accounts are yours to keep."</em></p>
-        <p>If he asks about timeline: <em>"Six weeks from kickoff. That's the sprint. By week six, your top prospects are identified and welcome sequences are running automatically."</em></p>
+        <p>Re-engagement campaign for his existing 7,000 subscribers, RightMessage integration, intake survey, welcome sequence, prospect map, kickoff call, bi-weekly sprint calls. That's 7 deliverables in 3 weeks.</p>
+        <p><strong>Watch out:</strong> He already has his own email platform — don't say or imply "we set you up with email." The actual deliverable for his existing list is the re-engagement campaign: a one-time send that invites his current 7,000 subscribers to self-profile too, not just new signups going forward.</p>
+        <p>If he asks about platform and RightMessage costs: <em>"Your email platform and RightMessage are billed directly to you by the platforms. My fee is for building and configuring everything, writing the surveys and welcome sequences, and running the sprint calls. The accounts are yours to keep."</em></p>
+        <p>If he asks about timeline: <em>"Three weeks from kickoff. That's the sprint. By week three, your top prospects are identified and welcome sequences are running automatically."</em></p>
       </aside>
     </section>
 
@@ -1520,26 +1537,25 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Pricing slide — skipped for this brief (no tiered plans).</strong></p>
-        <p>This slide retains content from a previous deck. The single-price offer ($4,500 setup + $2,500/month) is on slide 22. If you add <code>plans:</code> to brief.yaml and run /fill-deck, this slide will be authored.</p>
+        <p><strong>If you ever land here (direct link, browser back/forward) — the numbers on this slide are WRONG for Peter.</strong> This is leftover pricing from a different client ($2,997 tiers), not his $4,500 + $2,500/month offer. Say: "Wrong slide, one sec" and click forward immediately — do not reference or explain these numbers to Peter. His real pricing is on slide 22.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Your 6-Week Sprint</div>
+        <div class="ppd-eyebrow">Your 3-Week Sprint</div>
         <div class="bonus-grid">
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Weeks 1&#8211;2</div>
-            <p class="body ppd-muted">Kit and RightMessage wired to your list. Intake survey live on your thank-you page. Click-tracking active. First subscriber profiles building.</p>
+            <div class="ppd-headline-sm">Week 1</div>
+            <p class="body ppd-muted">Email platform + RightMessage wired up. Survey live.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Weeks 3&#8211;4</div>
-            <p class="body ppd-muted">Welcome sequences trigger by intake answer. Re-engagement email to your existing list. Subscriber segments forming in Kit. Data accumulating.</p>
+            <div class="ppd-headline-sm">Week 2</div>
+            <p class="body ppd-muted">Welcome sequences fire by answer. Re-engagement email sent.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Weeks 5&#8211;6</div>
-            <p class="body ppd-muted">Top contacts identified by role, challenge, and buyer readiness. Sprint review call to walk through your first qualified cohort. System on autopilot.</p>
+            <div class="ppd-headline-sm">Week 3</div>
+            <p class="body ppd-muted">Top prospects tagged and mapped. Sprint review call.</p>
           </div>
         </div>
         <div class="ppd-footer">
@@ -1550,9 +1566,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Sprint Timeline — Slide 20</strong></p>
-        <p><strong>Beat:</strong> Walk through it briskly — one sentence per phase. This makes the 6-week promise tangible.</p>
-        <p><strong>Say:</strong> "Here's exactly how the six weeks run. Weeks one and two: we wire everything up — Kit, RightMessage, intake survey on your thank-you page, click-tracking active. Weeks three and four: your new subscribers start profiling themselves. The welcome sequence fires automatically by intake answer. We also send a re-engagement email to your existing list so they get a chance to tell you who they are. Weeks five and six: we build your prospect map — every contact tagged by role, challenge, and buyer readiness. We finish with a sprint review call where I walk you through your first qualified cohort."</p>
+        <p><strong>Beat:</strong> Walk through it briskly — one sentence per week. This makes the 3-week promise tangible.</p>
+        <p><strong>Say:</strong> "Here's exactly how the three weeks run. Week one: we wire everything up — your email platform, RightMessage, intake survey on your thank-you page, click-tracking active. Week two: your new subscribers start profiling themselves. The welcome sequence fires automatically by intake answer. We also send a re-engagement email to your existing list so they get a chance to tell you who they are. Week three: we build your prospect map — every contact tagged by role, challenge, and buyer readiness. We finish with a sprint review call where I walk you through your first qualified cohort."</p>
         <p><strong>Watch out:</strong> Don't linger here. The point is to show the work is concrete and phased, not to explain every technical step. One pass, keep momentum.</p>
+        <p><strong>If he asks about cutting it closer to launch:</strong> <em>"Three weeks from kickoff still leaves you about a week of buffer before July 21st. I'd rather hand you a tested system with room to spare than promise faster and have you launching on day one of a brand-new setup."</em></p>
       </aside>
     </section>
 
@@ -1560,9 +1577,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Our Guarantee</div>
         <div class="guarantee-hero">
-          <h2 class="ppd-headline-md">Your list profiled and top prospects ready in 6 weeks &#8212; or I keep working.</h2>
-          <p class="body ppd-body-lg">We commit to a 6-week sprint. At the end of it, your list is profiled, your top prospects are identified, and welcome sequences are running. If any milestone isn&#8217;t hit when the sprint ends, I keep working until it is &#8212; at no extra cost to you.</p>
-          <p class="fine">Note: this requires you to give access to your Kit account and landing page setup after signup &#8212; those are needed to build the system. The guarantee covers the full build and all sprint deliverables. The Kit and RightMessage subscriptions are yours and are separate from my fee.</p>
+          <h2 class="ppd-headline-md">Your list profiled and top prospects ready in 3 weeks &#8212; or I keep working.</h2>
+          <p class="body ppd-body-lg">We commit to a 3-week sprint. At the end of it, your list is profiled, your top prospects are identified, and welcome sequences are running. If any milestone isn&#8217;t hit when the sprint ends, I keep working until it is &#8212; at no extra cost to you.</p>
+          <p class="fine">Note: this requires you to give access to your email platform and landing page setup after signup &#8212; those are needed to build the system. The guarantee covers the full build and all sprint deliverables. The email-platform and RightMessage subscriptions are yours and are separate from my fee.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1572,8 +1589,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Say the guarantee out loud — don't just let him read it:</strong></p>
-        <p><em>"Here's my commitment: if your list isn't profiled and your first batch of qualified prospects isn't identified with welcome sequences running by the end of the 6-week sprint, I keep working until every milestone is hit — at no extra cost to you. There is no financial risk here. You either get what I promised, or you get more of my time for free."</em></p>
-        <p>Then: <em>"The only thing I ask is that you give me access to your Kit account and your landing page after we start. That's all I need to build this."</em></p>
+        <p><em>"Here's my commitment: if your list isn't profiled and your first batch of qualified prospects isn't identified with welcome sequences running by the end of the 3-week sprint, I keep working until every milestone is hit — at no extra cost to you. There is no financial risk here. You either get what I promised, or you get more of my time for free. And since your book drops July 21st, three weeks from kickoff still leaves you about a week of breathing room before launch."</em></p>
+        <p>Then: <em>"The only thing I ask is that you give me access to your email platform and your landing page after we start. That's all I need to build this."</em></p>
       </aside>
     </section>
 
@@ -1586,7 +1603,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <p>Here&#8217;s what we&#8217;re building with the Audience Intelligence System:</p>
           <p>Every new subscriber profiled from day one &#8212; and a re-engagement campaign to qualify your existing list.</p>
           <p>We take a limited number of clients per sprint so every system gets full attention and goes live on time.</p>
-          <p>We build it with Kit, RightMessage, and a personalized welcome sequence for every subscriber type &#8212; with direct involvement from me every step of the way.</p>
+          <p>We build it with your email platform, RightMessage, and a personalized sequence for every subscriber type.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1596,7 +1613,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Say the price plainly and stop talking:</strong></p>
-        <p><em>"$4,500 setup, then $2,500 a month. The setup covers the full 6-week build — Kit, RightMessage, intake survey, welcome sequences, and prospect map. The monthly retainer is how we keep improving the system after the sprint."</em></p>
+        <p><em>"$4,500 setup, then $2,500 a month. The setup covers the full 3-week build — your email platform, RightMessage, intake survey, welcome sequences, and prospect map. The monthly retainer is how we keep improving the system after the sprint."</em></p>
         <p>One sentence. Say it confidently and stop talking. Then: <em>"Any questions on what's included?"</em></p>
         <p>If he hesitates: <em>"What questions do you have? Let's handle them now."</em></p>
         <p>If he says he needs to think: <em>"Totally fair. What specifically would help you decide? I'd rather answer it now than have you go away with an unanswered question."</em></p>
@@ -1609,26 +1626,16 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <div class="left">
             <div class="ppd-eyebrow">Next steps&#8230;</div>
             <h3>Ready to profile your list and close the right prospects?</h3>
-            <p>Click below, pay the setup fee, and I&#8217;ll be in touch within 24 hours to book your kickoff call. Your list profiled and top prospects identified within 6 weeks &#8212; guaranteed.</p>
+            <p>Click below, pay the setup fee, and I&#8217;ll be in touch within 24 hours to book your kickoff call. Your list profiled and top prospects identified within 3 weeks &#8212; guaranteed.</p>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <div class="cta-card" id="ppd-cta-card" data-mode="static" data-cta-url="https://paypal.me/shlomofr/4500" data-cta-label="I&#8217;m ready &#8212; let&#8217;s build my system" data-endpoint="/api/lead">
+            <div class="cta-card" id="ppd-cta-card" data-mode="static">
               <p class="title">Ready to start?</p>
-              <div class="choices" role="radiogroup" aria-label="Your response">
-                <button type="button" class="choice-btn" data-choice="in" aria-pressed="false">
-                  <span>I&#8217;m ready &#8212; let&#8217;s build it</span><span class="check">&#10003;</span>
-                </button>
-                <button type="button" class="choice-btn" data-choice="question" aria-pressed="false">
-                  <span>I have a question first</span><span class="check">&#10003;</span>
-                </button>
-                <button type="button" class="choice-btn" data-choice="out" aria-pressed="false">
-                  <span>Not right now, thanks</span><span class="check">&#10003;</span>
-                </button>
-              </div>
-              <div class="success" style="display:none" role="status">
-                <a class="static-cta" href="https://paypal.me/shlomofr/4500" data-static-cta>I&#8217;m ready &#8212; let&#8217;s build my system</a>
-                <p data-success-body>I&#8217;ll be in touch within 24 hours to book your kickoff.</p>
+              <div class="choices" role="group" aria-label="Your response">
+                <a class="cta-direct primary" href="https://paypal.me/shlomofr/4500">I&#8217;m ready &#8212; let&#8217;s build it</a>
+                <a class="cta-direct secondary" href="mailto:shlomo@assetbolt.com?subject=Question about the Audience Intelligence System">I have a question first</a>
+                <a class="cta-direct secondary" href="https://tidycal.com/shlomofreund/30-minute-meeting">Not right now &#8212; let&#8217;s reconnect</a>
               </div>
             </div>
             <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</div>
@@ -1638,9 +1645,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>The close. Three paths — handle each one:</strong></p>
         <p><strong>If Peter has his own copy of the deck open:</strong> You cannot see what he clicks. Don't wait for him to click something. Say: <em>"I want to check in — what's your gut telling you right now?"</em> Then listen. His answer tells you which path you're on.</p>
-        <p><strong>He clicks / says "I'm ready":</strong> The PayPal link opens for the $4,500 setup fee. Say: <em>"Perfect. Once that goes through, I'll email you within 24 hours to book the kickoff call. Your list profiled and top prospects identified within 6 weeks — that's the commitment."</em></p>
+        <p><strong>Each button is now a direct, one-click link — no second click needed:</strong> "I'm ready" opens PayPal directly. "I have a question" opens a pre-filled email to Shlomo. "Not right now" opens a booking link to reconnect later. Talk through the choice with him verbally before he clicks anything.</p>
+        <p><strong>He clicks / says "I'm ready":</strong> PayPal opens for the $4,500 setup fee. Say: <em>"Perfect. Once that goes through, I'll email you within 24 hours to book the kickoff call. Your list profiled and top prospects identified within 3 weeks — that's the commitment."</em></p>
         <p><strong>He clicks / says "I have a question":</strong> Say: <em>"Great — ask me anything. What's on your mind right now?"</em> Address it live on the call.</p>
-        <p><strong>He clicks / says "Not right now":</strong> Don't push. Say: <em>"Completely fair. What would need to change for this to make sense for you?"</em> Listen. There's usually one specific thing. Address it if you can.</p>
+        <p><strong>He clicks / says "Not right now":</strong> Don't push. Say: <em>"Completely fair. What would need to change for this to make sense for you?"</em> The link books a 30-min reconnect call — only mention it if the conversation naturally lands there.</p>
         <p><strong>The most important thing after showing this slide:</strong> Stop talking. Ask once. Then wait.</p>
       </aside>
     </section>
@@ -1684,35 +1692,6 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   </div>
 </div>
 
-<!-- CTA override: PayPal only fires on the "in" choice -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var card = document.getElementById(‘ppd-cta-card’);
-  if (!card) return;
-  var staticEl = card.querySelector(‘[data-static-cta]’);
-  var successEl = card.querySelector(‘.success’);
-  card.querySelectorAll(‘.choice-btn’).forEach(function(btn) {
-    btn.addEventListener(‘click’, function() {
-      var choice = btn.dataset.choice;
-      if (!staticEl) return;
-      card.querySelectorAll(‘.choice-btn’).forEach(function(b) {
-        b.setAttribute(‘aria-pressed’, b === btn ? ‘true’ : ‘false’);
-      });
-      if (choice === ‘in’) {
-        staticEl.href = ‘https://paypal.me/shlomofr/4500’;
-        staticEl.textContent = "I’m ready — pay $4,500 setup fee";
-        if (successEl) successEl.style.display = ‘block’;
-      } else if (choice === ‘question’) {
-        staticEl.href = ‘mailto:shlomo@assetbolt.com?subject=Question about the Audience Intelligence System’;
-        staticEl.textContent = ‘Email Shlomo your question’;
-        if (successEl) successEl.style.display = ‘block’;
-      } else {
-        if (successEl) successEl.style.display = ‘none’;
-      }
-    });
-  });
-});
-</script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@28.1.0/dist/js/intlTelInputWithUtils.min.js"></script>
