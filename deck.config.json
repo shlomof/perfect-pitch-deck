@@ -1,8 +1,8 @@
 {
   "$schema": "./scripts/deck.config.schema.json",
   "name": "Asset Bolt",
-  "tagline": "Turn email subscribers into buyers — from setup to first sale in 72 hours",
-  "url": "https://winick-assetbolt.pages.dev",
+  "tagline": "Own your LinkedIn newsletter list — migrate subscribers to a platform you control",
+  "url": "https://kimberly-assetbolt.pages.dev",
   "allowed_origins": [
     "http://localhost:8765",
     "http://localhost:8788",
@@ -11,7 +11,7 @@
     "http://127.0.0.1:8800"
   ],
   "cloudflare": {
-    "project_name": "winick-assetbolt",
+    "project_name": "kimberly-assetbolt",
     "production_branch": "main"
   },
   "ghl": {

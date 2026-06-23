@@ -22,22 +22,22 @@
 <!-- ─── SEO / Open Graph ───────────────────────────────────────────────
      Customise these for your deck. When deployed in public mode (no
      DECK_PASSWORD), search crawlers and social cards will pick these up. -->
-<title>Asset Bolt</title>
-<meta name="description" content="A 23-slide pitch-deck template that sets you up to close the deal. Packed with sales psychology and Hormozi-style offer framing." />
-<link rel="canonical" href="https://example.com/" />
+<title>Asset Bolt — The Owned-List Migration</title>
+<meta name="description" content="A walkthrough of the LinkedIn-to-owned-list migration system, built for Kimberly Lee / Lotic Systems." />
+<link rel="canonical" href="https://kimberly-assetbolt.pages.dev/" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Perfect Pitch Deck" />
-<meta property="og:description" content="A template for a personalised pitch that sets you up to close the deal." />
-<meta property="og:url" content="https://example.com/" />
-<meta property="og:image" content="https://example.com/assets/og-image.png" />
+<meta property="og:title" content="Asset Bolt — The Owned-List Migration" />
+<meta property="og:description" content="A walkthrough of the LinkedIn-to-owned-list migration system, built for Kimberly Lee / Lotic Systems." />
+<meta property="og:url" content="https://kimberly-assetbolt.pages.dev/" />
+<meta property="og:image" content="https://kimberly-assetbolt.pages.dev/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Perfect Pitch Deck" />
-<meta name="twitter:description" content="A template for a personalised pitch that sets you up to close the deal." />
-<meta name="twitter:image" content="https://example.com/assets/og-image.png" />
+<meta name="twitter:title" content="Asset Bolt — The Owned-List Migration" />
+<meta name="twitter:description" content="A walkthrough of the LinkedIn-to-owned-list migration system, built for Kimberly Lee / Lotic Systems." />
+<meta name="twitter:image" content="https://kimberly-assetbolt.pages.dev/assets/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Mona+Sans:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -389,13 +389,13 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 /* Slide 1 — Cover (matches Figma node 1-838: poster 528x798, right col 878px) */
 .ppd-cover {
   position: absolute; inset: 0;
-  display: grid; grid-template-columns: 528px 878px; column-gap: 161px;
+  display: grid; grid-template-columns: 750px 770px; column-gap: 90px;
   align-items: start;
   padding: 141px 160px 0;
   box-sizing: border-box;
 }
 .ppd-cover .poster {
-  width: 528px; height: 340px;
+  width: 750px; height: 500px;
   display: flex; align-items: center; justify-content: center;
   align-self: center;
   border-radius: 8px; overflow: hidden;
@@ -542,13 +542,19 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .outcomes-split .right {
   background: var(--accent-blue);
   padding: 80px 80px 80px 0;
-  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
-  gap: 12px;
+  display: flex; flex-direction: column; justify-content: center;
 }
 .outcomes-split .right .ph {
   background:
     repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/40px 40px;
   border-radius: 2px;
+}
+.outcomes-split .right .proof-shot {
+  width: 100%; border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  display: block;
+}
+.outcomes-split .right .proof-caption {
+  margin: 16px 0 0; font-size: 16px; color: rgba(255,255,255,0.85); font-style: italic;
 }
 
 /* Slide 9 — Plans On Offer (3 cards) */
@@ -683,6 +689,21 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
     repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/40px 40px;
   border-radius: 2px;
 }
+/* Flow diagram — illustrative 3-step mechanism graphic, used in place of screenshots */
+.flow-diagram { display: flex; flex-direction: column; align-items: center; }
+.flow-diagram .flow-step { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.flow-diagram .flow-icon { width: 96px; height: 96px; }
+.flow-diagram .flow-icon svg { width: 100%; height: 100%; }
+.flow-diagram .flow-label { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 22px; text-align: center; max-width: 260px; }
+.flow-diagram .flow-connector { width: 3px; height: 72px; background: currentColor; opacity: 0.4; margin: 8px 0; }
+.howitworks-split .right .flow-diagram { color: var(--text-inverse); }
+.howitworks .right .flow-diagram { color: var(--accent); }
+.howitworks .right.ph { display: flex; align-items: center; justify-content: center; }
+.ppd-cover .poster .flow-diagram-horizontal { display: flex; align-items: center; justify-content: center; gap: 20px; color: var(--accent); width: 100%; }
+.ppd-cover .poster .flow-diagram-horizontal .flow-icon { width: 104px; height: 104px; flex-shrink: 0; }
+.ppd-cover .poster .flow-diagram-horizontal .flow-icon svg { width: 100%; height: 100%; }
+.ppd-cover .poster .flow-diagram-horizontal .flow-arrow { width: 46px; height: 28px; color: var(--text-muted-inverse); flex-shrink: 0; }
+.ppd-cover .poster .flow-diagram-horizontal .flow-arrow svg { width: 100%; height: 100%; }
 .howitworks-split .right .corner-brand {
   position: absolute; right: 80px; bottom: 32px;
   color: var(--text-inverse);
@@ -695,18 +716,19 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; color: var(--text-primary);
 }
 
-/* Slide 20 — 48-Hour Bonus Offer (3 cards) */
+/* Slide 20 — 48-Hour Bonus Offer (single centered card) */
 .bonus-grid {
   position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -50%);
-  display: grid; grid-template-columns: repeat(3, 460px); gap: 36px;
+  display: flex; justify-content: center;
 }
 .bonus-grid .ppd-card {
-  text-align: center; padding: 64px 40px;
-  display: flex; flex-direction: column; align-items: center; gap: 28px;
+  text-align: center; padding: 96px 110px;
+  display: flex; flex-direction: column; align-items: center; gap: 36px;
+  width: 820px;
 }
-.bonus-grid .ppd-card .ppd-headline-sm { margin: 0; font-size: 52px; font-weight: 800; line-height: 1.08; letter-spacing: -0.018em; }
-.bonus-grid .ppd-card .body { margin: 0; font-size: 22px; line-height: 1.45; }
+.bonus-grid .ppd-card .ppd-headline-sm { margin: 0; font-size: 68px; font-weight: 800; line-height: 1.08; letter-spacing: -0.018em; }
+.bonus-grid .ppd-card .body { margin: 0; font-size: 28px; line-height: 1.5; }
 
 /* Slide 6 — Key Outcomes full blue (3 col) */
 .bg-blue > .ppd-eyebrow {
@@ -1013,11 +1035,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-white">
         <div class="ppd-cover">
           <div class="poster">
-            <div style="width:100%;height:100%;background:repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/40px 40px;border-radius:2px;"></div>
+            <img src="assets/peter-kit-subscriber-growth.png" alt="Kit subscriber growth chart" />
           </div>
           <div class="content">
             <h1 class="title">Asset Bolt</h1>
-            <p class="lede">Turn your LinkedIn newsletter into a list you actually own &#8212; automatically.</p>
+            <p class="lede">Turn your LinkedIn newsletter into a list you actually own.</p>
             <ul class="ppd-check-list">
               <li>Subscribers move to your own Kit list</li>
               <li>Stop relying on LinkedIn&#8217;s algorithm</li>
@@ -1035,6 +1057,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Before you open the deck:</strong> This is the leave-behind / pre-read for the walkthrough call with Kimberly Lee (founder, Lotic Systems) booked for June 23, 2026, 10am PT. On her first call (June 18), she said herself: "I can sell a book and I can sell an app, but the in-between piece... has not gained the traction" and "I'm not a sales and marketing person." She agreed to a smaller, infrastructure-only starter offer: migrating her ~500-subscriber LinkedIn newsletter onto a Kit list she owns.</p>
         <p><strong>On the mechanism:</strong> This is the same scrape &#8594; automated DM &#8594; self-opt-in method already proven on another Asset Bolt client's LinkedIn newsletter (Peter Sorgenfrei) &#8212; not something Asset Bolt has built as a paid deliverable before. Be straightforward about that if asked: "I watched this work firsthand, and I'm building it for you."</p>
+        <p><strong>On the cover image:</strong> the growth chart is Peter Sorgenfrei's actual Kit subscriber count, not Kimberly's (same honesty point as above — this exact system hasn't been built for a paying client yet). Same line works here if she asks.</p>
         <p><strong>Goal for this call:</strong> Walk through the system, then the $500/month offer (first payment $1,100: $600 Kit setup + $500 month one). PayPal link is on slide 23.</p>
       </aside>
     </section>
@@ -1051,9 +1074,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Open with a real, similar client — not a cold name-drop:</strong></p>
-        <p><em>"Before I walk you through this — I've worked with another LinkedIn creator in almost the exact spot you're in: real audience, a newsletter that brings in interest but not business, no owned list yet. We moved her subscribers off LinkedIn and onto her own list using the same approach I'm about to show you."</em></p>
-        <p><strong>Why this works:</strong> Kimberly's own diagnosis on the first call was "I can sell a book and I can sell an app, but the in-between piece... has not gained the traction." Opening with someone who had the same gap builds instant recognition before you even get to the mechanism.</p>
+        <p><strong>Open by naming the real client this is built on — don't invent a story:</strong></p>
+        <p><em>"Before I walk you through this — I want to be upfront about where it comes from. I watched this exact method work firsthand for another client, Peter Sorgenfrei, who advises CEOs and founders. He had a LinkedIn newsletter bringing in interest that wasn't turning into anything he owned. We moved his subscribers off LinkedIn and onto his own list using the same approach I'm about to show you — and now I'm building the same system for you."</em></p>
+        <p><strong>Why this works:</strong> Kimberly's own diagnosis on the first call was "I can sell a book and I can sell an app, but the in-between piece... has not gained the traction." Naming the real client — not a composite or invented persona — keeps this consistent with the honesty framing on slide 1 and the proof slides later.</p>
       </aside>
     </section>
 
@@ -1085,8 +1108,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <p>Every new subscriber lands on a platform you don&#8217;t control &#8212; and can lose access to overnight.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Manual List-Building.</div>
-            <p>Without a system, moving subscribers off LinkedIn means hours of copy-paste work you don&#8217;t have time for.</p>
+            <div class="ppd-headline-md">Manual Isn&#8217;t Just Slow.</div>
+            <p>Copy-pasting names into a list without their own opt-in isn&#8217;t just tedious &#8212; it risks breaking spam and privacy rules, especially for EU subscribers.</p>
           </div>
           <div>
             <div class="ppd-headline-md">Algorithm Risk Grows.</div>
@@ -1102,7 +1125,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Problem Agitators — Slide 4</strong></p>
         <p><strong>Beat:</strong> Three separate reasons why doing nothing gets worse, not better.</p>
-        <p><strong>Say:</strong> "Card one — every new subscriber to your newsletter lands on a platform you don't own. If LinkedIn changes the algorithm or your account has an issue, you can lose access overnight. Card two — without a system, moving those subscribers off LinkedIn yourself means hours of manual copy-paste work, which is exactly the kind of thing you told me isn't your strength. Card three — every week this sits, more of your audience exists only on a platform you don't control."</p>
+        <p><strong>Say:</strong> "Card one — every new subscriber to your newsletter lands on a platform you don't own. If LinkedIn changes the algorithm or your account has an issue, you can lose access overnight. Card two — doing this manually isn't just slow, it's risky: adding people to a list without their own opt-in can run into spam and privacy rules, especially if any subscribers are in the EU. Card three — every week this sits, more of your audience exists only on a platform you don't control."</p>
+        <p><strong>Caution:</strong> Keep this general (not a specific legal claim) — say "can run into" not "is illegal." Neither Shlomo nor Asset Bolt is a lawyer; the point is risk-awareness, not a legal opinion.</p>
         <p><strong>Watch out:</strong> Don't hint at the solution here. Let the pain land. The promise comes on the next slide. Keep this about the newsletter specifically — not her book or app.</p>
       </aside>
     </section>
@@ -1110,7 +1134,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;Own your LinkedIn subscribers as a real, owned email list &#8212; with people self-opting in automatically, so you&#8217;re never one platform change away from losing your audience.&#8221;</p>
+          <p class="quote">&#8220;Own your LinkedIn subscribers as a real, owned email list &#8212; each one opting themselves in, so you&#8217;re never one platform change away from losing your audience.&#8221;</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1122,7 +1146,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <p><strong>Big Blue Promise — Slide 5</strong></p>
         <p><strong>Bridge in:</strong> This slide has no title — it's the quote on its own. Say one pivot line first: <em>"But it doesn't have to stay that way."</em> Then click and read the quote.</p>
         <p><strong>Beat:</strong> Read this out loud as you show the slide, then pause.</p>
-        <p><strong>Say:</strong> "Own your LinkedIn subscribers as a real, owned email list — with people self-opting in automatically, so you're never one platform change away from losing your audience." Then pause. Let it sit for three seconds.</p>
+        <p><strong>Say:</strong> "Own your LinkedIn subscribers as a real, owned email list — each one opting themselves in, so you're never one platform change away from losing your audience." Then pause. Let it sit for three seconds.</p>
         <p><strong>Watch out:</strong> Don't explain the mechanism yet — that's the next slides. Keep it scoped to the newsletter migration specifically (infrastructure only, as agreed on the first call) — don't let it drift into implying this also solves her book or app marketing.</p>
       </aside>
     </section>
@@ -1137,11 +1161,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           </div>
           <div>
             <div class="ppd-headline-md">Self-Opt-In Setup.</div>
-            <p>No manual list-building. Subscribers say yes once and they&#8217;re automatically added to your owned list.</p>
+            <p>No manual list-building. Each subscriber gets one message and opts themselves in, one click.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Done For You.</div>
-            <p>You don&#8217;t touch the scraping or automation &#8212; I build and run the whole system.</p>
+            <div class="ppd-headline-md">Hands-Off Build.</div>
+            <p>I run the scraping and setup remotely on your own computer &#8212; your only job is a 1-minute daily check.</p>
           </div>
         </div>
         <div class="ppd-footer">
@@ -1153,8 +1177,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Key Outcomes — Slide 6</strong></p>
         <p><strong>Beat:</strong> Three outcomes from the same system — make each one about Kimberly's actual situation.</p>
-        <p><strong>Say:</strong> "Own your list: your LinkedIn subscribers move onto a Kit list you control, safe from algorithm changes. Self-opt-in setup: no manual list-building on your end — subscribers say yes once and they're added automatically. Done for you: you don't touch the scraping or the automation, I build and run the whole thing."</p>
-        <p><strong>Watch out:</strong> Keep this scoped to her ~500-subscriber newsletter specifically — don't let it drift into promising this also fixes the book/app marketing gap she described.</p>
+        <p><strong>Say:</strong> "Own your list: your LinkedIn subscribers move onto a Kit list you control, safe from algorithm changes. Self-opt-in setup: no manual list-building on your end — each subscriber gets one simple message and opts themselves in with one click. Hands-off build: I do the scraping and the Dripify setup remotely on your own computer, so it's running from your own LinkedIn session — not mine. The one thing that stays on your side: when someone says yes to the first message, you send them the sign-up link yourself, from your own account. Takes about a minute a day — I'll show you exactly how on the call."</p>
+        <p><strong>Watch out:</strong> Keep this scoped to her ~500-subscriber newsletter specifically — don't let it drift into promising this also fixes the book/app marketing gap she described. Don't claim this is fully hands-off for her — the daily opt-in-link send is permanently hers, every day, indefinitely. Be upfront about it; it's a minute of work, not a dealbreaker, but don't let her find out about it after signing.</p>
       </aside>
     </section>
 
@@ -1177,10 +1201,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             </div>
           </div>
           <div class="right">
-            <div class="ph"></div>
-            <div class="ph"></div>
-            <div class="ph"></div>
-            <div class="ph"></div>
+            <img class="proof-shot" src="assets/peter-kit-subscriber-growth.png" alt="Kit subscriber growth chart" />
+            <p class="proof-caption">Another Asset Bolt client&#8217;s Kit subscriber growth after this exact migration system went live.</p>
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--text-inverse);">
@@ -1189,8 +1211,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Walk through the three outcomes — this is what changes for her:</strong></p>
-        <p><em>"Right now those ~500 subscribers only exist inside LinkedIn. Once this is built, every one of them who opts in lives on a Kit list you actually control — and new subscribers keep flowing in the same way, automatically."</em></p>
-        <p>This slide doesn't have real screenshots yet because Asset Bolt hasn't built this exact system as a paid deliverable before — be straightforward if she asks: "I watched this work for another client's LinkedIn newsletter, and I'm building it for you the same way."</p>
+        <p><em>"Right now those ~500 subscribers only exist inside LinkedIn. Once this is built, every one of them who opts in lives on a Kit list you actually control — and new subscribers keep moving over the same way, month after month."</em></p>
+        <p>This is Peter Sorgenfrei's own Kit growth chart, not Kimberly's (this exact system hasn't been built for a paying client yet) — be straightforward if she asks: "This is what it looked like for the client I watched this work for. I'm building the same thing for you now."</p>
       </aside>
     </section>
 
@@ -1200,25 +1222,42 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <div class="left">
             <div class="ppd-eyebrow">How It Works</div>
             <h3>From LinkedIn To Owned List.</h3>
-            <p>I scrape your LinkedIn newsletter subscribers into a list, run one simple automated DM asking if they want the deeper version, and when they say yes, they get a link to your own Kit page and opt in themselves.</p>
+            <p>I scrape your LinkedIn newsletter subscribers into a list and set up one simple automated first message asking if they want the deeper version. When they say yes, you send them a link to your own Kit page &#8212; one minute a day &#8212; and they opt in themselves.</p>
             <ul>
-              <li>Subscriber list scraped</li>
-              <li>One simple automated DM sent</li>
-              <li>Self-opt-in link to your own Kit sign-up page</li>
+              <li>Subscriber list scraped, remotely, from your machine</li>
+              <li>One simple automated first message sent</li>
+              <li>You send the sign-up link, they opt in themselves</li>
             </ul>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <div class="ph"></div>
+            <div class="flow-diagram">
+              <div class="flow-step">
+                <div class="flow-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="14" cy="16" r="5" fill="currentColor" stroke="none"/><line x1="26" y1="16" x2="54" y2="16" stroke-linecap="round"/><circle cx="14" cy="32" r="5" fill="currentColor" stroke="none"/><line x1="26" y1="32" x2="54" y2="32" stroke-linecap="round"/><circle cx="14" cy="48" r="5" fill="currentColor" stroke="none"/><line x1="26" y1="48" x2="54" y2="48" stroke-linecap="round"/></svg></div>
+                <div class="flow-label">Scrape your subscribers</div>
+              </div>
+              <div class="flow-connector"></div>
+              <div class="flow-step">
+                <div class="flow-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><path d="M10 14 H54 a4 4 0 0 1 4 4 V40 a4 4 0 0 1 -4 4 H26 L14 54 V44 H10 a4 4 0 0 1 -4 -4 V18 a4 4 0 0 1 4 -4 Z" stroke-linejoin="round"/></svg></div>
+                <div class="flow-label">One automated message</div>
+              </div>
+              <div class="flow-connector"></div>
+              <div class="flow-step">
+                <div class="flow-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="32" cy="32" r="26"/><path d="M20 33 L28 41 L46 23" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="flow-label">They self-opt-in</div>
+              </div>
+            </div>
             <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
       <aside class="notes">
         <p><strong>Explain the mechanism simply — don't over-explain the tech:</strong></p>
+        <p><strong>Setup — remote, not your password:</strong> <em>"On our first call I'll set up remote desktop access to your computer — like screen-sharing, but I can actually drive. I run the scrape and the Dripify setup from there, on your own LinkedIn session. I never log into your LinkedIn from my own device — that's actually what keeps your account safe; a login from an unfamiliar device or location is what gets accounts flagged."</em></p>
         <p><strong>Step 1 — Scrape:</strong> <em>"I pull your LinkedIn newsletter subscriber list into a CSV — LinkedIn shows names but no contact info, so this is the first step to actually reaching them."</em></p>
-        <p><strong>Step 2 — Automated DM:</strong> <em>"Each first-degree connection gets one simple automated message: 'I have a more in-depth version of the newsletter — want me to send it?' No spam, no mass blast — one clear offer."</em></p>
-        <p><strong>Step 3 — Self-opt-in:</strong> <em>"When they say yes, they get a link to your own Kit sign-up page and opt themselves in. That's what keeps it CAN-SPAM compliant — I can't add anyone manually, even with verbal permission. They have to say yes twice: once to the DM, once to the sign-up."</em></p>
+        <p><strong>Step 2 — Automated first message:</strong> <em>"Each first-degree connection gets one simple automated message: 'I have a more in-depth version of the newsletter — want me to send it?' No spam, no mass blast — one clear offer."</em></p>
+        <p><strong>Step 3 — You send the link, they self-opt-in:</strong> <em>"When someone says yes, you check Dripify each morning and send them the link to your own Kit sign-up page yourself — about a minute a day. They click and opt themselves in. That's what keeps it CAN-SPAM compliant — nobody gets added manually, even with verbal permission, and it has to come from your own account, not mine."</em></p>
+        <p><strong>Honesty check:</strong> Don't let this slide imply zero ongoing involvement from her — the daily link-send is permanently hers. Say it plainly, don't bury it.</p>
         <p>If she asks whether this has been done before: be honest — this is the proven method from another client's own LinkedIn newsletter, and Asset Bolt is building it as a system for her now.</p>
       </aside>
     </section>
@@ -1228,15 +1267,32 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">How It Works</div>
         <div class="howitworks">
           <div class="left">
-            <h3>Three weeks from scrape to a list you own.</h3>
-            <p>We scrape your LinkedIn subscribers, load them into an automated DM tool, and send one simple message offering the deeper version. When they say yes, they get a link to your Kit page and opt in themselves.</p>
+            <h3>Live within 10 days &#8212; subscribers flowing from there.</h3>
+            <p>I scrape your LinkedIn subscribers remotely, load them into an automated DM tool, and send one simple message offering the deeper version. When they say yes, you send them the link to your Kit page yourself, and they opt in.</p>
             <ul>
-              <li>Subscribers scraped to CSV</li>
-              <li>Automated DM offers deeper value</li>
-              <li>Self-opt-in link sent to your Kit sign-up page</li>
+              <li>Subscribers scraped to CSV, remotely, from your machine</li>
+              <li>Automated first message offers deeper value</li>
+              <li>You send the sign-up link daily, they self-opt-in</li>
             </ul>
           </div>
-          <div class="right ph"></div>
+          <div class="right">
+            <div class="flow-diagram">
+              <div class="flow-step">
+                <div class="flow-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="14" cy="16" r="5" fill="currentColor" stroke="none"/><line x1="26" y1="16" x2="54" y2="16" stroke-linecap="round"/><circle cx="14" cy="32" r="5" fill="currentColor" stroke="none"/><line x1="26" y1="32" x2="54" y2="32" stroke-linecap="round"/><circle cx="14" cy="48" r="5" fill="currentColor" stroke="none"/><line x1="26" y1="48" x2="54" y2="48" stroke-linecap="round"/></svg></div>
+                <div class="flow-label">Scraped to CSV, remotely</div>
+              </div>
+              <div class="flow-connector"></div>
+              <div class="flow-step">
+                <div class="flow-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><path d="M10 14 H54 a4 4 0 0 1 4 4 V40 a4 4 0 0 1 -4 4 H26 L14 54 V44 H10 a4 4 0 0 1 -4 -4 V18 a4 4 0 0 1 4 -4 Z" stroke-linejoin="round"/></svg></div>
+                <div class="flow-label">Automated first message</div>
+              </div>
+              <div class="flow-connector"></div>
+              <div class="flow-step">
+                <div class="flow-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="32" cy="32" r="26"/><path d="M20 33 L28 41 L46 23" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="flow-label">You send the link, they opt in</div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1246,8 +1302,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Walk through the mechanism at a steady pace:</strong></p>
-        <p><em>"First, I scrape your LinkedIn newsletter subscriber list into a CSV — that's the only way to get past LinkedIn showing just names, no contact info. Then an automated DM tool sends one message to each first-degree connection, offering the deeper version of your newsletter. When they say yes, they get a link to your own Kit sign-up page and opt themselves in."</em></p>
+        <p><em>"First, I scrape your LinkedIn newsletter subscriber list into a CSV — that's the only way to get past LinkedIn showing just names, no contact info. I do this remotely, on your own computer, so it's running from your own LinkedIn session, not mine — that's what keeps your account looking normal to LinkedIn. Then an automated DM tool sends one message to each first-degree connection, offering the deeper version of your newsletter. When they say yes, you send them the link to your own Kit sign-up page — that part's a quick daily check on your end — and they opt themselves in."</em></p>
         <p><strong>On honesty:</strong> If she asks for a results graph or dashboard — there isn't one yet for this exact build. Say plainly: "I watched this work firsthand for another client's LinkedIn newsletter, and I'm building it for you the same way — your first month is the build, and you'll see subscribers start landing on your own list during it."</p>
+        <p><strong>On the "10 days" claim:</strong> That's the setup timeline only — scrape configured, Dripify running, first DMs going out. It is NOT a promise that her list will be substantially bigger by day 10. Subscriber accumulation follows the real trickle rate (0–9/day on the proven case), which is why the guarantee is scoped to the full first month, not 10 days. If she asks "so I'll have X subscribers by day 10?" — correct it: "The system will be live and running by then. Subscribers keep landing on your list throughout the month after that."</p>
+        <p><strong>If she asks why 10 days specifically:</strong> Dripify caps outreach at 50 messages/day per account — a deliberately safe pace, not a tool limitation, to avoid LinkedIn flagging the account for automated behavior. At ~500 subscribers, 500 &#247; 50/day = everyone gets the first message within 10 days. Dripify tracks who's already been messaged automatically, so there's no overlap or duplicate sends to manage. <strong>Caveat:</strong> the 50/day pool is first-degree LinkedIn connections only — if any subscribers aren't 1st-degree with her, Dripify can't message them, so the real messageable pool could be a bit under 500.</p>
       </aside>
     </section>
 
@@ -1257,7 +1315,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="objections-grid">
           <div class="ppd-card">
             <div class="ppd-headline-sm">This sounds technical.</div>
-            <p>I handle 100% of it — scraping, DMs, setup.</p>
+            <p>I handle the scraping and setup remotely. You only send one quick daily link.</p>
           </div>
           <div class="ppd-card">
             <div class="ppd-headline-sm">Is this even allowed?</div>
@@ -1276,7 +1334,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Name the objections Kimberly is most likely thinking — she told you directly she's not the marketing/sales person:</strong></p>
-        <p><strong>"This sounds technical"</strong> — say: <em>"I know technical setup isn't your strength — that's exactly why this is fully done-for-you. You don't touch the scraping, the DM tool, or the Kit setup. I build and run all of it."</em></p>
+        <p><strong>"This sounds technical"</strong> — say: <em>"I know technical setup isn't your strength — I handle the scraping, the DM tool, and the Kit setup, remotely on your own computer. The one thing that stays on you is sending a quick link to anyone who says yes — about a minute a day. I'll show you exactly how."</em></p>
         <p><strong>"Is this even allowed?"</strong> — say: <em>"Yes — this is fully CAN-SPAM compliant. I can't add anyone to your list manually, even with verbal permission. They have to opt in themselves, every time."</em></p>
         <p><strong>"I only have 500 people"</strong> — say: <em>"That's actually the right size to start. Smaller lists are exactly where owning the list early matters most — you avoid losing the relationship before it's ever grown."</em></p>
       </aside>
@@ -1287,19 +1345,14 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">What Clients Say</div>
         <div class="wins-grid">
           <div class="ppd-card">
-            <div class="stat">30&#8211;50</div>
-            <div class="label">Signups/Day</div>
-            <p class="body">One LinkedIn post converted 30&#8211;50 people to a client's owned list in 24 hours.</p>
+            <div class="stat">2&#8211;6 wks</div>
+            <div class="label">To First 100</div>
+            <p class="body">Steady self-opt-ins move a client's LinkedIn subscribers onto his owned list, week after week.</p>
             <div class="proof-name">Peter Sorgenfrei</div>
           </div>
+          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
           <div class="ppd-card">
-            <div class="stat">29</div>
-            <div class="label">Leads Found</div>
-            <p class="body">Three simple list questions surfaced 29 right-fit prospects.</p>
-            <div class="proof-name">Peter Sorgenfrei, CEO Advisor</div>
-          </div>
-          <div class="ppd-card">
-            <div class="stat">[MISSING]</div>
+            <div class="stat">Former CHRO</div>
             <div class="label">Client Trust</div>
             <p class="body">He brought out the best practices and set me up for success.</p>
             <div class="proof-name">Jeff Bettinger</div>
@@ -1312,10 +1365,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Point to the three cards and say:</strong></p>
-        <p><strong>30&#8211;50/day card:</strong> <em>"Another Asset Bolt client posted one LinkedIn update and converted 30 to 50 people onto his owned email list in a single day, using this exact method."</em></p>
-        <p><strong>29 leads card:</strong> <em>"That same client also ran a different system — three simple questions to his list surfaced 29 right-fit prospects he didn't know he had."</em></p>
-        <p><strong>Client trust card:</strong> <em>"Jeff, a career coach, said I'm the best he's seen at this kind of setup."</em> <strong>Note:</strong> this card's stat is marked [MISSING] — Jeff's testimonial doesn't have a hard number attached. Either swap in a real metric if one surfaces, or leave the card qualitative.</p>
+        <p><strong>Point to the two cards and say:</strong></p>
+        <p><strong>2&#8211;6 weeks card:</strong> <em>"Another Asset Bolt client used this exact method to move his LinkedIn newsletter subscribers onto his own list — steady growth, first 100 subscribers landed within a few weeks."</em></p>
+        <p><strong>Client trust card:</strong> Jeff is a former CHRO Shlomo did a different marketing setup for — not this LinkedIn migration system. Say: <em>"Jeff is a former CHRO I built a different marketing setup for, and he told me I'm the best he's seen. That's the same standard of work I'm bringing to your system."</em> Don't imply Jeff saw this exact migration system — he didn't.</p>
+        <p><strong>Accuracy fix (2026-06-21):</strong> The old "30–50/day" card was actually from a single viral LinkedIn post (150K impressions), unrelated to this migration system — the system itself runs 0–9 new subscribers/day, a steady trickle, not a flood. Don't repeat the 30–50 number on this call; it's not what Kimberly's ~500-subscriber list would see. The old "29 leads" card was from a completely different Asset Bolt service (the 3-question qualification layer) — removed from this slide because it doesn't belong on a proof point for the migration system specifically. If she asks about that bigger system, it's a separate future conversation, not part of today's pitch.</p>
         <p>Be upfront if asked: these are real results from other Asset Bolt clients, not from this exact migration system yet — it's the same proven method, newly being built for her specifically.</p>
       </aside>
     </section>
@@ -1431,7 +1484,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Slow down here. Let Kimberly imagine it.</strong></p>
         <p>Read the right panel out loud: <em>"Picture it: your subscribers are already moving onto your own list, opting in on their own — no more wondering what happens if LinkedIn changes the rules."</em></p>
-        <p>Then add: <em>"You said the in-between piece hasn't gained traction because marketing isn't your thing. This is what it looks like when that piece runs itself — you don't have to think about the migration at all."</em></p>
+        <p>Then add: <em>"You said the in-between piece hasn't gained traction because marketing isn't your thing. This is what it looks like when the technical side runs itself — the scraping, the setup, the automation are all handled. The only thing left on your end is a quick daily check to send the link to anyone who's said yes."</em></p>
         <p>Make it vivid. This is the 'after' picture. Pause after you say it and let it land before moving on.</p>
       </aside>
     </section>
@@ -1452,7 +1505,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Frame the offer before you reveal the price:</strong></p>
-        <p><em>"Here's what we're building: the LinkedIn-to-owned-list migration. Your newsletter subscribers move off LinkedIn and onto a Kit list you control — automatically, with each one opting in themselves."</em></p>
+        <p><em>"Here's what we're building: the LinkedIn-to-owned-list migration. Your newsletter subscribers move off LinkedIn and onto a Kit list you control — each one opting themselves in."</em></p>
         <p><em>"In the next slide I'll show you exactly what's included. Then the price. Then we decide."</em></p>
         <p>Keep it short. Don't break momentum with over-explanation here.</p>
       </aside>
@@ -1480,7 +1533,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <p><strong>Walk through the inclusions at a steady pace — don't rush:</strong></p>
         <p>Scrape, automated DM, self-opt-in setup, and the Kit account build (40% off as part of this offer). Four deliverables, built in your first month.</p>
         <p><strong>Watch out:</strong> Don't imply this covers her book/app marketing gap — this offer is scoped to the newsletter migration specifically, exactly as agreed on the first call ("I'm not a copywriter, but I can build the system").</p>
-        <p>If she asks about Kit and Dripify costs: <em>"Those are billed directly to you by Kit and Dripify — roughly $75 to $100 a month combined. My fee covers building and running the whole migration system, plus your Kit account setup."</em></p>
+        <p>If she asks about Kit and Dripify costs: <em>"Dripify runs $39 to $99 a month depending on plan — I'll confirm exactly which tier we need before we start. Kit is actually free at your subscriber count — their free plan covers up to 10,000 subscribers and you're around 500. The only catch on the free plan is it shows Kit's own branding and caps you to one automation; if you'd rather avoid that, their paid Creator plan starts around $33 to $39 a month. Either way, those are billed directly to you by Kit and Dripify — my fee covers building and running the whole migration system, plus your Kit account setup."</em></p>
+        <p><strong>Updated 2026-06-21:</strong> the previous "$75–$100/month combined" figure on this and the Special Offer slide was outdated/imprecise — Kit raised its free-plan subscriber cap to 10,000 since that number was written, so Kit is very likely free for Kimberly specifically, not a paid cost. Verify Dripify's exact plan needed for a single first-degree DM campaign before the call.</p>
       </aside>
     </section>
 
@@ -1540,10 +1594,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="bonus-grid">
           <div class="ppd-card">
             <div class="ppd-headline-sm">40% Off Kit</div>
-            <p class="body ppd-muted">Your Kit account, normally $1,000 &#8212; now $600.</p>
+            <p class="body ppd-muted">Your Kit account, normally $1,000 &#8212; now $600, when you commit to the 4-month system.</p>
           </div>
-          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
-          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1554,8 +1606,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Bonus — Slide 20</strong></p>
         <p><strong>Beat:</strong> One real bonus, said plainly — no manufactured urgency.</p>
-        <p><strong>Say:</strong> "Your Kit account setup is normally $1,000 on its own. As part of this, it's 40% off — $600, bundled into your first payment alongside month one."</p>
-        <p><strong>Watch out:</strong> Only one real bonus exists for this offer — don't pad it with invented extras.</p>
+        <p><strong>Say:</strong> "Your Kit account setup is normally $1,000 on its own. As part of this, when you commit to the 4-month system, it's 40% off — $600, bundled into your first payment alongside month one."</p>
+        <p><strong>Watch out:</strong> Only one real bonus exists for this offer — don't pad it with invented extras. This bonus is tied to the 4-month commitment specifically — if she ever negotiates a shorter or month-to-month arrangement, the 40% off doesn't carry over automatically; that's a separate decision.</p>
       </aside>
     </section>
 
@@ -1564,8 +1616,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">Our Guarantee</div>
         <div class="guarantee-hero">
           <h2 class="ppd-headline-md">Subscribers flowing into your own list within your first month &#8212; or I keep working.</h2>
-          <p class="body ppd-body-lg">I commit to your first month. If your LinkedIn newsletter subscribers aren&#8217;t flowing into your own Kit list by the end of it, I keep working on the system until they are &#8212; at no extra charge to you.</p>
-          <p class="fine">Note: this requires your LinkedIn account and Kit account access after signup &#8212; those are needed to build the system. Your Kit and Dripify subscriptions are billed directly to you by those platforms, separate from my fee.</p>
+          <p class="body ppd-body-lg">Conditional on your 1-minute daily check: if your subscribers aren&#8217;t flowing into your own Kit list within your first month, I keep working on the system until they are &#8212; at no extra charge to you.</p>
+          <p class="fine">Note: this requires remote access to your own computer (not your LinkedIn password) and your Kit account, plus the daily opt-in check on your end &#8212; the one condition this guarantee depends on. Kit and Dripify subscriptions are billed directly to you, separate from my fee.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1575,8 +1627,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Say the guarantee out loud — don't just let her read it:</strong></p>
-        <p><em>"Here's my commitment: if your subscribers aren't flowing into your own Kit list by the end of your first month, I keep working until they are — at no extra charge to you. There's no financial risk here."</em></p>
-        <p>Then: <em>"The only thing I need is access to your LinkedIn account and your Kit account once we start. That's all this requires from you."</em></p>
+        <p><em>"Here's my commitment: as long as you keep up the 1-minute daily check, if your subscribers aren't flowing into your own Kit list by the end of your first month, I keep working until they are — at no extra charge to you. There's no financial risk here."</em></p>
+        <p>Then: <em>"The only thing I need is remote desktop access to your own computer — never your LinkedIn password, I don't log in from my end at all, which is exactly what keeps your account safe from being flagged — plus your Kit account. And about a minute a day to send the opt-in link to anyone who's said yes. That's the one condition this guarantee depends on."</em></p>
       </aside>
     </section>
 
@@ -1584,12 +1636,12 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Special Offer</div>
         <div class="offer-card">
-          <div class="price">$500/month, 4-month minimum</div>
+          <div class="price">First payment $1,100, then $500/mo (4-mo min)</div>
           <div class="spots">Only a few builds running</div>
           <p>Here&#8217;s what I&#8217;m building for your LinkedIn newsletter this month:</p>
-          <p>The outcome: your subscribers move to a list you own, opting in themselves, automatically.</p>
-          <p>I take on a limited number of these builds at a time, so every system gets my full, hands-on attention.</p>
-          <p>Includes the scrape, the DM sequence, the Kit setup (40% off), and the whole system built and run for you, done-for-you.</p>
+          <p>The outcome: your subscribers move to a list you own, each one opting in themselves.</p>
+          <p>First payment: a one-time $600 Kit setup (40% off the usual $1,000) plus your first $500 month.</p>
+          <p>Then $500/month for three more months. Includes the scrape, the DM sequence, and the whole system built and run for you.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1599,10 +1651,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Say the price plainly and stop talking:</strong></p>
-        <p><em>"$500 a month, four-month minimum. Your first payment is $1,100 — that's $600 for the Kit account setup, 40% off, plus your first month. Then $500 a month for four more months. The system — scrape, automated DM, self-opt-in, Kit setup — is all included."</em></p>
+        <p><em>"Your first payment is $1,100 — that's a one-time $600 Kit account setup, 40% off the usual $1,000, plus your first $500 month. Then $500 a month for three more months — four months total. The system — scrape, automated DM, self-opt-in, Kit setup — is all included."</em></p>
+        <p><strong>Why this card now spells out the breakdown:</strong> Previously the card only showed "$500/month, 4-month minimum" with no mention of the $600 setup or the $1,100 first payment — that detail only lived in speaker notes and on the separate Bonus slide. If she's reading her own copy without you narrating, the numbers wouldn't connect. Now the full breakdown is on the card itself.</p>
         <p>One pass. Say it confidently and stop talking. Then: <em>"Any questions on what's included?"</em></p>
         <p>If she hesitates: <em>"What questions do you have? Let's handle them now."</em></p>
-        <p><strong>Separately, not part of this fee:</strong> Kit and Dripify subscriptions, roughly $75–$100/month combined, billed directly to her by those platforms.</p>
+        <p><strong>Separately, not part of this fee:</strong> Dripify ($39–$99/month, depending on plan) billed directly to her. Kit is likely free at her ~500-subscriber count (their free plan covers up to 10,000) unless she wants to avoid Kit's branding/single-automation limit, in which case their paid Creator plan starts ~$33–$39/month.</p>
       </aside>
     </section>
 
