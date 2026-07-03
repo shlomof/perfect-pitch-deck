@@ -196,6 +196,29 @@
 					font-size: 1.2em;
 				}
 
+				/* Distinguish verbatim "say this out loud" lines from strategic
+				   context/remarks. em = say it exactly; everything else = notes
+				   for the presenter, not to be read aloud. */
+				.speaker-controls-notes .value p {
+					font-size: 0.8em;
+					color: #777;
+					margin: 12px 0;
+				}
+
+				.speaker-controls-notes .value em {
+					display: block;
+					font-style: normal;
+					font-size: 1.25em;
+					font-weight: 600;
+					line-height: 1.45;
+					color: #111;
+					background: #eef3ff;
+					border-left: 4px solid #2563eb;
+					padding: 8px 12px;
+					margin-top: 4px;
+					border-radius: 3px;
+				}
+
 			/* Layout selector */
 			#speaker-layout {
 				position: absolute;
