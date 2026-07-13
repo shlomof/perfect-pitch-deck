@@ -18,6 +18,7 @@ import { resolve } from 'node:path';
 const ROOT = resolve(import.meta.dirname, '..');
 const INDEX = resolve(ROOT, 'index.html');
 const SCHEMA = resolve(ROOT, 'slides/schema.json');
+const NOTES_DIR = resolve(ROOT, 'notes');
 
 const STRICT = process.argv.includes('--strict');
 
@@ -65,6 +66,49 @@ while (true) {
 if (!Array.isArray(schema.slides)) {
   console.error('FATAL: schema.json missing "slides" array');
   process.exit(2);
+}
+
+// ─── Notes drift check ──────────────────────────────────────────────────
+// notes/slide-NN.html is the source of truth (see scripts/inject-notes.mjs);
+// the <aside class="notes"> in index.html is supposed to be an exact splice
+// of it. Hand-editing one without the other is how a deck ends up telling
+// the presenter to say something the slide no longer shows (this happened
+// on the Jim James deck: slide 9's aside was updated to describe a real
+// screenshot, but notes/slide-09.html still said "there isn't a dashboard
+// for this build"). Compare normalized text on every build so drift shows
+// up immediately instead of surviving silently across client reuses.
+function normalizeNotesText(html) {
+  return html
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&#8217;|&#8216;/g, "'")
+    .replace(/&#8220;|&#8221;/g, '"')
+    .replace(/&#8212;|&#8211;/g, '-')
+    .replace(/&amp;/g, '&')
+    .replace(/&[a-z]+;/g, ' ')
+    .replace(/&#\d+;/g, "'")
+    .replace(/[‘’]/g, "'")
+    .replace(/[“”]/g, '"')
+    .replace(/[–—]/g, '-')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+const ASIDE_RE = /<aside class="notes">([\s\S]*?)<\/aside>/;
+
+for (let idx = 0; idx < sections.length; idx++) {
+  const n = idx + 1;
+  const notePath = resolve(NOTES_DIR, `slide-${String(n).padStart(2, '0')}.html`);
+  if (!existsSync(notePath)) continue;
+  const asideMatch = sections[idx].html.match(ASIDE_RE);
+  const liveText = normalizeNotesText(asideMatch ? asideMatch[1] : '');
+  const sourceText = normalizeNotesText(readFileSync(notePath, 'utf8'));
+  if (liveText !== sourceText) {
+    warning(
+      `<aside class="notes"> in index.html does not match notes/slide-${String(n).padStart(2, '0')}.html — one was hand-edited without the other. Run node scripts/inject-notes.mjs (after reconciling which side is correct) to resync.`,
+      n,
+      'notes'
+    );
+  }
 }
 
 for (const slideSpec of schema.slides) {

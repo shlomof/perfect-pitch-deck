@@ -542,7 +542,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .outcomes-split .right {
   background: var(--accent-blue);
   padding: 80px 80px 80px 0;
-  display: flex; flex-direction: column; justify-content: center;
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+  gap: 12px;
 }
 .outcomes-split .right .ph {
   background:
@@ -571,7 +572,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 }
 .plans-grid .plan .plan-title { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 42px; line-height: 1.1; margin: 0 0 32px; }
 .plans-grid .plan .plan-result { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 32px; line-height: 1.2; letter-spacing: -0.012em; margin: 0 0 32px; }
-.plans-grid .plan .plan-price { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 56px; line-height: 1.1; margin: 0 0 36px; }
+.plans-grid .plan .plan-price { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 56px; line-height: 1.1; margin: 0 0 8px; }
+.plans-grid .plan .plan-price-sub { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.3; margin: 0 0 32px; }
 .plans-grid .plan ul { list-style: disc; padding-left: 22px; margin: 0; font-size: 20px; line-height: 1.7; text-align: left; }
 .plans-grid .plan ul ul { list-style: disc; padding-left: 22px; margin: 4px 0 0; }
 
@@ -716,19 +718,21 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; color: var(--text-primary);
 }
 
-/* Slide 20 — 48-Hour Bonus Offer (single centered card) */
+/* Slide 20 — Timeline (3-up grid, matches .objections-grid pattern) */
 .bonus-grid {
   position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -50%);
-  display: flex; justify-content: center;
+  display: grid; grid-template-columns: repeat(3, 480px); gap: 36px;
 }
 .bonus-grid .ppd-card {
-  text-align: center; padding: 96px 110px;
-  display: flex; flex-direction: column; align-items: center; gap: 36px;
-  width: 820px;
+  text-align: center; padding: 80px 48px;
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-card);
 }
-.bonus-grid .ppd-card .ppd-headline-sm { margin: 0; font-size: 68px; font-weight: 800; line-height: 1.08; letter-spacing: -0.018em; }
-.bonus-grid .ppd-card .body { margin: 0; font-size: 28px; line-height: 1.5; }
+.bonus-grid .ppd-card .ppd-headline-sm { margin: 0; font-size: 52px; font-weight: 800; line-height: 1.08; letter-spacing: -0.018em; }
+.bonus-grid .ppd-card .body { margin: 0; font-size: 24px; line-height: 1.45; }
 
 /* Slide 6 — Key Outcomes full blue (3 col) */
 .bg-blue > .ppd-eyebrow {
@@ -1074,10 +1078,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Open with what you built this for:</strong></p>
-        <p><em>"Before I walk you through this — I built this specifically for you based on what you told me on our first call. You said you've been on steroids creating content and useless at monetizing it. This is what changes that."</em></p>
-        <p><strong>Why this opens strong:</strong> Jim named the gap himself, unprompted, in his own words. You're not selling him on the problem — he already diagnosed it. This slide lands that alignment before you say anything about the offer.</p>
-        <p><strong>On the proof:</strong> Peter Sorgenfrei's qualification result (29 leads from 3 questions) already landed hard with Jim on Call 1 — he said "that's what I need to learn how to get." Lean on that reaction; it's the strongest proof point you have for this specific prospect.</p>
+        <p><strong>SAY:</strong> <em>"Before I walk you through this: I want to be upfront about where it comes from. Same qualification layer you reacted to on our first call. Peter Sorgenfrei added three questions to his opt-in and it surfaced 29 leads he didn't know he had. I watched that happen firsthand. What I'm showing you today is the same idea, built for your five platforms instead of his one list."</em></p>
+        <p><strong>Open by naming the real client this is built on. Don't invent a story:</strong></p>
+        <p><strong>Why this opens strong:</strong> Jim already named the gap himself and already reacted to Peter's result on Call 1 ("that's what I need to learn how to get"). Naming Peter directly, not a composite or invented persona, keeps this consistent with the honesty framing on slide 1 and the proof slides later.</p>
       </aside>
     </section>
 
@@ -1093,8 +1096,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
+        <p><strong>SAY:</strong> <em>"You said this yourself on our first call. I wrote it down. That's not a problem I invented for you — that's exactly where you are."</em></p>
         <p><strong>Let this slide sit. Don't explain it. These are Jim's own words.</strong></p>
-        <p>Say: <em>"You said this yourself on our first call. I wrote it down. That's not a problem I invented for you — that's exactly where you are."</em></p>
         <p>Let the silence land. Then move forward.</p>
         <p><strong>Why this works:</strong> Jim already owns this diagnosis. He didn't resist it, he named it plainly and with real emotional weight ("on steroids" vs. "useless"). Reflecting it back creates the "he was listening" moment that earns trust before the solution is shown.</p>
         <p><strong>Watch out:</strong> Don't editorialize. The quote is the whole slide. Say "you said this" and stop talking.</p>
@@ -1125,12 +1128,14 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
+        <p><strong>SAY:</strong> <em>"You've got real audience everywhere — LinkedIn, Ghost, YouTube, the podcast, the WhatsApp group. But none of it lives anywhere you actually own. If any one platform changes its rules, that audience is gone."</em></p>
+        <p><strong>SAY:</strong> <em>"You publish to everyone the same way. There's no way to know who's actually a 'could hire me this quarter' person versus someone who just likes your content. So it doesn't convert."</em></p>
+        <p><strong>SAY:</strong> <em>"You said it yourself — you've been on steroids making content. But the ratio between how much you're producing and how many clients it converts to hasn't moved. That gap gets more expensive every year you're 'useless at monetizing it,' as you put it."</em></p>
+        <p><strong>SAY:</strong> <em>"But it doesn't have to stay that way."</em></p>
         <p><strong>Problem Agitators — Slide 4</strong></p>
         <p><strong>Beat:</strong> Three separate reasons why five growing platforms with no consolidation gets worse, not better.</p>
-        <p><strong>Card 1 — No Single Source:</strong> <em>"You've got real audience everywhere — LinkedIn, Ghost, YouTube, the podcast, the WhatsApp group. But none of it lives anywhere you actually own. If any one platform changes its rules, that audience is gone."</em></p>
-        <p><strong>Card 2 — No Way To Tell:</strong> <em>"You publish to everyone the same way. There's no way to know who's actually a 'could hire me this quarter' person versus someone who just likes your content. So it doesn't convert."</em></p>
-        <p><strong>Card 3 — Every Year On Steroids:</strong> <em>"You said it yourself — you've been on steroids making content. But the ratio between how much you're producing and how many clients it converts to hasn't moved. That gap gets more expensive every year you're 'useless at monetizing it,' as you put it."</em></p>
         <p><strong>Watch out:</strong> Don't soften card 3 &#8212; use Jim's own "on steroids / useless at monetizing" framing, not a euphemism for it.</p>
+        <p>The pivot line is the bridge to the next slide, say it before you click forward, then click, the next slide is the promise quote.</p>
       </aside>
     </section>
 
@@ -1147,7 +1152,6 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Big Blue Promise — Slide 5</strong></p>
-        <p><strong>Bridge in:</strong> Say one pivot line first: <em>"But it doesn't have to stay that way."</em> Then click and read the quote.</p>
         <p><strong>Beat:</strong> Read the quote out loud, then pause. Three seconds. Let it land.</p>
         <p><strong>Say:</strong> "One owned list every platform you publish on feeds into — and every new subscriber tells you, the moment they join, whether they're ready to hire you." Pause. Let it sit.</p>
         <p><strong>Watch out:</strong> Don't explain the mechanism yet. This is the promise slide, not the how-it-works slide. Let it breathe.</p>
@@ -1168,7 +1172,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           </div>
           <div>
             <div class="ppd-headline-md">Done For You.</div>
-            <p>I build every piece. You review, approve, and it runs &#8212; live in 3 weeks.</p>
+            <p>I build every piece. You review, approve, and it runs &#8212; live in 2 weeks.</p>
           </div>
         </div>
         <div class="ppd-footer">
@@ -1198,12 +1202,14 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             </div>
             <div class="msg">
               <div class="ppd-headline-sm">Done For You.</div>
-              <p class="body">I build every piece. You review and approve. Live in 3 weeks.</p>
+              <p class="body">I build every piece. You review and approve. Live in 2 weeks.</p>
             </div>
           </div>
           <div class="right">
-            <img class="proof-shot" src="assets/peter-kit-subscriber-growth.png" alt="Kit subscriber growth chart" />
-            <p class="proof-caption">Another Asset Bolt client&#8217;s Kit list growth, built on the same foundation we&#8217;re building for you.</p>
+            <div class="ph"><img src="assets/brand/RM%20who%20are%20you%20answer%201.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
+            <div class="ph"><img src="assets/brand/RM%20who%20are%20you%20answer%202.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
+            <div class="ph"><img src="assets/brand/RM%20challenge%20answer%201.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
+            <div class="ph"><img src="assets/brand/RM%20challenge%20answer%202.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--text-inverse);">
@@ -1211,11 +1217,12 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
+        <p><strong>SAY:</strong> <em>"Right now you've got five separate audiences and no single list. Once this is built, everything you publish points to one list you control. Nobody can take it from you."</em></p>
+        <p><strong>SAY:</strong> <em>"The moment someone subscribes, they answer a couple of questions — who they are and what they're actually struggling with. Then you can see who's a consulting prospect and who's a content fan. You stop guessing."</em></p>
+        <p><strong>SAY:</strong> <em>"I build every piece of this. You review and approve. That's the full ask on your end."</em></p>
+        <p><strong>SAY:</strong> <em>"These are real subscriber answers from a live system — the same qualification mechanism you reacted to on Call 1. Top row: who they are. Bottom row: what they're actually struggling with. In their own words, the moment they join."</em></p>
         <p><strong>Walk through the three outcomes — this is what changes for Jim:</strong></p>
-        <p><strong>One Owned List:</strong> <em>"Right now you've got five separate audiences and no single list. Once this is built, everything you publish points to one list you control. Nobody can take it from you."</em></p>
-        <p><strong>Qualifies Itself:</strong> <em>"The moment someone subscribes, they answer a couple of questions — what they're trying to solve, what kind of business they run. Then you can see who's a consulting prospect and who's a content fan. You stop guessing."</em></p>
-        <p><strong>Done For You:</strong> <em>"I build every piece of this. You review and approve. That's the full ask on your end."</em></p>
-        <p>The chart is Peter Sorgenfrei's Kit list growth — the same qualification mechanism Jim reacted strongly to on Call 1 ("that's what I need to learn how to get"). Point back to that reaction directly if it's natural: "This is the same system you said you wanted."</p>
+        <p>Let Jim read the cards. Don't talk over them — this is the same "read the real answers" moment that landed hardest with Nadya and Peter Winick. A stat card telling him "29 leads" is an abstraction; these screenshots are the proof he can see for himself.</p>
       </aside>
     </section>
 
@@ -1273,24 +1280,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
               <li>Subscribers self-qualify the moment they join</li>
             </ul>
           </div>
-          <div class="right">
-            <div class="flow-diagram">
-              <div class="flow-step">
-                <div class="flow-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="14" cy="16" r="5" fill="currentColor" stroke="none"/><line x1="26" y1="16" x2="54" y2="16" stroke-linecap="round"/><circle cx="14" cy="32" r="5" fill="currentColor" stroke="none"/><line x1="26" y1="32" x2="54" y2="32" stroke-linecap="round"/><circle cx="14" cy="48" r="5" fill="currentColor" stroke="none"/><line x1="26" y1="48" x2="54" y2="48" stroke-linecap="round"/></svg></div>
-                <div class="flow-label">Kit list + consolidation live</div>
-              </div>
-              <div class="flow-connector"></div>
-              <div class="flow-step">
-                <div class="flow-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><path d="M10 14 H54 a4 4 0 0 1 4 4 V40 a4 4 0 0 1 -4 4 H26 L14 54 V44 H10 a4 4 0 0 1 -4 -4 V18 a4 4 0 0 1 4 -4 Z" stroke-linejoin="round"/></svg></div>
-                <div class="flow-label">Visitor finds you and opts in</div>
-              </div>
-              <div class="flow-connector"></div>
-              <div class="flow-step">
-                <div class="flow-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="32" cy="32" r="26"/><path d="M20 33 L28 41 L46 23" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <div class="flow-label">They tell you they&#8217;re ready</div>
-              </div>
-            </div>
-          </div>
+          <div class="right ph"><img src="assets/brand/RM%20graph.png" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0d1117;" alt="" /></div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1299,12 +1289,13 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
+        <p><strong>SAY:</strong> <em>"First I configure your Kit account and connect it as the one place all five of your platforms point to. There's nothing to migrate off Zoho or Ghost — you just add links pointing here as you already publish."</em></p>
+        <p><strong>SAY:</strong> <em>"Anyone who finds you through LinkedIn, Ghost, YouTube, the podcast, or the WhatsApp group lands in the same list — the one you actually own."</em></p>
+        <p><strong>SAY:</strong> <em>"If you go with the Full System, every new subscriber answers a couple of questions right at signup. Not after the fact — right when they join. That's what tells you who's ready to hire you versus who's just a fan."</em></p>
+        <p><strong>SAY:</strong> <em>"This is what it looks like once it's running — 62 answers collected, 17 contacts enriched with tags, 83% answer rate. That's not a projection. That's a real system running for a real client. Yours will look like this."</em></p>
         <p><strong>How It Works — Slide 9</strong></p>
         <p><strong>Walk through each step at a steady pace:</strong></p>
-        <p><strong>Step 1 — Consolidation:</strong> <em>"First I configure your Kit account and connect it as the one place all five of your platforms point to. There's nothing to migrate off Zoho or Ghost — you just add links pointing here as you already publish."</em></p>
-        <p><strong>Step 2 — Opt-in:</strong> <em>"Anyone who finds you through LinkedIn, Ghost, YouTube, the podcast, or the WhatsApp group lands in the same list — the one you actually own."</em></p>
-        <p><strong>Step 3 — Qualification:</strong> <em>"If you go with the Full System, every new subscriber answers a couple of questions right at signup. Not after the fact — right when they join. That's what tells you who's ready to hire you versus who's just a fan."</em></p>
-        <p><strong>On the timeline:</strong> 3 weeks is the full build, live and running. Not a promise of subscriber volume — that depends on how much traffic Jim's five platforms already send. The guarantee is about the system being live and working, not a specific number.</p>
+        <p><strong>On the timeline:</strong> 2 weeks is the Phase 1 build, live and running. Phase 2, if he takes it, adds up to 3 more weeks on top. Not a promise of subscriber volume — that depends on how much traffic Jim's five platforms already send. The guarantee is about the system being live and working, not a specific number.</p>
         <p><strong>If he asks why qualification matters so much:</strong> "Consolidation alone gets everyone in one room. It doesn't tell you who in that room actually wants to hire you. That's the piece that turns a list into a client."</p>
       </aside>
     </section>
@@ -1319,11 +1310,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           </div>
           <div class="ppd-card">
             <div class="ppd-headline-sm">I already have Ghost.</div>
-            <p>Ghost stays as your site. It can&#8217;t run qualification.</p>
+            <p>Ghost stays as your site, we migrate that list into Kit too.</p>
           </div>
           <div class="ppd-card">
             <div class="ppd-headline-sm">Will people opt in?</div>
-            <p>Fair question &#8212; let me show you what&#8217;s worked for people like you.</p>
+            <p>83% do, the moment they land on the page. Real data, not a guess.</p>
           </div>
         </div>
         <div class="ppd-footer">
@@ -1333,10 +1324,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
+        <p><strong>SAY</strong> (if he says "I don't have time"): <em>"That's exactly why this is built the way it is. You're not writing copy, not configuring Kit, not managing a tool. I build it, you review it once, and it runs."</em></p>
+        <p><strong>SAY</strong> (if he says "I already have Ghost"): <em>"Ghost stays exactly as it is — your site, your publishing home, nothing changes there. The issue is the subscriber list underneath it, only 437 people, sitting separate from everything else. In Phase 2, I migrate that list into Kit and send them one broadcast asking them to qualify themselves too, so they're not left behind. Kit isn't a second newsletter, it's the one list everything actually feeds into."</em></p>
+        <p><strong>SAY</strong> (if he says "Will people opt in?"): <em>"They already do. 83% of subscribers who see the thank-you page answer the questions, that's live data from a system running right now, not a projection."</em></p>
         <p><strong>Name the three objections Jim is most likely sitting with:</strong></p>
-        <p><strong>"I don't have time"</strong> — say: <em>"That's exactly why this is built the way it is. You're not writing copy, not configuring Kit, not managing a tool. I build it, you review it once, and it runs."</em></p>
-        <p><strong>"I already have Ghost"</strong> — say: <em>"Ghost stays exactly as it is — your site, your publishing home, nothing changes there. The issue is the subscriber list underneath it. Ghost's list can't run qualification at all — RightMessage doesn't sync to it. And it's only 437 people. Your LinkedIn newsletter alone is 1,417 — more than three times the size — and that's sitting on a platform you don't own. Kit isn't a second newsletter, it's the one list everything actually feeds into."</em></p>
-        <p><strong>"Will people opt in?"</strong> — say: <em>"Fair question — let me show you instead of just telling you."</em> Then move straight into the proof slides — this is exactly where Peter Sorgenfrei's result becomes the answer. Do not reveal price here — that's held for slide 19/22.</p>
+        <p>Then move straight into the proof slides for more depth, this is exactly where Peter Sorgenfrei's result reinforces it. Do not reveal price here — that's held for slide 19/22.</p>
         <p><strong>Watch out:</strong> Don't memorize these. If Jim raises a different objection, handle it live.</p>
       </aside>
     </section>
@@ -1366,11 +1358,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
+        <p><strong>SAY:</strong> <em>"Peter Sorgenfrei advises CEOs and founders — 70,000 LinkedIn followers. He didn't know which of them were ready to hire him. We built a system that asked his list three simple questions. Twenty-nine came back as real, qualified prospects. He had no idea they were sitting there."</em></p>
+        <p><strong>SAY:</strong> <em>"Jeff is a former CHRO I set up a different kind of marketing infrastructure for. He called me the best he's seen. That's the standard I bring to every build."</em></p>
         <p><strong>Point to the two cards and say:</strong></p>
         <p><strong>Context:</strong> Peter Sorgenfrei advises CEOs and founders — 70,000 LinkedIn followers, an active list he emails regularly. His problem was visibility, not silence: he had no idea which of his followers were actually ready to hire him.</p>
-        <p><strong>Say:</strong> <em>"Peter Sorgenfrei advises CEOs and founders — 70,000 LinkedIn followers. He didn't know which of them were ready to hire him. We built a system that asked his list three simple questions. Twenty-nine came back as real, qualified prospects. He had no idea they were sitting there."</em></p>
         <p><strong>This is the good news for Jim specifically:</strong> Jim already reacted to this exact result on Call 1 ("that's what I need to learn how to get"). This slide is where you can say it plainly: "This is the Full System — the qualification piece. This is what you said you wanted."</p>
-        <p><strong>Say (Jeff):</strong> <em>"Jeff is a former CHRO I set up a different kind of marketing infrastructure for. He called me the best he's seen. That's the standard I bring to every build."</em></p>
       </aside>
     </section>
 
@@ -1484,10 +1476,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Slow down here. Let Jim imagine it.</strong></p>
-        <p>Read the right panel out loud: <em>"Picture it: every platform you publish on feeds one list, and every new subscriber tells you the moment they join whether they're ready to hire you."</em></p>
+        <p><strong>SAY:</strong> <em>"Picture it: every platform you publish on feeds one list, and every new subscriber tells you the moment they join whether they're ready to hire you."</em></p>
+        <p><strong>SAY:</strong> <em>"You said you'd like to double what you're currently doing. This is the mechanism — not more content, a way to see who in the content you're already making is ready to become a client."</em></p>
+        <p><strong>Slow down here. Let Jim imagine it.</strong> Read the right panel out loud for the first line, then add the second.</p>
         <p><strong>Why this lands:</strong> This is the direct answer to Jim's own words — "on steroids creating content, useless at monetizing it." This slide is the after-picture of that exact gap closing.</p>
-        <p>Then add: <em>"You said you'd like to double what you're currently doing. This is the mechanism — not more content, a way to see who in the content you're already making is ready to become a client."</em></p>
         <p>Make it vivid. This is the 'after' picture. Pause after you say it. Let it land before moving on.</p>
       </aside>
     </section>
@@ -1496,9 +1488,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Today&#8217;s Offer: The Signal Layer</div>
         <div class="todays-offer">
-          <h3>Two ways to get there. Pick what fits where you are today.</h3>
-          <p>Both start with consolidating everything you publish into one Kit list. One goes further &#8212; qualifying every subscriber the moment they join.</p>
-          <p class="closer">Here&#8217;s exactly what&#8217;s included in each.</p>
+          <h3>One build, two phases. Start now, expand when ready.</h3>
+          <p>Phase 1 consolidates everything you publish into one Kit list. Phase 2 adds qualification once that list is live and moving, so you see who&#8217;s ready to hire you.</p>
+          <p class="closer">Here&#8217;s exactly what&#8217;s included in each phase.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1507,11 +1499,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
+        <p><strong>SAY:</strong> <em>"What I just described is where this is headed. Here's how we get there, in two phases, and I want to show you both honestly."</em></p>
+        <p><strong>SAY:</strong> <em>"Phase 1 gets everything consolidated into one list. Phase 2 adds qualification once that list is live — that's the piece that actually tells you who's ready to hire you. You don't have to decide on Phase 2 today; it makes more sense once Phase 1 is producing real subscribers to qualify."</em></p>
+        <p><strong>SAY:</strong> <em>"In the next slide I'll show you what's included in each phase. Then the prices. Then we decide where to start."</em></p>
         <p><strong>Today's Offer — Slide 17</strong></p>
-        <p><strong>Bridge from the big vision (slide 16) to today's ask:</strong> <em>"What I just described is where this is headed. There are two ways in, and I want to show you both honestly."</em></p>
-        <p><em>"Foundation gets everything consolidated into one list. The Full System does that plus qualifies every subscriber at signup — that's the piece that actually tells you who's ready to hire you."</em></p>
-        <p><em>"In the next slide I'll show you what's included in each. Then the prices. Then we decide."</em></p>
-        <p>Keep it short. Don't break momentum here.</p>
+        <p>Keep it short. Don't break momentum here. Note the shift from Call 1: this is no longer "pick one forever" — it's "start here, add this when it's ready to pay off."</p>
       </aside>
     </section>
 
@@ -1519,13 +1511,16 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">What&#8217;s Included?</div>
         <div class="inclusions-grid">
+          <div class="ppd-card"><div class="ppd-headline-sm">Kickoff Call</div><p class="body ppd-body-md ppd-muted">60 minutes to map your rollout, start to finish.</p></div>
           <div class="ppd-card"><div class="ppd-headline-sm">Kit Setup</div><p class="body ppd-body-md ppd-muted">Your Kit account built, tested, ready to go.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">One List</div><p class="body ppd-body-md ppd-muted">Every platform you publish on points to it.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Migration</div><p class="body ppd-body-md ppd-muted">Your LinkedIn newsletter subs moved to your own list.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Qualify</div><p class="body ppd-body-md ppd-muted">Optional: subscribers sort themselves at signup.</p></div>
-          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
-          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
-          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Migration</div><p class="body ppd-body-md ppd-muted">Your subscribers moving to your own list, ongoing.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Dripify</div><p class="body ppd-body-md ppd-muted">The tool behind it, run remotely, every month.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Welcome Seq.</div><p class="body ppd-body-md ppd-muted">Three emails building your expertise, sent automatically.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Landing Page</div><p class="body ppd-body-md ppd-muted">Kit&#8217;s own template page, not custom, live fast.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">RightMessage</div><p class="body ppd-body-md ppd-muted">Subscribers sort themselves the moment they opt in.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Data Calls</div><p class="body ppd-body-md ppd-muted">Twice-monthly calls: review the data, plan the next build.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Sprints</div><p class="body ppd-body-md ppd-muted">Between calls, I build whatever&#8217;s next.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Ghost Import</div><p class="body ppd-body-md ppd-muted">Your 437 Ghost subscribers moved to Kit, asked to qualify.</p></div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1534,41 +1529,59 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
+        <p><strong>SAY:</strong> <em>"Once you're in, we get on a call and map the whole rollout together before anything ships."</em></p>
+        <p><strong>SAY:</strong> <em>"I configure your Kit account from scratch, forms, automations, the whole thing. You don't need to learn the platform."</em></p>
+        <p><strong>SAY:</strong> <em>"Your LinkedIn newsletter subscribers get moved over onto your own list, and this isn't a one-time thing, it's ongoing. Your 1,417 today, plus anyone who follows you after launch, all of it keeps landing here."</em></p>
+        <p><strong>SAY:</strong> <em>"Here's how that actually happens. On our first call I set up remote desktop access to your own computer, like screen-sharing, but I can actually drive, and I run the scrape and Dripify setup from there, on your own LinkedIn session. I never log into LinkedIn from my own device, that's what keeps your account safe, a login from an unfamiliar device is what gets accounts flagged. Then every month for as long as we're working together, I log back in the same way, TeamViewer, pull a fresh list, and anyone who's followed you or subscribed since the last pass gets picked up and gets the same offer."</em></p>
+        <p><strong>SAY:</strong> <em>"Three emails, written to build your expertise, that go out automatically to every new subscriber."</em></p>
+        <p><strong>SAY:</strong> <em>"This is a Kit template page, not a custom design, it's where people actually land and opt in. Fast to build, not the bespoke version."</em></p>
+        <p><strong>SAY:</strong> <em>"This is the first Phase 2 piece. A couple of questions at signup, and you see instantly who's ready to hire you versus who's just a fan."</em></p>
+        <p><strong>SAY:</strong> <em>"Twice a month, we get on a call, look at who's shown up as ready to hire you, and decide what to build next."</em></p>
+        <p><strong>SAY:</strong> <em>"The calls are where we decide what's next. This is the actual building of it in between, that's the part that turns the list into an actual pipeline instead of a one-time project."</em></p>
+        <p><strong>SAY:</strong> <em>"Your Ghost newsletter has 437 subscribers sitting there, separate from everything else. I migrate that list into Kit and send them one broadcast asking them to answer the same qualification questions, so they're not left behind, they get folded into the same system."</em></p>
+        <p><strong>SAY</strong> (only if it comes up naturally, this is a free tip, not a card): <em>"One thing you can do yourself, for free, anytime: drop the new list link into your YouTube description, show notes, and the WhatsApp group. Takes you ten minutes, more traffic into the same system."</em></p>
+        <p><strong>SAY</strong> (if he wants to talk only about Phase 1, walk the first six cards and set the last four aside): <em>"Those four are Phase 2, we can come back to them once your list actually has people moving through it."</em></p>
         <p><strong>What's Included — Slide 18</strong></p>
-        <p><strong>Walk through the four cards at a steady pace:</strong></p>
-        <p><strong>Kit Setup:</strong> <em>"I configure your Kit account from scratch — forms, automations, the whole thing. You don't need to learn the platform."</em></p>
-        <p><strong>One List:</strong> <em>"LinkedIn, Ghost, YouTube, podcast, WhatsApp — you just point links you already control at one place. No new publishing habits to learn."</em></p>
-        <p><strong>Migration:</strong> <em>"Your 1,417 LinkedIn newsletter subscribers get one automated message inviting them to your own list — same system already running for other clients."</em></p>
-        <p><strong>Qualify:</strong> <em>"This is the Full System piece. A couple of questions at signup, and you see instantly who's ready to hire you versus who's just a fan."</em></p>
-        <p><strong>On Kit costs:</strong> Kit is free up to 10,000 subscribers. If Jim asks: "You won't pay Kit anything for a long time. My fee covers building and configuring everything."</p>
+        <p><strong>First six cards are Phase 1 (ships now). Last four are Phase 2 (once the list is live). Say that out loud before you walk the cards</strong>, it's what makes this a sequence, not a menu. Note this isn't a clean row split visually, walk left to right, top to bottom, and just narrate the boundary yourself when you get to RightMessage.</p>
+        <p>Dripify has its own subscription (Basic plan, roughly $39-59/mo) billed to Jim directly, not part of my fee. This is the same process already running for another client (Kimberly Lee), proven, not new territory. Don't name a dollar figure for your own retainer here, prices come on slide 19, just say "that's what the ongoing part of this actually is, not a system running itself."</p>
+        <p>This is the same generic sequence I built into David Dayton's Phase 1, not tied to any survey answer, that personalization only kicks in if he adds Phase 2.</p>
+        <p>Be upfront it's a template if he asks, don't let him assume custom work here.</p>
+        <p>Bonus detail if it comes up: once this is live, the Welcome Sequence from Phase 1 also gets smarter, it adapts to what someone answered instead of staying generic. RightMessage is its own separate subscription, not bundled into Kit, roughly $79/mo for under 10K visitors, same tier Peter Sorgenfrei pays.</p>
+        <p>This is the retainer's real selling point, lead with the ongoing value, not the fee, when you get to slide 19.</p>
+        <p>This is real work, an actual migration plus a campaign, not busywork, it's a genuine Phase 2 line item.</p>
+        <p>YouTube, the podcast, and the WhatsApp group don't have an exportable subscriber list the way Ghost does, so there's no migration to do there, that's why this is a free tip and not its own card. This is Jim's own work, not billable, don't build a card or a price around it.</p>
+        <p><strong>On Kit and RightMessage costs:</strong> Kit is NOT free once Phase 2 is in play, it needs the paid Creator plan (roughly $33-39/mo) for RightMessage to connect. RightMessage itself is a completely separate, independent subscription on top of that, not bundled into Kit's fee, roughly $79/mo for under 10K visitors. Both are billed directly to Jim by those vendors, neither is part of my fee. If Jim asks: "Once qualification's in, you're paying Kit's plan and RightMessage's plan separately, that's between $33-39 plus $79 a month, billed by them directly, not me. Phase 1 alone can stay free longer, no RightMessage needed yet."</p>
+        <p>Don't push past this if he signals budget caution, per the Call 1 note about anchoring too low too early, let him ask for Phase 2 rather than you defending it unprompted.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Plans On Offer</div>
+        <div class="ppd-eyebrow">The Two Phases</div>
         <div class="plans-grid">
           <div class="plan">
-            <div class="plan-title">Foundation</div>
+            <div class="plan-title">Phase 1</div>
             <div class="plan-result">Every platform you publish on points to one owned list</div>
             <div class="plan-price">$1,500</div>
+            <div class="plan-price-sub ppd-muted">+ $500/mo after</div>
             <ul>
               <li>Kit account configured from scratch</li>
-              <li>LinkedIn newsletter migration campaign (1,417 subscribers)</li>
-              <li>One consolidation point for every platform</li>
-              <li>$500/mo ongoing after launch</li>
+              <li>LinkedIn migration + ongoing Dripify pulls</li>
+              <li>3-email welcome sequence + landing page</li>
+              <li>Kickoff call to map the rollout</li>
             </ul>
           </div>
           <div class="plan" style="border:2px solid var(--accent);">
-            <div class="plan-title" style="color:var(--accent);">Full System</div>
-            <div class="plan-result">Subscribers tell you if they&#8217;re ready to hire you</div>
-            <div class="plan-price">$4,000</div>
+            <div class="plan-title" style="color:var(--accent);">Phase 2</div>
+            <div class="plan-result">Subscribers tell you who&#8217;s ready to hire you</div>
+            <div class="plan-price">+$2,500</div>
+            <div class="plan-price-sub ppd-muted">$1,500/mo after (replaces Phase 1)</div>
             <ul>
-              <li>Everything in Foundation, plus:
+              <li>Everything in Phase 1, plus:
                 <ul>
-                  <li>Qualification questions at opt-in</li>
-                  <li>See prospects vs. fans instantly</li>
-                  <li>$1,500/mo ongoing (replaces Foundation retainer)</li>
+                  <li>Qualification at opt-in</li>
+                  <li>Ghost's 437 subscribers migrated in, asked to qualify</li>
+                  <li>Twice-monthly data and build calls</li>
                 </ul>
               </li>
             </ul>
@@ -1587,24 +1600,30 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
+        <p><strong>SAY:</strong> <em>"Phase 1 gets your Kit list live, your LinkedIn subscribers moved over, and a welcome sequence running: $1,500 to build, $500 a month after. That alone won't get you a client, it just puts your LinkedIn audience in one room. Once that's live, Phase 2 adds qualification, plus folding your Ghost subscribers into the same system: $2,500 more, so $4,000 total, and the retainer steps up to $1,500 a month, which replaces the Phase 1 retainer, it doesn't stack on top of it. You don't need to decide on Phase 2 today."</em></p>
         <p><strong>Plans — Slide 19</strong></p>
-        <p><strong>Present both, recommend the Full System, let him choose:</strong> <em>"Foundation gets everything consolidated — $1,500 to build, $500 a month after. That alone won't get you a client, it just puts everyone in one room. The Full System adds qualification at the moment someone opts in, so you actually see who's ready to hire you — $4,000 to build, $1,500 a month after, which replaces the Foundation retainer, not stacks on top of it."</em></p>
-        <p><strong>Be honest about the tradeoff if he asks which one he needs:</strong> "Consolidation is necessary but not sufficient on its own. If the goal is doubling your consulting volume, qualification is the piece that actually does that — Foundation alone is infrastructure, not a lead source."</p>
-        <p><strong>Watch out:</strong> Don't pressure toward the Full System. Present both honestly and let him pick based on where he actually is financially — he told you this needs to make sense given his situation.</p>
+        <p><strong>Both numbers are now visible on the slide itself</strong>, the setup fee in large text, the monthly retainer right underneath in smaller text. You're reinforcing what he can already see, not revealing something new when you get to the bullets.</p>
+        <p><strong>Be honest about the tradeoff if he asks which one he needs:</strong> "Phase 1 alone is infrastructure for your LinkedIn audience, not a lead source. If the goal is doubling your consulting volume, qualification is the piece that actually does that. But it also doesn't make sense to qualify subscribers before there's a live list for them to land on, that's why it's sequenced this way." YouTube, the podcast, and WhatsApp aren't part of either phase, they don't have an exportable list the way Ghost does, that's on Jim to point at the new list himself whenever he gets to it, don't promise to touch those.</p>
+        <p><strong>Watch out:</strong> Don't pressure toward Phase 2 today. Present Phase 1 as the real, complete first step, not a stripped-down alternative, and let him ask about Phase 2 once he sees the shape of it. He told you this needs to make sense given his situation.</p>
+        <p><strong>Your real goal on this call:</strong> Phase 1 already carries its own $500/mo retainer, so a Phase 1 close alone already tests whether a retainer, even a small one, is sellable. A Phase 2 close on top of that is a bonus signal, not a requirement. If he's hesitant on Phase 2 today, a soft close is fine: "Let's get Phase 1 live first, and I'll check back in once your list has real movement to show you."</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">What You Get Either Way</div>
+        <div class="ppd-eyebrow">Your Timeline</div>
         <div class="bonus-grid">
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Direct Access</div>
-            <p class="body ppd-muted">You work with me, not a handoff to a junior.</p>
+            <div class="ppd-headline-sm">Week 1-2</div>
+            <p class="body ppd-muted">Phase 1 live: Kit set up, one list, migration done.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">No Lock-In</div>
-            <p class="body ppd-muted">Start with Foundation, add qualification whenever you&#8217;re ready.</p>
+            <div class="ppd-headline-sm">Week 3-4</div>
+            <p class="body ppd-muted">Phase 2 build: qualification wired up and tested.</p>
+          </div>
+          <div class="ppd-card">
+            <div class="ppd-headline-sm">Week 5</div>
+            <p class="body ppd-muted">Live: subscribers self-qualify, first data call booked.</p>
           </div>
         </div>
         <div class="ppd-footer">
@@ -1614,10 +1633,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>What You Get Either Way — Slide 20</strong></p>
-        <p><strong>Beat:</strong> Reassurance, not a pitch. Whichever plan he picks, these two things are true.</p>
-        <p><strong>Say (Direct Access):</strong> "Whichever plan you pick, you're working with me directly — same as everyone else I build for."</p>
-        <p><strong>Say (No Lock-In):</strong> "If you start with Foundation and want to add qualification later, that's a straightforward upgrade — you're not locked into one path today."</p>
+        <p><strong>Your Timeline — Slide 20</strong></p>
+        <p><strong>Beat:</strong> Walk it briskly, one line per marker. This makes both phases tangible instead of abstract.</p>
+        <p><strong>Say:</strong> "Here's exactly how this runs if you go all the way through. Weeks one and two: Phase 1 goes live, your Kit account, one consolidated list, the LinkedIn migration, all done. Weeks three and four: if you're moving into Phase 2, that's when the qualification layer gets built and tested. Week five: it's live, subscribers are qualifying themselves, and we have our first data call."</p>
+        <p><strong>If he's only doing Phase 1 today:</strong> Just walk Week 1-2 and stop there: "That's your two weeks. Phase 2 picks up from wherever you leave off, whenever you're ready."</p>
+        <p><strong>Fold in the reassurance points here too, don't skip them just because the cards changed:</strong> "Whichever phase you're on, you're working with me directly, not handed off to anyone. And Phase 1 and Phase 2 aren't two different paths, Phase 2 is just what Phase 1 grows into once it's live, you're not locking into anything beyond Phase 1 today."</p>
       </aside>
     </section>
 
@@ -1625,9 +1645,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Our Guarantee</div>
         <div class="guarantee-hero">
-          <h2 class="ppd-headline-md">Consolidated list live in 3 weeks. Or I keep working.</h2>
-          <p class="body ppd-body-lg">If your Kit list and consolidation setup aren&#8217;t live within 3 weeks, I keep working until they are. No extra charge. If you add the qualification layer, the same guarantee applies to that build too.</p>
-          <p class="fine">Requires: your Kit login and approval on copy before it loads. Kit itself is billed separately by Kit, not by me.</p>
+          <h2 class="ppd-headline-md">Consolidated list live in 2 weeks. Or I keep working.</h2>
+          <p class="body ppd-body-lg">If your Kit list and consolidation setup aren&#8217;t live within 2 weeks, I keep working until they are. No extra charge. Phase 2 adds up to 3 more weeks when you're ready for it, same guarantee applies to that build too.</p>
+          <p class="fine">Requires: your Kit login, approval on copy before it loads, and remote desktop access to your own computer each month for the LinkedIn rescrape (not your password, I never log in from my own device). Kit, RightMessage, and Dripify are each billed separately, not by me.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1636,9 +1656,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
+        <p><strong>SAY:</strong> <em>"Here's my commitment: if your consolidated list isn't live within 2 weeks, I keep working until it is. No extra charge. Phase 2 adds up to 3 more weeks when you're ready for it, and that same guarantee covers the qualification build too."</em></p>
+        <p><strong>SAY:</strong> <em>"The only things I need from you are your Kit login, your approval on copy before we load it, and remote desktop access to your computer once a month for the LinkedIn rescrape, never your password, I don't log in from my own device. That's the full ask."</em></p>
         <p><strong>Say the guarantee out loud — don't just let Jim read it:</strong></p>
-        <p><em>"Here's my commitment: if your consolidated list isn't live within 3 weeks, I keep working until it is. No extra charge. If you go with the Full System, that same guarantee covers the qualification build too."</em></p>
-        <p>Then: <em>"The only things I need from you are your Kit login and your approval on copy before we load it. That's the full ask."</em></p>
       </aside>
     </section>
 
@@ -1646,12 +1666,12 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Special Offer</div>
         <div class="offer-card">
-          <div class="price">$1,500 Foundation. $4,000 Full System.</div>
-          <div class="spots">Two ways in &#8212; you choose</div>
-          <p>Here&#8217;s what&#8217;s included at each level:</p>
-          <p>Foundation: Kit setup, one consolidated list, LinkedIn migration. $1,500 + $500/mo.</p>
-          <p>Full System: Foundation plus qualification at opt-in &#8212; see who&#8217;s ready to hire you instantly. $4,000 + $1,500/mo.</p>
-          <p>Either way, you own the list, the migration, and the setup. Qualification is the piece that actually tells you who to call.</p>
+          <div class="price">$1,500 Phase 1. +$2,500 for Phase 2.</div>
+          <div class="spots">One system, two phases</div>
+          <p>Here&#8217;s exactly what happens in each phase:</p>
+          <p>Phase 1: Kit setup, LinkedIn migration, welcome sequence, landing page, kickoff call. $1,500 + $500/mo.</p>
+          <p>Phase 2: qualification at opt-in, Ghost's 437 subscribers migrated in, twice-monthly data and build calls. +$2,500 ($4,000 total), $1,500/mo.</p>
+          <p>Either way, you own the list and the setup outright. Phase 2 is what turns it into an ongoing engine that tells you who to call, every month.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1660,11 +1680,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Say the numbers plainly and stop talking:</strong></p>
-        <p><em>"Foundation is $1,500 to build, $500 a month after. Full System is $4,000 to build, $1,500 a month after — that replaces the Foundation retainer, it doesn't stack on top of it. Both are done for you, nothing recurring beyond the monthly."</em></p>
-        <p>One pass. Say it confidently and stop. Then: <em>"Which one makes sense for where you are right now?"</em></p>
-        <p><strong>If price itself is the hesitation:</strong> <em>"You told me you'd like to double your project count. Foundation alone won't do that — it just puts everyone in one room. The Full System is the piece that actually surfaces who's ready. If budget's the real constraint, we can start with Foundation and add qualification once it's proven itself."</em> Use this only if he pushes back — don't volunteer it unprompted.</p>
-        <p><strong>On Kit cost:</strong> Kit is free up to 10,000 subscribers. If he asks about ongoing platform costs beyond the retainer: "Kit itself is free at your subscriber count for a long time. The monthly retainer is my fee, not Kit's."</p>
+        <p><strong>SAY:</strong> <em>"Phase 1 is $1,500 to build, $500 a month after. Once that's live, Phase 2 is $2,500 more, so $4,000 total, and the retainer steps up to $1,500 a month, replacing the Phase 1 retainer, not stacking on it. Both are done for you, nothing recurring beyond the monthly."</em></p>
+        <p><strong>SAY:</strong> <em>"What's your gut feeling on this?"</em></p>
+        <p><strong>SAY:</strong> <em>"You told me you'd like to double your project count. Phase 1 alone won't do that, it just puts everyone in one room. Phase 2 is the piece that actually surfaces who's ready. Let's start with Phase 1 and revisit Phase 2 once it's proven itself."</em></p>
+        <p><strong>Say the numbers plainly and stop talking, one pass, don't rush past the bridge question that follows.</strong></p>
+        <p>Let him answer first, in his own words, before you say anything else. Jim isn't going to have his own copy of this deck open, only you do, on screen share, so there's nothing for him to click, this question is the actual close mechanism, not a button.</p>
+        <p>Use this only if he pushes back, don't volunteer it unprompted.</p>
+        <p><strong>Remember the bigger goal today:</strong> beyond closing Phase 1, you're testing whether a retainer, even a small one, is something Jim (and future clients) will actually pay for on an ongoing basis. If he goes for Phase 2, that's a real signal, not just revenue.</p>
+        <p><strong>On Kit, RightMessage, and Dripify costs:</strong> Kit is NOT free once Phase 2 is in play, it needs the paid Creator plan (roughly $33-39/mo) for RightMessage to connect. RightMessage itself is a separate, independent subscription on top of that (roughly $79/mo for under 10K visitors), not bundled into Kit's fee. Dripify has its own subscription too (roughly $39-59/mo), running since Phase 1. All three are billed to Jim directly by those vendors, none of it is part of my fee. If he asks about ongoing platform costs beyond the retainer: "Kit, RightMessage, and Dripify are each billed separately by them, not me. Phase 1 alone can stay on Kit's free tier longer; Phase 2 needs Kit's paid plan plus RightMessage's own subscription from day one."</p>
+        <p><strong>Once he answers the gut-feeling question, click to the final slide:</strong> it's just a visual recap for him to look at while you keep talking, he can't click anything on it, only you can, from your own screen. The actual next step gets decided by what he just said out loud, not by a button.</p>
       </aside>
     </section>
 
@@ -1674,14 +1698,14 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <div class="left">
             <div class="ppd-eyebrow">Next steps&#8230;</div>
             <h3>Ready to build your signal layer?</h3>
-            <p>Pick Foundation or the Full System below, and I&#8217;ll follow up within 24 hours to schedule the kickoff.</p>
+            <p>Let&#8217;s get Phase 1 live, and lock in Phase 2 now if it makes sense. I&#8217;ll follow up within 24 hours to schedule the kickoff.</p>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
             <div class="cta-card" id="ppd-cta-card" data-mode="static">
               <p class="title">Ready to start?</p>
               <div class="choices" role="group" aria-label="Your response">
-                <a class="cta-direct primary" href="https://tidycal.com/shlomofreund/30-minute-meeting">I&#8217;m in &#8212; let&#8217;s pick a plan</a>
+                <a class="cta-direct primary" href="https://tidycal.com/shlomofreund/30-minute-meeting">I&#8217;m in, let&#8217;s start Phase 1</a>
                 <a class="cta-direct secondary" href="mailto:shlomo@assetbolt.com?subject=Question about The Signal Layer">I have a question first</a>
                 <a class="cta-direct secondary" href="mailto:shlomo@assetbolt.com?subject=The Signal Layer - not right now">Not right now, keep me posted</a>
               </div>
@@ -1691,13 +1715,14 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>The close. Three paths. Know each one before you walk in.</strong></p>
-        <p><strong>Before you show this slide:</strong> Say: <em>"Jim, here's where I want to land us today. Which one makes sense — Foundation, or the Full System?"</em> Then click to this slide.</p>
-        <p><strong>Each button is a direct, one-click link:</strong> "I'm in" opens the booking link to schedule the kickoff (where you'll confirm the plan and payment). "I have a question" opens a pre-filled email. "Not right now" opens a low-pressure email to stay in touch.</p>
-        <p><strong>He says / clicks "I'm in":</strong> <em>"Perfect. Let's get the kickoff on the calendar — I'll confirm which plan and we'll get started."</em></p>
-        <p><strong>He says / clicks "I have a question":</strong> Say: <em>"Great — ask me anything."</em> Address it live. Most common question will be the Zoho/consolidation mechanics or which plan actually gets him more clients.</p>
-        <p><strong>He says / clicks "Not right now":</strong> Don't push. Say: <em>"Completely fair. What would need to change for this to make sense for you?"</em> Then listen.</p>
-        <p><strong>The most important thing after showing this slide:</strong> Stop talking. Ask once. Then wait.</p>
+        <p><strong>SAY:</strong> <em>"Perfect. Let's get the kickoff on the calendar, and while we're there I'll ask whether you want Phase 2 locked in now or revisited once Phase 1's live."</em></p>
+        <p><strong>SAY:</strong> <em>"Great, ask me anything."</em></p>
+        <p><strong>SAY</strong> (if he hesitates, don't push): <em>"Completely fair. What would need to change for this to make sense for you?"</em></p>
+        <p><strong>The close. This slide is a visual only, Jim has no copy to click, everything here happens by what he says out loud after the gut-feeling question on the previous slide.</strong></p>
+        <p>Then send him the booking link yourself, right after the call, don't wait for him to find it.</p>
+        <p>Address it live. Most common question will be the Zoho/consolidation mechanics or whether Phase 2 is worth committing to now.</p>
+        <p>Then listen.</p>
+        <p><strong>The most important thing happened one slide back:</strong> asking "What's your gut feeling on this?" and then actually stopping to let him answer. This slide is just where that answer plays out, don't try to re-ask anything here.</p>
       </aside>
     </section>
   </div>
@@ -1954,13 +1979,18 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
     async function attemptUnlock() {
       if (!input || !input.value) return;
       modal.classList.remove('invalid');
+      // Open the speaker popup synchronously, before the WebCrypto await below —
+      // browsers tie window.open() to the user's Enter/click gesture, and that
+      // gesture window can lapse while decryption (PBKDF2 + AES-GCM) is in
+      // flight. Opening first (then filling the popup once decrypt resolves)
+      // keeps window.open() inside the gesture instead of racing it.
+      openSpeakerView();
       try {
         await decryptAll(input.value);
         rememberPassword(input.value);
         unlocked = true;
         modal.classList.remove('open');
         if (hudLockIco) hudLockIco.hidden = true;
-        setTimeout(openSpeakerView, 60);
       } catch (e) {
         modal.classList.add('invalid');
         input.select();

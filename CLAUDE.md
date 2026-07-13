@@ -4,6 +4,7 @@ This file tells Claude Code how to work inside this repo. Read it before editing
 
 ## Golden Rules (do not break)
 
+0. **Start every new client deck from `template-base`, never from the previous client's deck.** Run `git checkout template-base -- index.html notes/ deck.config.json` before `/fill-deck` for a new prospect. Editing forward from whoever came before silently carries their framing choices, phrasing, and stale references into the next pitch with no record of why anything changed — this already happened once (a client-specific story swap on slide 2 that nobody decided on, plus `notes/*.html` files left three clients stale). If a framing choice from a past deck is worth reusing (e.g. a proof-point story), that's a deliberate call to make and note in the brief — not a default from copying the file forward.
 1. **Use design tokens.** Never hardcode hex, `rgba()`, or `font-size` in px outside of `:root` in `index.html`. The brand tokens are in the `:root` block at the top of the `<style>` element.
 2. **Never edit class names, `data-*` attributes, or structure in `index.html` from a slide-authoring skill.** Only replace TEXT INSIDE existing slot elements. Layout is the system's job, copy is the user's job.
 3. **Use existing slot names.** Per-slide slots are defined in `slides/schema.json` and surfaced in each `skills/slide-NN-*/SKILL.md`. If a slide doesn't have a slot for what you want to add, leave it.
