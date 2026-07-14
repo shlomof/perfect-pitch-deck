@@ -22,22 +22,22 @@
 <!-- ─── SEO / Open Graph ───────────────────────────────────────────────
      Customise these for your deck. When deployed in public mode (no
      DECK_PASSWORD), search crawlers and social cards will pick these up. -->
-<title>Asset Bolt — The Signal Layer</title>
-<meta name="description" content="A walkthrough of The Signal Layer, built for Jim James." />
-<link rel="canonical" href="https://kimberly-assetbolt.pages.dev/" />
+<title>Asset Bolt — The Soft Landing System</title>
+<meta name="description" content="A walkthrough of the Soft Landing System, built for TID — The Israel Dream." />
+<link rel="canonical" href="https://tid-assetbolt.pages.dev/" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Asset Bolt — The Signal Layer" />
-<meta property="og:description" content="A walkthrough of The Signal Layer, built for Jim James." />
-<meta property="og:url" content="https://kimberly-assetbolt.pages.dev/" />
-<meta property="og:image" content="https://kimberly-assetbolt.pages.dev/assets/og-image.png" />
+<meta property="og:title" content="Asset Bolt — The Soft Landing System" />
+<meta property="og:description" content="A walkthrough of the Soft Landing System, built for TID — The Israel Dream." />
+<meta property="og:url" content="https://tid-assetbolt.pages.dev/" />
+<meta property="og:image" content="https://tid-assetbolt.pages.dev/assets/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Asset Bolt — The Signal Layer" />
-<meta name="twitter:description" content="A walkthrough of The Signal Layer, built for Jim James." />
-<meta name="twitter:image" content="https://kimberly-assetbolt.pages.dev/assets/og-image.png" />
+<meta name="twitter:title" content="Asset Bolt — The Soft Landing System" />
+<meta name="twitter:description" content="A walkthrough of the Soft Landing System, built for TID — The Israel Dream." />
+<meta name="twitter:image" content="https://tid-assetbolt.pages.dev/assets/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Mona+Sans:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -297,7 +297,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .ppd-slide.bg-light { background: var(--bg-light); color: var(--text-primary); }
 .ppd-slide.bg-dark  { background: var(--bg-dark);  color: var(--text-inverse); }
 .ppd-slide.bg-blue  { background: var(--bg-blue);  color: var(--text-inverse); }
-.ppd-slide.bg-blue-tint { background: var(--bg-blue-tint); color: var(--accent-blue); }
+.ppd-slide.bg-blue-tint { background: var(--bg-blue-tint); color: var(--text-inverse); }
 .ppd-slide.bg-white { background: var(--surface); color: var(--text-primary); }
 
 .ppd-eyebrow {
@@ -389,15 +389,14 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 /* Slide 1 — Cover (matches Figma node 1-838: poster 528x798, right col 878px) */
 .ppd-cover {
   position: absolute; inset: 0;
-  display: grid; grid-template-columns: 750px 770px; column-gap: 90px;
+  display: grid; grid-template-columns: 528px 878px; column-gap: 161px;
   align-items: start;
   padding: 141px 160px 0;
   box-sizing: border-box;
 }
 .ppd-cover .poster {
-  width: 750px; height: 500px;
+  width: 528px; height: 798px;
   display: flex; align-items: center; justify-content: center;
-  align-self: center;
   border-radius: 8px; overflow: hidden;
   background: var(--surface);
 }
@@ -462,7 +461,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .inclusions-grid .ppd-card .ppd-headline-sm { margin: 0 0 12px; }
 .inclusions-grid .ppd-card .body { margin: 0; }
 
-/* Slide 4 — Why Asset Bolt? (dark) */
+/* Slide 4 — Why {Company Name}? (dark) */
 .why-hero {
   position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -50%);
@@ -512,10 +511,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .quote-slide .quote {
   font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800;
   font-size: 104px; line-height: 1.04; letter-spacing: -0.03em;
-  color: var(--accent-blue-soft);
+  color: var(--text-inverse);
   margin: 0;
 }
-.quote-slide.tint .quote { color: var(--accent-blue); font-size: 120px; }
+.quote-slide.tint .quote { color: var(--text-inverse); font-size: 120px; }
 .quote-slide .quote-author {
   display: flex; align-items: center; gap: 18px;
   margin-top: 48px;
@@ -550,13 +549,6 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
     repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/40px 40px;
   border-radius: 2px;
 }
-.outcomes-split .right .proof-shot {
-  width: 100%; border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-  display: block;
-}
-.outcomes-split .right .proof-caption {
-  margin: 16px 0 0; font-size: 16px; color: rgba(255,255,255,0.85); font-style: italic;
-}
 
 /* Slide 9 — Plans On Offer (3 cards) */
 .plans-grid {
@@ -572,8 +564,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 }
 .plans-grid .plan .plan-title { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 42px; line-height: 1.1; margin: 0 0 32px; }
 .plans-grid .plan .plan-result { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 32px; line-height: 1.2; letter-spacing: -0.012em; margin: 0 0 32px; }
-.plans-grid .plan .plan-price { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 56px; line-height: 1.1; margin: 0 0 8px; }
-.plans-grid .plan .plan-price-sub { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.3; margin: 0 0 32px; }
+.plans-grid .plan .plan-price { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 56px; line-height: 1.1; margin: 0 0 4px; }
+.plans-grid .plan .plan-price-sub { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.3; margin: 0 0 32px; }
 .plans-grid .plan ul { list-style: disc; padding-left: 22px; margin: 0; font-size: 20px; line-height: 1.7; text-align: left; }
 .plans-grid .plan ul ul { list-style: disc; padding-left: 22px; margin: 4px 0 0; }
 
@@ -590,7 +582,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 }
 .todays-offer h3 { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 44px; line-height: 1.18; margin: 0 0 28px; letter-spacing: -0.015em; }
 .todays-offer p { font-size: 22px; line-height: 1.5; margin: 0 0 28px; }
-.todays-offer .closer { font-style: italic; font-weight: 700; color: var(--accent-blue); }
+.todays-offer .closer { font-style: italic; font-weight: 700; color: var(--text-primary); }
 
 /* Slide 9 — How It Works (text left + wide landscape image right) */
 .bg-white > .ppd-eyebrow,
@@ -615,7 +607,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 }
 
 /* Slide 4 (problem-agitators) light blue tint */
-.bg-blue-tint .ppd-eyebrow { color: var(--accent-blue); }
+.bg-blue-tint .ppd-eyebrow { color: var(--text-inverse); }
 .bg-blue-tint > .ppd-eyebrow {
   position: absolute; left: 80px; top: 80px;
   font-size: 56px; font-weight: 800; letter-spacing: -0.015em;
@@ -625,10 +617,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   transform: translateY(-50%);
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 80px;
   text-align: center;
-  color: var(--accent-blue);
+  color: var(--text-inverse);
 }
-.agitators-grid .ppd-headline-md { color: var(--accent-blue); margin: 0 0 24px; font-size: 64px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; max-width: 360px; margin-left: auto; margin-right: auto; }
-.agitators-grid p { color: var(--text-primary); font-size: 22px; line-height: 1.5; margin: 0 auto; max-width: 380px; }
+.agitators-grid .ppd-headline-md { color: var(--text-inverse); margin: 0 0 24px; font-size: 64px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; max-width: 360px; margin-left: auto; margin-right: auto; }
+.agitators-grid p { color: var(--text-inverse); font-size: 22px; line-height: 1.5; margin: 0 auto; max-width: 380px; }
 
 /* Slide 15 — Team (dark, 5 portraits) */
 .team-grid {
@@ -691,21 +683,6 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
     repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/40px 40px;
   border-radius: 2px;
 }
-/* Flow diagram — illustrative 3-step mechanism graphic, used in place of screenshots */
-.flow-diagram { display: flex; flex-direction: column; align-items: center; }
-.flow-diagram .flow-step { display: flex; flex-direction: column; align-items: center; gap: 20px; }
-.flow-diagram .flow-icon { width: 96px; height: 96px; }
-.flow-diagram .flow-icon svg { width: 100%; height: 100%; }
-.flow-diagram .flow-label { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 22px; text-align: center; max-width: 260px; }
-.flow-diagram .flow-connector { width: 3px; height: 72px; background: currentColor; opacity: 0.4; margin: 8px 0; }
-.howitworks-split .right .flow-diagram { color: var(--text-inverse); }
-.howitworks .right .flow-diagram { color: var(--accent); }
-.howitworks .right.ph { display: flex; align-items: center; justify-content: center; }
-.ppd-cover .poster .flow-diagram-horizontal { display: flex; align-items: center; justify-content: center; gap: 20px; color: var(--accent); width: 100%; }
-.ppd-cover .poster .flow-diagram-horizontal .flow-icon { width: 104px; height: 104px; flex-shrink: 0; }
-.ppd-cover .poster .flow-diagram-horizontal .flow-icon svg { width: 100%; height: 100%; }
-.ppd-cover .poster .flow-diagram-horizontal .flow-arrow { width: 46px; height: 28px; color: var(--text-muted-inverse); flex-shrink: 0; }
-.ppd-cover .poster .flow-diagram-horizontal .flow-arrow svg { width: 100%; height: 100%; }
 .howitworks-split .right .corner-brand {
   position: absolute; right: 80px; bottom: 32px;
   color: var(--text-inverse);
@@ -718,21 +695,18 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; color: var(--text-primary);
 }
 
-/* Slide 20 — Timeline (3-up grid, matches .objections-grid pattern) */
+/* Slide 20 — 48-Hour Bonus Offer (3 cards) */
 .bonus-grid {
   position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -50%);
-  display: grid; grid-template-columns: repeat(3, 480px); gap: 36px;
+  display: grid; grid-template-columns: repeat(3, 460px); gap: 36px;
 }
 .bonus-grid .ppd-card {
-  text-align: center; padding: 80px 48px;
-  display: flex; flex-direction: column; align-items: center; gap: 20px;
-  background: var(--surface);
-  border-radius: var(--radius-card);
-  border: 1px solid var(--border-card);
+  text-align: center; padding: 64px 40px;
+  display: flex; flex-direction: column; align-items: center; gap: 28px;
 }
 .bonus-grid .ppd-card .ppd-headline-sm { margin: 0; font-size: 52px; font-weight: 800; line-height: 1.08; letter-spacing: -0.018em; }
-.bonus-grid .ppd-card .body { margin: 0; font-size: 24px; line-height: 1.45; }
+.bonus-grid .ppd-card .body { margin: 0; font-size: 22px; line-height: 1.45; }
 
 /* Slide 6 — Key Outcomes full blue (3 col) */
 .bg-blue > .ppd-eyebrow {
@@ -751,7 +725,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 
 /* Slide 19 reuses .quote-slide with tint variant */
 .quote-slide.tint .quote {
-  color: var(--accent-blue);
+  color: var(--text-inverse);
   font-size: 124px;
 }
 
@@ -967,33 +941,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   font: inherit; font-weight: 700; font-size: 17px;
   text-decoration: none; text-align: center;
 }
-.cta-card .cta-direct {
-  display: flex; align-items: center; justify-content: center;
-  width: 100%; box-sizing: border-box;
-  border-radius: 12px; padding: 16px 20px;
-  font: inherit; font-size: 18px; font-weight: 600;
-  text-decoration: none; text-align: center;
-  transition: opacity .15s, border-color .15s;
-}
-.cta-card .cta-direct.primary { background: var(--accent-blue); color: #FFF; border: 0; }
-.cta-card .cta-direct.primary:hover { opacity: 0.92; }
-.cta-card .cta-direct.secondary {
-  background: var(--surface); color: var(--text-primary);
-  border: 1px solid #E4E4E4; font-weight: 500;
-}
-.cta-card .cta-direct.secondary:hover { border-color: var(--accent-blue); }
 .cta-card .static-cta:hover { background: #1750D9; }
 .cta-card.is-success .static-cta[href] { display: inline-block; }
 
-/* ── Asset Bolt brand overrides: black + white + orange ──────────────── */
-/* Quote text on full-orange slides (5, 12) must be white, not orange-on-orange */
-.quote-slide:not(.tint) .quote { color: var(--text-inverse); }
-/* All footers, mini-footers, corner brands: orange on every slide */
-.ppd-footer { color: var(--accent-blue); }
-.ppd-footer-mini { color: var(--accent-blue); }
-.intro-brand { color: var(--accent-blue); }
-.corner-brand { color: var(--accent-blue); }
-/* ── Slide 23 — Future split (black left / white right) ─────────────── */
 /* Slide 23 — Future split (black left / white right) */
 .future-split {
   position: absolute; inset: 0;
@@ -1039,18 +989,33 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-white">
         <div class="ppd-cover">
           <div class="poster">
-            <img src="assets/peter-kit-subscriber-growth.png" alt="Kit subscriber growth chart" />
+            <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+              <div style="position:relative;height:44%;overflow:hidden;flex-shrink:0;">
+                <img src="assets/brand/tid-homepage-real.png" style="width:100%;height:100%;object-fit:cover;object-position:top center;" alt="TID's real homepage today" />
+                <div style="position:absolute;top:14px;left:14px;background:rgba(0,0,0,0.6);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:6px 14px;border-radius:100px;">Today</div>
+              </div>
+              <div style="position:relative;flex:1;background-image:linear-gradient(160deg,rgba(15,25,45,0.88),rgba(10,15,25,0.94)),url('assets/brand/tid-homepage-real.png');background-size:cover;background-position:center 30%;display:flex;flex-direction:column;justify-content:center;padding:28px 32px;font-family:'Inter',sans-serif;color:#fff;">
+                <div style="position:absolute;top:14px;right:14px;background:rgba(201,168,96,0.18);color:#C9A860;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:5px 12px;border-radius:100px;">Personalized</div>
+                <div style="font-size:10px;color:#C9A860;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;">Israeli Real Estate &mdash; Tel Aviv, Luxury Only</div>
+                <div style="font-family:Georgia,'Times New Roman',serif;font-size:26px;line-height:1.2;margin:12px 0 10px;">Own Tel Aviv&#8217;s<br/>finest &rarr; <span style="color:#C9A860;font-style:italic;">home.</span></div>
+                <div style="opacity:0.65;font-size:12.5px;line-height:1.5;margin-bottom:16px;">You told us: Tel Aviv, luxury only. Zihron &ndash; Weizmann fits &mdash; boutique buildings by Kikar HaMedina. We handle it all, legal to management, until it&#8217;s really yours.</div>
+                <div style="display:flex;gap:10px;">
+                  <div style="background:#fff;color:#0d1420;font-size:12px;font-weight:700;padding:9px 16px;border-radius:100px;">Book a Call &rarr;</div>
+                  <div style="border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:12px;font-weight:700;padding:9px 16px;border-radius:100px;">See Zihron &ndash; Weizmann</div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="content">
-            <h1 class="title">Asset Bolt</h1>
-            <p class="lede">One list every platform feeds, that tells you who&#8217;s ready to hire you.</p>
+            <h1 class="title">Soft Landing System</h1>
+            <p class="lede">Every parlor-meeting lead already tells you what they want. Here's how to act on it.</p>
             <ul class="ppd-check-list">
-              <li>Every platform you publish on points to one list</li>
-              <li>Qualifies subscribers as they join</li>
-              <li>Kit account, built and owned by you</li>
+              <li>Turns your sign-up data into action</li>
+              <li>Personalized emails, not mass blasts</li>
+              <li>Dynamic pages matched to their budget</li>
             </ul>
             <div class="ppd-cta-row">
-              <a class="ppd-pill-cta" href="#/1">See what&#8217;s inside</a>
+              <a class="ppd-pill-cta" href="#/1">Let's lock in your plan</a>
             </div>
           </div>
         </div>
@@ -1059,48 +1024,49 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Before you open the deck:</strong> This is the leave-behind / walkthrough deck for Call 2 with Jim James, booked July 7 2026, 3:00 PM Israel / 1:00 PM UK. Jim closed the discovery call himself, saying: "I have been on steroids when it comes to creating content, and building communities. I have been useless at monetizing that." He's a peer, not a student — treat him as one.</p>
-        <p><strong>Jim's situation:</strong> "The Unnoticed Entrepreneur" — 3 Wiley books, 900+ episode podcast, LinkedIn newsletter (1,417 subs), Ghost newsletter (437 subs), YouTube (1,670+ subs), 53-person AI WhatsApp group. Five audiences, zero way to tell who's a consulting prospect vs. a content fan. Currently on Zoho, not Kit.</p>
-        <p><strong>Goal for this call:</strong> Walk through both plans — Foundation (consolidation + LinkedIn migration) and the recommended Full System (adds qualification at opt-in) — and let him pick. Prices are on slide 19 and restated on slide 22.</p>
-        <p><strong>Key framing:</strong> Consolidation alone won't get him a client — it just puts everyone in one room. Qualification is what tells him who in that room is ready to buy. Be honest about that distinction if he asks which plan he actually needs.</p>
+        <p><strong>Cover — Slide 1</strong></p>
+        <p><strong>Beat:</strong> Land that this deck is built specifically off their 7/1 call, not a template — then move fast into the room.</p>
+        <p><strong>Say:</strong> "This is the Soft Landing System — what I want to show you today for TID. Everything on the next few slides is built off what you and David told me on our first call, not a generic pitch."</p>
+        <p><strong>Watch out:</strong> Don't linger on the cover — it's a tone-setter, not a topic. Three seconds, then move.</p>
+        <p><strong>Visual:</strong> Top half is a real screenshot of their actual homepage today (tidinvestments.com). Bottom half rebuilds the exact same layout — eyebrow, big serif headline with the arrow, subtext, two pill buttons — but with wording for a specific lead who said "Tel Aviv, luxury only": headline "Own Tel Aviv's finest &rarr; home." (mirrors their real "Own a piece of Israel &rarr; home."), subtext naming Zihron &ndash; Weizmann, and the second button swapped from "How it works" to "See Zihron &ndash; Weizmann." Say: "Same page, same layout — just built around what they told you, instead of the generic version everyone else sees."</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-dark">
       <div class="ppd-slide bg-dark">
         <div class="intro-slide">
-          <h1>Nice to<br/>meet you,<br/>Jim!</h1>
+          <h1>Nice to<br/>meet you,<br/>Joseph & David!</h1>
           <div class="subhead">Asset Bolt</div>
         </div>
         <div class="intro-brand">
-          <svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>
+          <svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>
           <span>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"Before I walk you through this: I want to be upfront about where it comes from. Same qualification layer you reacted to on our first call. Peter Sorgenfrei added three questions to his opt-in and it surfaced 29 leads he didn't know he had. I watched that happen firsthand. What I'm showing you today is the same idea, built for your five platforms instead of his one list."</em></p>
-        <p><strong>Open by naming the real client this is built on. Don't invent a story:</strong></p>
-        <p><strong>Why this opens strong:</strong> Jim already named the gap himself and already reacted to Peter's result on Call 1 ("that's what I need to learn how to get"). Naming Peter directly, not a composite or invented persona, keeps this consistent with the honesty framing on slide 1 and the proof slides later.</p>
+        <p><strong>Icebreaker — Slide 2</strong></p>
+        <p><strong>Beat:</strong> Warm, direct greeting — signal momentum from the last call, not small talk.</p>
+        <p><strong>Say:</strong> "Good to see you both again, Joseph. Since we spoke, I've been thinking through exactly how this fits what you and David are building with TID."</p>
+        <p><strong>Watch out:</strong> Don't drift into weather/travel small talk — Joseph and David already gave you the room on Call 1. Get straight to their world.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent-tint">
       <div class="ppd-slide bg-blue-tint">
         <div class="quote-slide tint">
-          <p class="quote">&#8220;I&#8217;ve been on steroids creating content. I&#8217;ve been useless at monetizing it.&#8221;</p>
+          <p class="quote">&#8220;You write a name on a list and hope you remember to follow up in six months.&#8221;</p>
         </div>
-        <div class="ppd-footer" style="color: var(--accent-blue);">
+        <div class="ppd-footer" style="color: var(--text-inverse);">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"You said this yourself on our first call. I wrote it down. That's not a problem I invented for you — that's exactly where you are."</em></p>
-        <p><strong>Let this slide sit. Don't explain it. These are Jim's own words.</strong></p>
-        <p>Let the silence land. Then move forward.</p>
-        <p><strong>Why this works:</strong> Jim already owns this diagnosis. He didn't resist it, he named it plainly and with real emotional weight ("on steroids" vs. "useless"). Reflecting it back creates the "he was listening" moment that earns trust before the solution is shown.</p>
-        <p><strong>Watch out:</strong> Don't editorialize. The quote is the whole slide. Say "you said this" and stop talking.</p>
+        <p><strong>The Problem — Slide 3</strong></p>
+        <p><strong>Beat:</strong> Reflect their own words back to them — this is what Joseph and David actually described on Call 1.</p>
+        <p><strong>Say:</strong> "This is basically what you told me last time — someone says 'maybe in six months' at a parlor meeting, you write their name down, and you're hoping you remember to reach back out."</p>
+        <p><strong>Watch out:</strong> Say it plainly, don't editorialize — let them nod. This should feel like you were listening, not diagnosing them.</p>
       </aside>
     </section>
 
@@ -1109,81 +1075,81 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">And To Make Things Worse&#8230;</div>
         <div class="agitators-grid">
           <div>
-            <div class="ppd-headline-md">No Single Source</div>
-            <p>LinkedIn newsletter, Ghost, YouTube, podcast, WhatsApp &#8212; five audiences, no list you actually own or control.</p>
+            <div class="ppd-headline-md">Every Missed Follow-Up</div>
+            <p>300 people showed up in Rome. Only a few became deals. The rest are just names, waiting to be remembered.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">No Way To Tell</div>
-            <p>Every subscriber gets the same message. You can&#8217;t see who&#8217;s a consulting prospect and who&#8217;s just a fan.</p>
+            <div class="ppd-headline-md">The Bigger Events Get</div>
+            <p>Milan, Zurich, NYC, Miami, LA are coming &#8212; more names in Notion nobody has time to personally follow up with.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Every Year On Steroids</div>
-            <p>More content, more followers, same conversion. The gap between audience size and client count keeps growing.</p>
+            <div class="ppd-headline-md">Can&#8217;t Tell Who&#8217;s Ready</div>
+            <p>Someone says &#8216;maybe in six months&#8217; and nothing tracks whether that&#8217;s real interest or a polite no.</p>
           </div>
         </div>
-        <div class="ppd-footer" style="color: var(--accent-blue);">
+        <div class="ppd-footer" style="color: var(--text-inverse);">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"You've got real audience everywhere — LinkedIn, Ghost, YouTube, the podcast, the WhatsApp group. But none of it lives anywhere you actually own. If any one platform changes its rules, that audience is gone."</em></p>
-        <p><strong>SAY:</strong> <em>"You publish to everyone the same way. There's no way to know who's actually a 'could hire me this quarter' person versus someone who just likes your content. So it doesn't convert."</em></p>
-        <p><strong>SAY:</strong> <em>"You said it yourself — you've been on steroids making content. But the ratio between how much you're producing and how many clients it converts to hasn't moved. That gap gets more expensive every year you're 'useless at monetizing it,' as you put it."</em></p>
-        <p><strong>SAY:</strong> <em>"But it doesn't have to stay that way."</em></p>
-        <p><strong>Problem Agitators — Slide 4</strong></p>
-        <p><strong>Beat:</strong> Three separate reasons why five growing platforms with no consolidation gets worse, not better.</p>
-        <p><strong>Watch out:</strong> Don't soften card 3 &#8212; use Jim's own "on steroids / useless at monetizing" framing, not a euphemism for it.</p>
-        <p>The pivot line is the bridge to the next slide, say it before you click forward, then click, the next slide is the promise quote.</p>
+        <p><strong>Pain Agitators — Slide 4</strong></p>
+        <p><strong>Beat:</strong> Scale the problem forward — Rome was 300 people; Milan, Zurich, NYC, Miami, LA are next.</p>
+        <p><strong>Say:</strong> "Rome alone was 300 people, way more than planned for. Milan's in a few weeks, then Zurich, then the US swing in October — every one of those events adds more names to a list that already isn't getting followed up on."</p>
+        <p><strong>Don't cite a specific "expected N" number</strong> — the call said ~80, TID's own blog post says ~100. Their own sources disagree; just say "way more than planned for."</p>
+        <p><strong>Watch out:</strong> Don't let this feel like criticism of how they've run things so far — they built something that outgrew manual follow-up faster than expected. Frame it as a good problem.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;One owned list every platform you publish on feeds into &#8212; and every new subscriber tells you, the moment they join, whether they&#8217;re ready to hire you.&#8221;</p>
+          <p class="quote">&#8220;In 4 weeks, every parlor-meeting lead sees their exact match &#8212; city, budget, project &#8212; automatically and personally, before you ever call them. Or I keep building until they do.&#8221;</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Big Blue Promise — Slide 5</strong></p>
-        <p><strong>Beat:</strong> Read the quote out loud, then pause. Three seconds. Let it land.</p>
-        <p><strong>Say:</strong> "One owned list every platform you publish on feeds into — and every new subscriber tells you, the moment they join, whether they're ready to hire you." Pause. Let it sit.</p>
-        <p><strong>Watch out:</strong> Don't explain the mechanism yet. This is the promise slide, not the how-it-works slide. Let it breathe.</p>
+        <p><strong>The Big Promise — Slide 5</strong></p>
+        <p><strong>Beat:</strong> This is the sentence they should be able to repeat back after the call.</p>
+        <p><strong>Say:</strong> "In four weeks, every single parlor-meeting lead sees their exact match automatically — and it still feels personal, even at 300 people in a room. If it's not live in four weeks, I keep building until it is."</p>
+        <p><strong>Watch out:</strong> The 4-week timeframe is an estimate, not yet confirmed with them — if multilingual scope (Italian/Hebrew) comes up as a requirement, flag that it may extend this.</p>
       </aside>
     </section>
 
-    <section data-visibility="hidden" data-bg-token="accent">
+    <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="ppd-eyebrow">Key Outcomes</div>
         <div class="outcomes-cols">
           <div>
-            <div class="ppd-headline-md">One List.</div>
-            <p>Every platform you publish on feeds into a list you actually own &#8212; not LinkedIn&#8217;s to bury.</p>
+            <div class="ppd-headline-md">Know Goal, Horizon, Aliyah</div>
+            <p>Not just budget and city &#8212; the same three questions you ask on every call, captured the moment someone raises their hand.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Qualifies Itself.</div>
-            <p>New subscribers answer a few questions at signup. You see who&#8217;s ready to buy, instantly.</p>
+            <div class="ppd-headline-md">Event Or Not, Same System</div>
+            <p>Someone who found you cold on your site gets the exact same personalized treatment as someone who met you at a parlor meeting.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Done For You.</div>
-            <p>I build every piece. You review, approve, and it runs &#8212; live in 2 weeks.</p>
+            <div class="ppd-headline-md">They Come Back, You Know</div>
+            <p>Someone from Rome browses your Premium listings six months later &#8212; you&#8217;ll know before they call.</p>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Key Outcomes — Slide 6 (hidden)</strong></p>
-        <p><strong>This slide is hidden.</strong> If you land here accidentally, say "Wrong slide, one sec" and click forward. Nothing to present here.</p>
+        <p><strong>Key Outcomes — Slide 6</strong></p>
+        <p><strong>Beat:</strong> Translate the promise into three concrete "what changes for you" moments.</p>
+        <p><strong>Say:</strong> "Concretely: you capture goal, horizon, and Aliyah timeline the moment someone raises their hand — the same three questions you already ask on every call. Someone who found you cold on your site gets treated exactly like someone who met you at a parlor meeting. And if a Rome attendee comes back six months later and starts browsing Premium, you'll know before they call."</p>
+        <p><strong>Scenario to use live:</strong> "Someone views the Ashdod Land listing on your site, then leaves without booking a call. Two weeks later they book one. Right now that's a cold call — you don't know what they looked at. With this, Joseph or David opens the call already knowing: this is about Ashdod Land, not a blank slate."</p>
+        <p><strong>Watch out:</strong> This slide now reflects TID's own qualification framework (goal/horizon/Aliyah — from their "Land, Emerging, Premium" blog post) instead of just budget+city — it's a stronger, more credible mechanism because it's literally the same three questions they already ask, not something invented. Keep the $800K/northern-Israel example in the scenario if it still fits, but don't force it if the goal/horizon framing tells the story better live.</p>
       </aside>
     </section>
 
@@ -1193,23 +1159,39 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <div class="left">
             <div class="ppd-eyebrow">Key Outcomes</div>
             <div class="msg">
-              <div class="ppd-headline-sm">One Owned List.</div>
-              <p class="body">LinkedIn, Ghost, YouTube, podcast, WhatsApp &#8212; everything you publish points to one list you control.</p>
+              <div class="ppd-headline-sm">No More Manual Lists</div>
+              <p class="body">You stop writing names down and hoping &#8212; the system remembers, follows up, and reports back automatically.</p>
             </div>
             <div class="msg">
-              <div class="ppd-headline-sm">Qualifies Itself.</div>
-              <p class="body">Every new subscriber answers a few questions at signup, so you see who&#8217;s ready to hire you immediately.</p>
+              <div class="ppd-headline-sm">Know Your Real ROI</div>
+              <p class="body">See exactly how many of your 300 Rome attendees are still warm, so you know the real return on every event.</p>
             </div>
             <div class="msg">
-              <div class="ppd-headline-sm">Done For You.</div>
-              <p class="body">I build every piece. You review and approve. Live in 2 weeks.</p>
+              <div class="ppd-headline-sm">Scale To Every City</div>
+              <p class="body">Milan, Zurich, NYC, Miami, LA &#8212; the same system runs every event without adding headcount.</p>
             </div>
           </div>
           <div class="right">
-            <div class="ph"><img src="assets/brand/RM%20who%20are%20you%20answer%201.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
-            <div class="ph"><img src="assets/brand/RM%20who%20are%20you%20answer%202.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
-            <div class="ph"><img src="assets/brand/RM%20challenge%20answer%201.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
-            <div class="ph"><img src="assets/brand/RM%20challenge%20answer%202.png" style="width:100%;height:100%;object-fit:contain;background:#0d1117;border-radius:2px;" alt="" /></div>
+            <div class="ph" style="background:#0d1117;border-radius:2px;display:flex;flex-direction:column;justify-content:center;padding:24px;font-family:'Inter',sans-serif;color:#fff;box-sizing:border-box;">
+              <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;">Premium &middot; Tel Aviv</div>
+              <div style="font-size:22px;font-weight:700;margin:8px 0 4px;">Zihron &ndash; Weizmann</div>
+              <div style="opacity:0.55;font-size:14px;">Boutique buildings, Old North</div>
+            </div>
+            <div class="ph" style="background:#0d1117;border-radius:2px;display:flex;flex-direction:column;justify-content:center;padding:24px;font-family:'Inter',sans-serif;color:#fff;box-sizing:border-box;">
+              <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;">Land &middot; Negev</div>
+              <div style="font-size:22px;font-weight:700;margin:8px 0 4px;">Ashdod Land</div>
+              <div style="opacity:0.55;font-size:14px;">North-East master plan</div>
+            </div>
+            <div class="ph" style="background:#0d1117;border-radius:2px;display:flex;flex-direction:column;justify-content:center;padding:24px;font-family:'Inter',sans-serif;color:#fff;box-sizing:border-box;">
+              <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;">Emerging &middot; Ramat Gan</div>
+              <div style="font-size:22px;font-weight:700;margin:8px 0 4px;">Rokah 40-42</div>
+              <div style="opacity:0.55;font-size:14px;">Facing Park HaYarkon</div>
+            </div>
+            <div class="ph" style="background:#0d1117;border-radius:2px;display:flex;flex-direction:column;justify-content:center;padding:24px;font-family:'Inter',sans-serif;color:#fff;box-sizing:border-box;">
+              <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;">Tagged Visitor</div>
+              <div style="font-size:22px;font-weight:700;margin:8px 0 4px;">Viewed Premium &times;3</div>
+              <div style="opacity:0.55;font-size:14px;">Ready to talk, not yet booked</div>
+            </div>
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--text-inverse);">
@@ -1217,53 +1199,50 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"Right now you've got five separate audiences and no single list. Once this is built, everything you publish points to one list you control. Nobody can take it from you."</em></p>
-        <p><strong>SAY:</strong> <em>"The moment someone subscribes, they answer a couple of questions — who they are and what they're actually struggling with. Then you can see who's a consulting prospect and who's a content fan. You stop guessing."</em></p>
-        <p><strong>SAY:</strong> <em>"I build every piece of this. You review and approve. That's the full ask on your end."</em></p>
-        <p><strong>SAY:</strong> <em>"These are real subscriber answers from a live system — the same qualification mechanism you reacted to on Call 1. Top row: who they are. Bottom row: what they're actually struggling with. In their own words, the moment they join."</em></p>
-        <p><strong>Walk through the three outcomes — this is what changes for Jim:</strong></p>
-        <p>Let Jim read the cards. Don't talk over them — this is the same "read the real answers" moment that landed hardest with Nadya and Peter Winick. A stat card telling him "29 leads" is an abstraction; these screenshots are the proof he can see for himself.</p>
+        <p><strong>Key Outcomes (cont.) — Slide 7</strong></p>
+        <p><strong>Beat:</strong> Shift from the lead-level benefit (slide 6) to the business-level one — this is what changes for Joseph and David running the operation.</p>
+        <p><strong>Say:</strong> "Zoom out from any one lead for a second — this is what it does for you running the business. No more manual list-checking, you actually know your Rome conversion rate, and Milan, Zurich, the US swing in October all run on the same system without you hiring anyone new."</p>
+        <p><strong>Scenario to use live:</strong> "Someone spends time on your Premium tier page — the $2M-$10M+ properties — but never books a call. That's a completely different follow-up than someone who bounced off the Land tier page in ten seconds. Or someone bounces between Emerging and Premium multiple times — tag them 'undecided on tier,' which is a different sales conversation than someone locked into one price point. Right now none of that gets captured or acted on."</p>
+        <p><strong>Watch out:</strong> Don't just repeat slide 6 — that one was about the lead's experience, this one is about TID's operating leverage. Keep them distinct. The tier names (Land/Emerging/Premium) and project names (Ashdod Land, Zihron-Weizmann, Rokah Ramat Gan) are pulled directly from TID's own site — use them, don't genericize.</p>
+        <p><strong>Visuals:</strong> The four right-panel cards are mockups built from TID's own site content (real tier names and project names), not generic third-party screenshots — point at them as illustrations of what tagging looks like, not as a live product screenshot.</p>
       </aside>
     </section>
 
-    <section data-visibility="hidden" data-bg-token="bg-light">
+    <section data-bg-token="bg-light">
       <div class="ppd-slide" style="padding:0;">
         <div class="howitworks-split">
           <div class="left">
             <div class="ppd-eyebrow">How It Works</div>
-            <h3>Consolidate, Then Qualify.</h3>
-            <p>I build one Kit list that everything you publish points to — no data migration needed. Then every new subscriber answers a few questions at signup, so you see who&#8217;s ready to hire you the moment they join.</p>
+            <h3>From Sign-Up To Sold</h3>
+            <p>However someone tells you their goal, horizon, and Aliyah plans today &#8212; at a parlor meeting or on your site &#8212; that answer doesn't trigger anything yet. I turn it into an automatic personalized sequence, and your site shows them the exact project matching what they said.</p>
             <ul>
-              <li>Kit account, built for you</li>
-              <li>Every platform points to one list</li>
-              <li>Qualification questions at the moment they opt in</li>
+              <li>Works with however you collect interest today</li>
+              <li>Personalized email sequence sent</li>
+              <li>Website shows their exact matching project live</li>
             </ul>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <div class="flow-diagram">
-              <div class="flow-step">
-                <div class="flow-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="14" cy="16" r="5" fill="currentColor" stroke="none"/><line x1="26" y1="16" x2="54" y2="16" stroke-linecap="round"/><circle cx="14" cy="32" r="5" fill="currentColor" stroke="none"/><line x1="26" y1="32" x2="54" y2="32" stroke-linecap="round"/><circle cx="14" cy="48" r="5" fill="currentColor" stroke="none"/><line x1="26" y1="48" x2="54" y2="48" stroke-linecap="round"/></svg></div>
-                <div class="flow-label">Five platforms, one list</div>
-              </div>
-              <div class="flow-connector"></div>
-              <div class="flow-step">
-                <div class="flow-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><path d="M10 14 H54 a4 4 0 0 1 4 4 V40 a4 4 0 0 1 -4 4 H26 L14 54 V44 H10 a4 4 0 0 1 -4 -4 V18 a4 4 0 0 1 4 -4 Z" stroke-linejoin="round"/></svg></div>
-                <div class="flow-label">They opt in and self-qualify</div>
-              </div>
-              <div class="flow-connector"></div>
-              <div class="flow-step">
-                <div class="flow-icon"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="32" cy="32" r="26"/><path d="M20 33 L28 41 L46 23" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <div class="flow-label">You see who&#8217;s ready</div>
+            <div class="ph" style="background:#0d1117;display:flex;align-items:center;justify-content:center;">
+              <div style="width:88%;background:#1c1c1e;border-radius:10px;padding:28px;font-family:'Inter',sans-serif;color:#fff;">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+                  <div style="width:36px;height:36px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;">TID</div>
+                  <div style="font-size:14px;opacity:0.6;">to you &middot; just now</div>
+                </div>
+                <div style="font-size:20px;font-weight:700;margin-bottom:14px;">Your match: Premium in Tel Aviv</div>
+                <div style="font-size:15px;line-height:1.6;opacity:0.7;">Hi &mdash; based on what you told us, here's the one we&#8217;d put in front of you first: Zihron &ndash; Weizmann, boutique buildings by Kikar HaMedina...</div>
               </div>
             </div>
-            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</div>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>How It Works Split — Slide 8 (hidden)</strong></p>
-        <p><strong>This slide is hidden.</strong> If you land here accidentally, say "Wrong slide, one sec" and click forward. Nothing to present here.</p>
+        <p><strong>How It Works — Slide 8</strong></p>
+        <p><strong>Beat:</strong> Walk the actual mechanism, step by step, in the order it happens for a real lead.</p>
+        <p><strong>Say:</strong> "However someone tells you their goal, horizon, and Aliyah plans today — at a parlor meeting or on your site — that's the trigger point. From there it's automatic: a personalized email sequence goes out, and if they land on your site, they see the exact project that matches what they told you, not a generic homepage."</p>
+        <p><strong>Watch out:</strong> This is the slide to actually show, if possible — pull up the $800K-northern-Israel example live rather than just describing it. That's the moment that landed on Call 1. Don't name a specific tool (Google Form, etc.) for how they currently collect this — that detail was never confirmed with TID, it came from a garbled transcript reference. Say "however you collect it today" instead.</p>
+        <p><strong>Visual:</strong> The right-panel image is a mockup email using TID's own project name (Zihron &ndash; Weizmann) and city (Tel Aviv) — built to speak TID's world, not a generic screenshot from another client's tool.</p>
       </aside>
     </section>
 
@@ -1272,31 +1251,44 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">How It Works</div>
         <div class="howitworks">
           <div class="left">
-            <h3>Consolidate everything. Qualify from day one.</h3>
-            <p>One Kit list every platform points to — LinkedIn, Ghost, YouTube, podcast, WhatsApp. No migration needed. Every new subscriber answers a few questions at signup, so you see who&#8217;s ready to hire you.</p>
+            <h3>A Build You Never Have To Touch</h3>
+            <p>I build the personalized email sequences and dynamic pages myself, wired up to however you're already collecting interest &#8212; end to end. You review and approve; France and I handle every technical piece.</p>
             <ul>
-              <li>One list, five platforms</li>
-              <li>No data migration required</li>
-              <li>Subscribers self-qualify the moment they join</li>
+              <li>You approve, we build</li>
+              <li>Live in your systems, not ours</li>
+              <li>Weekly check-ins until it&#8217;s live and working</li>
             </ul>
           </div>
-          <div class="right ph"><img src="assets/brand/RM%20graph.png" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0d1117;" alt="" /></div>
+          <div class="right ph" style="background:#0d1117;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+            <div style="width:78%;background:#1c1c1e;border-radius:10px;padding:28px;font-family:'Inter',sans-serif;color:#fff;">
+              <div style="font-size:12px;opacity:0.5;text-transform:uppercase;letter-spacing:0.08em;">Lead Profile</div>
+              <div style="font-size:21px;font-weight:800;margin:8px 0 18px;">Rome Attendee &rarr; Back On Site</div>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div style="display:flex;justify-content:space-between;font-size:14px;"><span style="opacity:0.6;">Goal</span><span>Preservation</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:14px;"><span style="opacity:0.6;">Aliyah</span><span>Within 2 years</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:14px;"><span style="opacity:0.6;">Revisited</span><span>Premium &middot; Tel Aviv &times;3</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:14px;"><span style="opacity:0.6;">Tagged</span><span style="color:var(--accent);font-weight:700;">Ready to talk</span></div>
+              </div>
+            </div>
+            <div style="color:var(--accent);font-size:20px;">&darr;</div>
+            <div style="width:78%;background:#1c1c1e;border-radius:10px;padding:22px 28px;font-family:'Inter',sans-serif;color:#fff;border:1px solid rgba(233,119,49,0.3);">
+              <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:10px;">Auto-Email Sent</div>
+              <div style="font-size:16px;font-weight:700;">&#8220;We have more projects in Tel Aviv &#8212; book a call.&#8221;</div>
+            </div>
+          </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"First I configure your Kit account and connect it as the one place all five of your platforms point to. There's nothing to migrate off Zoho or Ghost — you just add links pointing here as you already publish."</em></p>
-        <p><strong>SAY:</strong> <em>"Anyone who finds you through LinkedIn, Ghost, YouTube, the podcast, or the WhatsApp group lands in the same list — the one you actually own."</em></p>
-        <p><strong>SAY:</strong> <em>"If you go with the Full System, every new subscriber answers a couple of questions right at signup. Not after the fact — right when they join. That's what tells you who's ready to hire you versus who's just a fan."</em></p>
-        <p><strong>SAY:</strong> <em>"This is what it looks like once it's running — 62 answers collected, 17 contacts enriched with tags, 83% answer rate. That's not a projection. That's a real system running for a real client. Yours will look like this."</em></p>
-        <p><strong>How It Works — Slide 9</strong></p>
-        <p><strong>Walk through each step at a steady pace:</strong></p>
-        <p><strong>On the timeline:</strong> 2 weeks is the Phase 1 build, live and running. Phase 2, if he takes it, adds up to 3 more weeks on top. Not a promise of subscriber volume — that depends on how much traffic Jim's five platforms already send. The guarantee is about the system being live and working, not a specific number.</p>
-        <p><strong>If he asks why qualification matters so much:</strong> "Consolidation alone gets everyone in one room. It doesn't tell you who in that room actually wants to hire you. That's the piece that turns a list into a client."</p>
+        <p><strong>How It Works (delivery) — Slide 9</strong></p>
+        <p><strong>Beat:</strong> Answer "who actually builds this" before they ask — you and France, not them.</p>
+        <p><strong>Say:</strong> "You and Yossi don't touch any of this. I build the email sequences, the personalized pages, and the visitor-tagging, wired up to however you're already collecting interest — France handles the technical setup. You just review and approve."</p>
+        <p><strong>Watch out:</strong> They're a 2-person team (per Call 1) — lean into "this is the third team member you don't have to hire," don't make it sound like more work for them. Don't claim to "connect to" or "plug into" a specific existing form/system — we don't actually know if the event sign-up and the website's contact form are the same system or have a working backend. Speak generally: "however you're already collecting interest."</p>
+        <p><strong>Visual:</strong> The right-panel "Lead Profile" card is the strongest single visual in the deck — it shows a past event attendee (Rome) re-engaging on the site months later (browsing Premium/Tel Aviv), tagged and ready, using TID's own tier/city names. This is the point Shlomo specifically wants to land: you'll know what every person who was at your events does on your site afterward, not just what happens at the event itself. Below it, a connected card shows the automatic result of that tag: the system doesn't just notice the 3rd Premium/Tel Aviv view, it fires a real email off the back of it — "We have more projects in Tel Aviv — book a call." Say: "It's not just a dashboard you have to remember to check — the view itself triggers the follow-up."</p>
       </aside>
     </section>
 
@@ -1305,31 +1297,29 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">You Might Be Thinking&#8230;</div>
         <div class="objections-grid">
           <div class="ppd-card">
-            <div class="ppd-headline-sm">I don&#8217;t have time.</div>
-            <p>You don&#8217;t build or run any of it.</p>
+            <div class="ppd-headline-sm">What If The Match Is Wrong?</div>
+            <p>Worst case, one wrong guess &#8212; same as today.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">I already have Ghost.</div>
-            <p>Ghost stays as your site, we migrate that list into Kit too.</p>
+            <div class="ppd-headline-sm">Who Runs This Day-To-Day?</div>
+            <p>Neither of you has to &#8212; it runs itself once it&#8217;s live.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Will people opt in?</div>
-            <p>83% do, the moment they land on the page. Real data, not a guess.</p>
+            <div class="ppd-headline-sm">What About The Revenue Share?</div>
+            <p>We only take a cut on deals it actually helped nurture.</p>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY</strong> (if he says "I don't have time"): <em>"That's exactly why this is built the way it is. You're not writing copy, not configuring Kit, not managing a tool. I build it, you review it once, and it runs."</em></p>
-        <p><strong>SAY</strong> (if he says "I already have Ghost"): <em>"Ghost stays exactly as it is — your site, your publishing home, nothing changes there. The issue is the subscriber list underneath it, only 437 people, sitting separate from everything else. In Phase 2, I migrate that list into Kit and send them one broadcast asking them to qualify themselves too, so they're not left behind. Kit isn't a second newsletter, it's the one list everything actually feeds into."</em></p>
-        <p><strong>SAY</strong> (if he says "Will people opt in?"): <em>"They already do. 83% of subscribers who see the thank-you page answer the questions, that's live data from a system running right now, not a projection."</em></p>
-        <p><strong>Name the three objections Jim is most likely sitting with:</strong></p>
-        <p>Then move straight into the proof slides for more depth, this is exactly where Peter Sorgenfrei's result reinforces it. Do not reveal price here — that's held for slide 19/22.</p>
-        <p><strong>Watch out:</strong> Don't memorize these. If Jim raises a different objection, handle it live.</p>
+        <p><strong>Preemptive Objections — Slide 10</strong></p>
+        <p><strong>Beat:</strong> Get ahead of the three things most likely to stall this specific deal before they're said out loud.</p>
+        <p><strong>Say:</strong> "A few things you might already be thinking: day-to-day, neither of you has to touch this once it's live — it runs itself. Worst case on a wrong match, someone sees one project that isn't quite right — no worse than the guess you'd make on a call today. And on the revenue share — you only pay a percentage on deals this actually helped nurture, never on the rest."</p>
+        <p><strong>Watch out:</strong> The revenue-share objection is the one to watch closest — this is Shlomo's own idea for the pricing structure, not something TID asked for. Read the room here; have the flat-fee Plan 2 ready to pivot to immediately if this lands wrong. Also: TID is more established than a bare "2-person startup" — their site shows real institutional partners (Ministry of Aliyah & Integration, Tidhar Group) and 50+ investors in active negotiation, so avoid any framing that implies they're scrappy or under-resourced. David Siegel (former Meetup CEO) is their partner/investor — a real, separate person from David Sion Raccah (the co-founder on this call). Don't conflate the two. Dropped the language/multilingual objection entirely (2026-07-14) — Shlomo's call: every website handles multiple languages today, it's not a real objection worth pre-empting.</p>
       </aside>
     </section>
 
@@ -1353,56 +1343,70 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"Peter Sorgenfrei advises CEOs and founders — 70,000 LinkedIn followers. He didn't know which of them were ready to hire him. We built a system that asked his list three simple questions. Twenty-nine came back as real, qualified prospects. He had no idea they were sitting there."</em></p>
-        <p><strong>SAY:</strong> <em>"Jeff is a former CHRO I set up a different kind of marketing infrastructure for. He called me the best he's seen. That's the standard I bring to every build."</em></p>
-        <p><strong>Point to the two cards and say:</strong></p>
-        <p><strong>Context:</strong> Peter Sorgenfrei advises CEOs and founders — 70,000 LinkedIn followers, an active list he emails regularly. His problem was visibility, not silence: he had no idea which of his followers were actually ready to hire him.</p>
-        <p><strong>This is the good news for Jim specifically:</strong> Jim already reacted to this exact result on Call 1 ("that's what I need to learn how to get"). This slide is where you can say it plainly: "This is the Full System — the qualification piece. This is what you said you wanted."</p>
+        <p><strong>Customer Wins — Slide 11</strong></p>
+        <p><strong>Beat:</strong> Same proof used across every Asset Bolt pitch — real numbers, real names.</p>
+        <p><strong>Say:</strong> "Peter Sorgenfrei advises CEOs and founders with a big LinkedIn following — he had no idea which of his followers were ready to hire him until we asked his list three questions. Twenty-nine came back qualified. Jeff Bettinger, a former CHRO, said I'm the best he's seen at this kind of setup."</p>
+        <p><strong>Watch out:</strong> These aren't real-estate examples — be upfront that they're from other industries if asked, and pivot to "that's exactly the same gap you have with your 300 Rome leads."</p>
       </aside>
     </section>
 
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;He is the best I have seen.&#8221;</p>
+          <p class="quote">&#8220;I had no idea they were sitting there.&#8221;</p>
           <div class="quote-author">
-            <div class="meta">Jeff Bettinger<br/>Former CHRO</div>
+            <div class="meta">Peter Sorgenfrei<br/>Advisor to CEOs</div>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Customer Quote — Slide 12</strong></p>
-        <p><strong>Beat:</strong> Quote landing, not a second telling — you already covered Jeff briefly on the prior slide.</p>
-        <p><strong>Say:</strong> Read the quote, then pause for a beat. Nothing more needed.</p>
-        <p><strong>Watch out:</strong> Don't over-explain. Let it sit before moving to the differentiator slide.</p>
+        <p><strong>Customer Testimonial — Slide 12</strong></p>
+        <p><strong>Beat:</strong> Let this quote land in silence for a second before moving on — it's the whole pitch in one line.</p>
+        <p><strong>Say:</strong> "Peter said this after we surfaced 29 ready buyers he didn't know he had. That's the same thing sitting in your Notion notes right now from the 300 people in Rome."</p>
+        <p><strong>Watch out:</strong> Don't over-explain the quote — it should land on its own. Just point at it and pause.</p>
       </aside>
     </section>
 
-    <section data-visibility="hidden" data-bg-token="bg-dark">
-      <div class="ppd-slide bg-dark">
-        <div class="ppd-eyebrow">The System In Action</div>
+    <section data-bg-token="bg-light" data-visibility="hidden">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">Our Customers</div>
         <div class="customers-headline">
-          <h2 class="ppd-headline-md">Every Asset Bolt client had a real audience. None had a system to turn it into an owned, working pipeline.</h2>
+          <h2 class="ppd-headline-md">Name-Drop, Share a Story, and Explain How You&#8217;ve Solved Problems for Similar Customers.</h2>
         </div>
-        <div class="customers-grid"></div>
+        <div class="customers-grid">
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+          <div class="logo-circle"></div>
+        </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>If you ever land here (direct link, browser back/forward) — this slide is blank, no logos loaded.</strong> Say: "Wrong slide, one sec" and click forward immediately. Nothing to present here.</p>
+        <p><strong>HIDDEN — Slide 13 (Our Customers / logo wall)</strong></p>
+        <p><strong>Why:</strong> brief.yaml has no logos — this is a brand-new engagement type (real estate community marketing) with no comparable client to show yet. Filling this with placeholder logos would fabricate proof that doesn't exist.</p>
+        <p><strong>Action:</strong> This section now has <code>data-visibility="hidden"</code>, which tells Reveal.js to skip it during normal arrow-key/click-through navigation — you won't land on it by accident. If you ever do (e.g. via the overview view), just move on; there's nothing to present here.</p>
       </aside>
     </section>
 
@@ -1410,21 +1414,20 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-dark">
         <div class="ppd-eyebrow">Why Asset Bolt?</div>
         <div class="why-hero">
-          <h2 class="ppd-headline-md">Most people hand you a login and a tutorial. I build the whole system for you.</h2>
-          <p class="ppd-body-lg ppd-muted-inv">You&#8217;ve got five platforms and years of content &#8212; what you&#8217;ve never had is one person who builds the consolidation AND the qualification layer together, so new subscribers sort themselves as they arrive.</p>
+          <h2 class="ppd-headline-md">The Soft Landing System: automation that still feels like a handshake, not a funnel.</h2>
+          <p class="ppd-body-lg ppd-muted-inv">Most email tools blast the same message to everyone. This captures what each person told you at registration, then personalizes their sequence and their page around exactly that &#8212; automatically, the moment they sign up.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Why Asset Bolt — Slide 14</strong></p>
-        <p><strong>Beat:</strong> The core differentiator in one sentence, then stop.</p>
-        <p><strong>Say:</strong> "Most people who do this work hand you a login, point you to a tutorial, and call it done. You're expected to figure out the tool, figure out what to write, figure out how to consolidate five platforms yourself. I do all of that for you. You review and approve."</p>
-        <p><strong>Then add:</strong> "Jim — you've got fifteen years of real expertise and a huge amount of content. You've never lacked the substance. What you've lacked is the infrastructure that connects it to a buying decision. That's exactly what this builds."</p>
-        <p><strong>Watch out:</strong> Keep this tight. One pass, confident, then move on. Don't over-justify.</p>
+        <p><strong>Unique Mechanism — Slide 14</strong></p>
+        <p><strong>Beat:</strong> Land why this isn't just "Kit setup" — the mechanism is personalization tied directly to what each person told you.</p>
+        <p><strong>Say:</strong> "The reason this works isn't the email tool itself — it's that everything's built off what each person actually told you at registration. That's what makes it feel like the soft landing you already promise them, not a mass mailing."</p>
+        <p><strong>Watch out:</strong> Don't let this slide turn into a tech-stack explanation (Kit, automations, etc.) — keep it about the mechanism, not the tooling.</p>
       </aside>
     </section>
 
@@ -1436,7 +1439,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <img src="assets/brand/shlomo%20profile%20pic%20linkedin.jpg" style="width:220px;height:220px;border-radius:999px;object-fit:cover;object-position:center top;display:block;margin:0 auto 24px;" alt="Shlomo Freund" />
             <div class="name">Shlomo Freund</div>
             <div class="role">Founder</div>
-            <p>Email infrastructure builder for creators and consultants. Helps people with real audiences see who in that audience is actually ready to buy.</p>
+            <p>8200 alum, engineer. Built a global company in China helping multinationals enter the market. Now builds this for consultants.</p>
           </div>
           <div class="person">
             <div style="width:220px;height:220px;border-radius:999px;background:var(--accent);overflow:hidden;display:block;margin:0 auto 24px;"><img src="assets/brand/France%20Angelo%20Galvez%20profile%20pic.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" alt="France Galvez" /></div>
@@ -1450,15 +1453,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
         <p><strong>The Team — Slide 15</strong></p>
-        <p><strong>Beat:</strong> Brief intro. One pass, let the slide do the work.</p>
-        <p><strong>Say:</strong> "Two people working on your build. I'm Shlomo — I built AppInChina, and now I build email infrastructure for creators and consultants. France Galvez handles the technical side so everything goes live on time. Jim — you'll be working directly with me, not handed off to anyone."</p>
-        <p><strong>Watch out:</strong> Don't linger. One pass and move on to the offer.</p>
+        <p><strong>Beat:</strong> Brief intro, one pass — this is who actually builds it, not a personnel deep-dive.</p>
+        <p><strong>Say:</strong> "It's me and France on the technical side — I handle the strategy and copy, France handles every technical piece of the build. My background's 8200, then I built a global company in China helping multinationals enter the Chinese market — this is the same kind of build-it-end-to-end work, just applied to email and personalization now."</p>
+        <p><strong>Watch out:</strong> Keep this quick. With a 2-person team on their side too, don't over-index on team size as a selling point.</p>
       </aside>
     </section>
 
@@ -1470,40 +1473,38 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <p>Picture it: every platform you publish on feeds one list, and every new subscriber tells you the moment they join whether they&#8217;re ready to hire you.</p>
-            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</div>
+            <p>Imagine four months from now: Milan, Zurich, and NYC are done, every lead already got their sequence, and you know exactly who's ready to buy.</p>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"Picture it: every platform you publish on feeds one list, and every new subscriber tells you the moment they join whether they're ready to hire you."</em></p>
-        <p><strong>SAY:</strong> <em>"You said you'd like to double what you're currently doing. This is the mechanism — not more content, a way to see who in the content you're already making is ready to become a client."</em></p>
-        <p><strong>Slow down here. Let Jim imagine it.</strong> Read the right panel out loud for the first line, then add the second.</p>
-        <p><strong>Why this lands:</strong> This is the direct answer to Jim's own words — "on steroids creating content, useless at monetizing it." This slide is the after-picture of that exact gap closing.</p>
-        <p>Make it vivid. This is the 'after' picture. Pause after you say it. Let it land before moving on.</p>
+        <p><strong>Future Vision — Slide 16</strong></p>
+        <p><strong>Beat:</strong> Paint the picture using their actual event calendar, not a generic timeline.</p>
+        <p><strong>Say:</strong> "Picture this: it's November. Milan, Zurich, and the US swing are all behind you. Every single lead from every one of those events already got a personalized sequence, and for the first time you actually know who's ready to buy versus who needs more time."</p>
+        <p><strong>Watch out:</strong> Use their real event calendar (Milan late August, Zurich, NYC/Miami/LA in October) — don't genericize this into "six months from now."</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Today&#8217;s Offer: The Signal Layer</div>
+        <div class="ppd-eyebrow">Today&#8217;s Offer - Soft Landing System</div>
         <div class="todays-offer">
-          <h3>One build, two phases. Start now, expand when ready.</h3>
-          <p>Phase 1 consolidates everything you publish into one Kit list. Phase 2 adds qualification once that list is live and moving, so you see who&#8217;s ready to hire you.</p>
-          <p class="closer">Here&#8217;s exactly what&#8217;s included in each phase.</p>
+          <h3>Get Every Lead Followed Up And Personalized, Automatically &#8212; In 4 Weeks.</h3>
+          <p>If you&#8217;re tired of writing names down and hoping you remember, this is what you need &#8212; automatic capture, personalized emails, and a site that speaks to each person directly.</p>
+          <p class="closer">Stick with me, and I&#8217;ll walk you through exactly what&#8217;s included.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"What I just described is where this is headed. Here's how we get there, in two phases, and I want to show you both honestly."</em></p>
-        <p><strong>SAY:</strong> <em>"Phase 1 gets everything consolidated into one list. Phase 2 adds qualification once that list is live — that's the piece that actually tells you who's ready to hire you. You don't have to decide on Phase 2 today; it makes more sense once Phase 1 is producing real subscribers to qualify."</em></p>
-        <p><strong>SAY:</strong> <em>"In the next slide I'll show you what's included in each phase. Then the prices. Then we decide where to start."</em></p>
         <p><strong>Today's Offer — Slide 17</strong></p>
-        <p>Keep it short. Don't break momentum here. Note the shift from Call 1: this is no longer "pick one forever" — it's "start here, add this when it's ready to pay off."</p>
+        <p><strong>Beat:</strong> Build anticipation for the stack without naming price yet — that comes on slide 19.</p>
+        <p><strong>Say:</strong> "Here's exactly what you get when you say yes: every lead followed up and personalized automatically, live in four weeks."</p>
+        <p><strong>Watch out:</strong> Don't let the revenue-share detail leak in here — that's a pricing-slide conversation, not a value-stack one.</p>
       </aside>
     </section>
 
@@ -1511,79 +1512,58 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">What&#8217;s Included?</div>
         <div class="inclusions-grid">
-          <div class="ppd-card"><div class="ppd-headline-sm">Kickoff Call</div><p class="body ppd-body-md ppd-muted">60 minutes to map your rollout, start to finish.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Kit Setup</div><p class="body ppd-body-md ppd-muted">Your Kit account built, tested, ready to go.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Migration</div><p class="body ppd-body-md ppd-muted">Your subscribers moving to your own list, ongoing.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Dripify</div><p class="body ppd-body-md ppd-muted">The tool behind it, run remotely, every month.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Welcome Seq.</div><p class="body ppd-body-md ppd-muted">Three emails building your expertise, sent automatically.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Landing Page</div><p class="body ppd-body-md ppd-muted">Kit&#8217;s own template page, not custom, live fast.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">RightMessage</div><p class="body ppd-body-md ppd-muted">Subscribers sort themselves the moment they opt in.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Data Calls</div><p class="body ppd-body-md ppd-muted">Twice-monthly calls: review the data, plan the next build.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Sprints</div><p class="body ppd-body-md ppd-muted">Between calls, I build whatever&#8217;s next.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Ghost Import</div><p class="body ppd-body-md ppd-muted">Your 437 Ghost subscribers moved to Kit, asked to qualify.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Setup</div><p class="body ppd-body-md ppd-muted">Works with however you already collect interest today.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Nurture</div><p class="body ppd-body-md ppd-muted">Personalized email sequence sent automatically per lead.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Dynamic Site</div><p class="body ppd-body-md ppd-muted">Site shows each visitor their exact matching project.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Tagging</div><p class="body ppd-body-md ppd-muted">Tags by what they viewed, so you know before you call.</p></div>
+          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
+          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
+          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
+          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
+          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
+          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
+          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
+          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"Once you're in, we get on a call and map the whole rollout together before anything ships."</em></p>
-        <p><strong>SAY:</strong> <em>"I configure your Kit account from scratch, forms, automations, the whole thing. You don't need to learn the platform."</em></p>
-        <p><strong>SAY:</strong> <em>"Your LinkedIn newsletter subscribers get moved over onto your own list, and this isn't a one-time thing, it's ongoing. Your 1,417 today, plus anyone who follows you after launch, all of it keeps landing here."</em></p>
-        <p><strong>SAY:</strong> <em>"Here's how that actually happens. On our first call I set up remote desktop access to your own computer, like screen-sharing, but I can actually drive, and I run the scrape and Dripify setup from there, on your own LinkedIn session. I never log into LinkedIn from my own device, that's what keeps your account safe, a login from an unfamiliar device is what gets accounts flagged. Then every month for as long as we're working together, I log back in the same way, TeamViewer, pull a fresh list, and anyone who's followed you or subscribed since the last pass gets picked up and gets the same offer."</em></p>
-        <p><strong>SAY:</strong> <em>"Three emails, written to build your expertise, that go out automatically to every new subscriber."</em></p>
-        <p><strong>SAY:</strong> <em>"This is a Kit template page, not a custom design, it's where people actually land and opt in. Fast to build, not the bespoke version."</em></p>
-        <p><strong>SAY:</strong> <em>"This is the first Phase 2 piece. A couple of questions at signup, and you see instantly who's ready to hire you versus who's just a fan."</em></p>
-        <p><strong>SAY:</strong> <em>"Twice a month, we get on a call, look at who's shown up as ready to hire you, and decide what to build next."</em></p>
-        <p><strong>SAY:</strong> <em>"The calls are where we decide what's next. This is the actual building of it in between, that's the part that turns the list into an actual pipeline instead of a one-time project."</em></p>
-        <p><strong>SAY:</strong> <em>"Your Ghost newsletter has 437 subscribers sitting there, separate from everything else. I migrate that list into Kit and send them one broadcast asking them to answer the same qualification questions, so they're not left behind, they get folded into the same system."</em></p>
-        <p><strong>SAY</strong> (only if it comes up naturally, this is a free tip, not a card): <em>"One thing you can do yourself, for free, anytime: drop the new list link into your YouTube description, show notes, and the WhatsApp group. Takes you ten minutes, more traffic into the same system."</em></p>
-        <p><strong>SAY</strong> (if he wants to talk only about Phase 1, walk the first six cards and set the last four aside): <em>"Those four are Phase 2, we can come back to them once your list actually has people moving through it."</em></p>
         <p><strong>What's Included — Slide 18</strong></p>
-        <p><strong>First six cards are Phase 1 (ships now). Last four are Phase 2 (once the list is live). Say that out loud before you walk the cards</strong>, it's what makes this a sequence, not a menu. Note this isn't a clean row split visually, walk left to right, top to bottom, and just narrate the boundary yourself when you get to RightMessage.</p>
-        <p>Dripify has its own subscription (Basic plan, roughly $39-59/mo) billed to Jim directly, not part of my fee. This is the same process already running for another client (Kimberly Lee), proven, not new territory. Don't name a dollar figure for your own retainer here, prices come on slide 19, just say "that's what the ongoing part of this actually is, not a system running itself."</p>
-        <p>This is the same generic sequence I built into David Dayton's Phase 1, not tied to any survey answer, that personalization only kicks in if he adds Phase 2.</p>
-        <p>Be upfront it's a template if he asks, don't let him assume custom work here.</p>
-        <p>Bonus detail if it comes up: once this is live, the Welcome Sequence from Phase 1 also gets smarter, it adapts to what someone answered instead of staying generic. RightMessage is its own separate subscription, not bundled into Kit, roughly $79/mo for under 10K visitors, same tier Peter Sorgenfrei pays.</p>
-        <p>This is the retainer's real selling point, lead with the ongoing value, not the fee, when you get to slide 19.</p>
-        <p>This is real work, an actual migration plus a campaign, not busywork, it's a genuine Phase 2 line item.</p>
-        <p>YouTube, the podcast, and the WhatsApp group don't have an exportable subscriber list the way Ghost does, so there's no migration to do there, that's why this is a free tip and not its own card. This is Jim's own work, not billable, don't build a card or a price around it.</p>
-        <p><strong>On Kit and RightMessage costs:</strong> Kit is NOT free once Phase 2 is in play, it needs the paid Creator plan (roughly $33-39/mo) for RightMessage to connect. RightMessage itself is a completely separate, independent subscription on top of that, not bundled into Kit's fee, roughly $79/mo for under 10K visitors. Both are billed directly to Jim by those vendors, neither is part of my fee. If Jim asks: "Once qualification's in, you're paying Kit's plan and RightMessage's plan separately, that's between $33-39 plus $79 a month, billed by them directly, not me. Phase 1 alone can stay free longer, no RightMessage needed yet."</p>
-        <p>Don't push past this if he signals budget caution, per the Call 1 note about anchoring too low too early, let him ask for Phase 2 rather than you defending it unprompted.</p>
+        <p><strong>Beat:</strong> Four concrete deliverables, quickly — this is the "what am I actually getting" slide.</p>
+        <p><strong>Say:</strong> "Concretely: works with however you already collect interest, a personalized nurture sequence, a dynamic site that matches each visitor, and tagging so you know what someone's interested in before you ever call them."</p>
+        <p><strong>Scenario to use live:</strong> "If someone's looked at the Premium tier three times, that's tagged differently than someone who glanced at Land once. By the time you call them, you already know which conversation you're walking into."</p>
+        <p><strong>Watch out:</strong> Keep it to these four — don't pad with generic inclusions like "support" or "consultation" that every vendor claims. Card 1 is "Setup," not "Connect" or "Capture" — don't claim to plug into a specific existing form/system (event sign-up and website contact form may not even be the same system) or name a specific tool like Google Form — we haven't confirmed either with TID.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">The Two Phases</div>
+        <div class="ppd-eyebrow">Pick Your Path</div>
         <div class="plans-grid">
-          <div class="plan">
-            <div class="plan-title">Phase 1</div>
-            <div class="plan-result">Every platform you publish on points to one owned list</div>
-            <div class="plan-price">$1,500</div>
-            <div class="plan-price-sub ppd-muted">+ $500/mo after</div>
+          <div class="plan" style="border:2px solid var(--accent);">
+            <div class="plan-title" style="color:var(--accent);">Growth Partner</div>
+            <div class="plan-result">Every lead nurtured personally, priced to your upside</div>
+            <div class="plan-price">$4,500</div>
+            <div class="plan-price-sub ppd-muted">+ $2,000/mo + 12% of sourced deals</div>
             <ul>
-              <li>Kit account configured from scratch</li>
-              <li>LinkedIn migration + ongoing Dripify pulls</li>
-              <li>3-email welcome sequence + landing page</li>
-              <li>Kickoff call to map the rollout</li>
+              <li>Works with whatever sign-up process you already run</li>
+              <li>Personalized email sequence + dynamic page per lead</li>
+              <li>12% of commission only on deals the system nurtures &#8212; we win when you win</li>
             </ul>
           </div>
-          <div class="plan" style="border:2px solid var(--accent);">
-            <div class="plan-title" style="color:var(--accent);">Phase 2</div>
-            <div class="plan-result">Subscribers tell you who&#8217;s ready to hire you</div>
-            <div class="plan-price">+$2,500</div>
-            <div class="plan-price-sub ppd-muted">$1,500/mo after (replaces Phase 1)</div>
+          <div class="plan">
+            <div class="plan-title">Fixed Retainer</div>
+            <div class="plan-result">Same system, simple flat monthly cost</div>
+            <div class="plan-price">$4,500</div>
+            <div class="plan-price-sub ppd-muted">+ $3,500/mo, no revenue share</div>
             <ul>
-              <li>Everything in Phase 1, plus:
-                <ul>
-                  <li>Qualification at opt-in</li>
-                  <li>Ghost's 437 subscribers migrated in, asked to qualify</li>
-                  <li>Twice-monthly data and build calls</li>
-                </ul>
-              </li>
+              <li>Everything in Growth Partner</li>
+              <li>Flat monthly retainer instead of revenue share</li>
+              <li>Simpler to budget if you&#8217;d rather not share commission</li>
             </ul>
           </div>
           <div class="plan" style="visibility:hidden;pointer-events:none;">
@@ -1595,49 +1575,46 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"Phase 1 gets your Kit list live, your LinkedIn subscribers moved over, and a welcome sequence running: $1,500 to build, $500 a month after. That alone won't get you a client, it just puts your LinkedIn audience in one room. Once that's live, Phase 2 adds qualification, plus folding your Ghost subscribers into the same system: $2,500 more, so $4,000 total, and the retainer steps up to $1,500 a month, which replaces the Phase 1 retainer, it doesn't stack on top of it. You don't need to decide on Phase 2 today."</em></p>
         <p><strong>Plans — Slide 19</strong></p>
-        <p><strong>Both numbers are now visible on the slide itself</strong>, the setup fee in large text, the monthly retainer right underneath in smaller text. You're reinforcing what he can already see, not revealing something new when you get to the bullets.</p>
-        <p><strong>Be honest about the tradeoff if he asks which one he needs:</strong> "Phase 1 alone is infrastructure for your LinkedIn audience, not a lead source. If the goal is doubling your consulting volume, qualification is the piece that actually does that. But it also doesn't make sense to qualify subscribers before there's a live list for them to land on, that's why it's sequenced this way." YouTube, the podcast, and WhatsApp aren't part of either phase, they don't have an exportable list the way Ghost does, that's on Jim to point at the new list himself whenever he gets to it, don't promise to touch those.</p>
-        <p><strong>Watch out:</strong> Don't pressure toward Phase 2 today. Present Phase 1 as the real, complete first step, not a stripped-down alternative, and let him ask about Phase 2 once he sees the shape of it. He told you this needs to make sense given his situation.</p>
-        <p><strong>Your real goal on this call:</strong> Phase 1 already carries its own $500/mo retainer, so a Phase 1 close alone already tests whether a retainer, even a small one, is sellable. A Phase 2 close on top of that is a bonus signal, not a requirement. If he's hesitant on Phase 2 today, a soft close is fine: "Let's get Phase 1 live first, and I'll check back in once your list has real movement to show you."</p>
+        <p><strong>Beat:</strong> Present both numbers plainly, on the slide, before you say anything — no hidden pricing.</p>
+        <p><strong>Say:</strong> "Two ways to do this. Growth Partner is $4,500 to build plus $2,000 a month, plus 12% of the commission on any deal this system actually helped nurture — so my incentive is tied directly to yours. Fixed Retainer is the same build, same $4,500, but $3,500 a month flat with no revenue share, if you'd rather keep it simple."</p>
+        <p><strong>Watch out:</strong> <strong>This whole slide is Shlomo's own idea, not something TID asked for.</strong> Watch their reaction closely on "12%" — if there's any hesitation or confusion about how deal-attribution would even work, pivot immediately to Fixed Retainer as the easy default. Don't defend the revenue-share model if it's not landing; the flat plan is a completely legitimate close on its own. The 12% figure itself is also a guess — 10-15% was the range Shlomo was considering, so there's room to move on that number live if it helps close. Don't name a specific tool (Google Form, etc.) for their current sign-up process — unconfirmed, came from a garbled transcript reference.</p>
+        <p><strong>Pricing logic:</strong> Growth Partner's $2,000/mo reflects TID's real scale (institutional partners, 50+ investors in negotiation, deals up to $10M+) — not a bootstrapped 2-person shop. Fixed Retainer's $3,500/mo is deliberately set well above Growth Partner's $2,000/mo (a $1,500/mo gap) so the revenue-share option reads as the obviously smarter choice for anyone doing the math — the only reason to pick Fixed Retainer is a genuine aversion to sharing commission, not price. If TID pushes back that $3,500/mo flat feels steep, that's the intended reaction — it's supposed to make Growth Partner look like the deal.</p>
       </aside>
     </section>
 
-    <section data-bg-token="bg-light">
+    <section data-bg-token="bg-light" data-visibility="hidden">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Your Timeline</div>
+        <div class="ppd-eyebrow">48-Hour Bonus Offer &#127873;</div>
         <div class="bonus-grid">
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Week 1-2</div>
-            <p class="body ppd-muted">Phase 1 live: Kit set up, one list, migration done.</p>
+            <div class="ppd-headline-sm">Bonus #1</div>
+            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Week 3-4</div>
-            <p class="body ppd-muted">Phase 2 build: qualification wired up and tested.</p>
+            <div class="ppd-headline-sm">Bonus #2</div>
+            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Week 5</div>
-            <p class="body ppd-muted">Live: subscribers self-qualify, first data call booked.</p>
+            <div class="ppd-headline-sm">Bonus #3</div>
+            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
           </div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Your Timeline — Slide 20</strong></p>
-        <p><strong>Beat:</strong> Walk it briskly, one line per marker. This makes both phases tangible instead of abstract.</p>
-        <p><strong>Say:</strong> "Here's exactly how this runs if you go all the way through. Weeks one and two: Phase 1 goes live, your Kit account, one consolidated list, the LinkedIn migration, all done. Weeks three and four: if you're moving into Phase 2, that's when the qualification layer gets built and tested. Week five: it's live, subscribers are qualifying themselves, and we have our first data call."</p>
-        <p><strong>If he's only doing Phase 1 today:</strong> Just walk Week 1-2 and stop there: "That's your two weeks. Phase 2 picks up from wherever you leave off, whenever you're ready."</p>
-        <p><strong>Fold in the reassurance points here too, don't skip them just because the cards changed:</strong> "Whichever phase you're on, you're working with me directly, not handed off to anyone. And Phase 1 and Phase 2 aren't two different paths, Phase 2 is just what Phase 1 grows into once it's live, you're not locking into anything beyond Phase 1 today."</p>
+        <p><strong>HIDDEN — Slide 20 (Bonus Offer)</strong></p>
+        <p><strong>Why:</strong> brief.yaml has no bonus defined. Inventing a fake "48-hour bonus" for a warm, relationship-driven deal with a 2-person startup would read as manufactured urgency and cheapen the pitch.</p>
+        <p><strong>Action:</strong> This section now has <code>data-visibility="hidden"</code>, which tells Reveal.js to skip it during normal arrow-key/click-through navigation — you won't land on it by accident. If you ever do, just move on; there's nothing to present here.</p>
       </aside>
     </section>
 
@@ -1645,20 +1622,21 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Our Guarantee</div>
         <div class="guarantee-hero">
-          <h2 class="ppd-headline-md">Consolidated list live in 2 weeks. Or I keep working.</h2>
-          <p class="body ppd-body-lg">If your Kit list and consolidation setup aren&#8217;t live within 2 weeks, I keep working until they are. No extra charge. Phase 2 adds up to 3 more weeks when you're ready for it, same guarantee applies to that build too.</p>
-          <p class="fine">Requires: your Kit login, approval on copy before it loads, and remote desktop access to your own computer each month for the LinkedIn rescrape (not your password, I never log in from my own device). Kit, RightMessage, and Dripify are each billed separately, not by me.</p>
+          <h2 class="ppd-headline-md">If it&#8217;s not live in 4 weeks, I keep building until it is</h2>
+          <p class="body ppd-body-lg">If your registration capture, personalized nurture sequence, and dynamic page aren&#8217;t live within 4 weeks, I keep working until they are. No extra charge &#8212; you don&#8217;t pay more for a build that takes longer than planned.</p>
+          <p class="fine">Small print: the only ask is that you keep sending us real data &#8212; registration numbers and a rough sense of which leads turned into deals &#8212; so we can keep tuning the system as your events scale.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"Here's my commitment: if your consolidated list isn't live within 2 weeks, I keep working until it is. No extra charge. Phase 2 adds up to 3 more weeks when you're ready for it, and that same guarantee covers the qualification build too."</em></p>
-        <p><strong>SAY:</strong> <em>"The only things I need from you are your Kit login, your approval on copy before we load it, and remote desktop access to your computer once a month for the LinkedIn rescrape, never your password, I don't log in from my own device. That's the full ask."</em></p>
-        <p><strong>Say the guarantee out loud — don't just let Jim read it:</strong></p>
+        <p><strong>Our Guarantee — Slide 21</strong></p>
+        <p><strong>Beat:</strong> State the guarantee plainly and let it sit — this is the risk-reversal moment.</p>
+        <p><strong>Say:</strong> "If it's not live in four weeks, I keep building until it is. No extra charge. The only thing I need from you is real data as we go — registration numbers, and roughly which leads turn into deals — so the system keeps getting sharper."</p>
+        <p><strong>Watch out:</strong> The 4-week timeframe is still an estimate (see slide 5) — if multilingual scope changes it, the guarantee's timeframe needs to move with it.</p>
       </aside>
     </section>
 
@@ -1666,29 +1644,23 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Special Offer</div>
         <div class="offer-card">
-          <div class="price">$1,500 Phase 1. +$2,500 for Phase 2.</div>
-          <div class="spots">One system, two phases</div>
-          <p>Here&#8217;s exactly what happens in each phase:</p>
-          <p>Phase 1: Kit setup, LinkedIn migration, welcome sequence, landing page, kickoff call. $1,500 + $500/mo.</p>
-          <p>Phase 2: qualification at opt-in, Ghost's 437 subscribers migrated in, twice-monthly data and build calls. +$2,500 ($4,000 total), $1,500/mo.</p>
-          <p>Either way, you own the list and the setup outright. Phase 2 is what turns it into an ongoing engine that tells you who to call, every month.</p>
+          <div class="price">[Expiration time]:<br/><span class="ppd-strike">[$price]</span>[$discounted price]</div>
+          <div class="spots">7 <span class="ppd-strike">10</span> spots left</div>
+          <p>Here&#8217;s what I&#8217;m doing with the [offer name] in [month]:</p>
+          <p>The outcome is simple: To get you to [outcome], getting [outcome], and [outcome].</p>
+          <p>I&#8217;m only working with [total spots] [ICP], to help them with [success milestone] over a [timeline].</p>
+          <p>We&#8217;ll do it with the perfect mix of [inclusion], [inclusion] and [inclusion] with deep involvement from me and my team.</p>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">The Signal Layer</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"Phase 1 is $1,500 to build, $500 a month after. Once that's live, Phase 2 is $2,500 more, so $4,000 total, and the retainer steps up to $1,500 a month, replacing the Phase 1 retainer, not stacking on it. Both are done for you, nothing recurring beyond the monthly."</em></p>
-        <p><strong>SAY:</strong> <em>"What's your gut feeling on this?"</em></p>
-        <p><strong>SAY:</strong> <em>"You told me you'd like to double your project count. Phase 1 alone won't do that, it just puts everyone in one room. Phase 2 is the piece that actually surfaces who's ready. Let's start with Phase 1 and revisit Phase 2 once it's proven itself."</em></p>
-        <p><strong>Say the numbers plainly and stop talking, one pass, don't rush past the bridge question that follows.</strong></p>
-        <p>Let him answer first, in his own words, before you say anything else. Jim isn't going to have his own copy of this deck open, only you do, on screen share, so there's nothing for him to click, this question is the actual close mechanism, not a button.</p>
-        <p>Use this only if he pushes back, don't volunteer it unprompted.</p>
-        <p><strong>Remember the bigger goal today:</strong> beyond closing Phase 1, you're testing whether a retainer, even a small one, is something Jim (and future clients) will actually pay for on an ongoing basis. If he goes for Phase 2, that's a real signal, not just revenue.</p>
-        <p><strong>On Kit, RightMessage, and Dripify costs:</strong> Kit is NOT free once Phase 2 is in play, it needs the paid Creator plan (roughly $33-39/mo) for RightMessage to connect. RightMessage itself is a separate, independent subscription on top of that (roughly $79/mo for under 10K visitors), not bundled into Kit's fee. Dripify has its own subscription too (roughly $39-59/mo), running since Phase 1. All three are billed to Jim directly by those vendors, none of it is part of my fee. If he asks about ongoing platform costs beyond the retainer: "Kit, RightMessage, and Dripify are each billed separately by them, not me. Phase 1 alone can stay on Kit's free tier longer; Phase 2 needs Kit's paid plan plus RightMessage's own subscription from day one."</p>
-        <p><strong>Once he answers the gut-feeling question, click to the final slide:</strong> it's just a visual recap for him to look at while you keep talking, he can't click anything on it, only you can, from your own screen. The actual next step gets decided by what he just said out loud, not by a button.</p>
+        <p><strong>SKIPPED — Slide 22 (Special Offer / Urgency)</strong></p>
+        <p><strong>Why:</strong> brief.yaml has no urgency.text. There's no real scarcity or deadline here — TID isn't a cold-outbound funnel with capped spots, it's a warm relationship-driven build. Fabricating "only 3 spots left" would be detected instantly and would torch credibility on a deal Shlomo explicitly wants to land well.</p>
+        <p><strong>Action:</strong> Skip past this slide live on the call, or delete/hide it before presenting. The guarantee (slide 21) and the plans (slide 19) already carry the close — no manufactured urgency needed.</p>
       </aside>
     </section>
 
@@ -1697,32 +1669,64 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="nextsteps-split">
           <div class="left">
             <div class="ppd-eyebrow">Next steps&#8230;</div>
-            <h3>Ready to build your signal layer?</h3>
-            <p>Let&#8217;s get Phase 1 live, and lock in Phase 2 now if it makes sense. I&#8217;ll follow up within 24 hours to schedule the kickoff.</p>
+            <h3>Let&#8217;s Pick A Plan And Get Building</h3>
+            <p>Whichever plan you choose, I want to get this live before Milan. If you&#8217;re in, let&#8217;s lock the plan on this call and I&#8217;ll start immediately.</p>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <div class="cta-card" id="ppd-cta-card" data-mode="static">
-              <p class="title">Ready to start?</p>
-              <div class="choices" role="group" aria-label="Your response">
-                <a class="cta-direct primary" href="https://tidycal.com/shlomofreund/30-minute-meeting">I&#8217;m in, let&#8217;s start Phase 1</a>
-                <a class="cta-direct secondary" href="mailto:shlomo@assetbolt.com?subject=Question about The Signal Layer">I have a question first</a>
-                <a class="cta-direct secondary" href="mailto:shlomo@assetbolt.com?subject=The Signal Layer - not right now">Not right now, keep me posted</a>
+            <div class="cta-card" id="ppd-cta-card" data-endpoint="/api/lead">
+              <p class="title">Ready To Build?</p>
+              <div class="choices" role="radiogroup" aria-label="Your response">
+                <button type="button" class="choice-btn" data-choice="in" aria-pressed="false">
+                  <span>I&#8217;m in! Let&#8217;s go.</span><span class="check">&#10003;</span>
+                </button>
+                <button type="button" class="choice-btn" data-choice="question" aria-pressed="false">
+                  <span>Got a question, but looks good!</span><span class="check">&#10003;</span>
+                </button>
+                <button type="button" class="choice-btn" data-choice="out" aria-pressed="false">
+                  <span>I&#8217;m out. Let&#8217;s not waste time.</span><span class="check">&#10003;</span>
+                </button>
+              </div>
+              <form class="form" novalidate>
+                <div class="field" data-field="name">
+                  <label for="ppd-name">Name</label>
+                  <input id="ppd-name" name="name" type="text" autocomplete="name" required maxlength="100">
+                  <div class="err">Please enter your name.</div>
+                </div>
+                <div class="field" data-field="email">
+                  <label for="ppd-email">Email</label>
+                  <input id="ppd-email" name="email" type="email" autocomplete="email" required maxlength="254">
+                  <div class="err">Please enter a valid email.</div>
+                </div>
+                <div class="field" data-field="phone">
+                  <label for="ppd-phone">Phone</label>
+                  <input id="ppd-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+1 555 123 4567" maxlength="20">
+                  <div class="err">Please enter a valid phone number (with country code).</div>
+                </div>
+                <div class="field" data-field="message" hidden>
+                  <label for="ppd-message"><span data-message-label>Anything to add? (optional)</span></label>
+                  <textarea id="ppd-message" name="message" maxlength="2000" rows="3"></textarea>
+                  <div class="err">Please share a bit more so we can help.</div>
+                </div>
+                <button type="submit" class="submit">Send</button>
+                <div class="form-message" role="status" aria-live="polite"></div>
+              </form>
+              <div class="success" role="status">
+                <div class="tick">&#10003;</div>
+                <h4 data-success-title>Thanks — you&#8217;re on the list.</h4>
+                <p data-success-body>We&#8217;ll be in touch shortly.</p>
+                <a class="static-cta" data-static-cta>Book a call</a>
               </div>
             </div>
-            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>Asset Bolt</div>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SAY:</strong> <em>"Perfect. Let's get the kickoff on the calendar, and while we're there I'll ask whether you want Phase 2 locked in now or revisited once Phase 1's live."</em></p>
-        <p><strong>SAY:</strong> <em>"Great, ask me anything."</em></p>
-        <p><strong>SAY</strong> (if he hesitates, don't push): <em>"Completely fair. What would need to change for this to make sense for you?"</em></p>
-        <p><strong>The close. This slide is a visual only, Jim has no copy to click, everything here happens by what he says out loud after the gut-feeling question on the previous slide.</strong></p>
-        <p>Then send him the booking link yourself, right after the call, don't wait for him to find it.</p>
-        <p>Address it live. Most common question will be the Zoho/consolidation mechanics or whether Phase 2 is worth committing to now.</p>
-        <p>Then listen.</p>
-        <p><strong>The most important thing happened one slide back:</strong> asking "What's your gut feeling on this?" and then actually stopping to let him answer. This slide is just where that answer plays out, don't try to re-ask anything here.</p>
+        <p><strong>Clear Next Step — Slide 23</strong></p>
+        <p><strong>Beat:</strong> One ask — pick a plan, get building. Make it and stop talking.</p>
+        <p><strong>Say:</strong> "So — Growth Partner or Fixed Retainer? Whichever one you pick, I want to start this week so it's live before Milan."</p>
+        <p><strong>Watch out:</strong> Don't recap the whole deck here. Point at the three choices (in / question / out) and let them answer verbally — the buttons are for the live poll, not a form to fill out mid-pitch.</p>
       </aside>
     </section>
   </div>
@@ -1979,18 +1983,13 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
     async function attemptUnlock() {
       if (!input || !input.value) return;
       modal.classList.remove('invalid');
-      // Open the speaker popup synchronously, before the WebCrypto await below —
-      // browsers tie window.open() to the user's Enter/click gesture, and that
-      // gesture window can lapse while decryption (PBKDF2 + AES-GCM) is in
-      // flight. Opening first (then filling the popup once decrypt resolves)
-      // keeps window.open() inside the gesture instead of racing it.
-      openSpeakerView();
       try {
         await decryptAll(input.value);
         rememberPassword(input.value);
         unlocked = true;
         modal.classList.remove('open');
         if (hudLockIco) hudLockIco.hidden = true;
+        setTimeout(openSpeakerView, 60);
       } catch (e) {
         modal.classList.add('invalid');
         input.select();

@@ -1,8 +1,8 @@
 {
   "$schema": "./scripts/deck.config.schema.json",
   "name": "Asset Bolt",
-  "tagline": "Own your LinkedIn newsletter list — migrate subscribers to a platform you control",
-  "url": "https://kimberly-assetbolt.pages.dev",
+  "tagline": "The Soft Landing System — event-lead nurture and personalization, built for TID",
+  "url": "https://tid-assetbolt.pages.dev",
   "allowed_origins": [
     "http://localhost:8765",
     "http://localhost:8788",
@@ -11,7 +11,7 @@
     "http://127.0.0.1:8800"
   ],
   "cloudflare": {
-    "project_name": "kimberly-assetbolt",
+    "project_name": "perfect-pitch-deck",
     "production_branch": "main"
   },
   "ghl": {
