@@ -541,8 +541,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .outcomes-split .right {
   background: var(--accent-blue);
   padding: 80px 80px 80px 0;
-  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
-  gap: 12px;
+  display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: min-content;
+  align-content: center;
+  gap: 20px;
 }
 .outcomes-split .right .ph {
   background:
@@ -678,10 +679,12 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   position: relative;
 }
 .howitworks-split .right .ph {
-  width: 600px; height: 760px;
+  width: 600px;
   background:
     repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/40px 40px;
   border-radius: 2px;
+  padding: 60px 0;
+  display: flex; align-items: center; justify-content: center;
 }
 .howitworks-split .right .corner-brand {
   position: absolute; right: 80px; bottom: 32px;
@@ -997,7 +1000,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
               <div style="position:relative;flex:1;background-image:linear-gradient(160deg,rgba(15,25,45,0.88),rgba(10,15,25,0.94)),url('assets/brand/tid-homepage-real.png');background-size:cover;background-position:center 30%;display:flex;flex-direction:column;justify-content:center;padding:28px 32px;font-family:'Inter',sans-serif;color:#fff;">
                 <div style="position:absolute;top:14px;right:14px;background:rgba(201,168,96,0.18);color:#C9A860;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:5px 12px;border-radius:100px;">Personalized</div>
                 <div style="font-size:10px;color:#C9A860;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;">Israeli Real Estate &mdash; Tel Aviv, Luxury Only</div>
-                <div style="font-family:Georgia,'Times New Roman',serif;font-size:26px;line-height:1.2;margin:12px 0 10px;">Own Tel Aviv&#8217;s<br/>finest &rarr; <span style="color:#C9A860;font-style:italic;">home.</span></div>
+                <div style="font-family:Georgia,'Times New Roman',serif;font-size:26px;line-height:1.2;margin:12px 0 10px;">Own a piece of<br/>Tel Aviv &rarr; <span style="color:#C9A860;font-style:italic;">home.</span></div>
                 <div style="opacity:0.65;font-size:12.5px;line-height:1.5;margin-bottom:16px;">You told us: Tel Aviv, luxury only. Zihron &ndash; Weizmann fits &mdash; boutique buildings by Kikar HaMedina. We handle it all, legal to management, until it&#8217;s really yours.</div>
                 <div style="display:flex;gap:10px;">
                   <div style="background:#fff;color:#0d1420;font-size:12px;font-weight:700;padding:9px 16px;border-radius:100px;">Book a Call &rarr;</div>
@@ -1028,7 +1031,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <p><strong>Beat:</strong> Land that this deck is built specifically off their 7/1 call, not a template — then move fast into the room.</p>
         <p><strong>Say:</strong> "This is the Soft Landing System — what I want to show you today for TID. Everything on the next few slides is built off what you and David told me on our first call, not a generic pitch."</p>
         <p><strong>Watch out:</strong> Don't linger on the cover — it's a tone-setter, not a topic. Three seconds, then move.</p>
-        <p><strong>Visual:</strong> Top half is a real screenshot of their actual homepage today (tidinvestments.com). Bottom half rebuilds the exact same layout — eyebrow, big serif headline with the arrow, subtext, two pill buttons — but with wording for a specific lead who said "Tel Aviv, luxury only": headline "Own Tel Aviv's finest &rarr; home." (mirrors their real "Own a piece of Israel &rarr; home."), subtext naming Zihron &ndash; Weizmann, and the second button swapped from "How it works" to "See Zihron &ndash; Weizmann." Say: "Same page, same layout — just built around what they told you, instead of the generic version everyone else sees."</p>
+        <p><strong>Visual:</strong> Top half is a real screenshot of their actual homepage today (tidinvestments.com). Bottom half rebuilds the exact same layout — eyebrow, big serif headline with the arrow, subtext, two pill buttons — but with wording for a specific lead who said "Tel Aviv, luxury only": headline "Own a piece of Tel Aviv &rarr; home." (directly mirrors their real "Own a piece of Israel &rarr; home." — city swapped in, same grammar, so it still reads on its own instead of needing the original next to it), subtext naming Zihron &ndash; Weizmann, and the second button swapped from "How it works" to "See Zihron &ndash; Weizmann." Say: "Same page, same layout — just built around what they told you, instead of the generic version everyone else sees."</p>
       </aside>
     </section>
 
@@ -1075,8 +1078,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">And To Make Things Worse&#8230;</div>
         <div class="agitators-grid">
           <div>
-            <div class="ppd-headline-md">Every Missed Follow-Up</div>
-            <p>300 people showed up in Rome. Only a few became deals. The rest are just names, waiting to be remembered.</p>
+            <div class="ppd-headline-md">Warm Leads Go Invisible</div>
+            <p>Someone who loved a project six months ago could be back on your site right now, you'd never know.</p>
           </div>
           <div>
             <div class="ppd-headline-md">The Bigger Events Get</div>
@@ -1095,8 +1098,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Pain Agitators — Slide 4</strong></p>
-        <p><strong>Beat:</strong> Scale the problem forward — Rome was 300 people; Milan, Zurich, NYC, Miami, LA are next.</p>
-        <p><strong>Say:</strong> "Rome alone was 300 people, way more than planned for. Milan's in a few weeks, then Zurich, then the US swing in October — every one of those events adds more names to a list that already isn't getting followed up on."</p>
+        <p><strong>Beat:</strong> Card 1 used to just restate slide 3's problem (name-writing) with the Rome number attached — redundant, and it read as rubbing in something they already told you. This card now escalates to a different angle: the same 300 people are still out there acting, and TID has zero visibility into it. It also sets up the "Lead Profile" payoff on slide 9.</p>
+        <p><strong>Say:</strong> "Right now, someone who fell for a project in Rome could be back on your site tonight, browsing Premium listings — and you'd have no way of knowing. Milan's in a few weeks, then Zurich, then the US swing — every event adds more people you can't see re-engaging."</p>
         <p><strong>Don't cite a specific "expected N" number</strong> — the call said ~80, TID's own blog post says ~100. Their own sources disagree; just say "way more than planned for."</p>
         <p><strong>Watch out:</strong> Don't let this feel like criticism of how they've run things so far — they built something that outgrew manual follow-up faster than expected. Frame it as a good problem.</p>
       </aside>
@@ -1105,7 +1108,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;In 4 weeks, every parlor-meeting lead sees their exact match &#8212; city, budget, project &#8212; automatically and personally, before you ever call them. Or I keep building until they do.&#8221;</p>
+          <p class="quote">&#8220;In 4 weeks, every parlor-meeting lead sees their exact match &#8212; city, budget, project &#8212; automatically and personally, before you ever call them.&#8221;</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1116,8 +1119,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>The Big Promise — Slide 5</strong></p>
         <p><strong>Beat:</strong> This is the sentence they should be able to repeat back after the call.</p>
-        <p><strong>Say:</strong> "In four weeks, every single parlor-meeting lead sees their exact match automatically — and it still feels personal, even at 300 people in a room. If it's not live in four weeks, I keep building until it is."</p>
-        <p><strong>Watch out:</strong> The 4-week timeframe is an estimate, not yet confirmed with them — if multilingual scope (Italian/Hebrew) comes up as a requirement, flag that it may extend this.</p>
+        <p><strong>Say:</strong> "In four weeks, every single parlor-meeting lead sees their exact match automatically — and it still feels personal, even at 300 people in a room."</p>
+        <p><strong>Watch out:</strong> The 4-week timeframe is an estimate, not yet confirmed with them — if multilingual scope (Italian/Hebrew) comes up as a requirement, flag that it may extend this. The guarantee language ("I keep building until it is") was pulled off this slide 2026-07-14 — it belongs on slide 21 only, not duplicated here, and slide 21's version of it needs its own fix (see that slide's notes).</p>
       </aside>
     </section>
 
@@ -1126,8 +1129,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">Key Outcomes</div>
         <div class="outcomes-cols">
           <div>
-            <div class="ppd-headline-md">Know Goal, Horizon, Aliyah</div>
-            <p>Not just budget and city &#8212; the same three questions you ask on every call, captured the moment someone raises their hand.</p>
+            <div class="ppd-headline-md">Goal, Horizon, Aliyah</div>
+            <p>Appreciation, yield, preservation, horizon, Aliyah timeline &#8212; the same three questions you already ask, captured the moment they raise their hand.</p>
           </div>
           <div>
             <div class="ppd-headline-md">Event Or Not, Same System</div>
@@ -1150,6 +1153,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <p><strong>Say:</strong> "Concretely: you capture goal, horizon, and Aliyah timeline the moment someone raises their hand — the same three questions you already ask on every call. Someone who found you cold on your site gets treated exactly like someone who met you at a parlor meeting. And if a Rome attendee comes back six months later and starts browsing Premium, you'll know before they call."</p>
         <p><strong>Scenario to use live:</strong> "Someone views the Ashdod Land listing on your site, then leaves without booking a call. Two weeks later they book one. Right now that's a cold call — you don't know what they looked at. With this, Joseph or David opens the call already knowing: this is about Ashdod Land, not a blank slate."</p>
         <p><strong>Watch out:</strong> This slide now reflects TID's own qualification framework (goal/horizon/Aliyah — from their "Land, Emerging, Premium" blog post) instead of just budget+city — it's a stronger, more credible mechanism because it's literally the same three questions they already ask, not something invented. Keep the $800K/northern-Israel example in the scenario if it still fits, but don't force it if the goal/horizon framing tells the story better live.</p>
+        <p><strong>What "goal" means (for Shlomo, not to read verbatim):</strong> it's TID's own first qualifying question on every call — is this buyer after appreciation (property value growth), yield (rental income), or preservation (capital safety, parking money somewhere stable)? Horizon = how soon they want to transact. Aliyah = whether/when they're planning to actually move to Israel. The card title was shortened from "Know Goal, Horizon, Aliyah" (26 chars, over the 25-char hard limit) to "Goal, Horizon, Aliyah," and the body now spells out the three goal-options inline so it's not just a bare word on the slide.</p>
       </aside>
     </section>
 
@@ -1163,35 +1167,17 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
               <p class="body">You stop writing names down and hoping &#8212; the system remembers, follows up, and reports back automatically.</p>
             </div>
             <div class="msg">
-              <div class="ppd-headline-sm">Know Your Real ROI</div>
-              <p class="body">See exactly how many of your 300 Rome attendees are still warm, so you know the real return on every event.</p>
+              <div class="ppd-headline-sm">Know Who's Still Warm</div>
+              <p class="body">See how many of your 300 Rome attendees are re-engaging on your site right now, not just names sitting in Notion.</p>
             </div>
             <div class="msg">
               <div class="ppd-headline-sm">Scale To Every City</div>
               <p class="body">Milan, Zurich, NYC, Miami, LA &#8212; the same system runs every event without adding headcount.</p>
             </div>
           </div>
-          <div class="right">
-            <div class="ph" style="background:#0d1117;border-radius:2px;display:flex;flex-direction:column;justify-content:center;padding:24px;font-family:'Inter',sans-serif;color:#fff;box-sizing:border-box;">
-              <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;">Premium &middot; Tel Aviv</div>
-              <div style="font-size:22px;font-weight:700;margin:8px 0 4px;">Zihron &ndash; Weizmann</div>
-              <div style="opacity:0.55;font-size:14px;">Boutique buildings, Old North</div>
-            </div>
-            <div class="ph" style="background:#0d1117;border-radius:2px;display:flex;flex-direction:column;justify-content:center;padding:24px;font-family:'Inter',sans-serif;color:#fff;box-sizing:border-box;">
-              <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;">Land &middot; Negev</div>
-              <div style="font-size:22px;font-weight:700;margin:8px 0 4px;">Ashdod Land</div>
-              <div style="opacity:0.55;font-size:14px;">North-East master plan</div>
-            </div>
-            <div class="ph" style="background:#0d1117;border-radius:2px;display:flex;flex-direction:column;justify-content:center;padding:24px;font-family:'Inter',sans-serif;color:#fff;box-sizing:border-box;">
-              <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;">Emerging &middot; Ramat Gan</div>
-              <div style="font-size:22px;font-weight:700;margin:8px 0 4px;">Rokah 40-42</div>
-              <div style="opacity:0.55;font-size:14px;">Facing Park HaYarkon</div>
-            </div>
-            <div class="ph" style="background:#0d1117;border-radius:2px;display:flex;flex-direction:column;justify-content:center;padding:24px;font-family:'Inter',sans-serif;color:#fff;box-sizing:border-box;">
-              <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;">Tagged Visitor</div>
-              <div style="font-size:22px;font-weight:700;margin:8px 0 4px;">Viewed Premium &times;3</div>
-              <div style="opacity:0.55;font-size:14px;">Ready to talk, not yet booked</div>
-            </div>
+          <div class="right" style="grid-template-columns: 1fr 1fr; grid-template-rows: 1fr;">
+            <img src="assets/brand/tid-goal-aliyah-charts.png" alt="Aggregate breakdown of Goal and Aliyah Timeline answers" style="width:100%;height:100%;object-fit:contain;border-radius:2px;background:#0d1117;" />
+            <img src="assets/brand/tid-horizon-chart.png" alt="Aggregate breakdown of Horizon answers" style="width:100%;height:100%;object-fit:contain;border-radius:2px;background:#0d1117;" />
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--text-inverse);">
@@ -1201,10 +1187,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Key Outcomes (cont.) — Slide 7</strong></p>
         <p><strong>Beat:</strong> Shift from the lead-level benefit (slide 6) to the business-level one — this is what changes for Joseph and David running the operation.</p>
-        <p><strong>Say:</strong> "Zoom out from any one lead for a second — this is what it does for you running the business. No more manual list-checking, you actually know your Rome conversion rate, and Milan, Zurich, the US swing in October all run on the same system without you hiring anyone new."</p>
-        <p><strong>Scenario to use live:</strong> "Someone spends time on your Premium tier page — the $2M-$10M+ properties — but never books a call. That's a completely different follow-up than someone who bounced off the Land tier page in ten seconds. Or someone bounces between Emerging and Premium multiple times — tag them 'undecided on tier,' which is a different sales conversation than someone locked into one price point. Right now none of that gets captured or acted on."</p>
-        <p><strong>Watch out:</strong> Don't just repeat slide 6 — that one was about the lead's experience, this one is about TID's operating leverage. Keep them distinct. The tier names (Land/Emerging/Premium) and project names (Ashdod Land, Zihron-Weizmann, Rokah Ramat Gan) are pulled directly from TID's own site — use them, don't genericize.</p>
-        <p><strong>Visuals:</strong> The four right-panel cards are mockups built from TID's own site content (real tier names and project names), not generic third-party screenshots — point at them as illustrations of what tagging looks like, not as a live product screenshot.</p>
+        <p><strong>Say:</strong> "Zoom out from any one lead for a second — this is what it does for you running the business. Here's what the aggregate breakdown actually looks like: you'd know that most of your leads are after appreciation over yield, and roughly how many are planning Aliyah within two years versus not planning at all. That's not a guess anymore, it's real data you can act on — for scheduling which projects to bring to which city, for staffing, for knowing what to say in the room."</p>
+        <p><strong>Watch out:</strong> Don't just repeat slide 6 — that one was about the lead's experience, this one is about TID's operating leverage (aggregate visibility, not individual matching). Keep them distinct.</p>
+        <p><strong>Visuals — replaced 2026-07-14.</strong> The original four hand-built "tier tagging" cards read flat (four near-identical dark boxes of text) and Shlomo flagged them as weak after actually looking at the render. Replaced with two real generated images matching TID's actual qualifying questions: <code>assets/brand/tid-goal-aliyah-charts.png</code> (aggregate distribution for Goal and Aliyah Timeline) and <code>assets/brand/tid-horizon-chart.png</code> (aggregate distribution for Horizon). Both were built off real RightMessage reference screenshots from the Peter Sorgenfrei account (style-matched, not invented from scratch), then relabeled with TID's own questions and options. <strong>The numbers on these charts are illustrative, not real TID data</strong> — TID hasn't run this at scale yet. If asked, say "this is what it'll look like once you're live," don't imply these are already your numbers.</p>
       </aside>
     </section>
 
@@ -1214,7 +1199,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <div class="left">
             <div class="ppd-eyebrow">How It Works</div>
             <h3>From Sign-Up To Sold</h3>
-            <p>However someone tells you their goal, horizon, and Aliyah plans today &#8212; at a parlor meeting or on your site &#8212; that answer doesn't trigger anything yet. I turn it into an automatic personalized sequence, and your site shows them the exact project matching what they said.</p>
+            <p>However someone tells you their goal, horizon, and Aliyah plans today, at a parlor meeting or on your site, that answer feeds straight into the system: a personalized sequence goes out, and your site shows them the exact project matching what they said.</p>
             <ul>
               <li>Works with however you collect interest today</li>
               <li>Personalized email sequence sent</li>
@@ -1243,6 +1228,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <p><strong>Say:</strong> "However someone tells you their goal, horizon, and Aliyah plans today — at a parlor meeting or on your site — that's the trigger point. From there it's automatic: a personalized email sequence goes out, and if they land on your site, they see the exact project that matches what they told you, not a generic homepage."</p>
         <p><strong>Watch out:</strong> This is the slide to actually show, if possible — pull up the $800K-northern-Israel example live rather than just describing it. That's the moment that landed on Call 1. Don't name a specific tool (Google Form, etc.) for how they currently collect this — that detail was never confirmed with TID, it came from a garbled transcript reference. Say "however you collect it today" instead.</p>
         <p><strong>Visual:</strong> The right-panel image is a mockup email using TID's own project name (Zihron &ndash; Weizmann) and city (Tel Aviv) — built to speak TID's world, not a generic screenshot from another client's tool.</p>
+        <p><strong>On "can I actually build the dynamic site part?" (Shlomo's question, 2026-07-14):</strong> Yes — this is exactly what RightMessage's "website personalization campaigns" feature (confirmed on both the Scale and Pro tier) is built for. It's not a live database filter across TID's project inventory — it's conditional content blocks keyed to a visitor's tag/segment (e.g. "goal=preservation + city=Tel Aviv" shows the Zihron-Weizmann block instead of the default homepage). Same mechanism as changing text, just scoped per-segment rather than site-wide. The deck's current wording ("your site shows them the exact project matching what they said") is accurate to that mechanism — it doesn't imply a live search/filter tool, just pre-set matching content per segment, which is genuinely buildable with what you already have.</p>
       </aside>
     </section>
 
@@ -1252,24 +1238,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="howitworks">
           <div class="left">
             <h3>A Build You Never Have To Touch</h3>
-            <p>I build the personalized email sequences and dynamic pages myself, wired up to however you're already collecting interest &#8212; end to end. You review and approve; France and I handle every technical piece.</p>
+            <p>I build the personalized email sequences and dynamic pages myself, wired up to however you're already collecting interest, end to end. You review each draft before anything goes live; I handle every technical piece.</p>
             <ul>
-              <li>You approve, we build</li>
+              <li>You review before it goes live</li>
               <li>Live in your systems, not ours</li>
-              <li>Weekly check-ins until it&#8217;s live and working</li>
+              <li>I keep you posted as I build</li>
             </ul>
           </div>
           <div class="right ph" style="background:#0d1117;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
-            <div style="width:78%;background:#1c1c1e;border-radius:10px;padding:28px;font-family:'Inter',sans-serif;color:#fff;">
-              <div style="font-size:12px;opacity:0.5;text-transform:uppercase;letter-spacing:0.08em;">Lead Profile</div>
-              <div style="font-size:21px;font-weight:800;margin:8px 0 18px;">Rome Attendee &rarr; Back On Site</div>
-              <div style="display:flex;flex-direction:column;gap:10px;">
-                <div style="display:flex;justify-content:space-between;font-size:14px;"><span style="opacity:0.6;">Goal</span><span>Preservation</span></div>
-                <div style="display:flex;justify-content:space-between;font-size:14px;"><span style="opacity:0.6;">Aliyah</span><span>Within 2 years</span></div>
-                <div style="display:flex;justify-content:space-between;font-size:14px;"><span style="opacity:0.6;">Revisited</span><span>Premium &middot; Tel Aviv &times;3</span></div>
-                <div style="display:flex;justify-content:space-between;font-size:14px;"><span style="opacity:0.6;">Tagged</span><span style="color:var(--accent);font-weight:700;">Ready to talk</span></div>
-              </div>
-            </div>
+            <img src="assets/brand/tid-lead-profile-card.png" alt="Real lead profile card showing a person's Goal, Horizon, and Aliyah Timeline answers" style="width:78%;border-radius:10px;display:block;" />
             <div style="color:var(--accent);font-size:20px;">&darr;</div>
             <div style="width:78%;background:#1c1c1e;border-radius:10px;padding:22px 28px;font-family:'Inter',sans-serif;color:#fff;border:1px solid rgba(233,119,49,0.3);">
               <div style="font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:10px;">Auto-Email Sent</div>
@@ -1286,9 +1263,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>How It Works (delivery) — Slide 9</strong></p>
         <p><strong>Beat:</strong> Answer "who actually builds this" before they ask — you and France, not them.</p>
-        <p><strong>Say:</strong> "You and Yossi don't touch any of this. I build the email sequences, the personalized pages, and the visitor-tagging, wired up to however you're already collecting interest — France handles the technical setup. You just review and approve."</p>
-        <p><strong>Watch out:</strong> They're a 2-person team (per Call 1) — lean into "this is the third team member you don't have to hire," don't make it sound like more work for them. Don't claim to "connect to" or "plug into" a specific existing form/system — we don't actually know if the event sign-up and the website's contact form are the same system or have a working backend. Speak generally: "however you're already collecting interest."</p>
-        <p><strong>Visual:</strong> The right-panel "Lead Profile" card is the strongest single visual in the deck — it shows a past event attendee (Rome) re-engaging on the site months later (browsing Premium/Tel Aviv), tagged and ready, using TID's own tier/city names. This is the point Shlomo specifically wants to land: you'll know what every person who was at your events does on your site afterward, not just what happens at the event itself. Below it, a connected card shows the automatic result of that tag: the system doesn't just notice the 3rd Premium/Tel Aviv view, it fires a real email off the back of it — "We have more projects in Tel Aviv — book a call." Say: "It's not just a dashboard you have to remember to check — the view itself triggers the follow-up."</p>
+        <p><strong>Say:</strong> "You and Yossi don't touch any of this. I build the email sequences, the personalized pages, and the visitor-tagging myself, wired up to however you're already collecting interest. You review each draft, I handle every technical piece."</p>
+        <p><strong>Watch out:</strong> They're a 2-person team (per Call 1) — lean into "this is the third team member you don't have to hire," don't make it sound like more work for them. Don't claim to "connect to" or "plug into" a specific existing form/system — we don't actually know if the event sign-up and the website's contact form are the same system or have a working backend. Speak generally: "however you're already collecting interest." <strong>France was cut from this slide (2026-07-14)</strong> — Team isn't introduced until slide 15, so naming her here before Joseph/David know who she is didn't land; say "I handle every technical piece" instead. Also cut "weekly check-ins until it's live" — that's not a real, confirmed cadence, and it implied a sprint-style relationship Shlomo doesn't actually run; replaced with a general "I keep you posted as I build" that doesn't commit to a specific cadence he hasn't defined. If Shlomo has an actual communication cadence he wants stated here, update this bullet with it.</p>
+        <p><strong>Visual — replaced 2026-07-14.</strong> The hand-built CSS "Lead Profile" card is now a real generated image: <code>assets/brand/tid-lead-profile-card.png</code>, built off a real RightMessage per-person profile screenshot (name/email header, location/device/last-seen metadata, then question cards with the person's actual selected answer checkmarked) and relabeled with TID's own Goal/Horizon/Aliyah Timeline fields. This is still the strongest single visual in the deck — it shows exactly what TID would see for one real lead. Below it, the "Auto-Email Sent" card (still hand-built, unchanged) shows the automatic follow-up that fires off the back of that profile. Say: "It's not just a dashboard you have to remember to check — the view itself triggers the follow-up."</p>
+        <p><strong>Note:</strong> the generated card uses a placeholder name/location (Rome, Italy) consistent with the deck's Rome-attendee narrative — not a real TID lead. Don't present it as an actual person if asked.</p>
       </aside>
     </section>
 
@@ -1298,15 +1276,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="objections-grid">
           <div class="ppd-card">
             <div class="ppd-headline-sm">What If The Match Is Wrong?</div>
-            <p>Worst case, one wrong guess &#8212; same as today.</p>
+            <p>Worst case: one wrong guess. Same as today.</p>
           </div>
           <div class="ppd-card">
             <div class="ppd-headline-sm">Who Runs This Day-To-Day?</div>
             <p>Neither of you has to &#8212; it runs itself once it&#8217;s live.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">What About The Revenue Share?</div>
-            <p>We only take a cut on deals it actually helped nurture.</p>
+            <div class="ppd-headline-sm">What About My Rome Leads?</div>
+            <p>First batch loaded in. Nobody who already raised a hand gets left out.</p>
           </div>
         </div>
         <div class="ppd-footer">
@@ -1318,8 +1296,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Preemptive Objections — Slide 10</strong></p>
         <p><strong>Beat:</strong> Get ahead of the three things most likely to stall this specific deal before they're said out loud.</p>
-        <p><strong>Say:</strong> "A few things you might already be thinking: day-to-day, neither of you has to touch this once it's live — it runs itself. Worst case on a wrong match, someone sees one project that isn't quite right — no worse than the guess you'd make on a call today. And on the revenue share — you only pay a percentage on deals this actually helped nurture, never on the rest."</p>
-        <p><strong>Watch out:</strong> The revenue-share objection is the one to watch closest — this is Shlomo's own idea for the pricing structure, not something TID asked for. Read the room here; have the flat-fee Plan 2 ready to pivot to immediately if this lands wrong. Also: TID is more established than a bare "2-person startup" — their site shows real institutional partners (Ministry of Aliyah & Integration, Tidhar Group) and 50+ investors in active negotiation, so avoid any framing that implies they're scrappy or under-resourced. David Siegel (former Meetup CEO) is their partner/investor — a real, separate person from David Sion Raccah (the co-founder on this call). Don't conflate the two. Dropped the language/multilingual objection entirely (2026-07-14) — Shlomo's call: every website handles multiple languages today, it's not a real objection worth pre-empting.</p>
+        <p><strong>Say:</strong> "A few things you might already be thinking: day-to-day, neither of you has to touch this once it's live — it runs itself. Worst case on a wrong match, someone sees one project that isn't quite right — no worse than the guess you'd make on a call today. And your 300 people from Rome? They're the very first batch this loads in — nobody who already raised a hand gets left behind."</p>
+        <p><strong>Watch out:</strong> TID is more established than a bare "2-person startup" — their site shows real institutional partners (Ministry of Aliyah & Integration, Tidhar Group) and 50+ investors in active negotiation, so avoid any framing that implies they're scrappy or under-resourced. David Siegel (former Meetup CEO) is their partner/investor — a real, separate person from David Sion Raccah (the co-founder on this call). Don't conflate the two. Dropped the language/multilingual objection entirely (2026-07-14) — Shlomo's call: every website handles multiple languages today, it's not a real objection worth pre-empting.</p>
+        <p><strong>Card 3 changed 2026-07-14:</strong> This card used to preemptively answer "what about the revenue share?" — but that's slide 19 material, and Shlomo caught that you can't defuse an objection to a pricing structure the room hasn't seen yet (this is slide 10, pricing is slide 19). Swapped to a real objection that doesn't need pricing context: their 300 existing Rome leads not getting lost in the transition to the new system. The revenue-share objection-handling now needs to live on or right after slide 19 instead — see that slide's notes, which also flag a bigger unresolved problem with the revenue-share structure itself.</p>
       </aside>
     </section>
 
@@ -1329,8 +1308,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="wins-grid">
           <div class="ppd-card">
             <div class="stat">29 Leads</div>
-            <div class="label">In 3 Questions</div>
-            <p class="body">Peter Sorgenfrei asked his list three questions. Twenty-nine potential clients surfaced who were ready to hire.</p>
+            <div class="label">Same Mechanism</div>
+            <p class="body">Same system, three questions, surfaced 29 ready buyers Peter didn't know he had.</p>
             <div class="proof-name">Peter Sorgenfrei</div>
           </div>
           <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
@@ -1350,8 +1329,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Customer Wins — Slide 11</strong></p>
         <p><strong>Beat:</strong> Same proof used across every Asset Bolt pitch — real numbers, real names.</p>
-        <p><strong>Say:</strong> "Peter Sorgenfrei advises CEOs and founders with a big LinkedIn following — he had no idea which of his followers were ready to hire him until we asked his list three questions. Twenty-nine came back qualified. Jeff Bettinger, a former CHRO, said I'm the best he's seen at this kind of setup."</p>
-        <p><strong>Watch out:</strong> These aren't real-estate examples — be upfront that they're from other industries if asked, and pivot to "that's exactly the same gap you have with your 300 Rome leads."</p>
+        <p><strong>Say:</strong> "This isn't about Peter's industry — it's the same mechanism you're getting. He advises CEOs and founders, had no idea which of his followers were ready to hire him until we asked his list three questions. Twenty-nine came back qualified. Jeff Bettinger, a former CHRO, said I'm the best he's seen at this kind of setup."</p>
+        <p><strong>Watch out:</strong> These aren't real-estate examples — lead with "it's the system, not the client" (per Shlomo's note 2026-07-14) rather than letting Joseph/David wonder why you're citing a CEO advisor and an HR exec. Card 1's label now reads "Same Mechanism" instead of "In 3 Questions" to make that point on the slide itself, not just live.</p>
+        <p><strong>On the Jeff Bettinger card (Shlomo's open question, 2026-07-14):</strong> he asked whether to swap this testimonial for something else — it's a trust/character quote ("best I've seen") without a concrete number or mechanism behind it, which is weaker than Peter's card. No other real testimonial exists in brief.yaml to swap in without fabricating one. Recommendation: keep it as a softer trust-signal alongside Peter's harder number — the two together cover both "the system works" (Peter) and "people trust me generally" (Jeff). If Shlomo gets a better, more specific testimonial later, swap it in then.</p>
       </aside>
     </section>
 
@@ -1445,7 +1425,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <div style="width:220px;height:220px;border-radius:999px;background:var(--accent);overflow:hidden;display:block;margin:0 auto 24px;"><img src="assets/brand/France%20Angelo%20Galvez%20profile%20pic.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" alt="France Galvez" /></div>
             <div class="name">France Galvez</div>
             <div class="role">Tech Lead</div>
-            <p>Handles every Kit setup and automation so every client goes live on time without touching the tech themselves.</p>
+            <p>Handles every technical setup and automation so every client goes live on time without touching the tech themselves.</p>
           </div>
           <div class="person" style="visibility:hidden;pointer-events:none;"></div>
           <div class="person" style="visibility:hidden;pointer-events:none;"></div>
@@ -1461,7 +1441,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <p><strong>The Team — Slide 15</strong></p>
         <p><strong>Beat:</strong> Brief intro, one pass — this is who actually builds it, not a personnel deep-dive.</p>
         <p><strong>Say:</strong> "It's me and France on the technical side — I handle the strategy and copy, France handles every technical piece of the build. My background's 8200, then I built a global company in China helping multinationals enter the Chinese market — this is the same kind of build-it-end-to-end work, just applied to email and personalization now."</p>
-        <p><strong>Watch out:</strong> Keep this quick. With a 2-person team on their side too, don't over-index on team size as a selling point.</p>
+        <p><strong>Watch out:</strong> Keep this quick. With a 2-person team on their side too, don't over-index on team size as a selling point. France's bio no longer names "Kit" (2026-07-14) — TID doesn't know what that is, and naming a specific tool here reads like jargon, not value. Says "technical setup" now instead.</p>
+        <p><strong>Open TODO flagged by Shlomo (2026-07-14, deferred):</strong> does the Phase 1 build also need a Kit.com account for TID (for the email-sending layer, separate from RightMessage's personalization layer)? If so, that's a second vendor pass-through cost to document, same treatment as the RightMessage note in brief.yaml. Shlomo said "separate future" — not resolved now, flagging so it doesn't get lost.</p>
       </aside>
     </section>
 
@@ -1505,6 +1486,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <p><strong>Beat:</strong> Build anticipation for the stack without naming price yet — that comes on slide 19.</p>
         <p><strong>Say:</strong> "Here's exactly what you get when you say yes: every lead followed up and personalized automatically, live in four weeks."</p>
         <p><strong>Watch out:</strong> Don't let the revenue-share detail leak in here — that's a pricing-slide conversation, not a value-stack one.</p>
+        <p><strong>On "does 4 weeks still make sense with phases now?" (Shlomo's question, 2026-07-14):</strong> Yes, unaffected. The 4-week timeline is scoped only to Phase 1 (registration capture, nurture sequence, dynamic page — slide 18's inclusions). Phase 2 and 3 (slide 20) are explicitly framed as "not now, later, unpriced," sequenced to start only after Phase 1 is live — so they don't add to or interact with the Phase 1 delivery clock at all.</p>
       </aside>
     </section>
 
@@ -1516,8 +1498,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <div class="ppd-card"><div class="ppd-headline-sm">Nurture</div><p class="body ppd-body-md ppd-muted">Personalized email sequence sent automatically per lead.</p></div>
           <div class="ppd-card"><div class="ppd-headline-sm">Dynamic Site</div><p class="body ppd-body-md ppd-muted">Site shows each visitor their exact matching project.</p></div>
           <div class="ppd-card"><div class="ppd-headline-sm">Tagging</div><p class="body ppd-body-md ppd-muted">Tags by what they viewed, so you know before you call.</p></div>
-          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
-          <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Kickoff Call</div><p class="body ppd-body-md ppd-muted">Strategy call mapping goal, horizon, Aliyah into the build.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Check-Ins</div><p class="body ppd-body-md ppd-muted">Ongoing tuning as more events and cities come online.</p></div>
           <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
           <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
           <div class="ppd-card" style="visibility:hidden;pointer-events:none;"></div>
@@ -1533,10 +1515,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>What's Included — Slide 18</strong></p>
-        <p><strong>Beat:</strong> Four concrete deliverables, quickly — this is the "what am I actually getting" slide.</p>
-        <p><strong>Say:</strong> "Concretely: works with however you already collect interest, a personalized nurture sequence, a dynamic site that matches each visitor, and tagging so you know what someone's interested in before you ever call them."</p>
+        <p><strong>Beat:</strong> Six concrete deliverables, quickly — this is the "what am I actually getting" slide.</p>
+        <p><strong>Say:</strong> "Concretely: works with however you already collect interest, a personalized nurture sequence, a dynamic site that matches each visitor, tagging so you know what someone's interested in before you call, a kickoff call to map your actual qualifying questions into the build, and ongoing tuning as more cities come online."</p>
         <p><strong>Scenario to use live:</strong> "If someone's looked at the Premium tier three times, that's tagged differently than someone who glanced at Land once. By the time you call them, you already know which conversation you're walking into."</p>
-        <p><strong>Watch out:</strong> Keep it to these four — don't pad with generic inclusions like "support" or "consultation" that every vendor claims. Card 1 is "Setup," not "Connect" or "Capture" — don't claim to plug into a specific existing form/system (event sign-up and website contact form may not even be the same system) or name a specific tool like Google Form — we haven't confirmed either with TID.</p>
+        <p><strong>Watch out:</strong> Don't pad with generic inclusions like "support" or "consultation" that every vendor claims. Card 1 is "Setup," not "Connect" or "Capture" — don't claim to plug into a specific existing form/system (event sign-up and website contact form may not even be the same system) or name a specific tool like Google Form — we haven't confirmed either with TID.</p>
+        <p><strong>Expanded from 4 to 6 cards (2026-07-14):</strong> Shlomo asked whether 4 cards was too thin compared to Peter Winick's deck, which used 7. Checked that deck's committed version — it broke the build into granular real pieces (Re-Engage, RightMessage, Survey Build, Welcome Flow, Prospect Map, Kickoff Call, Sprint Calls) rather than 4 broad ones. Added two genuine, non-padded pieces here: "Kickoff Call" (a real first step — mapping their actual 3 qualifying questions into the build) and "Check-Ins" (the ongoing tuning that the monthly retainer is actually paying for, previously undocumented anywhere in the deck). Didn't invent a 7th — nothing else in scope is distinct enough not to read as padding.</p>
       </aside>
     </section>
 
@@ -1548,22 +1531,22 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <div class="plan-title" style="color:var(--accent);">Growth Partner</div>
             <div class="plan-result">Every lead nurtured personally, priced to your upside</div>
             <div class="plan-price">$4,500</div>
-            <div class="plan-price-sub ppd-muted">+ $2,000/mo + 12% of sourced deals</div>
+            <div class="plan-price-sub ppd-muted">$2,000/mo floor, or a deal share, whichever's more</div>
             <ul>
               <li>Works with whatever sign-up process you already run</li>
               <li>Personalized email sequence + dynamic page per lead</li>
-              <li>12% of commission only on deals the system nurtures &#8212; we win when you win</li>
+              <li>You pay whichever is bigger each month, $2,000 or a deal share (12% on the first 2, 8% after) &#8212; never both</li>
             </ul>
           </div>
           <div class="plan">
             <div class="plan-title">Fixed Retainer</div>
             <div class="plan-result">Same system, simple flat monthly cost</div>
             <div class="plan-price">$4,500</div>
-            <div class="plan-price-sub ppd-muted">+ $3,500/mo, no revenue share</div>
+            <div class="plan-price-sub ppd-muted">+ $3,500/mo + 3% of sourced deals</div>
             <ul>
               <li>Everything in Growth Partner</li>
-              <li>Flat monthly retainer instead of revenue share</li>
-              <li>Simpler to budget if you&#8217;d rather not share commission</li>
+              <li>Mostly flat retainer, plus a small 3% deal share</li>
+              <li>Predictable cost, only a modest share on top</li>
             </ul>
           </div>
           <div class="plan" style="visibility:hidden;pointer-events:none;">
@@ -1582,39 +1565,38 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Plans — Slide 19</strong></p>
         <p><strong>Beat:</strong> Present both numbers plainly, on the slide, before you say anything — no hidden pricing.</p>
-        <p><strong>Say:</strong> "Two ways to do this. Growth Partner is $4,500 to build plus $2,000 a month, plus 12% of the commission on any deal this system actually helped nurture — so my incentive is tied directly to yours. Fixed Retainer is the same build, same $4,500, but $3,500 a month flat with no revenue share, if you'd rather keep it simple."</p>
-        <p><strong>Watch out:</strong> <strong>This whole slide is Shlomo's own idea, not something TID asked for.</strong> Watch their reaction closely on "12%" — if there's any hesitation or confusion about how deal-attribution would even work, pivot immediately to Fixed Retainer as the easy default. Don't defend the revenue-share model if it's not landing; the flat plan is a completely legitimate close on its own. The 12% figure itself is also a guess — 10-15% was the range Shlomo was considering, so there's room to move on that number live if it helps close. Don't name a specific tool (Google Form, etc.) for their current sign-up process — unconfirmed, came from a garbled transcript reference.</p>
-        <p><strong>Pricing logic:</strong> Growth Partner's $2,000/mo reflects TID's real scale (institutional partners, 50+ investors in negotiation, deals up to $10M+) — not a bootstrapped 2-person shop. Fixed Retainer's $3,500/mo is deliberately set well above Growth Partner's $2,000/mo (a $1,500/mo gap) so the revenue-share option reads as the obviously smarter choice for anyone doing the math — the only reason to pick Fixed Retainer is a genuine aversion to sharing commission, not price. If TID pushes back that $3,500/mo flat feels steep, that's the intended reaction — it's supposed to make Growth Partner look like the deal.</p>
+        <p><strong>Say:</strong> "Two ways to do this. Growth Partner is $4,500 to build, then each month you pay whichever is bigger: a $2,000 floor, or a share of that month's deals — 12% on the first two, 8% on anything past that — never both stacked together. Fixed Retainer is the same build, same $4,500, but $3,500 a month flat, plus a small 3% share on top — simpler to predict, still gives me a little skin in the game."</p>
+        <p><strong>Watch out:</strong> <strong>This whole slide is Shlomo's own idea, not something TID asked for.</strong> Watch their reaction on the revenue-share mechanic generally — if there's hesitation or confusion about how deal-attribution works, slow down and walk the "whichever is bigger, never both" logic again rather than pushing past it. Don't name a specific tool (Google Form, etc.) for their current sign-up process — unconfirmed, came from a garbled transcript reference.</p>
+        <p><strong>Pricing logic, finalized 2026-07-14 (replaces the earlier additive structure):</strong> Growth Partner used to be $2,000/mo flat PLUS 12% on top, which had two real problems — (1) "we only take a cut on nurtured deals" was a hollow claim since Phase 1 personalizes every lead, there's no un-nurtured population to contrast against, and (2) the math could make Growth Partner cost MORE than Fixed Retainer in a good month (one ~60,000 ILS commission, corrected from an earlier wrong $60K-USD assumption, works out to ~$20,000 at the current ~3.0 ILS/$1 rate — 12% of that is ~$2,400, more than the $1,500/mo plan-gap on its own). A hard cap (Growth Partner can never cost more than Fixed Retainer's $3,500) was considered and rejected by Shlomo — it capped his upside at a token amount, killing the reason to prefer revenue share at all. <strong>The 60,000 ILS figure itself is now confirmed, not a guess</strong> — TID told Shlomo directly (2026-07-15) they take 2% from the client + 1% from the contractor, 3% total, which lands at ~60,000 ILS on an average-low-end Israeli apartment.</p>
+        <p><strong>Final structure:</strong> Growth Partner is now a <strong>draw against commission</strong> (standard sales-comp model): $2,000/mo is a floor, not an addition — each month TID pays max($2,000, that month's deal share), never the sum of both. The share itself declines with volume: 12% on the first 2 deals sourced that month, 8% on any beyond that — real, uncapped upside for Shlomo as volume grows, but the marginal rate softens so a big month doesn't feel punitive to TID. Concrete shape: 0 deals -> $2,000. 1 deal -> ~$2,400. 3 deals -> ~$6,400. 5 deals -> ~$9,600 (vs. ~$14,000 under the old stacked model). Fixed Retainer picked up a small 3% share on top of its flat $3,500 (~$600/deal) so Shlomo isn't locked out of all upside if TID picks that plan — numerically modest, but it does mean "no revenue share" is no longer an accurate claim for this plan; don't say that line live.</p>
+        <p><strong>Open risk to watch, not yet tested with TID:</strong> if TID's aversion to Fixed Retainer's now-added 3% is about the AMOUNT, this is a non-issue (it's small). If their real aversion is to the PRINCIPLE of sharing any commission at all, adding 3% reopens friction Fixed Retainer was designed to avoid. Untested — read the room live.</p>
       </aside>
     </section>
 
-    <section data-bg-token="bg-light" data-visibility="hidden">
+    <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">48-Hour Bonus Offer &#127873;</div>
+        <div class="ppd-eyebrow">What Comes Next</div>
         <div class="bonus-grid">
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Bonus #1</div>
-            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
+            <div class="ppd-headline-sm">Pre-Event Prep</div>
+            <p class="body ppd-muted">Phase 2: matches projects to each lead before the event.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Bonus #2</div>
-            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
-          </div>
-          <div class="ppd-card">
-            <div class="ppd-headline-sm">Bonus #3</div>
-            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
+            <div class="ppd-headline-sm">Pipeline View</div>
+            <p class="body ppd-muted">Phase 3: shows who's ready to buy vs. who needs more time.</p>
           </div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>HIDDEN — Slide 20 (Bonus Offer)</strong></p>
-        <p><strong>Why:</strong> brief.yaml has no bonus defined. Inventing a fake "48-hour bonus" for a warm, relationship-driven deal with a 2-person startup would read as manufactured urgency and cheapen the pitch.</p>
-        <p><strong>Action:</strong> This section now has <code>data-visibility="hidden"</code>, which tells Reveal.js to skip it during normal arrow-key/click-through navigation — you won't land on it by accident. If you ever do, just move on; there's nothing to present here.</p>
+        <p><strong>What Comes Next — Slide 20</strong></p>
+        <p><strong>Beat:</strong> Show the offer has a future without pricing or promising it today &#8212; this is a roadmap glimpse, not an upsell.</p>
+        <p><strong>Say:</strong> "Two things I'd want to build next, once this is running. Right now, before every parlor meeting, you're calling the community host to learn budgets and interests so you know which 3-4 projects to bring &#8212; that's the same data this system already captures, so Phase 2 uses it to auto-match projects to each registrant before you ever fly out. And once you're running Milan, Zurich, the US swing off this, Phase 3 gives you one view of who across every city is ready to buy versus who needs more time &#8212; so you can scale cities without scaling headcount."</p>
+        <p><strong>Watch out:</strong> Don't price either phase today and don't imply it starts alongside Phase 1 &#8212; this slide exists to show the system grows with them, not to upsell mid-pitch. If Joseph or David ask "can we get Phase 2 now," say it's built on top of Phase 1's data capture, so Phase 1 has to be live first.</p>
       </aside>
     </section>
 
@@ -1622,8 +1604,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Our Guarantee</div>
         <div class="guarantee-hero">
-          <h2 class="ppd-headline-md">If it&#8217;s not live in 4 weeks, I keep building until it is</h2>
-          <p class="body ppd-body-lg">If your registration capture, personalized nurture sequence, and dynamic page aren&#8217;t live within 4 weeks, I keep working until they are. No extra charge &#8212; you don&#8217;t pay more for a build that takes longer than planned.</p>
+          <h2 class="ppd-headline-md">If it&#8217;s not live in 4 weeks, there&#8217;s no extra charge for the delay</h2>
+          <p class="body ppd-body-lg">If your registration capture, personalized nurture sequence, and dynamic page aren&#8217;t live within 4 weeks, you pay exactly what we agreed, nothing more. I keep working at no additional cost until it&#8217;s live.</p>
           <p class="fine">Small print: the only ask is that you keep sending us real data &#8212; registration numbers and a rough sense of which leads turned into deals &#8212; so we can keep tuning the system as your events scale.</p>
         </div>
         <div class="ppd-footer">
@@ -1635,32 +1617,34 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Our Guarantee — Slide 21</strong></p>
         <p><strong>Beat:</strong> State the guarantee plainly and let it sit — this is the risk-reversal moment.</p>
-        <p><strong>Say:</strong> "If it's not live in four weeks, I keep building until it is. No extra charge. The only thing I need from you is real data as we go — registration numbers, and roughly which leads turn into deals — so the system keeps getting sharper."</p>
+        <p><strong>Say:</strong> "If it's not live in four weeks, you pay exactly what we agreed, nothing more — I keep working until it's live at no additional cost. The only thing I need from you is real data as we go — registration numbers, and roughly which leads turn into deals — so the system keeps getting sharper."</p>
         <p><strong>Watch out:</strong> The 4-week timeframe is still an estimate (see slide 5) — if multilingual scope changes it, the guarantee's timeframe needs to move with it.</p>
+        <p><strong>Guarantee finalized 2026-07-14 (second draft).</strong> First version ("I keep building until it is," unbounded) implied indefinite free labor — didn't fit an ongoing engagement, Shlomo flagged it. Second version (waive the first month's retainer) was ALSO rejected by Shlomo directly ("no that's not what I can do") — waiving real money wasn't something he was willing to commit to. This third version is a much lower-commitment guarantee: no scope-creep billing (you never pay extra just because the build ran long), not a refund or waived fee. This is the version actually confirmed for use.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Special Offer</div>
+        <div class="ppd-eyebrow">Before Milan</div>
         <div class="offer-card">
-          <div class="price">[Expiration time]:<br/><span class="ppd-strike">[$price]</span>[$discounted price]</div>
-          <div class="spots">7 <span class="ppd-strike">10</span> spots left</div>
-          <p>Here&#8217;s what I&#8217;m doing with the [offer name] in [month]:</p>
-          <p>The outcome is simple: To get you to [outcome], getting [outcome], and [outcome].</p>
-          <p>I&#8217;m only working with [total spots] [ICP], to help them with [success milestone] over a [timeline].</p>
-          <p>We&#8217;ll do it with the perfect mix of [inclusion], [inclusion] and [inclusion] with deep involvement from me and my team.</p>
+          <div class="price">Live Before Milan,<br/>Not After.</div>
+          <div class="spots">Milan: late August</div>
+          <p>Every week this waits is another event's names going straight into Notion.</p>
+          <p>Lock it in today and it's built, tested, and already warm before you walk into that room.</p>
+          <p>Same $4,500 setup either way. The only variable is whether Milan runs on the old process or the new one.</p>
+          <p>Wait, and Milan gets the same manual follow-up Rome did. Start now, and it's the first event where every single lead gets the personalized treatment automatically.</p>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Soft Landing System</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>SKIPPED — Slide 22 (Special Offer / Urgency)</strong></p>
-        <p><strong>Why:</strong> brief.yaml has no urgency.text. There's no real scarcity or deadline here — TID isn't a cold-outbound funnel with capped spots, it's a warm relationship-driven build. Fabricating "only 3 spots left" would be detected instantly and would torch credibility on a deal Shlomo explicitly wants to land well.</p>
-        <p><strong>Action:</strong> Skip past this slide live on the call, or delete/hide it before presenting. The guarantee (slide 21) and the plans (slide 19) already carry the close — no manufactured urgency needed.</p>
+        <p><strong>Before Milan — Slide 22 (rebuilt 2026-07-14)</strong></p>
+        <p><strong>Beat:</strong> Real calendar urgency, not manufactured scarcity — TID isn't a cold-outbound funnel with capped spots, so no fake "3 spots left." The only honest lever available is the Milan event date they already care about.</p>
+        <p><strong>Say:</strong> "One more thing worth saying plainly: every week this waits is another event's worth of names going straight into Notion instead of a working system. Milan's late August — if we lock this in today, it's built, tested, and already warm before you walk into that room. Same $4,500 either way — the only variable is whether Milan runs on the old process or the new one."</p>
+        <p><strong>Watch out:</strong> This replaced the kit's default discount/spots-left template (previously hidden, still had raw <code>[bracket placeholder]</code> text — that slide archetype assumes a real price discount and a real capacity cap, neither of which is true here, so don't revert to it). Don't invent a specific "expected N attendees" for Milan — same rule as Rome, no unconfirmed numbers.</p>
       </aside>
     </section>
 
