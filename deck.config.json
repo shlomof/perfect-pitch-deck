@@ -1,8 +1,8 @@
 {
   "$schema": "./scripts/deck.config.schema.json",
-  "name": "Asset Bolt",
-  "tagline": "The Soft Landing System — event-lead nurture and personalization, built for TID",
-  "url": "https://tid-assetbolt.pages.dev",
+  "name": "Asset Bolt — Václav Šulista",
+  "tagline": "The Google-Ads Insurance Policy",
+  "url": "https://vaclav-assetbolt.pages.dev",
   "allowed_origins": [
     "http://localhost:8765",
     "http://localhost:8788",
@@ -11,7 +11,7 @@
     "http://127.0.0.1:8800"
   ],
   "cloudflare": {
-    "project_name": "perfect-pitch-deck",
+    "project_name": "vaclav-assetbolt",
     "production_branch": "main"
   },
   "ghl": {

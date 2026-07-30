@@ -8,8 +8,8 @@ All brand tokens live in the `:root` block at the top of `index.html`'s `<style>
 
 | Knob | Default | What it controls |
 | --- | --- | --- |
-| `--accent` | `#E97731` | **Asset Bolt brand orange.** Drives the accent family on every slide. |
-| `--brand-hue` | `48.45` | OKLCH hue of `--accent`. Used to derive matching tints. **Auto-set by `/brand`** when you paste a new `--accent`. |
+| `--accent` | `#E8622A` | **Asset Bolt brand orange — verified against the live site** (`assetbolt-site/src/styles/tokens/primitives.css`, logo SVGs, `site.config.ts`). Corrected 2026-07-26: earlier decks in this kit (Jim James, David Dayton, Kimberly Lee, TID) used `#E97731`, a drifted value that was never checked against the real brand source. Drives the accent family on every slide. |
+| `--brand-hue` | `42` | OKLCH hue of `--accent`, matching `assetbolt-site`'s own `--brand-hue: 42`. Used to derive matching tints. **Auto-set by `/brand`** when you paste a new `--accent`. |
 | `--brand-hue-secondary` | `var(--brand-hue)` | Optional second hue for gradient surfaces (progress bar, slide 16). Default = match primary — most users leave this alone. |
 | `--font-display` | `'Mona Sans', 'Inter', sans-serif` | Headline / display font |
 | `--font-body` | `'Inter', system-ui, sans-serif` | Body / UI font |
@@ -49,9 +49,9 @@ These reproduce the current deck's `#C7DCFF` / `#D9E8FF` at **deltaE < 1.5 (impe
 | --- | --- | --- | --- |
 | `--text-primary` (#000) | `--bg-light` (#F5F5F5) | AAA | most slides |
 | `--text-primary` (#000) | `--surface` (#FFF) | AAA | cards |
-| `--text-primary` (#000) | `--accent` (#E97731) | AA (7.15:1) | accent pill, choice-btn |
+| `--text-primary` (#000) | `--accent` (#E8622A) | AA-ish — recheck with `/check` | accent pill, choice-btn |
 | `--text-inverse` (#FFF) | `--bg-dark` (#000) | AAA | dark slides |
-| `--text-inverse` (#FFF) | `--accent` (#E97731) | **2.94:1 — barely below AA-large (3.0); check slides 5,6,7,12 visually** | full-bleed accent slides |
+| `--text-inverse` (#FFF) | `--accent` (#E8622A) | **Recheck with `validate-brand.mjs` — ratio shifts slightly from the old #E97731 value; visually confirm slides 5,6,7,12** | full-bleed accent slides |
 | `--text-primary` (#000) | `--accent-tint` | AAA | tinted slides (3, 4) |
 | `--accent-soft` (#C7DCFF) | `--accent` (#1F5EFF) | AA-large | soft quote text inside accent slides |
 | `--text-muted` | `--bg-light` / `--surface` | AA | body copy |
