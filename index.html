@@ -788,9 +788,12 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   display: grid; grid-template-columns: 1fr 1fr;
 }
 .nextsteps-split .left { background: var(--bg-light); padding: 80px; position: relative; }
-.nextsteps-split .left .ppd-eyebrow { font-size: 56px; font-weight: 800; letter-spacing: -0.015em; margin: 0 0 220px; }
-.nextsteps-split .left h3 { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 76px; line-height: 1.04; margin: 0 0 44px; letter-spacing: -0.025em; max-width: 680px; }
-.nextsteps-split .left p { font-size: 24px; line-height: 1.5; margin: 0; max-width: 680px; }
+.nextsteps-split .left .ppd-eyebrow { font-size: 56px; font-weight: 800; letter-spacing: -0.015em; margin: 0 0 60px; }
+.nextsteps-split .left h3 { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 76px; line-height: 1.04; margin: 0 0 32px; letter-spacing: -0.025em; max-width: 680px; }
+.nextsteps-split .left p { font-size: 24px; line-height: 1.5; margin: 0 0 28px; max-width: 680px; }
+.nextsteps-timeline { list-style: none; margin: 0; padding: 0; max-width: 680px; counter-reset: step; }
+.nextsteps-timeline li { display: flex; gap: 18px; align-items: baseline; font-size: 20px; line-height: 1.5; margin: 0 0 20px; color: var(--text-muted); }
+.nextsteps-timeline li strong { color: var(--text-primary); font-weight: 700; flex-shrink: 0; min-width: 92px; }
 .nextsteps-split .right {
   background: var(--bg-dark); position: relative;
   display: flex; align-items: center; justify-content: center;
@@ -984,8 +987,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
     <section data-bg-token="surface" data-background-color="rgb(255, 255, 255)">
       <div class="ppd-slide bg-white">
         <div class="ppd-cover">
-          <div class="poster">
-            <img src="assets/brand/asset_bolt_logo.jpg" alt="Asset Bolt">
+          <div class="poster" style="color: var(--accent);">
+            <svg viewBox="0 0 44 44" fill="currentColor" style="width: 55%; height: auto;"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>
           </div>
           <div class="content">
             <h1 class="title">Own Your Audience</h1>
@@ -993,15 +996,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <ul class="ppd-check-list">
               <li>GDPR-safe: subscribers opt themselves in</li>
               <li>No setup fee, cancel anytime</li>
-              <li>Runs on autopilot after setup</li>
+              <li>Just a one-minute daily check-in after setup</li>
             </ul>
             <div class="ppd-cta-row">
               <a class="ppd-pill-cta" href="#/1">Let's talk next steps</a>
             </div>
           </div>
         </div>
-        <div class="cover-branding">
-          <img src="assets/brand/asset_bolt_logo.jpg" alt="">
+        <div class="cover-branding" style="color: var(--accent);">
+          <svg viewBox="0 0 44 44" fill="currentColor" style="width: 28px; height: 28px;"><path d="M28 4L12 24H22L16 40L32 20H22Z"/></svg>
         </div>
       </div>
     
@@ -1038,7 +1041,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
     <section data-bg-token="accent-tint" data-background-color="oklch(0.925 0.04446 42)">
       <div class="ppd-slide bg-blue-tint">
         <div class="quote-slide tint">
-          <p class="quote">I need to be ready for when Google search stops working. I can't sleep, and Google decides who gets the clients.</p>
+          <p class="quote">I want to be ready for when Google search stops working. You cannot sleep — Google decides who gets the clients.</p>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1064,8 +1067,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <p>Your 8,000 LinkedIn subscribers live on a platform you don't control — one algorithm change and they're gone.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">800 You Actually Own</div>
-            <p>Everyone else is reachable only as long as LinkedIn lets you reach them — no email, no direct line.</p>
+            <div class="ppd-headline-md">8,000 vs. 800</div>
+            <p>Only 800 of those 8,000 sit in a list you actually control today — the other 7,200 you can only reach as long as LinkedIn lets you.</p>
           </div>
           <div>
             <div class="ppd-headline-md">One Ad Channel, One Risk</div>
@@ -1089,8 +1092,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 
     <section data-bg-token="accent" data-background-color="rgb(232, 98, 42)">
       <div class="ppd-slide bg-blue">
-        <div class="quote-slide">
-          <p class="quote">Imagine your 8,000 LinkedIn subscribers automatically becoming a list you own — safe from Google, safe from LinkedIn, growing every month without you lifting a finger.</p>
+        <div class="quote-slide tint">
+          <p class="quote">Imagine your 8,000 LinkedIn subscribers becoming a list you own — safe from Google, safe from LinkedIn, growing every month with just a one-minute daily check-in from you.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1120,8 +1123,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <p>If your $500/mo Google Ads ever stops converting, you already have a second channel bringing in clients.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Zero Manual Work</div>
-            <p>Monthly scrape, automated DMs, self opt-in — the whole system runs on autopilot after setup.</p>
+            <div class="ppd-headline-md">Minutes, Not Hours</div>
+            <p>Monthly scrape, automated DMs, self opt-in — you just approve each day's batch in about a minute.</p>
           </div>
         </div>
         <div class="ppd-footer">
@@ -1154,12 +1157,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             </div>
             <div class="msg">
               <div class="ppd-headline-sm">Compounds Monthly</div>
-              <p class="body">Every month adds new subscribers to your owned list automatically, with no extra work from you.</p>
+              <p class="body">Every month adds new subscribers to your owned list automatically — about a minute of your time to approve it.</p>
             </div>
           </div>
-          <div class="right">
-            <div class="ph"></div>
-            <div class="ph"></div>
+          <div class="right" style="grid-template-columns: 1fr 1fr; grid-template-rows: 1fr;">
             <div class="ph" style="background:transparent; display:flex; align-items:center; justify-content:center;"><img src="assets/brand/vaclav-career-stage-bars-mockup.png" alt="Career Stage segmentation mockup" style="width:100%; height:100%; object-fit:contain;" /></div>
             <div class="ph" style="background:transparent; display:flex; align-items:center; justify-content:center;"><img src="assets/brand/vaclav-dm-notification-mockup.png" alt="Auto-DM notification mockup" style="width:100%; height:100%; object-fit:contain;" /></div>
           </div>
@@ -1183,7 +1184,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <div class="left">
             <div class="ppd-eyebrow">THE MECHANISM</div>
             <h3>Scrape. DM. Self Opt-In.</h3>
-            <p>I pull your LinkedIn newsletter subscriber list, load it into an automated DM tool, and send one message: ‘I have a more in-depth version, want me to send it?’ When they say yes, they opt themselves into your GHL list.</p>
+            <p>I pull your LinkedIn newsletter subscriber list, load it into an automated DM tool that sends one message on your behalf: ‘I have a more in-depth version, want me to send it?’ When they say yes, they opt themselves into your GHL list.</p>
             <ul>
               <li>First-degree connections only</li>
               <li>Fully GDPR / CAN-SPAM compliant</li>
@@ -1212,7 +1213,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">THE SYSTEM</div>
         <div class="howitworks">
           <div class="left">
-            <h3>One Migration, Then It Runs Itself</h3>
+            <h3>One Migration, Then One Minute a Day</h3>
             <p>Set up once, and every month new LinkedIn subscribers get scraped, DM’d, and self-opted into your GHL list automatically. You only touch it for a one-minute daily check-in.</p>
             <ul>
               <li>Scrape → DM → opt-in</li>
@@ -1252,7 +1253,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           </div>
           <div class="ppd-card">
             <div class="ppd-headline-sm">“What about GHL setup?”</div>
-            <p>RightMessage integrates with GHL directly — no extra tool.</p>
+            <p>It's your existing GHL account — I plug straight into it, nothing new to learn.</p>
           </div>
         </div>
         <div class="ppd-footer">
@@ -1278,21 +1279,19 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <div class="stat">29</div>
             <div class="label">leads found</div>
             <p class="body">Three questions to his list surfaced 29 exact-match buyers he never knew were there.</p>
-            <div class="proof-circle"><img src="assets/skool-wordmark.svg" alt="Skool"></div>
+            <img class="proof-avatar" src="https://cdn.prod.website-files.com/62729ca9393e4e7139e2d68a/62b42ab5a08ac70ea088b31c_PeterSorgenfrei_01.jpg" alt="Peter Sorgenfrei">
             <div class="proof-name">Peter Sorgenfrei</div>
           </div>
           <div class="ppd-card">
             <div class="stat">220+</div>
             <div class="label">apps launched</div>
             <p class="body">Helped 220+ international apps enter a brand-new market from zero.</p>
-            <div class="proof-circle"><img src="assets/skool-wordmark.svg" alt="Skool"></div>
             <div class="proof-name">AppInChina</div>
           </div>
           <div class="ppd-card">
-            <div class="stat">10 days</div>
-            <div class="label">or it's free</div>
-            <p class="body">Every build ships on time, or Shlomo works free until it does.</p>
-            <img class="proof-avatar" src="assets/steve.webp" alt="Steve Butler">
+            <div class="stat">Month 1</div>
+            <div class="label">or I keep going free</div>
+            <p class="body">If subscribers aren't flowing into your GHL list within 30 days, I keep working until they are — no extra charge.</p>
             <div class="proof-name">Build Guarantee</div>
           </div>
         </div>
@@ -1313,10 +1312,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 
     <section data-bg-token="accent" data-background-color="rgb(232, 98, 42)">
       <div class="ppd-slide bg-blue">
-        <div class="quote-slide">
+        <div class="quote-slide tint">
           <p class="quote">He is the best I have seen.</p>
           <div class="quote-author">
-            <img src="assets/steve.webp" alt="Steve Butler">
+            <img src="assets/brand/jeff-bettinger.jpg" alt="Jeff Bettinger">
             <div class="meta">Jeff Bettinger, Former CHRO</div>
           </div>
         </div>
@@ -1336,7 +1335,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </aside>
     </section>
 
-    <section data-bg-token="bg-light" data-background-color="rgb(245, 245, 245)">
+    <section data-bg-token="bg-light" data-background-color="rgb(245, 245, 245)" data-visibility="hidden">
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">TRUSTED BY</div>
         <div class="customers-headline">
@@ -1408,7 +1407,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <img class="avatar" src="assets/brand/France Angelo Galvez profile pic.png" alt="France Galvez" style="object-fit: cover;" />
             <div class="name">France</div>
             <div class="role">Tech Lead</div>
-            <p>Handles the technical implementation of every GHL and RightMessage setup so it goes live on time.</p>
+            <p>Handles the technical implementation of every GHL setup so it goes live on time.</p>
           </div>
           
           
@@ -1452,7 +1451,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 
     <section data-bg-token="bg-light" data-background-color="rgb(245, 245, 245)">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Today’s Offer - [Offer name]</div>
+        <div class="ppd-eyebrow">Today’s Offer: Google-Ads Insurance</div>
         <div class="todays-offer">
           <h3>Move your 8,000 LinkedIn subscribers onto a list you own</h3>
           <p>Monthly scrape, automated DM sequence, self opt-in setup, and GHL sync — fully done for you, no setup fee.</p>
@@ -1536,7 +1535,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </aside>
     </section>
 
-    <section data-bg-token="bg-light" data-background-color="rgb(245, 245, 245)">
+    <section data-bg-token="bg-light" data-background-color="rgb(245, 245, 245)" data-visibility="hidden">
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">48-Hour Bonus Offer 🎁</div>
         <div class="bonus-grid">
@@ -1625,7 +1624,13 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <div class="left">
             <div class="ppd-eyebrow">NEXT STEPS</div>
             <h3>Ready to Start Owning Your List?</h3>
-            <p>Let's connect Dripify to your LinkedIn and get the first scrape running — I'll walk you through it.</p>
+            <p>Here's exactly what happens once you say yes:</p>
+            <ol class="nextsteps-timeline">
+              <li><strong>Today</strong> connect Dripify to your LinkedIn, run the first scrape live</li>
+              <li><strong>Week 1</strong> first-degree subscribers get the opt-in DM; you approve each day's batch</li>
+              <li><strong>Weeks 2-4</strong> opt-ins flow into your GHL list; guarantee window closes at day 30</li>
+              <li><strong>Month 2+</strong> monthly re-scrape runs automatically, same one-minute daily check-in</li>
+            </ol>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
