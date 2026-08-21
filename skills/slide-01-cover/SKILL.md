@@ -107,7 +107,7 @@ The layout below is the source of truth for structure. Replace ONLY text inside 
           </div>
         </div>
         <div class="cover-branding">
-          <img src="assets/slide-1-logo.svg" alt="" />
+          <img src="assets/brand/wordmark.svg" alt="" />
         </div>
       </div>
     

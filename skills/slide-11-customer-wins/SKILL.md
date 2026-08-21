@@ -1,6 +1,6 @@
 ---
 name: slide-11-customer-wins
-description: "Customer Wins" — three metric cards with logo or avatar proof. Light background.
+description: "Customer Wins" — two metric cards with logo or avatar proof (matches Asset Bolt's 2 standing testimonials, Jeff Bettinger and Peter Sorgenfrei; add a 3rd card back deliberately if a deck-specific proof point is genuinely relevant). Light background.
 slide_index: 11
 layout_family: grid-3
 strategic_role: proof
@@ -31,10 +31,6 @@ Full reference: [notes/slide-11.html](../../notes/slide-11.html)
 | `card_2_label` | card_meta | 15 | ✓ | ✓ | `.wins-grid .ppd-card:nth-child(2) .label` |
 | `card_2_body` | card_body | 65 |  | ✓ | `.wins-grid .ppd-card:nth-child(2) .body` |
 | `card_2_proof_name` | attribution | 30 | ✓ |  | `.wins-grid .ppd-card:nth-child(2) .proof-name` |
-| `card_3_stat` | metric | 12 | ✓ | ✓ | `.wins-grid .ppd-card:nth-child(3) .stat` |
-| `card_3_label` | card_meta | 15 | ✓ | ✓ | `.wins-grid .ppd-card:nth-child(3) .label` |
-| `card_3_body` | card_body | 65 |  | ✓ | `.wins-grid .ppd-card:nth-child(3) .body` |
-| `card_3_proof_name` | attribution | 35 | ✓ |  | `.wins-grid .ppd-card:nth-child(3) .proof-name` |
 | `footer_left` | footer_brand | 25 | ✓ |  | `.ppd-footer .ppd-footer-left` |
 | `footer_mid` | footer_brand | 30 | ✓ |  | `.ppd-footer .ppd-footer-mid` |
 | `footer_right_brand` | footer_brand | 20 | ✓ |  | `.ppd-footer .ppd-footer-right` |
@@ -47,9 +43,6 @@ Full reference: [notes/slide-11.html](../../notes/slide-11.html)
 - `card_2_stat` — 48px breaks centre above 17 chars
 - `card_2_label` — label below stat; wraps and breaks card rhythm above ~14 chars
 - `card_2_proof_name` — single line below logo; wraps above ~28 chars
-- `card_3_stat` — 48px breaks centre above 17 chars
-- `card_3_label` — label below stat; wraps and breaks card rhythm above ~14 chars
-- `card_3_proof_name` — single line below avatar; wraps above ~28 chars
 ## Voice & Tone Rules
 
 - Lead with the metric. Number first, context second.
@@ -119,13 +112,6 @@ The layout below is the source of truth for structure. Replace ONLY text inside 
             <p class="body">Each metric should also reinforce your key messages.</p>
             <div class="proof-circle"><img src="assets/skool-wordmark.svg" alt="Skool" /></div>
             <div class="proof-name">Skool</div>
-          </div>
-          <div class="ppd-card">
-            <div class="stat">&#8722;$XX</div>
-            <div class="label">Costs</div>
-            <p class="body">Replace the circles below with customer logos or people.</p>
-            <img class="proof-avatar" src="assets/steve.webp" alt="Steve Butler" />
-            <div class="proof-name">Steve Butler @ LinkNinja</div>
           </div>
         </div>
         <div class="ppd-footer">

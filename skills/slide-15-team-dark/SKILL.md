@@ -1,6 +1,6 @@
 ---
 name: slide-15-team-dark
-description: "The Team" — dark slide with 5 portraits, names, roles, and bios.
+description: "The Team" — dark slide with 2 portraits, names, roles, and bios (matches Asset Bolt's actual 2-person team; expand back to more slots if this kit is ever reused for a client with a bigger team).
 slide_index: 15
 layout_family: team-5
 strategic_role: team
@@ -29,31 +29,16 @@ Full reference: [notes/slide-15.html](../../notes/slide-15.html)
 | `person_2_name` | card_title | 15 | ✓ | ✓ | `.team-grid .person:nth-child(2) .name` |
 | `person_2_role` | card_meta | 10 | ✓ | ✓ | `.team-grid .person:nth-child(2) .role` |
 | `person_2_bio` | card_body | 110 |  | ✓ | `.team-grid .person:nth-child(2) p` |
-| `person_3_name` | card_title | 15 | ✓ | ✓ | `.team-grid .person:nth-child(3) .name` |
-| `person_3_role` | card_meta | 10 | ✓ | ✓ | `.team-grid .person:nth-child(3) .role` |
-| `person_3_bio` | card_body | 110 |  | ✓ | `.team-grid .person:nth-child(3) p` |
-| `person_4_name` | card_title | 15 | ✓ | ✓ | `.team-grid .person:nth-child(4) .name` |
-| `person_4_role` | card_meta | 10 | ✓ | ✓ | `.team-grid .person:nth-child(4) .role` |
-| `person_4_bio` | card_body | 110 |  | ✓ | `.team-grid .person:nth-child(4) p` |
-| `person_5_name` | card_title | 15 | ✓ | ✓ | `.team-grid .person:nth-child(5) .name` |
-| `person_5_role` | card_meta | 10 | ✓ | ✓ | `.team-grid .person:nth-child(5) .role` |
-| `person_5_bio` | card_body | 110 |  | ✓ | `.team-grid .person:nth-child(5) p` |
 | `footer_left` | footer_brand | 25 | ✓ |  | `.ppd-footer .ppd-footer-left` |
 | `footer_mid` | footer_brand | 30 | ✓ |  | `.ppd-footer .ppd-footer-mid` |
 | `footer_right_brand` | footer_brand | 20 | ✓ |  | `.ppd-footer .ppd-footer-right` |
 ### Fragility notes
 
 - `eyebrow` — white-on-dark eyebrow; wraps above ~18 chars
-- `person_1_name` — uppercase 18px; wraps above ~14 chars and breaks 5-up alignment
+- `person_1_name` — uppercase 18px; wraps above ~14 chars and breaks 2-up alignment
 - `person_1_role` — uppercase 18px; wraps above ~9 chars and pushes bio down
 - `person_2_name` — uppercase 18px; wraps above ~14 chars
 - `person_2_role` — uppercase 18px; wraps above ~9 chars
-- `person_3_name` — uppercase 18px; wraps above ~14 chars
-- `person_3_role` — uppercase 18px; wraps above ~9 chars
-- `person_4_name` — uppercase 18px; wraps above ~14 chars
-- `person_4_role` — uppercase 18px; wraps above ~9 chars
-- `person_5_name` — uppercase 18px; wraps above ~14 chars
-- `person_5_role` — uppercase 18px; wraps above ~9 chars
 ## Voice & Tone Rules
 
 - Each bio earns its place — relevant credential, recognisable past role, or specific expertise.
@@ -111,24 +96,6 @@ The layout below is the source of truth for structure. Replace ONLY text inside 
       <div class="ppd-slide bg-dark">
         <div class="ppd-eyebrow">The Team</div>
         <div class="team-grid">
-          <div class="person">
-            <div class="avatar"></div>
-            <div class="name">FULL NAME</div>
-            <div class="role">ROLE</div>
-            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
-          </div>
-          <div class="person">
-            <div class="avatar"></div>
-            <div class="name">FULL NAME</div>
-            <div class="role">ROLE</div>
-            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
-          </div>
-          <div class="person">
-            <div class="avatar"></div>
-            <div class="name">FULL NAME</div>
-            <div class="role">ROLE</div>
-            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
-          </div>
           <div class="person">
             <div class="avatar"></div>
             <div class="name">FULL NAME</div>
