@@ -1,8 +1,8 @@
 {
   "$schema": "./scripts/deck.config.schema.json",
-  "name": "Asset Bolt — Václav Šulista",
-  "tagline": "The Google-Ads Insurance Policy",
-  "url": "https://vaclav-assetbolt.pages.dev",
+  "name": "Perfect Pitch Deck Creator",
+  "tagline": "A template for a personalised pitch that sets you up to close the deal",
+  "url": "https://perfect-pitch-deck.pages.dev",
   "allowed_origins": [
     "http://localhost:8765",
     "http://localhost:8788",
@@ -11,7 +11,7 @@
     "http://127.0.0.1:8800"
   ],
   "cloudflare": {
-    "project_name": "vaclav-assetbolt",
+    "project_name": "perfect-pitch-deck",
     "production_branch": "main"
   },
   "ghl": {
