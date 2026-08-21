@@ -43,8 +43,9 @@ After the loop:
 
 8. Run `node scripts/inject-notes.mjs` ONCE to splice all updated notes into `index.html`.
 9. Run `node scripts/validate-deck.mjs --strict` to confirm no hard-limit overruns survived.
-10. Print a summary: total slides filled, skipped, failed. Suggest `/fill-slide N` for any failures.
-11. Open `http://localhost:8765` (start the dev server with `npm run dev` first if not running) so the user can review.
+10. Run `skills/narrative-check/SKILL.md` (see that skill for the full procedure). Structural validation in step 9 cannot catch a slide contradicting another slide's claim, or a core theme from `brief.yaml` quietly missing from every slide — only a full read of the deck as one story catches that. Fix anything it finds before moving on.
+11. Print a summary: total slides filled, skipped, failed, plus the narrative-check outcome. Suggest `/fill-slide N` for any failures.
+12. Open `http://localhost:8765` (start the dev server with `npm run dev` first if not running) so the user can review.
 
 ## Modes
 

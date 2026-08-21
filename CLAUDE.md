@@ -11,6 +11,7 @@ This file tells Claude Code how to work inside this repo. Read it before editing
 4. **Honor char limits.** Hard limits in `slides/schema.json` mean HARD — rewrite shorter, never truncate mid-word, never overrun. Soft limits (body/bullets) can be ±10%.
 5. **Brand SVGs must use `fill="currentColor"`** for the recolour-able shape. Never use CSS `filter: hue-rotate / brightness / saturate` to recolour a brand asset — that hack was the canonical "we forgot to themify the asset" smell in the previous iteration.
 6. **Never invent brief data.** If a required field is missing from `brief.yaml`, write `[MISSING: <field>]` in the slot and stop — do not fabricate.
+7. **After editing any `offer.*` field in `brief.yaml` post-fill, or hand-editing more than one slide in a sitting, run `/narrative-check` before calling it done.** This already went wrong once for real (Kai Peschl deck, 2026-08-21): three separate rounds of "fix the narrative," each reasonable on its own slide, quietly deleted the deck's central growth-number theme by the third round, and one slide's speaker notes were never touched across any round because nobody was reading the deck as a whole story between edits — only structural validation ran, which can't see semantic drift. Run `node scripts/field-dependents.mjs <field>` first to see the full blast radius of a brief-field change, not just the slides you remember mattering, then `/narrative-check` (`skills/narrative-check/SKILL.md`) to actually read the whole deck against `brief.yaml`'s core claims before reporting the fix as complete.
 
 ## Copy Balance Rules
 
@@ -57,16 +58,18 @@ If either check fails, prompt the user to run `/brand` first.
 | `brief.yaml` | `/brief` ONLY |
 | `deck.config.json` | `/brand`, `/deploy`, `/ghl-setup` |
 | `.env` | `/ghl-setup`, `/deploy` |
-| `scripts/*` · `functions/*` · `staticrypt-template.html` · `package.json` | NEVER from slide-authoring skills; only as deliberate kit-maintenance edits |
+| `scripts/*` · `functions/*` · `staticrypt-template.html` · `package.json` | NEVER edited from slide-authoring skills; only as deliberate kit-maintenance edits. Exception: `scripts/dump-deck-text.mjs` and `scripts/field-dependents.mjs` are read-only diagnostics — any skill may *run* them, none may edit them casually. |
 
 ## Validators
 
-Two validators run before any build and on demand via `/check`:
+Two structural validators run before any build and on demand via `/check`:
 
 - `scripts/validate-brand.mjs` — fails on raw hex / `rgba()` / `font-size: px` outside `:root`; missing brand assets; SVGs without `currentColor`; Tailwind palette name leaks; dead asset files; dead font imports
 - `scripts/validate-deck.mjs` — fails on slot char overruns (hard limits in `slides/schema.json`); missing required slots; speaker notes that don't reference a brief-specific token (catches generic LLM output); placeholder text left in production (e.g. "{Company Name}")
 
 Both are warn-only during Phase 1 of development. Promoted to fail-on-error in Phase 4.
+
+Neither validator reads for meaning — they can't tell two slides contradict each other, or that a theme got quietly edited out across several rounds of fixes. That's what `/narrative-check` (`skills/narrative-check/SKILL.md`) is for — a semantic pass, not a lint rule, run via `node scripts/dump-deck-text.mjs` plus a full read against `brief.yaml`. See Golden Rule 7. `node scripts/field-dependents.mjs [field]` answers "which slides does this brief field touch" without relying on memory.
 
 ## When in doubt
 
@@ -75,3 +78,4 @@ Both are warn-only during Phase 1 of development. Promoted to fail-on-error in P
 - Read `skills/slide-NN-*/SKILL.md` for per-slide strategic intent + generation instructions
 - Read `notes/slide-NN.html` for the full presenter strategy reference (the SKILL.md's strategic intent is a distillation of this)
 - Read this file's "Golden Rules" before any cross-cutting change
+- Run `node scripts/dump-deck-text.mjs` before trusting your own memory of what a slide currently says — this exact mistake (assuming a slide still said what you last wrote, without re-checking) is what caused the Kai deck regression
