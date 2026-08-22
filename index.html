@@ -509,7 +509,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .quote-slide .quote {
   font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800;
   font-size: 104px; line-height: 1.04; letter-spacing: -0.03em;
-  color: var(--accent-blue-soft);
+  color: var(--text-inverse);
   margin: 0;
 }
 .quote-slide.tint .quote { color: var(--text-inverse); font-size: 120px; }
@@ -602,6 +602,14 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
     repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/40px 40px;
   border-radius: 2px;
 }
+.howitworks .right.filled {
+  height: 720px;
+  background: #FFFFFF;
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px;
+}
+.howitworks .right.filled img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
 /* Slide 4 (problem-agitators) light blue tint */
 .bg-blue-tint .ppd-eyebrow { color: var(--text-inverse); }
@@ -623,14 +631,16 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .team-grid {
   position: absolute; left: 80px; right: 80px; top: 50%;
   transform: translateY(-50%);
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;
   text-align: center;
 }
 .team-grid .person .avatar {
   width: 220px; height: 220px; border-radius: 999px; margin: 0 auto 24px;
   background:
     repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/30px 30px;
+  overflow: hidden;
 }
+.team-grid .person .avatar img { width: 100%; height: 100%; object-fit: cover; }
 .team-grid .person .name { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; margin: 0; }
 .team-grid .person .role { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 22px; }
 .team-grid .person p { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; line-height: 1.5; margin: 0 auto; max-width: 260px; color: rgba(255,255,255,0.95); }
@@ -745,7 +755,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .wins-grid {
   position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -50%);
-  display: grid; grid-template-columns: repeat(3, 450px); gap: 18px;
+  display: grid; grid-template-columns: repeat(2, 450px); gap: 18px;
 }
 .wins-grid .ppd-card {
   display: flex; flex-direction: column; align-items: center; text-align: center;
@@ -986,7 +996,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-white">
         <div class="ppd-cover">
           <div class="poster">
-            <img src="assets/99-problems-poster.png" alt="99 Problems But A Pitch Ain&#8217;t One!" />
+            <img src="assets/brand/asset_bolt_logo.jpg" alt="Asset Bolt" />
           </div>
           <div class="content">
             <h1 class="title">Own Your Credibility</h1>
@@ -1026,16 +1036,16 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Icebreaker — Slide 2</strong></p>
-        <p><strong>Beat:</strong> Namedrop a real client with a similar shape before getting into Kai's own situation.</p>
-        <p><strong>Say:</strong> "I just got off a build with Peter Sorgenfrei, who had the same problem you named: a real LinkedIn audience, but nothing of his own to show for it. Three questions on his list surfaced 29 people he had no idea were sitting there."</p>
-        <p><strong>Watch out:</strong> Keep it to one client story. Don't drift into a client-logo montage here, that's slide 13's job.</p>
+        <p><strong>Beat:</strong> Acknowledge that Kai came to this himself, this isn't a cold pitch.</p>
+        <p><strong>Say:</strong> "Good to properly meet you, Kai. You did the unusual thing here, you looked at what I do and asked if there was something in it for you. Let's dig into exactly what that could look like."</p>
+        <p><strong>Watch out:</strong> Keep it brief, don't over-thank him, move into the real conversation quickly.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent-tint">
       <div class="ppd-slide bg-blue-tint">
         <div class="quote-slide tint">
-          <p class="quote">&#8220;Every good DM ends with a manual email swap you have to remember, not something you own.&#8221;</p>
+          <p class="quote">&#8220;I would love to have 30 quality relationships out of each post, instead of 10.&#8221;</p>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1045,27 +1055,27 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>The Problem — Slide 3</strong></p>
-        <p><strong>Beat:</strong> Land the exact pain Kai named on Call 1, in his own vocabulary.</p>
-        <p><strong>Say:</strong> "You said it yourself: LinkedIn's a credibility machine, not an outreach machine. A good conversation still ends the same way, an email swap you have to remember, not something you own."</p>
-        <p><strong>Watch out:</strong> Let it sit for a second before moving on, don't rush past it into the pitch.</p>
+        <p><strong>Beat:</strong> Open on Kai's own stated want, verbatim, not a paraphrase of a problem he didn't state.</p>
+        <p><strong>Say:</strong> "You said this to me yourself last time: you'd love to have 30 quality relationships out of each post instead of 10. That's the whole starting point for what I want to show you today."</p>
+        <p><strong>Watch out:</strong> Don't turn this into a dramatized problem statement, it's just his own stated want reflected back, let it stand on its own. Don't imply Phase 1 itself grows this number, that's the Newsletter's job (slide 6/9) — this slide just names the want.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent-tint">
       <div class="ppd-slide bg-blue-tint">
-        <div class="ppd-eyebrow">And It Happens Every Post</div>
+        <div class="ppd-eyebrow">Just How It Works Today</div>
         <div class="agitators-grid">
           <div>
-            <div class="ppd-headline-md">Every DM Thread Dies</div>
-            <p>The conversation gets good, then it goes quiet on LinkedIn, and there is no way back to that person except waiting for their next post.</p>
+            <div class="ppd-headline-md">Lives In The DM Thread</div>
+            <p>Every good conversation stays exactly where it started, LinkedIn's own inbox, with no list or channel of your own underneath it.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">You Run It From Memory</div>
-            <p>Every good contact becomes one more email address to remember, follow up with, and hope you don't lose track of.</p>
+            <div class="ppd-headline-md">10 To 15, Not 30 Yet</div>
+            <p>LinkedIn's already working as a credibility layer, about 10 to 15 quality conversations per substantial post. You want that closer to 30.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Trust Starts From Zero</div>
-            <p>Every new corporate conversation starts from nothing again, even after months of posts they already read and agreed with.</p>
+            <div class="ppd-headline-md">Only Corporates Convert</div>
+            <p>Investors and founders don't hire you off LinkedIn. The corporate conversations are the only ones this actually needs to serve.</p>
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
@@ -1076,16 +1086,16 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Pain Agitators — Slide 4</strong></p>
-        <p><strong>Beat:</strong> Make the cost of running every relationship from memory concrete before offering relief.</p>
-        <p><strong>Say:</strong> "Every one of these is already happening to you, every week. The DM goes quiet, every good contact becomes one more email address you have to remember to follow up with, and every new corporate contact starts from zero even if they've read your last ten posts."</p>
-        <p><strong>Watch out:</strong> Don't hint at the fix yet, that's slide 5. Let the cost land first.</p>
+        <p><strong>Beat:</strong> State the current setup plainly, not dramatized, this isn't a crisis, just what happens today.</p>
+        <p><strong>Say:</strong> "This is just how it works right now, not a disaster, just the current setup. Every good conversation lives inside LinkedIn's own DM thread, nothing underneath it. LinkedIn's already getting you 10 to 15 quality conversations a post, and you want that closer to 30. And of the three audiences reading your posts, it's really only the corporate side that ever hires you."</p>
+        <p><strong>Watch out:</strong> Keep this calm and factual, don't dramatize it, Kai doesn't experience this as a crisis and treating it like one will read as forced. Don't claim anything about his follow-up habits, memory, or process, he was never asked about that on Call 1, so we don't actually know.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;In 10 days, every good conversation gets an owned home instead of a manual email swap, and I keep building until it does.&#8221;</p>
+          <p class="quote">&#8220;In 10 days, every good conversation gets a home you actually own, deliberately the smallest piece of a bigger system, built first.&#8221;</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1095,9 +1105,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>The Big Promise — Slide 5</strong></p>
-        <p><strong>Beat:</strong> Deliver the relief in one sentence with a real timeframe and a real guarantee behind it.</p>
-        <p><strong>Say:</strong> "In 10 days, this is live: your Kit account, opt-in, and welcome sequence. If it's not, I keep working until it is, at no extra charge to you."</p>
-        <p><strong>Watch out:</strong> Don't over-explain the mechanism here, that's slide 8 and 9's job. This slide is the promise, not the how.</p>
+        <p><strong>Beat:</strong> Deliver the relief in one sentence with a real timeframe, matching the actual guarantee on slide 21, no unbounded promise.</p>
+        <p><strong>Say:</strong> "In 10 days, this is live: your Kit account, opt-in, and welcome sequence. Deliberately the smallest piece of what I could build, not the full system."</p>
+        <p><strong>Watch out:</strong> Don't over-explain the mechanism here, that's slide 9's job. This slide is the promise, not the how. Don't promise indefinite free labor, that's not the real guarantee (see slide 21).</p>
       </aside>
     </section>
 
@@ -1106,12 +1116,12 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">Key Outcomes</div>
         <div class="outcomes-cols">
           <div>
-            <div class="ppd-headline-md">Nothing Dies In DMs</div>
-            <p>Every good LinkedIn conversation gets a place to land beyond the DM thread, so a quiet reply is not the end of the relationship.</p>
+            <div class="ppd-headline-md">10 Becomes 30, Owned</div>
+            <p>Your Newsletter grows how many people reach out, from 10 toward 30 like you said, and every one lands somewhere you actually own.</p>
           </div>
           <div>
             <div class="ppd-headline-md">Follow-Up Runs Itself</div>
-            <p>A welcome sequence keeps building trust automatically, so nothing depends on you remembering to follow up.</p>
+            <p>A welcome sequence keeps building trust automatically, no manual email swap required once the opt-in captures the contact.</p>
           </div>
           <div>
             <div class="ppd-headline-md">Corporates Stay Warm</div>
@@ -1126,13 +1136,13 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Key Outcomes — Slide 6</strong></p>
-        <p><strong>Beat:</strong> Turn the big promise into three felt changes, each mapped back to what he already told you.</p>
-        <p><strong>Say:</strong> "This isn't about growing your audience, it's about what happens to the conversations you already have. Follow-up stops depending on you remembering, and the corporate side, the side that actually pays you, hears from you between deals."</p>
-        <p><strong>Watch out:</strong> Keep it benefit-led. Don't slide into describing the Kit setup itself here.</p>
+        <p><strong>Beat:</strong> Name his own number directly, then show what happens to it once it's real.</p>
+        <p><strong>Say:</strong> "Three things change. Your Newsletter is what actually gets you from 10 toward 30 conversations a post, that's on you, and it's real. What I build is what happens to each one once it lands: it's captured into your Kit account instead of a manual email swap, and the corporate side, the side that actually pays you, hears from you between deals."</p>
+        <p><strong>Watch out:</strong> Don't let this contradict slide 9, the Newsletter drives the number, Phase 1 protects what it produces.</p>
       </aside>
     </section>
 
-    <section data-bg-token="accent">
+    <section data-visibility="hidden" data-bg-token="accent">
       <div class="ppd-slide" style="padding:0;">
         <div class="outcomes-split">
           <div class="left">
@@ -1162,14 +1172,12 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Key Outcomes — Slide 7</strong></p>
-        <p><strong>Beat:</strong> Same three outcomes, now paired with visuals if you have real screenshots to show.</p>
-        <p><strong>Say:</strong> "This one's just a different view of the same three things: you own the conversation, follow-up never depends on your memory, and it's corporates first, not a three-way router for founders and investors who don't live on LinkedIn for you anyway."</p>
-        <p><strong>Watch out:</strong> If you don't have real screenshots ready, consider skipping to slide 8 instead of showing empty placeholders.</p>
+        <p><strong>Key Outcomes — Slide 7 (HIDDEN 2026-08-22)</strong></p>
+        <p><strong>Why hidden:</strong> This is the split-image alternate layout for the SAME "outcomes" beat as slide 6 (manifest.json marks both index 6 and 7 as strategic_role "outcomes" — they're two archetype choices for one beat, not two sequential slides). No real screenshots exist to fill the 4 image placeholders, and showing both back to back duplicated content and read as incoherent. Keeping slide 6 (the grid-3 version) live instead. Un-hide only if real product screenshots become available AND slide 6 is removed instead, don't run both.</p>
       </aside>
     </section>
 
-    <section data-bg-token="bg-light">
+    <section data-visibility="hidden" data-bg-token="bg-light">
       <div class="ppd-slide" style="padding:0;">
         <div class="howitworks-split">
           <div class="left">
@@ -1190,10 +1198,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>How It Works — Slide 8</strong></p>
-        <p><strong>Beat:</strong> Show exactly what Phase 1 is, with no ambiguity about what's being sold today.</p>
-        <p><strong>Say:</strong> "Here's exactly what I build: your Kit account, an opt-in tied to your own LinkedIn writing, and a welcome sequence. Ten days, start to finish."</p>
-        <p><strong>Watch out:</strong> Don't let this slide drift into Phase 2 or 3 territory, that's the next slide's job. Keep Phase 1 crisp and bounded.</p>
+        <p><strong>How It Works — Slide 8 (HIDDEN 2026-08-22)</strong></p>
+        <p><strong>Why hidden:</strong> manifest.json marks both index 8 and 9 as strategic_role "mechanism" — same beat, two archetype choices. This one's a bare bullet summary with one empty image placeholder; slide 9 covers the identical Phase 1 explanation plus a real image (peter-kit-subscriber-growth.png) and explicitly names Phase 2/3. Running both back to back was redundant. Keeping slide 9 live instead.</p>
       </aside>
     </section>
 
@@ -1203,14 +1209,14 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="howitworks">
           <div class="left">
             <h3>The Exact Moment A Conversation Is Ready</h3>
-            <p>Instead of trading emails by hand, a branded opt-in captures the contact into your Kit account, then a welcome sequence keeps building trust automatically, no follow-up left to memory.</p>
+            <p>Instead of trading emails by hand, a branded opt-in captures the contact into your Kit account, then a welcome sequence keeps building trust automatically, no manual follow-up required. That's genuinely all this does today.</p>
             <ul>
               <li>Opt-in tied to your writing</li>
               <li>Welcome sequence runs on its own</li>
-              <li>Newsletter growth is on you, free, separate from this</li>
+              <li>Newsletter growth: your 10-to-30, free, on you</li>
             </ul>
           </div>
-          <div class="right ph"></div>
+          <div class="right filled"><img src="assets/peter-kit-subscriber-growth.png" alt="Kit subscriber growth over 6 months" /></div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1221,7 +1227,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>How It Works — Slide 9</strong></p>
         <p><strong>Beat:</strong> Walk through exactly what happens the moment a conversation is ready to go further, then name Phase 2 and 3 as separate, unpriced roadmap.</p>
-        <p><strong>Say:</strong> "Instead of you trading emails by hand, there's a branded opt-in that captures the contact into your Kit account, then a welcome sequence keeps building trust automatically, nothing left to memory. Growing how many people reach out in the first place is on your Newsletter, that's separate, free, and not what you're paying for today. Once that's built a real base, Phase 2 moves those subscribers in automatically, and Phase 3 adds one qualifying step so only corporates route anywhere that matters, neither priced today."</p>
+        <p><strong>Say:</strong> "Instead of you trading emails by hand, there's a branded opt-in that captures the contact into your Kit account, then a welcome sequence keeps building trust automatically, no manual follow-up required. Getting you from 10 toward 30 conversations a post, that's your Newsletter's job, separate, free, and not what you're paying for today. Once that's built a real base, Phase 2 moves those subscribers in automatically, and Phase 3 adds one qualifying step so only corporates route anywhere that matters, neither priced today."</p>
         <p><strong>Watch out:</strong> Be explicit that Phase 2 and 3 are not part of today's offer, and that the Newsletter's reach growth is Kai's own work, not something this build causes.</p>
       </aside>
     </section>
@@ -1265,21 +1271,12 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <div class="stat">29</div>
             <div class="label">New Clients</div>
             <p class="body">A 3-question survey on his list surfaced 29 people exactly who Peter was looking for.</p>
-            <div class="proof-circle"><img src="assets/skool-wordmark.svg" alt="Skool" /></div>
             <div class="proof-name">Peter Sorgenfrei</div>
-          </div>
-          <div class="ppd-card">
-            <div class="stat">Best Yet</div>
-            <div class="label">Client Verdict</div>
-            <p class="body">Set up the marketing himself and calls it the best he's seen.</p>
-            <div class="proof-circle"><img src="assets/skool-wordmark.svg" alt="Skool" /></div>
-            <div class="proof-name">Jeff Bettinger</div>
           </div>
           <div class="ppd-card">
             <div class="stat">1,624</div>
             <div class="label">New Subscribers</div>
             <p class="body">Opened her LinkedIn Newsletter as homework. Subscribers followed in 3 days, no cold outreach.</p>
-            <img class="proof-avatar" src="assets/steve.webp" alt="Ica" />
             <div class="proof-name">Ica</div>
           </div>
         </div>
@@ -1291,19 +1288,18 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Customer Wins — Slide 11</strong></p>
-        <p><strong>Beat:</strong> Back the objection-crusher with three real, specific results.</p>
-        <p><strong>Say:</strong> "Peter Sorgenfrei had the same 'no owned channel' problem, three questions surfaced 29 people he didn't know were there. Jeff Bettinger set up his own marketing with this and calls it the best he's seen. And Ica opened her LinkedIn Newsletter as homework, 1,624 subscribers followed in 3 days, no cold outreach, that's the exact mechanism your Phase 1 build sits on top of."</p>
-        <p><strong>Watch out:</strong> Ica's card is a general Asset Bolt proof point, not Kai-specific, keep it framed that way if he asks.</p>
+        <p><strong>Beat:</strong> Back the objection-crusher with two real, specific results. (Trimmed from 3 to 2 cards 2026-08-22 — matches slides/schema.json's current 2-card default; the 3rd card was Jeff Bettinger, dropped per Shlomo's instruction, plus it was shown with a mismatched Skool logo and a template-placeholder photo that were never his.)</p>
+        <p><strong>Say:</strong> "Peter Sorgenfrei had the same 'no owned channel' problem, three questions surfaced 29 people he didn't know were there. And Ica opened her LinkedIn Newsletter as homework, 1,624 subscribers followed in 3 days, no cold outreach, that's the exact mechanism your Phase 1 build sits on top of."</p>
+        <p><strong>Watch out:</strong> Ica's card is a general Asset Bolt proof point, not Kai-specific, keep it framed that way if he asks. Neither card has a real headshot/logo asset on file, don't add a placeholder image, the stat and name carry the card.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;He is the best I have seen.&#8221;</p>
+          <p class="quote">&#8220;I had no idea they were sitting there.&#8221;</p>
           <div class="quote-author">
-            <img src="assets/steve.webp" alt="Steve Butler" />
-            <div class="meta">Jeff Bettinger<br/>Former CHRO</div>
+            <div class="meta">Peter Sorgenfrei<br/>Advisor to CEOs &amp; Founders</div>
           </div>
         </div>
         <div class="ppd-footer">
@@ -1313,10 +1309,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Customer Testimonial — Slide 12</strong></p>
-        <p><strong>Beat:</strong> Let one short, real quote close out the proof section.</p>
-        <p><strong>Say:</strong> "Jeff put it simply: 'He is the best I have seen.' That's a former CHRO who's evaluated a lot of vendors."</p>
-        <p><strong>Watch out:</strong> Don't over-narrate the quote, let it sit on screen a beat before moving on.</p>
+        <p><strong>Customer Testimonial — Slide 12 (REWRITTEN 2026-08-22)</strong></p>
+        <p><strong>Beat:</strong> Let one short, real quote close out the proof section. Was Jeff Bettinger's "He is the best I have seen," dropped along with his testimonial (see slide 11) — now Peter Sorgenfrei's own line, pulled from the same quote already used on slide 11, so it lands as reinforcement, not a new claim.</p>
+        <p><strong>Say:</strong> "Peter put it simply: 'I had no idea they were sitting there.' Twenty-nine people, on a list he already had."</p>
+        <p><strong>Watch out:</strong> Don't over-narrate the quote, let it sit on screen a beat before moving on. No real headshot exists for Peter, the attribution is text-only on purpose, don't add a placeholder photo.</p>
       </aside>
     </section>
 
@@ -1360,7 +1356,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">Why Asset Bolt?</div>
         <div class="why-hero">
           <h2 class="ppd-headline-md">The Only Setup Built Around Writing You Already Do, Not a New Platform to Learn.</h2>
-          <p class="ppd-body-lg ppd-muted-inv">Most tools ask you to build an audience from scratch. This one starts from conversations you're already having, captures each the moment it's ready, and keeps building trust automatically, no memory required.</p>
+          <p class="ppd-body-lg ppd-muted-inv">Most tools ask you to build an audience from scratch. This one starts from conversations you're already having, captures each the moment it's ready, and keeps building trust automatically, without you managing it by hand.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1371,7 +1367,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Unique Mechanism — Slide 14</strong></p>
         <p><strong>Beat:</strong> Name why this is structurally different from every other audience tool he's tried.</p>
-        <p><strong>Say:</strong> "Most of these tools ask you to go build a following somewhere new. This one starts from conversations you're already having, captures each one the moment it's ready, and keeps building trust automatically, no memory required, no second job."</p>
+        <p><strong>Say:</strong> "Most of these tools ask you to go build a following somewhere new. This one starts from conversations you're already having, captures each one the moment it's ready, and keeps building trust automatically, without you managing it by hand."</p>
         <p><strong>Watch out:</strong> Avoid the word "unique," let the mechanism itself carry the contrast instead of claiming it.</p>
       </aside>
     </section>
@@ -1381,13 +1377,13 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">The Team</div>
         <div class="team-grid">
           <div class="person">
-            <div class="avatar"></div>
+            <div class="avatar"><img src="assets/brand/shlomo profile pic linkedin.jpg" alt="Shlomo Freund" /></div>
             <div class="name">Shlomo Freund</div>
             <div class="role">Founder</div>
             <p>Built AppInChina. Now turns LinkedIn followers into owned lists for independent experts.</p>
           </div>
           <div class="person">
-            <div class="avatar"></div>
+            <div class="avatar"><img src="assets/brand/France Angelo Galvez profile pic.png" alt="France Galvez" /></div>
             <div class="name">France Galvez</div>
             <div class="role">Tech Lead</div>
             <p>Handles every Kit and RightMessage build so each client goes live on time.</p>
@@ -1400,8 +1396,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>The Team — Slide 15</strong></p>
-        <p><strong>Beat:</strong> Put a name and face to who's actually building this.</p>
+        <p><strong>The Team — Slide 15 (real photos wired in 2026-08-22)</strong></p>
+        <p><strong>Beat:</strong> Put a name and face to who's actually building this. Avatars were empty checkerboard placeholders in every past deck built from this kit, real photos exist in assets/brand/ and are now wired in at the template level so future decks inherit this fixed.</p>
         <p><strong>Say:</strong> "It's me and France on the technical side, she handles the Kit and RightMessage build so it lands correctly and on time."</p>
         <p><strong>Watch out:</strong> Trimmed to the 2 real Asset Bolt team members, don't invent more to fill a wider grid.</p>
       </aside>
@@ -1415,15 +1411,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <p>Imagine 10 days from now: every good conversation has somewhere to go, capturing trust automatically instead of a forgotten email swap.</p>
+            <p>Imagine your Newsletter growing, 10 conversations a post pushing toward 30, and every one landing somewhere you actually own, not stuck in a DM thread.</p>
             <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
       <aside class="notes">
         <p><strong>Future Vision — Slide 16</strong></p>
-        <p><strong>Beat:</strong> Let Kai picture the after-state before the offer slide reveals the price.</p>
-        <p><strong>Say:</strong> "Picture 10 days from now: every good conversation has somewhere to go, capturing trust automatically instead of turning into another forgotten email swap."</p>
+        <p><strong>Beat:</strong> Paint the full picture, his own growth number and what happens to it, together, before the offer slide reveals the price.</p>
+        <p><strong>Say:</strong> "Picture your Newsletter a few months in: 10 conversations a post pushing toward 30, like you said you wanted. And every one of them lands somewhere you actually own, not stuck in a DM thread."</p>
         <p><strong>Watch out:</strong> Don't pitch the offer here, just paint the picture and move straight into slide 17.</p>
       </aside>
     </section>
@@ -1433,7 +1429,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">Today's Offer - Newsletter Foundation</div>
         <div class="todays-offer">
           <h3>Get Every Good Conversation a Place to Land, in Just 10 Days, for $1,650.</h3>
-          <p>If good conversations keep going quiet with nowhere to go, this fixes it: your own account, opt-in, and a welcome sequence that keeps talking after you stop.</p>
+          <p>Your own account, opt-in, and a welcome sequence that keeps talking after you stop. Deliberately the smallest step, not the full system.</p>
           <p class="closer">Stay with me, I'll walk you through everything you get next.</p>
         </div>
         <div class="ppd-footer">
@@ -1445,7 +1441,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <aside class="notes">
         <p><strong>Today's Offer — Slide 17</strong></p>
         <p><strong>Beat:</strong> Name the offer and the outcome together, without listing every inclusion yet.</p>
-        <p><strong>Say:</strong> "Here's exactly what today's offer is: the Newsletter Foundation Build. Every good conversation gets a place to land, in 10 days, for $1,650 flat."</p>
+        <p><strong>Say:</strong> "Here's exactly what today's offer is: the Newsletter Foundation Build. Every good conversation gets a place to land, in 10 days, for $1,650 flat. It's deliberately the smallest step I could propose, not the full system."</p>
         <p><strong>Watch out:</strong> Don't list every inclusion here, that's slide 18's job. Keep this slide about the promise, not the itemization.</p>
       </aside>
     </section>
@@ -1565,11 +1561,11 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Our Guarantee</div>
+        <div class="ppd-eyebrow">The Whole Risk</div>
         <div class="guarantee-hero">
-          <h2 class="ppd-headline-md">A 10-day guarantee on the Kit account, opt-in, and welcome sequence</h2>
-          <p class="body ppd-body-lg">If your Kit account, opt-in, and welcome sequence aren't fully live within 10 days of kickoff, I keep working until they are, at no extra charge.</p>
-          <p class="fine">Small print: the 10 days start once you've handed over Kit account access, not before.</p>
+          <h2 class="ppd-headline-md">This is deliberately the smallest version</h2>
+          <p class="body ppd-body-lg">If it proves useful, there's a real system worth building next, your Newsletter subscribers moving in automatically, every corporate relationship that matters tracked and nurtured on purpose. If it doesn't, you're out $1,650 and 10 days. That's the whole risk.</p>
+          <p class="fine">On purpose the cheapest piece of what I could build, not the full system, so you find out if it's worth going further before committing to more.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
@@ -1579,9 +1575,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       </div>
       <aside class="notes">
         <p><strong>Our Guarantee — Slide 21</strong></p>
-        <p><strong>Beat:</strong> Reverse the risk on the one thing that's actually being sold today.</p>
-        <p><strong>Say:</strong> "If your Kit account, opt-in, and welcome sequence aren't fully live in 10 days, I keep working until they are, no extra charge. The clock starts once you hand over Kit access."</p>
-        <p><strong>Watch out:</strong> Keep the small print to the one real condition, don't let it turn into a list of exceptions.</p>
+        <p><strong>Beat:</strong> Say plainly that this is deliberately small, not a dramatized fix. That's the actual close.</p>
+        <p><strong>Say:</strong> "I'll be straight with you, Kai, this is deliberately the smallest, cheapest version of what I could build. If it's useful, there's a real system worth building next, your Newsletter subscribers moving into your list automatically, and every corporate relationship that actually matters to you tracked and nurtured on purpose. That's the vision. If it's not useful, you're out $1,650 and 10 days, that's the whole risk."</p>
+        <p><strong>Watch out:</strong> Don't undercut this by also claiming Phase 1 solves everything, the honesty about scope is the point.</p>
       </aside>
     </section>
 
