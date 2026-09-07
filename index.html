@@ -602,14 +602,6 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
     repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/40px 40px;
   border-radius: 2px;
 }
-.howitworks .right.filled {
-  height: 720px;
-  background: #FFFFFF;
-  border-radius: 2px;
-  display: flex; align-items: center; justify-content: center;
-  padding: 40px;
-}
-.howitworks .right.filled img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
 /* Slide 4 (problem-agitators) light blue tint */
 .bg-blue-tint .ppd-eyebrow { color: var(--text-inverse); }
@@ -629,18 +621,16 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 
 /* Slide 15 — Team (dark, 5 portraits) */
 .team-grid {
-  position: absolute; left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-  display: grid; grid-template-columns: repeat(2, 340px); gap: 160px;
+  position: absolute; left: 80px; right: 80px; top: 50%;
+  transform: translateY(-50%);
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;
   text-align: center;
 }
 .team-grid .person .avatar {
   width: 220px; height: 220px; border-radius: 999px; margin: 0 auto 24px;
   background:
     repeating-conic-gradient(#FFFFFF 0% 25%, #E4E4E4 0% 50%) 0 0/30px 30px;
-  overflow: hidden;
 }
-.team-grid .person .avatar img { width: 100%; height: 100%; object-fit: cover; }
 .team-grid .person .name { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; margin: 0; }
 .team-grid .person .role { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 22px; }
 .team-grid .person p { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px; line-height: 1.5; margin: 0 auto; max-width: 260px; color: rgba(255,255,255,0.95); }
@@ -999,15 +989,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <img src="assets/brand/asset_bolt_logo.svg" alt="Asset Bolt" />
           </div>
           <div class="content">
-            <h1 class="title">Own Your Credibility</h1>
-            <p class="lede">A plan to turn the LinkedIn conversations you already have into ones you own.</p>
+            <h1 class="title">For Arnd Halbach</h1>
+            <p class="lede">How to know who on your list is ready to pay, before you message anyone.</p>
             <ul class="ppd-check-list">
-              <li>Built around the writing you already do</li>
-              <li>Foundation for what you already saw</li>
-              <li>Live in 10 days, one flat price</li>
+              <li>Convert LinkedIn subscribers into buyers</li>
+              <li>Know who's ready before you message</li>
+              <li>Built around your &#163;19,500 program</li>
             </ul>
             <div class="ppd-cta-row">
-              <a class="ppd-pill-cta" href="#/1">See What Gets Built First</a>
+              <a class="ppd-pill-cta" href="#/1">Let's talk next steps</a>
             </div>
           </div>
         </div>
@@ -1015,18 +1005,19 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <img src="assets/brand/wordmark.svg" alt="Asset Bolt" />
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>Cover — Slide 1</strong></p>
-        <p><strong>Beat:</strong> Set the tone before Kai sees a single slide of pitch.</p>
-        <p><strong>Say:</strong> "Kai, this one's built around what you actually told me last time. Nothing in here asks you to start a new platform or build an audience from scratch."</p>
-        <p><strong>Watch out:</strong> Don't linger here. This slide is a tone-setter, not a place to explain the offer yet.</p>
+        <p><strong>Cover &#8212; Slide 1</strong></p>
+        <p><strong>Beat:</strong> Set the frame: this deck exists to show Arnd exactly who on his own list is ready to join The Principals Group, before he sends anyone a message.</p>
+        <p><strong>Say:</strong> "Arnd, I put this together specifically off our call &#8212; how to find out who on your 1,100-person LinkedIn newsletter is actually ready to pay &#163;19,500 to join, before you spend another minute on someone who'll only ever read the book."</p>
+        <p><strong>Watch out:</strong> Don't rush past the cover &#8212; let the personalization land before moving to slide 2.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-dark">
       <div class="ppd-slide bg-dark">
         <div class="intro-slide">
-          <h1>Nice to<br/>meet you<br/>Kai!</h1>
+          <h1>Nice to<br/>meet you<br/>Arnd!</h1>
           <div class="subhead">Asset Bolt</div>
         </div>
         <div class="intro-brand">
@@ -1034,80 +1025,84 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <span>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>Icebreaker — Slide 2</strong></p>
-        <p><strong>Beat:</strong> Acknowledge that Kai came to this himself, then open with the real Peter Sorgenfrei story before getting into his own situation, same pattern as the David Dayton deck's icebreaker.</p>
-        <p><strong>Say:</strong> "Good to properly meet you, Kai. You did the unusual thing here, you looked at what I do and asked if there was something in it for you. Before we get into your situation, let me show you where this actually goes. Peter Sorgenfrei, a three-question survey on his list surfaced 29 buyers he had no idea were there. Now there's an automation that drafts outreach emails straight into his own Gmail based on what his list tells him about each person, he reads them, and sends the ones he wants, himself. That's the real shape of this. Let's dig into what it could look like for you."</p>
-        <p><strong>Watch out:</strong> Keep the acknowledgment brief, don't over-thank him. Don't claim a specific frequency for Peter's emails, that detail isn't confirmed. Be explicit these are drafts he reviews and sends personally, not automated cold outreach, that's the exact thing Kai ruled out for his own industry, don't blur that line this early.</p>
+        <p><strong>Icebreaker &#8212; Slide 2</strong></p>
+        <p><strong>Beat:</strong> Namedrop a similarly-situated client before getting into Arnd's own numbers.</p>
+        <p><strong>Say:</strong> "I've got another client, Peter Winick, doing the exact same conversion right now &#8212; turning his LinkedIn newsletter subscribers into a real owned list with Dripify. It's the same mechanism I'm about to walk you through for your 1,100."</p>
+        <p><strong>Watch out:</strong> Don't oversell Peter Winick's result &#8212; that piece is still mid-rollout for him, not a finished number yet. Frame it as "the same mechanism already running," not a completed case study.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent-tint">
       <div class="ppd-slide bg-blue-tint">
         <div class="quote-slide tint">
-          <p class="quote">&#8220;I would love to have 30 quality relationships out of each post, instead of 10.&#8221;</p>
+          <p class="quote">&#8220;Everyone on your list looks the same, even though one of them is ready to pay &#163;19,500.&#8221;</p>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>The Problem — Slide 3</strong></p>
-        <p><strong>Beat:</strong> Open on Kai's own stated want, verbatim, not a paraphrase of a problem he didn't state.</p>
-        <p><strong>Say:</strong> "You said this to me yourself last time: you'd love to have 30 quality relationships out of each post instead of 10. That's the whole starting point for what I want to show you today."</p>
-        <p><strong>Watch out:</strong> Don't turn this into a dramatized problem statement, it's just his own stated want reflected back, let it stand on its own. Nothing later in the deck (slides 6/9/16 included) claims to grow this number, so don't imply here that anything will, either.</p>
+        <p><strong>The Problem &#8212; Slide 3</strong></p>
+        <p><strong>Beat:</strong> Land the exact gap Arnd confirmed on Call 1: his list looks uniform even though it isn't.</p>
+        <p><strong>Say:</strong> "You told me the LinkedIn newsletter is the only list you've got, about 1,100 people, and right now every one of them looks the same to you. But some of them are your exact buyer &#8212; a self-employed consultant a year in, struggling more than they expected."</p>
+        <p><strong>Watch out:</strong> Don't let this feel abstract &#8212; tie it straight back to his own words about his buyer.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent-tint">
       <div class="ppd-slide bg-blue-tint">
-        <div class="ppd-eyebrow">Just How It Works Today</div>
+        <div class="ppd-eyebrow">And It's Only Growing</div>
         <div class="agitators-grid">
           <div>
-            <div class="ppd-headline-md">Tracked In Your Sheet</div>
-            <p>Serious contacts already go into your own Google Sheet, followed up on a 4-12 week cadence you set yourself.</p>
+            <div class="ppd-headline-md">Every Book-Only Reader</div>
+            <p>Every DM you send treats a curious reader exactly the same as a consultant ready to pay &#163;19,500 next month.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">10 To 15, Not 30 Yet</div>
-            <p>LinkedIn's already working as a credibility layer, about 10 to 15 quality conversations per substantial post. You want that closer to 30.</p>
+            <div class="ppd-headline-md">Competitors Are Watching</div>
+            <p>Other lead-gen consultants are already pitching the same struggling first-year consultants on your own list.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Only Corporates Convert</div>
-            <p>Investors and founders don't hire you off LinkedIn. The corporate conversations are the only ones this actually needs to serve.</p>
+            <div class="ppd-headline-md">The List Only Grows Cold</div>
+            <p>The longer everyone looks the same, the colder your best 1,100 people get while you guess who to message.</p>
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>Pain Agitators — Slide 4</strong></p>
-        <p><strong>Beat:</strong> State the current setup plainly, not dramatized, this isn't a crisis, just what happens today.</p>
-        <p><strong>Say:</strong> "This is just how it works right now, not a disaster, just the current setup. Serious contacts go into your own Google Sheet, you told me, and you stay in touch on a 4-12 week cadence depending how relevant they are. LinkedIn's already getting you 10 to 15 quality conversations a post, and you want that closer to 30. And of the three audiences reading your posts, it's really only the corporate side that ever hires you."</p>
-        <p><strong>Watch out:</strong> Keep this calm and factual, don't dramatize it. Kai confirmed directly (2026-08-23 DM) that his sheet-and-cadence system already works for him, he said it plainly, not as a complaint. Don't imply it's broken, slow, or losing anything, he never said that and it isn't true.</p>
+        <p><strong>Pain Agitators &#8212; Slide 4</strong></p>
+        <p><strong>Beat:</strong> Twist the knife: the cost of staying undifferentiated compounds every week.</p>
+        <p><strong>Say:</strong> "Every day this stays unsorted, you're either burning a message on someone who'll never buy, or missing the one person who's actually ready to pay &#163;19,500 this month."</p>
+        <p><strong>Watch out:</strong> Don't hint at the fix yet &#8212; that's slide 5.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;In 10 days, you'll have your own Kit account, opt-in, and welcome sequence, live and working.&#8221;</p>
+          <p class="quote">&#8220;In 5-6 weeks, you'll know exactly who on your 1,100-person list is ready to pay &#163;19,500, live and running, or Shlomo keeps building for free until it is.&#8221;</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>The Big Promise — Slide 5</strong></p>
-        <p><strong>Beat:</strong> Keep this to the simple, concrete promise only. Don't reference "Migration" or "the System" yet, that's slide 6's job, this slide has no premise built for it yet.</p>
-        <p><strong>Say:</strong> "In 10 days, this is live: your Kit account, opt-in, and welcome sequence."</p>
-        <p><strong>Watch out:</strong> Don't over-explain the mechanism here, that's slide 9's job. This slide is the promise, not the how. Don't promise indefinite free labor, that's not the real guarantee (see slide 21). Don't say "not starting from zero" or reference "the system," vague and undefined this early, nothing established it yet.</p>
+        <p><strong>The Big Promise &#8212; Slide 5</strong></p>
+        <p><strong>Beat:</strong> The relief moment after two slides of pain.</p>
+        <p><strong>Say:</strong> "Here's the promise: in five to six weeks, you'll know exactly who on that list is ready to join, and if it's not live and running by then, I keep building at no extra cost."</p>
+        <p><strong>Watch out:</strong> Don't let this read as jargon &#8212; keep it to the one sentence, no 'system' or 'platform' language.</p>
       </aside>
     </section>
 
@@ -1116,48 +1111,49 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">Key Outcomes</div>
         <div class="outcomes-cols">
           <div>
-            <div class="ppd-headline-md">What Migration Does</div>
-            <p>Every month, your LinkedIn Newsletter subscribers move into your own list automatically, and the opt-in sequence runs itself.</p>
+            <div class="ppd-headline-md">Know Who's Ready</div>
+            <p>Stop guessing. See exactly which of your 1,100 subscribers is close to paying &#163;19,500, before you send a message.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">What The System Adds</div>
-            <p>Everything Migration does, plus tagging who's an actual buyer and showing them the right next step.</p>
+            <div class="ppd-headline-md">Own The Conversation</div>
+            <p>You and your team make the calls that close &#163;19,500 deals, not a bot. The system just tells you who to call.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">What You Need First</div>
-            <p>The same Kit foundation either one runs on, built in 10 days for $1,500.</p>
+            <div class="ppd-headline-md">Stop Renting LinkedIn</div>
+            <p>Your 1,100 subscribers become a real, owned list you keep, no matter what LinkedIn does next.</p>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>Key Outcomes — Slide 6</strong></p>
-        <p><strong>Beat:</strong> State the two real products and the prerequisite plainly, three flat facts, no narrative build-up. This is an analytical buyer who did his own diligence.</p>
-        <p><strong>Say:</strong> "Three things, stated plainly. Migration, $500 a month, your LinkedIn Newsletter subscribers move into your own list automatically, opt-in sequence runs itself. The full System, $4,500 plus $2,500 a month, does everything Migration does, plus tags who's an actual buyer and routes them the right next step. Both need the same Kit foundation first, that's what $1,500 builds, in 10 days."</p>
-        <p><strong>Watch out:</strong> Don't promise a growth number here or on slide 9, and don't claim this fixes anything, he already has a working system, his own Google Sheet plus a deliberate 4-12 week cadence, confirmed directly over DM 2026-08-23. The honest reason to do this now is the real destination he already saw on the site, not curiosity alone, don't undersell that by falling back into "just testing it" language.</p>
+        <p><strong>Key Outcomes &#8212; Slide 6</strong></p>
+        <p><strong>Beat:</strong> Translate the promise into three felt changes.</p>
+        <p><strong>Say:</strong> "Week one, you'll start seeing real data on your subscribers. By the end, you'll know who's ready, you'll be the one making the call, not a bot, and you'll own that list for good, not just rent it from LinkedIn."</p>
+        <p><strong>Watch out:</strong> Keep this benefit-led &#8212; don't slide into describing the mechanism, that's slide 8.</p>
       </aside>
     </section>
 
-    <section data-visibility="hidden" data-bg-token="accent">
+    <section data-bg-token="accent" data-visibility="hidden">
       <div class="ppd-slide" style="padding:0;">
         <div class="outcomes-split">
           <div class="left">
             <div class="ppd-eyebrow">Key Outcomes</div>
             <div class="msg">
-              <div class="ppd-headline-sm">Own The Conversation</div>
-              <p class="body">Every quality DM gets a next step beyond LinkedIn, so the relationship keeps going after the thread goes quiet.</p>
+              <div class="ppd-headline-sm">Key Message #1.</div>
+              <p class="body">What makes your product different? What you offer that your competitors don&#8217;t. (Or better yet, can&#8217;t.)</p>
             </div>
             <div class="msg">
-              <div class="ppd-headline-sm">Nothing Runs On Memory</div>
-              <p class="body">A welcome sequence keeps talking to every new contact, so follow-up never depends on your memory.</p>
+              <div class="ppd-headline-sm">Key Message #2.</div>
+              <p class="body">Pair these points with images on the right that demonstrate what you mean, like screenshots of specific features.</p>
             </div>
             <div class="msg">
-              <div class="ppd-headline-sm">Corporates First</div>
-              <p class="body">Only the buyers who actually hire you get routed anywhere that matters, not founders or investors who don't.</p>
+              <div class="ppd-headline-sm">Key Message #3.</div>
+              <p class="body">Make sure these tie back to the customers&#8217; challenges to make sure they really hit home.</p>
             </div>
           </div>
           <div class="right">
@@ -1168,67 +1164,76 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--text-inverse);">
-          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-left">{Company Name}</span>
         </div>
       </div>
+    
       <aside class="notes">
-        <p><strong>Key Outcomes — Slide 7 (HIDDEN 2026-08-22)</strong></p>
-        <p><strong>Why hidden:</strong> This is the split-image alternate layout for the SAME "outcomes" beat as slide 6 (manifest.json marks both index 6 and 7 as strategic_role "outcomes" — they're two archetype choices for one beat, not two sequential slides). No real screenshots exist to fill the 4 image placeholders, and showing both back to back duplicated content and read as incoherent. Keeping slide 6 (the grid-3 version) live instead. Un-hide only if real product screenshots become available AND slide 6 is removed instead, don't run both.</p>
+        <p><strong>SLIDE OPTION — WITH IMAGES</strong></p>
+        <p><strong>Ease The Pain (Key Messages)</strong></p>
+        <p><strong>Purpose:</strong> Clearly highlight how your solution directly addresses their biggest problems and pain points. Key messages should focus on the benefits that make your solution stand out—like accelerating workflows, eliminating delays, or removing their most frustrating obstacles. Make it obvious how your solution creates tangible improvements that they can feel and measure.</p>
+        <p><strong>Why:</strong> Key messages must be simple, powerful, and trustworthy. When you clearly show how your solution solves their problems and delivers real, noticeable results, it's obvious why they can't go without it. Your message becomes the bridge between their pain and your solution.</p>
       </aside>
     </section>
 
-    <section data-visibility="hidden" data-bg-token="bg-light">
+    <section data-bg-token="bg-light" data-visibility="hidden">
       <div class="ppd-slide" style="padding:0;">
         <div class="howitworks-split">
           <div class="left">
             <div class="ppd-eyebrow">How It Works</div>
-            <h3>Phase 1: The Foundation</h3>
-            <p>I build your Kit account, a branded opt-in tied to your own LinkedIn writing, and a welcome sequence. Every quality conversation your posts already generate finally has somewhere to land beyond a DM thread.</p>
+            <h3>How Your Solution Works.</h3>
+            <p>This is an optional slide to explain how you deliver the solution. Duplicate if needed. Segue into a Notion doc, portfolio of work, or other relevant files.</p>
             <ul>
-              <li>Kit account, fully set up</li>
-              <li>Branded opt-in on your writing</li>
-              <li>Welcome sequence live within 10 days</li>
+              <li>Use bullets.</li>
+              <li>Keep text to a minimum.</li>
+              <li>Google the &#8216;Rule of 3&#8217; if you don&#8217;t know it.</li>
             </ul>
-            <div class="ppd-footer-mini">Asset Bolt</div>
+            <div class="ppd-footer-mini">{Company Name}</div>
           </div>
           <div class="right">
             <div class="ph"></div>
-            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</div>
           </div>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>How It Works — Slide 8 (HIDDEN 2026-08-22)</strong></p>
-        <p><strong>Why hidden:</strong> manifest.json marks both index 8 and 9 as strategic_role "mechanism" — same beat, two archetype choices. This one's a bare bullet summary with one empty image placeholder; slide 9 covers the identical Phase 1 explanation plus a real image (peter-kit-subscriber-growth.png) and explicitly names Phase 2/3. Running both back to back was redundant. Keeping slide 9 live instead.</p>
+        <p><strong>SLIDE OPTION — 1</strong></p>
+        <p><strong>Service Delivery (who/what/where/when/why/how)</strong></p>
+        <p><strong>Purpose:</strong> After laying out your big promise and key messages, it's time to explain exactly how you deliver. Break down who's involved, what steps are taken, where and when things happen, and how you back up your claims. This is where you show off your expertise and prove you're the real deal.</p>
+        <p><strong>Why?</strong> Without a clear understanding of your process and expertise, doubts creep in. People need to see how you make the magic happen, so they trust you can deliver on your promises.</p>
+        <p><strong>Pro-tip:</strong> Skip the info dump in your slides. Use real work you've already developed to explain and sell trust. Show your process, results, and past projects to back up what you're saying. When people see the awesome stuff you've already created, it's easier for them to trust that you'll deliver the same quality for them. Let your work prove the value.</p>
       </aside>
     </section>
 
-    <section data-bg-token="bg-light">
+    <section data-bg-token="bg-light" data-visibility="hidden">
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">How It Works</div>
         <div class="howitworks">
           <div class="left">
-            <h3>The Exact Moment A Conversation Is Ready</h3>
-            <p>A branded opt-in captures the contact into your Kit account, then a welcome sequence keeps building trust automatically. That's genuinely all this does today.</p>
+            <h3>Show Off Your Demos, Process, Portfolio etc.</h3>
+            <p>This is an optional slide to explain how you deliver the solution. Duplicate if needed. Segue into a Notion doc, portfolio of work, or other relevant files.</p>
             <ul>
-              <li>Opt-in tied to your writing</li>
-              <li>Welcome sequence runs on its own</li>
-              <li>Same foundation Migration builds on</li>
+              <li>Use bullets.</li>
+              <li>Keep text to a minimum.</li>
+              <li>Google the &#8216;Rule of 3&#8217; if you don&#8217;t know it.</li>
             </ul>
           </div>
-          <div class="right filled"><img src="assets/peter-kit-subscriber-growth.png" alt="Kit subscriber growth over 6 months" /></div>
+          <div class="right ph"></div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
+          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>How It Works — Slide 9</strong></p>
-        <p><strong>Beat:</strong> Walk through exactly what happens the moment a conversation is ready to go further, then name Phase 2 and 3 as separate, unpriced roadmap.</p>
-        <p><strong>Say:</strong> "A branded opt-in captures the contact into your Kit account, the platform that holds your list and sends the welcome sequence automatically. This runs alongside your sheet, it doesn't replace it. I'm not promising this grows you from 10 to 30, and I'm not promising it improves on what you're already doing, I can't back either of those up. Once that's built, Phase 2 moves your LinkedIn Newsletter subscribers in automatically, and Phase 3 adds one qualifying step so only corporates route anywhere that matters, both already priced on my site, just not part of today's offer, see the roadmap on slide 20."</p>
-        <p><strong>Watch out:</strong> Be explicit that Phase 2 and 3 are not part of today's offer. He confirmed directly (2026-08-23 DM) that he already has a working Google Sheet plus a deliberate 4-12 week cadence, no growth claim, no loss claim, no "fixing" claim survives that. Explain "Kit" in plain language the first time you say it, he doesn't know the brand.</p>
+        <p><strong>SLIDE OPTION — 2</strong></p>
+        <p><strong>Service Delivery (who/what/where/when/why/how)</strong></p>
+        <p><strong>Purpose:</strong> After laying out your big promise and key messages, it's time to explain exactly how you deliver. Break down who's involved, what steps are taken, where and when things happen, and how you back up your claims. This is where you show off your expertise and prove you're the real deal.</p>
+        <p><strong>Why?</strong> Without a clear understanding of your process and expertise, doubts creep in. People need to see how you make the magic happen, so they trust you can deliver on your promises.</p>
+        <p><strong>Pro-tip:</strong> Skip the info dump in your slides. Use real work you've already developed to explain and sell trust. Show your process, results, and past projects to back up what you're saying. When people see the awesome stuff you've already created, it's easier for them to trust that you'll deliver the same quality for them. Let your work prove the value.</p>
       </aside>
     </section>
 
@@ -1237,86 +1242,94 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">You Might Be Thinking&#8230;</div>
         <div class="objections-grid">
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Isn't this Substack again?</div>
-            <p>Fair. It's the writing you already do, not a new app.</p>
+            <div class="ppd-headline-sm">Isn't this just more lead-gen?</div>
+            <p>No cold outreach. This works your existing 1,100-person list first, before anyone new ever gets a message.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">No time to manage a list?</div>
-            <p>Ten days, a short checklist from you, no tech.</p>
+            <div class="ppd-headline-sm">Is my list even big enough?</div>
+            <p>1,100 is smaller than most case studies you'll see. At your price point, a handful of real buyers is a home run.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Worried this is a big ask?</div>
-            <p>Live in 10 days or I keep building free, that's the actual guarantee.</p>
+            <div class="ppd-headline-sm">Will this eat my team's time?</div>
+            <p>Semi-automated on purpose. You and your team make the calls that close &#163;19,500, the system just tells you who to call.</p>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>Preemptive Objections — Slide 10</strong></p>
-        <p><strong>Beat:</strong> Name the Substack doubt before he has to raise it himself.</p>
-        <p><strong>Say:</strong> "You might be thinking, isn't this just Substack again? Totally fair, you already burned out on one platform. The difference is this lives inside the LinkedIn writing you're already doing, not a new thing to check."</p>
-        <p><strong>Watch out:</strong> Don't fully resolve the objection here, let slides 11 and 12 do the proving.</p>
+        <p><strong>Objections &#8212; Slide 10</strong></p>
+        <p><strong>Beat:</strong> Name the exact objection Arnd raised on Call 1 before he can raise it again.</p>
+        <p><strong>Say:</strong> "You asked me directly last time, how is this different from other lead-gen consultants. Fair question, I hear it a lot. The difference is this never touches anyone new, it works the 1,100 people you already have."</p>
+        <p><strong>Watch out:</strong> Don't fully resolve it here, that's what slides 11 to 14 are for.</p>
+        <p><strong>IMPORTANT &#8212; the size comparison is actually better than the deck's headline number suggests, but don't turn it into a projected count for Arnd:</strong> Peter Sorgenfrei has 70,000 LinkedIn followers overall, but the 29 buyers came from asking his 1,700-person regular email newsletter, not the 70,000. That's a list much closer to Arnd's own 1,100 than "70,000" makes it sound. Say the real comparison out loud so he doesn't anchor on the wrong number himself: "Those 29 didn't come from 70,000 people, they came from a list of 1,700, so this is a lot closer to your situation than it looks at first." Do NOT follow this with a specific projected number for Arnd's own list (no "so you'd probably get X") &#8212; that's a promise nobody can back up before the system runs. If price comes up as a worry, the fallback is his own economics: at &#163;19,500 a sale, it doesn't take many real conversations to be worth it.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Customer Wins</div>
+        <div class="ppd-eyebrow">Real Results</div>
         <div class="wins-grid">
           <div class="ppd-card">
             <div class="stat">29</div>
-            <div class="label">New Clients</div>
-            <p class="body">A 3-question survey on his list surfaced 29 people exactly who Peter was looking for.</p>
+            <div class="label">New Buyers</div>
+            <p class="body">Peter Sorgenfrei asked his 1,700-person newsletter 3 questions. 29 came back ready to buy.</p>
+            <div class="proof-circle"><img src="https://cdn.prod.website-files.com/62729ca9393e4e7139e2d68a/62b42ab5a08ac70ea088b31c_PeterSorgenfrei_01.jpg" alt="Peter Sorgenfrei" /></div>
             <div class="proof-name">Peter Sorgenfrei</div>
           </div>
           <div class="ppd-card">
             <div class="stat">1,624</div>
             <div class="label">New Subscribers</div>
-            <p class="body">Opened her LinkedIn Newsletter as homework. Subscribers followed in 3 days, no cold outreach.</p>
-            <div class="proof-name">Ica</div>
+            <p class="body">Opened her LinkedIn Newsletter. 1,624 followed in 3 days, no cold outreach.</p>
+            <div class="proof-circle"></div>
+            <div class="proof-name">Ica, Asset Bolt client</div>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>Customer Wins — Slide 11</strong></p>
-        <p><strong>Beat:</strong> Back the objection-crusher with two real, specific results. (Trimmed from 3 to 2 cards 2026-08-22 — matches slides/schema.json's current 2-card default; the 3rd card was Jeff Bettinger, dropped per Shlomo's instruction, plus it was shown with a mismatched Skool logo and a template-placeholder photo that were never his.)</p>
-        <p><strong>Say:</strong> "Peter Sorgenfrei had the same 'no owned channel' problem, three questions surfaced 29 people he didn't know were there. And Ica opened her LinkedIn Newsletter as homework, 1,624 subscribers followed in 3 days, no cold outreach, that's the exact mechanism your Phase 1 build sits on top of."</p>
-        <p><strong>Watch out:</strong> Ica's card is a general Asset Bolt proof point, not Kai-specific, keep it framed that way if he asks. Neither card has a real headshot/logo asset on file, don't add a placeholder image, the stat and name carry the card.</p>
+        <p><strong>Customer Wins &#8212; Slide 11</strong></p>
+        <p><strong>Beat:</strong> Receipts, right after the objection slide.</p>
+        <p><strong>Say:</strong> "Peter Sorgenfrei asked his 1,700-person regular newsletter three questions, no idea who was ready to buy. 29 real buyers surfaced. Ica opened her LinkedIn Newsletter and picked up 1,624 subscribers in 3 days doing nothing but that."</p>
+        <p><strong>Watch out:</strong> Ica's card intentionally has no photo &#8212; don't add one, no verified real photo exists for her in this kit's assets. Also watch out: Peter DOES have 70,000 LinkedIn followers total, but that number is not what the 29 came from &#8212; don't let it slip back in as if it were the sample size, that's the exact conflation this slide used to make (fixed 2026-09-07).</p>
+        <p><strong>IMPORTANT:</strong> Be ready for "wait, is that 29 out of 70,000?" &#8212; the honest answer is no, it's 29 out of 1,700, which is much closer to Arnd's own 1,100 than the old framing implied. Say that plainly if asked. Don't multiply it out into a specific number for Arnd's own list.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;I had no idea they were sitting there.&#8221;</p>
+          <p class="quote">&#8220;29 people came back. I had no idea they were there.&#8221;</p>
           <div class="quote-author">
-            <div class="meta">Peter Sorgenfrei<br/>Advisor to CEOs &amp; Founders</div>
+            <img src="https://cdn.prod.website-files.com/62729ca9393e4e7139e2d68a/62b42ab5a08ac70ea088b31c_PeterSorgenfrei_01.jpg" alt="Peter Sorgenfrei" />
+            <div class="meta">Peter Sorgenfrei<br/>Advisor to CEOs</div>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>Customer Testimonial — Slide 12 (REWRITTEN 2026-08-22)</strong></p>
-        <p><strong>Beat:</strong> Let one short, real quote close out the proof section. Was Jeff Bettinger's "He is the best I have seen," dropped along with his testimonial (see slide 11) — now Peter Sorgenfrei's own line, pulled from the same quote already used on slide 11, so it lands as reinforcement, not a new claim.</p>
-        <p><strong>Say:</strong> "Peter put it simply: 'I had no idea they were sitting there.' Twenty-nine people, on a list he already had."</p>
-        <p><strong>Watch out:</strong> Don't over-narrate the quote, let it sit on screen a beat before moving on. No real headshot exists for Peter, the attribution is text-only on purpose, don't add a placeholder photo.</p>
+        <p><strong>Customer Testimonial &#8212; Slide 12</strong></p>
+        <p><strong>Beat:</strong> Let the quote do the work, then tell the story behind it.</p>
+        <p><strong>Say:</strong> "Peter said this to me himself &#8212; he had no idea those 29 people were sitting on his list. That's exactly the moment I want for you on your 1,100."</p>
+        <p><strong>Watch out:</strong> Don't just read the quote out loud &#8212; add the story behind it.</p>
       </aside>
     </section>
 
-    <section data-visibility="hidden" data-bg-token="bg-light">
+    <section data-bg-token="bg-light" data-visibility="hidden">
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Our Customers</div>
         <div class="customers-headline">
@@ -1342,6 +1355,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
         </div>
       </div>
+    
       <aside class="notes">
         <p><strong><em>OPTIONAL SLIDE — CUSTOMER LOGOS</em></strong></p>
         <p><strong>Story Time (Trust)</strong></p>
@@ -1355,20 +1369,21 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-dark">
         <div class="ppd-eyebrow">Why Asset Bolt?</div>
         <div class="why-hero">
-          <h2 class="ppd-headline-md">Done For You, Not Another Dashboard To Learn.</h2>
-          <p class="ppd-body-lg ppd-muted-inv">You don't configure this yourself. I build it, the same system that surfaced Peter 29 buyers and moved 1,624 people onto Ica's own list, and hand you something already working.</p>
+          <h2 class="ppd-headline-md">We don&#8217;t scrape or cold-message. We work the list you already have, then let you and your team close.</h2>
+          <p class="ppd-body-lg ppd-muted-inv">Dripify turns rented LinkedIn followers into an owned list. RightMessage sorts who&#8217;s ready to pay &#163;19,500 from who&#8217;s just reading. Semi-automated, on purpose, so no bot ever tries to close your program.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>Unique Mechanism — Slide 14</strong></p>
-        <p><strong>Beat:</strong> Name why this build is aimed at something specific, not a generic tool he'd have to figure out himself.</p>
-        <p><strong>Say:</strong> "You're not the one setting this up. I build it myself, it's the same system that got Peter 29 buyers off a list he already had, and moved 1,624 people onto Ica's list in three days. You get something already working, not a dashboard to figure out."</p>
-        <p><strong>Watch out:</strong> Avoid the word "unique," let the mechanism itself carry the contrast instead of claiming it. Don't say "no new platform," he is learning Kit, and Migration later needs his own LinkedIn Newsletter too, both real.</p>
+        <p><strong>Unique Mechanism &#8212; Slide 14</strong></p>
+        <p><strong>Beat:</strong> Name the mechanism plainly, tie it back to his own Call 1 objection.</p>
+        <p><strong>Say:</strong> "This isn't cold outreach dressed up. It's your own list, worked properly, with you and your team making the calls that actually close &#163;19,500 &#8212; that's the whole reason it's semi-automated, not a bot."</p>
+        <p><strong>Watch out:</strong> Avoid the word 'unique' &#8212; let the mechanism itself do the differentiating.</p>
       </aside>
     </section>
 
@@ -1377,29 +1392,30 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">The Team</div>
         <div class="team-grid">
           <div class="person">
-            <div class="avatar"><img src="assets/brand/shlomo profile pic linkedin.jpg" alt="Shlomo Freund" /></div>
+            <div class="avatar" style="background-image:url('assets/brand/shlomo profile pic linkedin.jpg');background-size:cover;background-position:center;"></div>
             <div class="name">Shlomo Freund</div>
             <div class="role">Founder</div>
-            <p>Built AppInChina. Now turns LinkedIn followers into owned lists for independent experts.</p>
+            <p>Email segmentation engineer turned audience architect. Built AppInChina.</p>
           </div>
           <div class="person">
-            <div class="avatar"><img src="assets/brand/France Angelo Galvez profile pic.png" alt="France Galvez" /></div>
+            <div class="avatar" style="background-image:url('assets/brand/France Angelo Galvez profile pic.png');background-size:cover;background-position:center;"></div>
             <div class="name">France Galvez</div>
             <div class="role">Tech Lead</div>
-            <p>Handles every Kit and RightMessage build so each client goes live on time.</p>
+            <p>Handles the technical build of every Kit and RightMessage setup so every client goes live on time.</p>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>The Team — Slide 15 (real photos wired in 2026-08-22)</strong></p>
-        <p><strong>Beat:</strong> Put a name and face to who's actually building this. Avatars were empty checkerboard placeholders in every past deck built from this kit, real photos exist in assets/brand/ and are now wired in at the template level so future decks inherit this fixed.</p>
-        <p><strong>Say:</strong> "It's me and France on the technical side, she handles the Kit and RightMessage build so it lands correctly and on time."</p>
-        <p><strong>Watch out:</strong> Trimmed to the 2 real Asset Bolt team members, don't invent more to fill a wider grid.</p>
+        <p><strong>The Team &#8212; Slide 15</strong></p>
+        <p><strong>Beat:</strong> Show there's a real two-person team behind the build, not a solo hustle.</p>
+        <p><strong>Say:</strong> "It's me and France on delivery &#8212; I handle the strategy and the calls, France handles the technical build, so nothing sits waiting on one person."</p>
+        <p><strong>Watch out:</strong> Keep this brief &#8212; it's a trust signal, not the main event.</p>
       </aside>
     </section>
 
@@ -1407,70 +1423,74 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide" style="padding:0;">
         <div class="future-split">
           <div class="left">
-            <h1>The<br/>Future If<br/>We Work<br/>Together.</h1>
+            <h1>The<br/>Future,<br/>Already<br/>Waiting.</h1>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <p>That's what Migration ($500/month) and the full System ($4,500 setup plus $2,500/month) already do for Peter, whenever you're ready for either.</p>
+            <p>In 5-6 weeks you&#8217;ll know who on your list is ready to join. Next: phase three writes personalized emails for you, automatically, ready in your inbox.</p>
             <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>Future Vision — Slide 16</strong></p>
-        <p><strong>Beat:</strong> Callback only, don't re-tell the Peter story in full, that's already been told on slide 2. Land the real prices here.</p>
-        <p><strong>Say:</strong> "Remember Peter's story from the start? That's Migration and the full System, already real, already priced. $500 a month, or $4,500 plus $2,500 a month, whenever you're ready for either."</p>
-        <p><strong>Watch out:</strong> Don't repeat the full Peter narrative again, slide 2 already did that work, repeating it reads as padding. This slide's only job now is landing the real numbers on the back of a story he already heard.</p>
+        <p><strong>Future Vision &#8212; Slide 16</strong></p>
+        <p><strong>Beat:</strong> Install the after-state, then tease what comes next without pitching it yet.</p>
+        <p><strong>Say:</strong> "Picture six weeks from now: you know exactly who's ready. And once that's flowing, phase three plugs in &#8212; personalized outreach emails written from what the system knows, landing ready to send in your inbox."</p>
+        <p><strong>Watch out:</strong> Phase three is not priced or sold today &#8212; keep this as vision, not an offer.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Today's Offer - Newsletter Foundation</div>
+        <div class="ppd-eyebrow">Today&#8217;s Offer - The Buyer-Ready System</div>
         <div class="todays-offer">
-          <h3>Build The Foundation For What You Already Saw, in Just 10 Days, for $1,500.</h3>
-          <p>Your own account, opt-in, and a welcome sequence, live in 10 days. The first real piece of the bigger picture you just saw.</p>
-          <p class="closer">Stay with me, I'll walk you through everything you get next.</p>
+          <h3>Know who's ready to join, in 5-6 weeks, all for $7,500.</h3>
+          <p>No more guessing which of your 1,100 subscribers is close to paying &#163;19,500. It's your own list, sorted, ready for real conversations.</p>
+          <p class="closer">Here's exactly what's included.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>Today's Offer — Slide 17</strong></p>
-        <p><strong>Beat:</strong> Name the offer, the price, and the reason $1,500 is a reasonable ask together, don't let the price sit there unjustified until slide 21.</p>
-        <p><strong>Say:</strong> "Here's exactly what today's offer is: the Newsletter Foundation Build. Live in 10 days for $1,500 flat, the first real piece of the picture I just showed you. I'm not telling you this fixes something broken, I'm telling you it's the cheapest, fastest way to be ready to go deeper the moment you want to."</p>
-        <p><strong>Watch out:</strong> Don't list every inclusion here, that's slide 18's job. Keep this slide about the promise and the reason the price is low-risk, not the itemization.</p>
-        <p><strong>Alternative to offer verbally, not on any slide (added 2026-08-25):</strong> If Kai leans toward the retainer path, Phase 1 is free in exchange for a 6-month Migration commitment (6 x $500 = $3,000 total). Billing starts once his own LinkedIn Newsletter is live, a 30-45 minute setup on his end, not today. Only raise this if the conversation naturally opens toward Migration, don't lead with it, it's a second option, not a replacement for the $1,500 standalone offer.</p>
+        <p><strong>Today's Offer &#8212; Slide 17</strong></p>
+        <p><strong>Beat:</strong> Name the offer and the price together, confidently, no hedging.</p>
+        <p><strong>Say:</strong> "Here's exactly what today's offer is: The Buyer-Ready System, $7,500, live in five to six weeks. Let me walk you through what's actually in it."</p>
+        <p><strong>Watch out:</strong> Don't over-explain the price here &#8212; that's the guarantee slide's job to reinforce.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">What's Included?</div>
+        <div class="ppd-eyebrow">What&#8217;s Included?</div>
         <div class="inclusions-grid">
-          <div class="ppd-card"><div class="ppd-headline-sm">Kit Account</div><p class="body ppd-body-md ppd-muted">Your own list system, free tier, no upgrade needed for Phase 1.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Opt-In Page</div><p class="body ppd-body-md ppd-muted">A signup page tied to the LinkedIn writing you already do.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Welcome Set</div><p class="body ppd-body-md ppd-muted">Three emails that keep talking once someone signs up.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">10-Day Build</div><p class="body ppd-body-md ppd-muted">Live and working within 10 days of kickoff, guaranteed.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">List Import</div><p class="body ppd-body-md ppd-muted">Your 1,100 LinkedIn subscribers scraped, ready to message.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">DM Sequence</div><p class="body ppd-body-md ppd-muted">Written, approved, sent from your own LinkedIn account.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Owned List</div><p class="body ppd-body-md ppd-muted">A real list you own, not rented from LinkedIn.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Data Layer</div><p class="body ppd-body-md ppd-muted">RightMessage collects real data on who's ready to join.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Buyer Sort</div><p class="body ppd-body-md ppd-muted">Sorts book readers from consultants ready to pay &#163;19,500.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Opt-In Only</div><p class="body ppd-body-md ppd-muted">Self opt-in only, nothing added without their own click.</p></div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>What's Included — Slide 18</strong></p>
-        <p><strong>Beat:</strong> Make the four real deliverables concrete and easy to point back to.</p>
-        <p><strong>Say:</strong> "Four things: your Kit account, an opt-in page tied to your writing, a three-email welcome set, and the whole thing live in 10 days. Kit's free tier covers all of this, you don't need to upgrade anything for Phase 1. If you ever go further, Phase 2 and 3 would need a paid Kit plan plus Dripify and RightMessage, but that's a later decision, not today's."</p>
-        <p><strong>Watch out:</strong> Trimmed to the 4 real Phase 1 inclusions, matching the "3-5 inclusions" rule, don't pad with filler. Be explicit Phase 1 needs zero upgrades from him.</p>
+        <p><strong>What's Included &#8212; Slide 18</strong></p>
+        <p><strong>Beat:</strong> Six concrete deliverables, not a vague feature list.</p>
+        <p><strong>Say:</strong> "Six pieces: your list gets scraped, the DM sequence goes out from your own account, you end up owning a real list, real data gets collected on each person, the qualifying layer sorts who's ready, and every opt-in is self-served, never added without their own click."</p>
+        <p><strong>Watch out:</strong> Timeframe/guarantee belongs on the guarantee slide (21), not here &#8212; this slide is deliverables only. Don't let a speed or delivery-date claim creep back into an inclusion card.</p>
       </aside>
     </section>
 
-    <section data-visibility="hidden" data-bg-token="bg-light">
+    <section data-bg-token="bg-light" data-visibility="hidden">
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Plans On Offer</div>
         <div class="plans-grid">
@@ -1520,6 +1540,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
         </div>
       </div>
+    
       <aside class="notes">
         <p><strong>ALTERNATIVE SLIDE OPTION FOR TIERED PRICING</strong></p>
         <p><strong>Tiered Pricing (The Offer)</strong></p>
@@ -1533,55 +1554,57 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">The Full Roadmap</div>
         <div class="bonus-grid">
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Phase 1: Live</div>
-            <p class="body ppd-muted">Your Kit account, opt-in, and welcome sequence, done.</p>
+            <div class="ppd-headline-sm">Phase 1</div>
+            <p class="body ppd-muted">Your list scraped, converted, and live in this build.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Phase 2: Import</div>
-            <p class="body ppd-muted">Migration, $500/mo, once your LinkedIn Newsletter is live.</p>
+            <div class="ppd-headline-sm">Phase 2</div>
+            <p class="body ppd-muted">RightMessage sorts who's ready to join, live in this build.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Phase 3: Route</div>
-            <p class="body ppd-muted">Full Asset Bolt System, $4,500 setup + $2,500/mo.</p>
+            <div class="ppd-headline-sm">Phase 3</div>
+            <p class="body ppd-muted">Personalized emails write themselves. Next, not now.</p>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>The Full Roadmap — Slide 20 (UN-HIDDEN and rebuilt 2026-08-22)</strong></p>
-        <p><strong>Beat:</strong> Was the generic hidden "48-Hour Bonus Offer" template placeholder. Shlomo flagged after reviewing that Phase 2 and Phase 3 weren't visible anywhere in the live run-through, only in speaker notes on slides 9/21. Rebuilt into an explicit 3-card roadmap (Phase 1 you're buying today, Phase 2 and 3 the vision if it proves useful) so the bigger system is actually on screen once, not just spoken.</p>
-        <p><strong>Say:</strong> "Quick look at where this goes if it's useful, and these aren't hypothetical, they're the two real products already live on my site. Phase 1, what you're getting today, live in 10 days. Phase 2 is LinkedIn Migration, $500 a month, that one needs your own LinkedIn Newsletter up and running first, since there's nothing to migrate until you have subscribers there. Phase 3 is the full Asset Bolt System, $4,500 setup plus $2,500 a month, one qualifying step so only the corporate side ever gets routed anywhere that matters. Neither's part of today's offer, just so you can see the shape of it."</p>
-        <p><strong>Watch out:</strong> Don't let this read as upselling, Phase 2/3 aren't for sale on this call, this is showing the real, already-priced vision per the tripwire framing, not pitching it. Say the LinkedIn Newsletter prerequisite plainly, don't let him assume Phase 2 works day one.</p>
+        <p><strong>The Full Roadmap &#8212; Slide 20</strong></p>
+        <p><strong>Beat:</strong> Recap what's actually being sold today (Phases 1-2) and make the future vision (Phase 3) visible, not just spoken.</p>
+        <p><strong>Say:</strong> "Just so the whole picture's in front of you: phases one and two are what today's $7,500 builds. Phase three, the personalized emails, isn't part of this yet, that's what comes next once the data's flowing."</p>
+        <p><strong>Ties to pricing:</strong> This is also where Phase 3 connects to the retainer conversation on slide 23 &#8212; adding Phase 3 later is what moves the $1,000/mo retainer toward the full $2,500/mo package. Don't oversell it or quote a date; just make sure he's seen where this goes.</p>
+        <p><strong>Watch out:</strong> No fake urgency, no "48-hour" framing &#8212; this is an honest roadmap recap, not a bonus pitch.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">The Guarantee</div>
+        <div class="ppd-eyebrow">Our Guarantee</div>
         <div class="guarantee-hero">
-          <h2 class="ppd-headline-md">Live In 10 Days, Or I Keep Working At No Extra Charge.</h2>
-          <p class="body ppd-body-lg">A Kit account, opt-in, and welcome sequence, live and working within 10 days of kickoff, guaranteed. If it's not done, I keep building until it is, at no extra charge.</p>
-          <p class="fine">This is Phase 1, the foundation for Migration and the full System when you're ready to go there. $1,500, one time, no retainer.</p>
+          <h2 class="ppd-headline-md">Live and running within 6 weeks, or Shlomo keeps building for free</h2>
+          <p class="body ppd-body-lg">This is a real build, not a template swap; 5-6 weeks is the honest estimate for converting your list and standing up the qualification system. If it isn't live and running by then, Shlomo keeps working at no extra cost until it is.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Your Credibility, Owned</span>
+          <span class="ppd-footer-mid">Buyers Already On The List</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>Our Guarantee — Slide 21</strong></p>
-        <p><strong>Beat:</strong> Lead with the promise, confidently, not the downside. Same facts as before, different posture, a guarantee, not a risk disclosure.</p>
-        <p><strong>Say:</strong> "Here's my guarantee, Kai: live and working within 10 days of kickoff, or I keep building until it is, no extra charge. This is Phase 1, the foundation for what you already saw, Migration at $500/month once your Newsletter is live, that's a 30-45 minute setup on your end, then the full Asset Bolt System at $4,500 setup plus $2,500/month, whenever you're ready to go there. $1,500, one time, today."</p>
-        <p><strong>Watch out:</strong> Don't undercut this by also claiming Phase 1 solves everything, the honesty about scope is the point. But don't lead with the downside either, that's what this slide used to do, lead with the promise, the capped cost is the fine print, not the headline.</p>
+        <p><strong>Our Guarantee &#8212; Slide 21</strong></p>
+        <p><strong>Beat:</strong> Reverse the risk on timeline, the thing most likely to worry him given the scope.</p>
+        <p><strong>Say:</strong> "Five to six weeks is the honest number for a build this size. If it runs long, that's on me, I keep working at no extra charge until it's live."</p>
+        <p><strong>Watch out:</strong> Don't promise results here, only the build timeline &#8212; no completed case study exists yet for this exact combination on Arnd's own list.</p>
       </aside>
     </section>
 
-    <section data-visibility="hidden" data-bg-token="bg-light">
+    <section data-bg-token="bg-light" data-visibility="hidden">
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Special Offer</div>
         <div class="offer-card">
@@ -1598,6 +1621,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
         </div>
       </div>
+    
       <aside class="notes">
         <p><strong>Drop The Mic Again (Urgency &amp; Scarcity)</strong></p>
         <p><strong>Purpose:</strong> Push for immediate action by emphasising limited availability and/or time-sensitive pricing.</p>
@@ -1611,22 +1635,22 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="nextsteps-split">
           <div class="left">
             <div class="ppd-eyebrow">Next steps&#8230;</div>
-            <h3>Let's Build Your Foundation</h3>
-            <p>Kai, let's lock in kickoff. I need Kit account access and $1,500 upfront, then we're live within 10 days, no monthly retainer today.</p>
+            <h3>Let's get your list sorted before your first &#163;19,500 sale.</h3>
+            <p>$7,500 setup + $1,000/mo after launch. Plus Dripify + RightMessage, billed to you directly (roughly $250-450/mo). Shlomo starts this week.</p>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
             <div class="cta-card" id="ppd-cta-card" data-endpoint="/api/lead">
-              <p class="title">Ready to Start?</p>
+              <p class="title">Ready to start?</p>
               <div class="choices" role="radiogroup" aria-label="Your response">
                 <button type="button" class="choice-btn" data-choice="in" aria-pressed="false">
-                  <span>I'm in, let's go</span><span class="check">&#10003;</span>
+                  <span>I&#8217;m in! Let&#8217;s go.</span><span class="check">&#10003;</span>
                 </button>
                 <button type="button" class="choice-btn" data-choice="question" aria-pressed="false">
-                  <span>Got a question, but looks good</span><span class="check">&#10003;</span>
+                  <span>Got a question, but looks good!</span><span class="check">&#10003;</span>
                 </button>
                 <button type="button" class="choice-btn" data-choice="out" aria-pressed="false">
-                  <span>I'm out, let's not waste time</span><span class="check">&#10003;</span>
+                  <span>Not now, but stay in touch.</span><span class="check">&#10003;</span>
                 </button>
               </div>
               <form class="form" novalidate>
@@ -1655,21 +1679,23 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
               </form>
               <div class="success" role="status">
                 <div class="tick">&#10003;</div>
-                <h4 data-success-title>Thanks, you're on the list.</h4>
-                <p data-success-body>I'll follow up to lock in your kickoff date shortly.</p>
-                <a class="static-cta" data-static-cta>Book a call</a>
+                <h4 data-success-title>Thanks, talk soon.</h4>
+                <p data-success-body>Shlomo will follow up to get started.</p>
+                <a class="static-cta" data-static-cta>Let's talk next steps</a>
               </div>
             </div>
             <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
+
       <aside class="notes">
-        <p><strong>Clear Next Step — Slide 23</strong></p>
-        <p><strong>Beat:</strong> Make one unambiguous ask, then stop talking.</p>
-        <p><strong>Say:</strong> "Kai, let's lock in kickoff. I need Kit account access from you, and the $1,500 upfront, same as I do with everyone, then we're live in 10 days, no retainer today. Are you in?"</p>
-        <p><strong>Watch out:</strong> Don't recap the whole deck here. Make the ask and let the silence do the work.</p>
-        <p><strong>If he asks about the retainer path instead (added 2026-08-25):</strong> "Two ways to do this: $1,500 today, Phase 1 only, no retainer. Or Phase 1's free if you commit to 6 months of Migration, $500 a month, $3,000 total, billing starts once your Newsletter is live, that's a 30-45 minute setup on your end, not today. Your call." Only offer this if he raises it or clearly leans toward committing further, don't volunteer it as the default.</p>
+        <p><strong>Clear Next Step &#8212; Slide 23</strong></p>
+        <p><strong>Beat:</strong> One ask, then stop talking.</p>
+        <p><strong>Say:</strong> "So, are you in? If yes, I start this week and we're live in five to six weeks."</p>
+        <p><strong>Watch out:</strong> No recap of the previous 22 slides &#8212; make the ask and hold the silence.</p>
+        <p><strong>Don't forget:</strong> Say out loud that Dripify (~$39-59/mo) and RightMessage ($199/mo on Kit or GHL, $399/mo if he stays on HubSpot) are billed to him directly, on top of the $7,500. Ask which platform he wants BEFORE quoting the exact RightMessage number — HubSpot keeps his setup as-is but costs more monthly; moving to Kit/GHL is cheaper for him but is more build work on our side. This is a real decision to make together, not something to gloss over.</p>
+        <p><strong>On the $1,000/mo retainer:</strong> Covers the monthly Dripify re-scrape/re-upload and RightMessage tag upkeep after launch — the ongoing work that keeps the system current, not optional busywork. <strong>If he checks the website and asks why it's not the $4,500 + $2,500/mo listed there:</strong> that package is the full standing offer, including the personalized automation layer (Phase 3) this build is deliberately holding back for later. $7,500 setup is bigger than the site's $4,500 because this build combines two systems from a standing start (no existing list at all); $1,000/mo is smaller than the site's $2,500 because it does not yet include the automation piece. If he adds Phase 3 later, that's the point where this moves toward the full $2,500/mo, not before.</p>
       </aside>
     </section>
   </div>
