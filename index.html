@@ -447,10 +447,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 
 /* Slide 3 — What's Included? (4x3 grid) */
 .inclusions-grid {
-  position: absolute; left: 80px; right: 80px; top: 50%;
-  transform: translateY(-50%);
-  display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr;
-  gap: 32px;
+  position: absolute; left: 80px; right: 80px; top: 200px; bottom: 100px;
+  display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr);
+  gap: 24px;
 }
 .inclusions-grid .ppd-card {
   display: flex; flex-direction: column; justify-content: center;
@@ -460,7 +459,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .inclusions-grid .ppd-card .ppd-headline-sm { margin: 0 0 12px; }
 .inclusions-grid .ppd-card .body { margin: 0; }
 
-/* Slide 4 — Why {Company Name}? (dark) */
+/* Slide 4 — Why Asset Bolt? (dark) */
 .why-hero {
   position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -50%);
@@ -483,24 +482,6 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .offer-card .price { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 56px; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 14px; }
 .offer-card .spots { font-size: 28px; font-weight: 400; margin: 0 0 36px; }
 .offer-card p { font-size: 18px; line-height: 1.5; margin: 18px 0; }
-
-/* Slide 22 (repurposed 2026-09-09, was Special Offer/urgency) — Build Timeline */
-.timeline-grid {
-  position: absolute; left: 80px; right: 80px; top: 50%;
-  transform: translateY(-50%);
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;
-}
-.timeline-grid .ppd-card {
-  display: flex; flex-direction: column; text-align: center;
-  padding: 40px 26px;
-}
-.timeline-grid .week-label {
-  font-family: 'Inter', sans-serif; font-weight: 800; font-size: 15px;
-  letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-blue);
-  margin: 0 0 14px;
-}
-.timeline-grid .ppd-headline-sm { margin: 0 0 12px; }
-.timeline-grid .body { margin: 0; }
 
 /* Slide 6 — Our Customers (logo grid) */
 .customers-headline {
@@ -640,9 +621,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 
 /* Slide 15 — Team (dark, 5 portraits) */
 .team-grid {
-  position: absolute; left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-  display: grid; grid-template-columns: repeat(2, 320px); gap: 80px;
+  position: absolute; left: 80px; right: 80px; top: 50%;
+  transform: translateY(-50%);
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;
   text-align: center;
 }
 .team-grid .person .avatar {
@@ -766,7 +747,6 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   transform: translate(-50%, -50%);
   display: grid; grid-template-columns: repeat(2, 450px); gap: 18px;
 }
-.wins-grid.single { grid-template-columns: 520px; }
 .wins-grid .ppd-card {
   display: flex; flex-direction: column; align-items: center; text-align: center;
   padding: 48px 32px;
@@ -1009,15 +989,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <img src="assets/brand/asset_bolt_logo.svg" alt="Asset Bolt" />
           </div>
           <div class="content">
-            <h1 class="title">For Arnd Halbach</h1>
-            <p class="lede">How to know who on your list is ready to pay, before you message anyone.</p>
+            <h1 class="title">Meetings Waiting</h1>
+            <p class="lede">Turning meetings already sitting in Sinergy's LinkedIn network into real conversations.</p>
             <ul class="ppd-check-list">
-              <li>Convert LinkedIn subscribers into buyers</li>
-              <li>Know who's ready before you message</li>
-              <li>Own your list. Stop renting LinkedIn</li>
+              <li>10-20 meetings already in your network, by your own count</li>
+              <li>Built around your real fit criteria</li>
+              <li>Live in 5-6 weeks, guaranteed</li>
             </ul>
             <div class="ppd-cta-row">
-              <a class="ppd-pill-cta" href="#/1">Let's talk next steps</a>
+              <a class="ppd-pill-cta" href="#/1">See the full system</a>
             </div>
           </div>
         </div>
@@ -1025,104 +1005,104 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <img src="assets/brand/wordmark.svg" alt="Asset Bolt" />
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Cover &#8212; Slide 1</strong></p>
-        <p><strong>Beat:</strong> Set the frame: this deck exists to show Arnd exactly who on his own list is ready to join The Principals Group, before he sends anyone a message.</p>
-        <p><em><strong>Say:</strong> "Arnd, I put this together specifically off our call &#8212; how to find out who on your 1,100-person LinkedIn newsletter is actually ready to pay &#163;19,500 to join, before you spend another minute on someone who'll only ever read the book."</em></p>
-        <p><strong>Watch out:</strong> Don't rush past the cover &#8212; let the personalization land before moving to slide 2.</p>
+        <p><strong>Cover — Slide 1</strong></p>
+        <p><strong>Beat:</strong> Open with his own number, not a company pitch — this deck exists because of what he said on the last call.</p>
+        <p><strong>Say:</strong> "Nadav, you told me yourself there's 10 to 20 meetings sitting in your LinkedIn network right now that you haven't worked. This is what that actually looks like built."</p>
+        <p><strong>Watch out:</strong> Don't open with AssetBolt or the mechanism — open with his own confirmed number first, mechanism comes later.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-dark">
       <div class="ppd-slide bg-dark">
         <div class="intro-slide">
-          <h1>Nice to<br/>meet you<br/>Arnd!</h1>
-          <div class="subhead">Asset Bolt</div>
+          <h1>Nice to<br/>meet you<br/>Nadav!</h1>
+          <div class="subhead">Asset Bolt for Sinergy</div>
         </div>
         <div class="intro-brand">
           <svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>
           <span>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Icebreaker &#8212; Slide 2</strong></p>
-        <p><strong>Beat:</strong> Warm the room with a same-situation namedrop &#8212; don't preview the mechanism yet, that's slide 3's reveal to make.</p>
-        <p><em><strong>Say:</strong> "Good to get on properly, Arnd. Before we dive in &#8212; I'm working with another client right now, Peter Winick, in a really similar spot to you on LinkedIn. Good company to be in."</em></p>
-        <p><strong>Watch out:</strong> Don't say "owned list," "Dripify," or "mechanism" here &#8212; that language belongs to slide 3 onward, saying it now spoils the problem reveal. Also don't oversell Peter Winick's result &#8212; that piece is still mid-rollout for him, not a finished case study.</p>
+        <p><strong>Icebreaker — Slide 2</strong></p>
+        <p><strong>Beat:</strong> Land on his own words before anything else — this isn't a generic AssetBolt pitch.</p>
+        <p><strong>Say:</strong> "Good to be back on this after the reschedule. Everything from here is built off what you actually told me — where your leads land, what makes one a fit, and that line about your network."</p>
+        <p><strong>Watch out:</strong> Keep this short — one beat, then move. Don't recap the whole 09-29 call here, the deck does that itself slide by slide.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent-tint">
       <div class="ppd-slide bg-blue-tint">
         <div class="quote-slide tint">
-          <p class="quote">&#8220;I don't have a list I own myself. It's just those 1,100 people on LinkedIn.&#8221;</p>
+          <p class="quote">&#8220;Your real pipeline runs on referrals alone, and the network that could fix that just sits there, unworked.&#8221;</p>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>The Problem &#8212; Slide 3</strong></p>
-        <p><strong>Beat:</strong> This is Arnd's own line from Call 1, not a paraphrase &#8212; say so out loud before moving on.</p>
-        <p><em><strong>Say:</strong> "That's what you told me last time, word for word. The LinkedIn newsletter is your only channel, about 1,100 people, and today every one of them looks the same to you &#8212; the person who'll only ever read the book and the consultant who's ready to join next month are indistinguishable from where you're standing."</em></p>
-        <p><strong>Watch out:</strong> Don't let this feel abstract &#8212; tie it straight back to his own words about his buyer.</p>
+        <p><strong>The Problem — Slide 3</strong></p>
+        <p><strong>Beat:</strong> Say it plainly, let it sit for a second before moving on.</p>
+        <p><strong>Say:</strong> "You told me yourself — real revenue is referral-only, and there's a network sitting right there in your LinkedIn connections that you know has clients in it, that you just haven't had time to work."</p>
+        <p><strong>Watch out:</strong> Don't soften it with "but that's normal" — let the discomfort do its job for one beat.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent-tint">
       <div class="ppd-slide bg-blue-tint">
-        <div class="ppd-eyebrow">And It's Only Growing</div>
+        <div class="ppd-eyebrow">And It Compounds&#8230;</div>
         <div class="agitators-grid">
           <div>
-            <div class="ppd-headline-md">Every Book-Only Reader</div>
-            <p>Every newsletter issue treats a curious reader the same as a consultant ready to join next month.</p>
+            <div class="ppd-headline-md">The 5% Reality</div>
+            <p>Under 1 in 20 real conversations turns into a client. Every quiet month is real revenue that never showed up.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Interest You Can't Sort</div>
-            <p>People already message you about the program most weeks. You can't yet tell who's ready to join and who's just curious.</p>
+            <div class="ppd-headline-md">Ad Spend Doubt</div>
+            <p>You keep paying for Facebook leads you don&#8217;t fully trust, and you already know it.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">The List Only Grows Cold</div>
-            <p>The longer everyone looks the same, the colder your best 1,100 people get while you guess who to message.</p>
+            <div class="ppd-headline-md">The Network Sits</div>
+            <p>Every month it sits unworked is more meetings that quietly go find someone else.</p>
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Pain Agitators &#8212; Slide 4</strong></p>
-        <p><strong>Beat:</strong> Twist the knife: the cost of staying undifferentiated compounds every week, using what Arnd already told you (inbound interest twice a week, none of it sorted).</p>
-        <p><em><strong>Say:</strong> "You told me people already reach out asking about the program most weeks. But because that list still isn't one you actually own, you can't tell if that's someone ready to join or someone who'll only ever read the book &#8212; and every week that stays true, your best 1,100 get colder."</em></p>
-        <p><strong>Watch out:</strong> Don't hint at the fix yet &#8212; that's slide 5. Don't invent a competitor threat he never raised &#8212; his own real objection ("there's lots of consultants that wanna help you lead generate") gets addressed directly on slide 10, not here. Keep the "because you don't own it" clause &#8212; it's the thread that ties slide 3's quote to this slide, and it pays off explicitly later on slides 6, 18, and the cover.</p>
+        <p><strong>Pain Agitators — Slide 4</strong></p>
+        <p><strong>Beat:</strong> Three real numbers from his own two calls, not abstractions.</p>
+        <p><strong>Say:</strong> "Under 5% close rate, an ad spend you already don't fully trust, and a network that's just sitting there getting less recent every month you don't work it."</p>
+        <p><strong>Watch out:</strong> Don't soften the Facebook line — he already volunteered this himself, no need to hedge it back for him.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">&#8220;In 5-6 weeks, you'll know exactly who on your 1,100-person list is ready to pay &#163;19,500 to join.&#8221;</p>
+          <p class="quote">&#8220;Ten to twenty meetings already sitting in your LinkedIn network, turned into real conversations in 5-6 weeks, or Shlomo keeps building until it&#8217;s live, at no extra cost.&#8221;</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>The Big Promise &#8212; Slide 5</strong></p>
-        <p><strong>Beat:</strong> The relief moment after two slides of pain &#8212; just the promise, nothing about timeline risk or the guarantee yet.</p>
-        <p><em><strong>Say:</strong> "Here's the promise: in five to six weeks, you'll know exactly who on that list is ready to join."</em></p>
-        <p><strong>Watch out:</strong> Don't fold the guarantee ("or Shlomo keeps building for free") into this slide &#8212; that's slide 21's job and saying it twice muddies both. Keep it to the one sentence, no 'system' or 'platform' language.</p>
+        <p><strong>The Big Promise — Slide 5</strong></p>
+        <p><strong>Beat:</strong> One sentence, let it land, don't explain it yet.</p>
+        <p><strong>Say:</strong> "Ten to twenty meetings, real ones, out of a network you already have — live in five to six weeks, or I keep building at no extra cost until it is."</p>
+        <p><strong>Watch out:</strong> Don't jump into mechanism yet — that's slide 8. Let the promise breathe.</p>
       </aside>
     </section>
 
@@ -1131,31 +1111,30 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">Key Outcomes</div>
         <div class="outcomes-cols">
           <div>
-            <div class="ppd-headline-md">Know Who's Ready</div>
-            <p>Stop guessing. See exactly which of your 1,100 subscribers is ready to buy, before you ever send a message.</p>
+            <div class="ppd-headline-md">A List You Own</div>
+            <p>Your LinkedIn connections, converted into a real list — not rented from an algorithm that can change tomorrow.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">No More Wasted Calls</div>
-            <p>Every call you make goes to someone already flagged as ready to join, never a guess or a cold list.</p>
+            <div class="ppd-headline-md">Sorted, Not Guessed</div>
+            <p>Every lead tagged against your real fit criteria before you spend a minute on it.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Stop Renting LinkedIn</div>
-            <p>Your 1,100 subscribers become a real, owned list you keep, no matter what LinkedIn does next.</p>
+            <div class="ppd-headline-md">Less Manual Triage</div>
+            <p>The WhatsApp-then-maybe-a-call routine, done automatically for the ones worth your time.</p>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Key Outcomes &#8212; Slide 6</strong></p>
-        <p><strong>Beat:</strong> Translate the promise into three felt changes.</p>
-        <p><em><strong>Say:</strong> "By week three, you'll start seeing real data on your subscribers as RightMessage comes online. From there, three things change: you'll know exactly who's ready before you ever message them, every call you make goes to someone worth calling instead of a guess, and you'll own that list for good instead of renting it from LinkedIn."</em></p>
-        <p><strong>Fixed 2026-09-09:</strong> Was "Week one, you'll start seeing real data" &#8212; Shlomo flagged this as overcommitting on a platform-dependent step. Dripify list conversion runs first; RightMessage data doesn't start flowing until that's underway, realistically week 3, not week 1.</p>
-        <p><strong>Watch out:</strong> Keep this benefit-led &#8212; don't slide into describing the mechanism, that's slide 8. Don't repeat the &#163;19,500 figure here, it's already landed on the promise slide &#8212; hammering the number on every card reads as salesy.</p>
+        <p><strong>Key Outcomes — Slide 6</strong></p>
+        <p><strong>Beat:</strong> Three concrete outcomes, tied to what he specifically confirmed he wants.</p>
+        <p><strong>Say:</strong> "You own the list instead of renting reach off LinkedIn, every lead gets sorted against your real criteria instead of guessed at, and the WhatsApp-then-maybe-call routine you're doing by hand gets a head start."</p>
+        <p><strong>Watch out:</strong> Keep these as outcomes, not features — don't describe Dripify or RightMessage by name yet, that's slide 8.</p>
       </aside>
     </section>
 
@@ -1185,7 +1164,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--text-inverse);">
-          <span class="ppd-footer-left">{Company Name}</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
         </div>
       </div>
     
@@ -1209,15 +1188,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
               <li>Keep text to a minimum.</li>
               <li>Google the &#8216;Rule of 3&#8217; if you don&#8217;t know it.</li>
             </ul>
-            <div class="ppd-footer-mini">{Company Name}</div>
+            <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
             <div class="ph"></div>
-            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</div>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
-
+    
       <aside class="notes">
         <p><strong>SLIDE OPTION — 1</strong></p>
         <p><strong>Service Delivery (who/what/where/when/why/how)</strong></p>
@@ -1243,12 +1222,12 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <div class="right ph"></div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
         <p><strong>SLIDE OPTION — 2</strong></p>
         <p><strong>Service Delivery (who/what/where/when/why/how)</strong></p>
@@ -1263,33 +1242,30 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">You Might Be Thinking&#8230;</div>
         <div class="objections-grid">
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Isn't this just more lead-gen?</div>
-            <p>No cold outreach. This works your existing 1,100-person list first, before anyone new ever gets a message.</p>
+            <div class="ppd-headline-sm">Isn&#8217;t This Just Ads Again?</div>
+            <p>No, this reaches people who already know you.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Is my list even big enough?</div>
-            <p>1,100 is smaller than most case studies you'll see. At your price point, a handful of real buyers is a home run.</p>
+            <div class="ppd-headline-sm">Will It Feel Robotic?</div>
+            <p>Every message ties to something real about them, like yours did.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Will this eat my team's time?</div>
-            <p>No random dialing. The system flags who's ready, so every call your team makes is one worth making.</p>
+            <div class="ppd-headline-sm">Is the Retainer Worth It?</div>
+            <p>One deal from your own numbers covers a full year of it, easily.</p>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Objections &#8212; Slide 10</strong></p>
-        <p><strong>Beat:</strong> Name the exact objection Arnd raised on Call 1 before he can raise it again, then give all three cards their own beat &#8212; not just the first.</p>
-        <p><em><strong>Say:</strong> "You asked me directly last time, how is this different from other lead-gen consultants. Fair question, I hear it a lot. The difference is this never touches anyone new, it works the 1,100 people you already have. And I know 1,100 feels small next to some of the case studies out there &#8212; at your price point, it doesn't take many real buyers to make this worth it. On your team's time: there's no random dialing, the system flags who's ready so every call your team makes is one worth making. The one honest exception is Dripify's daily message to subscribers &#8212; that's a real daily send, best done by your side rather than left fully automated, because it converts noticeably better that way."</em></p>
-        <p><strong>Watch out:</strong> Don't fully resolve any of these here, that's what slides 11 to 14 are for &#8212; this is "name it and move on," not a deep defense of any single card.</p>
-        <p><strong>Fixed 2026-09-10 (Shlomo caught it):</strong> The "Say" script only ever addressed card 1 ("Isn't this just more lead-gen?") &#8212; cards 2 and 3 had supporting notes below but no actual line to say. Rewrote the script to give all three cards their own clause, in order.</p>
-        <p><strong>IMPORTANT &#8212; don't state a specific size for Peter's list, the number we had isn't confirmed:</strong> Peter Sorgenfrei has 70,000 LinkedIn followers overall, but the 29 buyers didn't come from that 70,000 &#8212; they came from asking his own owned list three questions. An earlier version of this deck said "1,700" for that list (from Shlomo's own recollection during the 2026-09-07 review, not a written number from Peter), but as of 2026-09-09 Shlomo is no longer confident in that figure and thinks it may now be closer to 5,000. Don't state either number to Arnd until it's confirmed with Peter directly. Do NOT follow this with a specific projected number for Arnd's own list either (no "so you'd probably get X") &#8212; that's a promise nobody can back up before the system runs. If price comes up as a worry, the fallback is his own economics: at &#163;19,500 a sale, it doesn't take many real conversations to be worth it.</p>
-        <p><strong>Added 2026-09-10 (Shlomo) &#8212; for the "Will this eat my team's time?" card:</strong> Be upfront that Dripify's daily message to subscribers works best as a real daily send, reviewed/sent by Arnd's side, not a fully automated blast left to run itself &#8212; that's exactly how it's set up for Peter Sorgenfrei, and from real experience running it, it converts noticeably better than pure automation. Frame it as a quick daily task that pays for itself in response rate, not hidden extra labor &#8212; say it plainly rather than let him discover it later. Keep this separate from the connection-count point (see slide 23's notes) &#8212; that one's for the kickoff call, not this slide.</p>
+        <p><strong>Objections — Slide 10</strong></p>
+        <p><strong>Beat:</strong> Say the doubts before he does — it reads as confidence, not deflection.</p>
+        <p><strong>Say:</strong> "You might be wondering if this is just another ad channel, or if the outreach feels robotic, or whether $1,700 a month is worth it. Fair questions — here's the honest answer to each."</p>
+        <p><strong>Watch out:</strong> Don't over-explain any one card — let slide 11's real proof do the convincing.</p>
       </aside>
     </section>
 
@@ -1307,17 +1283,16 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Customer Wins &#8212; Slide 11</strong></p>
+        <p><strong>Real Results — Slide 11</strong></p>
         <p><strong>Beat:</strong> One clean receipt, right after the objection slide.</p>
-        <p><em><strong>Say:</strong> "Here's the receipt. Peter Sorgenfrei asked his own list three questions, no idea who was ready to buy, and 29 real buyers surfaced. That's the exact mechanism I'm building for your 1,100."</em></p>
-        <p><strong>Watch out:</strong> Peter DOES have 70,000 LinkedIn followers total, but that number is not what the 29 came from &#8212; don't let it slip back in as if it were the sample size.</p>
-        <p><strong>IMPORTANT (fixed 2026-09-09):</strong> Be ready for "wait, is that 29 out of 70,000?" &#8212; the honest answer is no, it's 29 out of his own owned list, not the LinkedIn follower count. An earlier version of this deck said "1,700" for that list's size, but Shlomo is no longer confident in that number as of 2026-09-09 (he now thinks it may be closer to 5,000) &#8212; don't quote either figure until it's confirmed with Peter directly. Ica's LinkedIn-newsletter-growth stat (1,624 subscribers in 3 days from opening a brand-new newsletter) was also dropped from this slide: it's a real, verified number, but it answers a question Arnd isn't asking &#8212; he already has a LinkedIn newsletter, he needs it converted, not started.</p>
+        <p><strong>Say:</strong> "Peter Sorgenfrei asked his own list three questions, no idea who was ready to buy, and 29 real buyers surfaced. That's the exact mechanism going into your build."</p>
+        <p><strong>Watch out:</strong> Peter's world is books and consulting, not procurement &#8212; if he asks, be direct: this proves the mechanism works, not that it's been run for a company like his yet. Don't quote a list-size denominator for the 29 &#8212; it's 29 off his own owned list, not a percentage of anything.</p>
       </aside>
     </section>
 
@@ -1332,16 +1307,16 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Customer Testimonial &#8212; Slide 12</strong></p>
+        <p><strong>Customer Testimonial — Slide 12</strong></p>
         <p><strong>Beat:</strong> Let the quote do the work, then tell the story behind it.</p>
-        <p><em><strong>Say:</strong> "Peter said this to me himself &#8212; he had no idea those 29 people were sitting on his list. That's exactly the moment I want for you on your 1,100."</em></p>
-        <p><strong>Watch out:</strong> Don't just read the quote out loud &#8212; add the story behind it.</p>
+        <p><strong>Say:</strong> "Peter said this to me himself &#8212; he had no idea those 29 people were sitting on his list. That's the exact moment I want for you inside your own network."</p>
+        <p><strong>Watch out:</strong> Don't just read the quote out loud &#8212; add the one-sentence story behind it before moving on.</p>
       </aside>
     </section>
 
@@ -1366,9 +1341,9 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
           <div class="logo-circle"></div>
         </div>
         <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
     
@@ -1383,55 +1358,54 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 
     <section data-bg-token="bg-dark">
       <div class="ppd-slide bg-dark">
-        <div class="ppd-eyebrow">Why Asset Bolt?</div>
+        <div class="ppd-eyebrow">Why This Works</div>
         <div class="why-hero">
-          <h2 class="ppd-headline-md">We don&#8217;t scrape or cold-message. We work the list you already have, then let you and your team close.</h2>
-          <p class="ppd-body-lg ppd-muted-inv">Dripify turns rented LinkedIn followers into an owned list. RightMessage does the sorting, automatically, so you're never guessing who's ready. What happens after that is the same as any &#163;19,500 sale: a real conversation, with you or your team.</p>
+          <h2 class="ppd-headline-md">The same trust that gets you referrals now runs the outreach for you &#8212; systemized, not one-off.</h2>
+          <p class="ppd-body-lg ppd-muted-inv">You already know the mechanism works, you&#8217;ve run it by hand: research a zone, find the right contact, write something real. This runs it on your full network, continuously, not just when you have a free afternoon.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Unique Mechanism &#8212; Slide 14</strong></p>
-        <p><strong>Beat:</strong> Name the mechanism plainly, tie it back to his own Call 1 objection.</p>
-        <p><em><strong>Say:</strong> "This isn't cold outreach dressed up. The system does the hard part automatically &#8212; it tells you who's actually ready. Like I said on our first call: nobody buys a &#163;19,500 program off the internet, you still have to make the calls. This just makes sure you're making them to the right people."</em></p>
-        <p><strong>Watch out:</strong> Avoid the word 'unique' &#8212; let the mechanism itself do the differentiating. Don't frame the manual-call step as a deliberate feature to be grateful for ("so no bot tries to close your program") &#8212; that reads as excusing a limitation. Lead with what's automated (the finding), then state the human close as an unremarkable fact about how &#163;19,500 sales work, not a selling point in itself.</p>
+        <p><strong>Why This Works — Slide 14</strong></p>
+        <p><strong>Beat:</strong> Tie the system back to the manual version he already proved works himself.</p>
+        <p><strong>Say:</strong> "This isn't a new idea for you &#8212; you already did this by hand, one industrial zone at a time. This just runs it on your whole network, all the time, not only when you have a free afternoon."</p>
+        <p><strong>Watch out:</strong> Don't pitch this as a totally new concept &#8212; the credibility comes from it being HIS OWN proven method, automated.</p>
       </aside>
     </section>
 
-    <section data-bg-token="bg-dark">
+    <section data-bg-token="bg-dark" data-visibility="hidden">
       <div class="ppd-slide bg-dark">
         <div class="ppd-eyebrow">The Team</div>
         <div class="team-grid">
           <div class="person">
-            <div class="avatar" style="background-image:url('assets/brand/shlomo profile pic linkedin.jpg');background-size:cover;background-position:center;"></div>
-            <div class="name">Shlomo Freund</div>
-            <div class="role">Founder</div>
-            <p>Email segmentation engineer turned audience architect. Built AppInChina.</p>
+            <div class="avatar"></div>
+            <div class="name">FULL NAME</div>
+            <div class="role">ROLE</div>
+            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
           </div>
           <div class="person">
-            <div class="avatar" style="background-image:url('assets/brand/France Angelo Galvez profile pic.png');background-size:cover;background-position:center;"></div>
-            <div class="name">France Galvez</div>
-            <div class="role">Tech Lead</div>
-            <p>Handles the technical build of every Kit and RightMessage setup so every client goes live on time.</p>
+            <div class="avatar"></div>
+            <div class="name">FULL NAME</div>
+            <div class="role">ROLE</div>
+            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>The Team &#8212; Slide 15</strong></p>
-        <p><strong>Beat:</strong> Show there's a real two-person team behind the build, not a solo hustle.</p>
-        <p><em><strong>Say:</strong> "It's me and France on delivery &#8212; I handle the strategy and the calls, France handles the technical build, so nothing sits waiting on one person."</em></p>
-        <p><strong>Watch out:</strong> Keep this brief &#8212; it's a trust signal, not the main event.</p>
+        <p><strong>OPTIONAL SLIDE</strong></p>
+        <p><strong>Purpose:</strong> Highlight YOU, or EPIC team members. Only use this if it genuinely adds trust or fits well with your offer and service.</p>
+        <p><strong>Why:</strong> For high-ticket offers or big projects, or other scenarios, it can build trust by showing there's a team of specialists who won't let you down.</p>
       </aside>
     </section>
 
@@ -1439,46 +1413,44 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide" style="padding:0;">
         <div class="future-split">
           <div class="left">
-            <h1>The<br/>Future,<br/>Already<br/>Waiting.</h1>
+            <h1>The<br/>Network,<br/>Finally<br/>Working.</h1>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <p>In 5-6 weeks you&#8217;ll know who on your list is ready to join. Next: phase three writes personalized emails for you, automatically, ready in your inbox.</p>
+            <p>Six weeks from now, the meetings you already know are sitting in your network stop being a maybe and start showing up on your calendar.</p>
             <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Future Vision &#8212; Slide 16</strong></p>
-        <p><strong>Beat:</strong> Install the after-state, then tease what comes next without pitching it yet.</p>
-        <p><em><strong>Say:</strong> "Picture six weeks from now: you know exactly who's ready. And once that's flowing, phase three plugs in &#8212; personalized outreach emails written from what the system knows, landing ready to send in your inbox."</em></p>
-        <p><strong>Watch out:</strong> Phase three is not priced or sold today &#8212; keep this as vision, not an offer.</p>
+        <p><strong>Future Pacing — Slide 16</strong></p>
+        <p><strong>Beat:</strong> Put him six weeks out, calendar already filling.</p>
+        <p><strong>Say:</strong> "Six weeks from now, this isn't a maybe anymore &#8212; the meetings you already know are in your network start actually landing on your calendar."</p>
+        <p><strong>Watch out:</strong> Keep this short, one beat, then move straight into the offer.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Today&#8217;s Offer - The Buyer-Ready System</div>
+        <div class="ppd-eyebrow">Today&#8217;s Offer - Full Pipeline System</div>
         <div class="todays-offer">
-          <h3>Know who's ready to join, in 5-6 weeks &#8212; $7,500 setup + $1,700/mo after launch.</h3>
-          <p>No more guessing which of your 1,100 subscribers is close to paying &#163;19,500. It's your own list, sorted, ready for real conversations.</p>
-          <p class="closer">Here's exactly what's included.</p>
+          <h3>Turn your network into sorted, ready meetings in 5-6 weeks &#8212; $6,500 setup + $1,700/mo.</h3>
+          <p>Everything from today, built: your LinkedIn connections converted into a real list, every lead tagged against your real fit criteria, one system instead of two bills.</p>
+          <p class="closer">Here&#8217;s exactly what&#8217;s included, plus two lighter options if you&#8217;d rather start smaller.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Today's Offer &#8212; Slide 17</strong></p>
+        <p><strong>Today's Offer — Slide 17</strong></p>
         <p><strong>Beat:</strong> Name the offer and the price together, confidently, no hedging.</p>
-        <p><em><strong>Say:</strong> "Here's exactly what today's offer is: The Buyer-Ready System, $7,500 to build it, $1,700 a month to keep it running and growing after that, live in five to six weeks. Two platforms run separately underneath it, Dripify and RightMessage, roughly $250 to $450 a month depending which CRM we land on &#8212; I'll walk you through that choice before we're done. Let me show you what's actually in the $7,500 first."</em></p>
-        <p><strong>Watch out:</strong> Don't over-explain the price here &#8212; that's the guarantee slide's job to reinforce. Naming the retainer number is one clause, not a detour into what it covers &#8212; that breakdown lives on slide 23.</p>
-        <p><strong>Fixed 2026-09-09:</strong> The pass-through platform costs used to only get said out loud on the closing slide (23) &#8212; Shlomo flagged that as too late and making the offer feel vague when it's first stated. Say the rough monthly number here, at the very first price mention, then the detailed platform-choice conversation still happens in full on slide 23.</p>
-        <p><strong>Fixed 2026-09-10 (Shlomo caught it):</strong> Same problem, different number &#8212; the $1,700/mo retainer was only ever named on the closing slide, same complaint as the platform costs above. Added it to the headline and the first price mention here, for the same reason: don't introduce the full cost picture for the first time on the last slide of the deck.</p>
+        <p><strong>Say:</strong> "Here's the offer: the Full Pipeline System, $6,500 to build it, $1,700 a month to keep it running after that, live in five to six weeks. Let me show you what's actually in the $6,500."</p>
+        <p><strong>Watch out:</strong> Don't over-explain the price here &#8212; that's the guarantee slide's job. Say the retainer number once, clearly, and move on.</p>
       </aside>
     </section>
 
@@ -1486,124 +1458,117 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">What&#8217;s Included?</div>
         <div class="inclusions-grid">
-          <div class="ppd-card"><div class="ppd-headline-sm">Dripify Sync</div><p class="body ppd-body-md ppd-muted">Your 1,100 LinkedIn subscribers converted into a real list.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Platform Setup</div><p class="body ppd-body-md ppd-muted">RightMessage's own fee is lower when paired with Kit or GHL than with HubSpot.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Data Layer</div><p class="body ppd-body-md ppd-muted">RightMessage collects real data on who's ready to join.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Buyer Sort</div><p class="body ppd-body-md ppd-muted">Sorts book readers from consultants ready to pay &#163;19,500.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Ready Alerts</div><p class="body ppd-body-md ppd-muted">A digest every 3 days of exactly who's flagged as ready to join.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Self-Qualified Leads</div><p class="body ppd-body-md ppd-muted">Every "ready" flag comes from their own click, not a guess &#8212; so the calls you make are warm ones.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Kickoff Call</div><p class="body ppd-body-md ppd-muted">A dedicated call to align on priorities before Shlomo starts building.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Kit Setup</div><p class="body ppd-body-md ppd-muted">Kit account, signup page, and domain authentication done for you.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">List Sync</div><p class="body ppd-body-md ppd-muted">Your LinkedIn connections converted into a real, owned list.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Qualifying</div><p class="body ppd-body-md ppd-muted">A qualifying layer built around your actual fit criteria.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Lead Tags</div><p class="body ppd-body-md ppd-muted">Every lead tagged and sorted before you spend time on it.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Kickoff Call</div><p class="body ppd-body-md ppd-muted">A dedicated call to align on priorities before building starts.</p></div>
           <div class="ppd-card"><div class="ppd-headline-sm">Sync Calls</div><p class="body ppd-body-md ppd-muted">Every 2 weeks, review the data and decide what gets built next.</p></div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
-        </div>
-      </div>
-
-      <aside class="notes">
-        <p><strong>What's Included &#8212; Slide 18</strong></p>
-        <p><strong>Beat:</strong> Eight concrete deliverables, not a vague feature list &#8212; the build (Dripify, Platform Setup, Data Layer, Buyer Sort, Ready Alerts, Self-Qualified Leads) and the retainer that keeps it running (Kickoff Call, Sync Calls).</p>
-        <p><em><strong>Say:</strong> "Eight pieces: Dripify converts your list, RightMessage gets connected to Kit or GHL &#8212; RightMessage's own fee runs cheaper there than it does on HubSpot &#8212; real data gets collected on each person, the qualifying layer sorts who's ready, you get a digest every 3 days of who just qualified, every one of those flags comes from their own click, never a guess, we kick the retainer off with a dedicated planning call, and every 2 weeks after that we look at the data together and decide what to build next."</em></p>
-        <p><strong>Watch out:</strong> Timeframe/guarantee belongs on the guarantee slide (21), not here &#8212; this slide is deliverables only. Don't let a speed or delivery-date claim creep back into an inclusion card. Don't say "DM sequence" or "scraped" &#8212; there is no batch DM blast in this build, the real deliverable is Dripify list conversion plus RightMessage-flagged calls that Arnd's team makes themselves.</p>
-        <p><strong>Fixed 2026-09-09 (Shlomo review pass):</strong> Dropped the "Owned List" card — it restated the result of Dripify Sync, not a separate thing Asset Bolt does. Renamed "Opt-In Only" to "Self-Qualified Leads" and tied it to a real benefit (warmer calls) instead of just restating the obvious compliance fact. Added "Platform Setup" as a 6th card, sourced from brief.yaml's price_addon_note (Arnd is deciding between Kit/GHL and staying on HubSpot, and that decision is real build work, not just a pass-through cost) — this was previously only spoken in slide 23's notes, never shown as a deliverable here.</p>
-        <p><strong>Fixed 2026-09-09 (second pass, Shlomo caught it):</strong> "Ready Alerts" was first written as a daily-morning digest, then caught the same day &#8212; the $1,700/mo retainer is scoped as Dripify/RightMessage upkeep, not an email-sending service (that only exists in Phase 3, which isn't in this build). Promising a daily manual send is unscoped ongoing labor Shlomo didn't price in. Changed to every 3 days &#8212; a "ready" flag doesn't go stale in a day, and this is a cadence Shlomo can actually sustain long-term across multiple retainer clients.</p>
-        <p><strong>Fixed 2026-09-10 (Shlomo caught it):</strong> The $1,500/mo retainer appeared nowhere in the deck except a self-directed note on the closing slide &#8212; the prospect never actually saw what the retainer buys. Added "Kickoff Call" and "Sync Calls" as cards 7 and 8: the retainer is Dripify upkeep + RightMessage upkeep/forward-builds decided on a call every 2 weeks, starting with a kickoff call. Now a standing rule for every retainer deck &#8212; see `CLAUDE.md` Golden Rule 9.</p>
-        <p><strong>Fixed 2026-09-10 (Shlomo, pricing-calc session):</strong> Raised retainer from $1,500/mo to $1,700/mo &#8212; Dripify stays $500/mo, RightMessage upkeep + forward-builds moved from $1,000/mo to $1,200/mo (was underpriced against the actual scope). The Kickoff Call/Sync Calls cards themselves are unchanged; only the dollar figure spoken elsewhere (slide 17, slide 23) moved.</p>
-        <p><strong>Fixed 2026-09-10 (Shlomo caught it):</strong> "Platform Setup" card and the "Say" line both read as if Kit/GHL is a cheaper platform than HubSpot generally &#8212; it's actually RightMessage's own integration fee that's cheaper on Kit/GHL ($199) vs HubSpot ($399), nothing about the CRM platforms' own costs. Reworded both to say "RightMessage's own fee," not "cheaper to run." Also flagged on slide 23: if Arnd actually switches to Kit/GHL, that platform's own subscription cost isn't priced anywhere in this deck yet &#8212; needs a real number before it's quoted to him.</p>
-      </aside>
-    </section>
-
-    <section data-bg-token="bg-light" data-visibility="hidden">
-      <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Plans On Offer</div>
-        <div class="plans-grid">
-          <div class="plan">
-            <div class="plan-title">Plan 1</div>
-            <div class="plan-result">Get [Result] Without [Biggest Pain] &#8211; In Just [Timeframe]</div>
-            <div class="plan-price">$XX</div>
-            <ul>
-              <li>INCLUSION</li>
-              <li>INCLUSION</li>
-              <li>INCLUSION</li>
-              <li>INCLUSION</li>
-            </ul>
-          </div>
-          <div class="plan">
-            <div class="plan-title">Plan 2</div>
-            <div class="plan-result">Get [Additional Value] &#8211; In Just [Timeframe]</div>
-            <div class="plan-price">$XX</div>
-            <ul>
-              <li>Everything in Plan 1 plus:
-                <ul>
-                  <li>INCLUSION</li>
-                  <li>INCLUSION</li>
-                  <li>INCLUSION</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="plan">
-            <div class="plan-title">Plan 3</div>
-            <div class="plan-result">Get [Additional Value] &#8211; In Just [Timeframe]</div>
-            <div class="plan-price">$XX</div>
-            <ul>
-              <li>Everything in Plan 1 &amp; Plan 2 plus:
-                <ul>
-                  <li>INCLUSION</li>
-                  <li>INCLUSION</li>
-                  <li>INCLUSION</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="ppd-footer">
-          <span class="ppd-footer-left">{Company Name}</span>
-          <span class="ppd-footer-mid">{Memorable Pitch Name}</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Acme Corp</span>
         </div>
       </div>
     
       <aside class="notes">
-        <p><strong>ALTERNATIVE SLIDE OPTION FOR TIERED PRICING</strong></p>
-        <p><strong>Tiered Pricing (The Offer)</strong></p>
-        <p><strong>Purpose:</strong> Present tiered, value-packed offers with clear outcomes and inclusions for each pricing option.</p>
-        <p><strong>Pro-Tip:</strong> Use decoy pricing to make the ideal tier appear like the best value by design.</p>
+        <p><strong>What's Included — Slide 18</strong></p>
+        <p><strong>Beat:</strong> Six concrete pieces &#8212; the build, then the retainer that keeps it running.</p>
+        <p><strong>Say:</strong> "Six pieces: Kit gets set up, your LinkedIn connections get converted into a real list, a qualifying layer gets built around your actual fit criteria, every lead gets tagged before you spend time on it, we kick the retainer off with a planning call, then every two weeks after that we look at the data together and decide what's next."</p>
+        <p><strong>Watch out:</strong> Don't let "List Sync" and "Qualifying" blur together &#8212; they're two separate real pieces of work, say them as two distinct things.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">The Full Roadmap</div>
-        <div class="bonus-grid">
-          <div class="ppd-card">
-            <div class="ppd-headline-sm">Phase 1</div>
-            <p class="body ppd-muted">Your list converted, owned, and live in this build.</p>
+        <div class="ppd-eyebrow">Plans On Offer</div>
+        <div class="plans-grid">
+          <div class="plan">
+            <div class="plan-title">Network Live</div>
+            <div class="plan-result">Turn your LinkedIn connections into a list you can reach</div>
+            <div class="plan-price">$2,000</div>
+            <ul>
+              <li>Kit account, signup page, domain authentication</li>
+              <li>Your LinkedIn connections converted into an owned list</li>
+              <li>Ongoing re-sync as your network grows</li>
+              <li>Then $500/mo to keep it running</li>
+            </ul>
           </div>
-          <div class="ppd-card">
-            <div class="ppd-headline-sm">Phase 2</div>
-            <p class="body ppd-muted">RightMessage sorts who's ready to join, live in this build.</p>
+          <div class="plan">
+            <div class="plan-title">Smart Filter</div>
+            <div class="plan-result">Know which inbound leads are worth your time</div>
+            <div class="plan-price">$6,000</div>
+            <ul>
+              <li>Kit account, signup page, domain authentication
+                <ul>
+                  <li>A qualifying layer built around your real fit criteria</li>
+                  <li>Every inbound lead tagged before you spend time on it</li>
+                  <li>Then $1,200/mo to keep it running</li>
+                </ul>
+              </li>
+            </ul>
           </div>
-          <div class="ppd-card">
-            <div class="ppd-headline-sm">Phase 3</div>
-            <p class="body ppd-muted">Personalized emails write themselves. Next, not now.</p>
+          <div class="plan">
+            <div class="plan-title">&#9733; Full Pipeline</div>
+            <div class="plan-result">Network activated and every lead sorted, in one build</div>
+            <div class="plan-price">$6,500</div>
+            <ul>
+              <li>Everything in Network Live &amp; Smart Filter plus:
+                <ul>
+                  <li>One Kit build, not two &#8212; never double-billed</li>
+                  <li>Kickoff call + a sync every 2 weeks</li>
+                  <li>Then $1,700/mo to keep it running</li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>The Full Roadmap &#8212; Slide 20</strong></p>
-        <p><strong>Beat:</strong> Recap what's actually being sold today (Phases 1-2) and make the future vision (Phase 3) visible, not just spoken.</p>
-        <p><em><strong>Say:</strong> "Just so the whole picture's in front of you: phases one and two are what today's $7,500 builds. Phase three, the personalized emails, isn't part of this yet, that's what comes next once the data's flowing."</em></p>
-        <p><strong>Ties to pricing:</strong> This is also where Phase 3 connects to the retainer conversation on slide 23 &#8212; but don't frame it as "this is what gets you to the standard $2,500/mo." Corrected 2026-09-10: the site's $2,500/mo tier was never about Phase 3 to begin with (see slide 23's notes), so that framing doesn't hold up. Say it plainly instead: adding Phase 3 later means new scope, priced separately, whenever he's ready for it. Don't oversell it or quote a date; just make sure he's seen where this goes.</p>
-        <p><strong>Watch out:</strong> No fake urgency, no "48-hour" framing &#8212; this is an honest roadmap recap, not a bonus pitch.</p>
+        <p><strong>Plans On Offer — Slide 19</strong></p>
+        <p><strong>Beat:</strong> You promised him "a few options" on the 09-29 call &#8212; here they are, real, separately priced.</p>
+        <p><strong>Say:</strong> "Three ways to go: Network Live if you just want your LinkedIn connections turned into a working list, Smart Filter if you only want your existing inbound sorted, or Full Pipeline if you want both &#8212; which is what most of what you told me points toward, and it's priced as a real saving over buying the two separately, not a markup."</p>
+        <p><strong>Watch out:</strong> Don't default to pitching Full Pipeline just because it's marked recommended &#8212; ask which one actually matches what he wants before assuming.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light" data-visibility="hidden">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">48-Hour Bonus Offer &#127873;</div>
+        <div class="bonus-grid">
+          <div class="ppd-card">
+            <div class="ppd-headline-sm">Bonus #1</div>
+            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
+          </div>
+          <div class="ppd-card">
+            <div class="ppd-headline-sm">Bonus #2</div>
+            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
+          </div>
+          <div class="ppd-card">
+            <div class="ppd-headline-sm">Bonus #3</div>
+            <p class="body ppd-muted">Use this slide to highlight bonus inclusions.</p>
+          </div>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
+        </div>
+      </div>
+    
+      <aside class="notes">
+        <p><strong>But That's Not All... (Bonus Inclusions)</strong></p>
+        <p><strong>Purpose:</strong> Add extra value to the offer and create urgency.</p>
+        <p><strong>Example:</strong> "To help you get started fast, we're including [Bonus], which has helped other clients with [outcome]. This bonus is available for the next 48 hours."</p>
+        <p><strong>Why:</strong> Bonuses increase perceived value and urgency. This way, you don't have to feel 'pushy'—the structure of the deal naturally handles it, so you come off as confident, not pushy.</p>
+        <p><strong>Pro-Tip:</strong> Read Alex Hormozi's $100M Offers: How To Make Offers So Good People Feel Stupid Saying No</p>
       </aside>
     </section>
 
@@ -1612,61 +1577,46 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">Our Guarantee</div>
         <div class="guarantee-hero">
           <h2 class="ppd-headline-md">Live and running within 6 weeks, or Shlomo keeps building for free</h2>
-          <p class="body ppd-body-lg">This is a real build, not a template swap; 5-6 weeks is the honest estimate for converting your list and standing up the qualification system. If it isn't live and running by then, Shlomo keeps working at no extra cost until it is.</p>
+          <p class="body ppd-body-lg">This is a real build, not a template swap. Five to six weeks is the honest estimate for converting your network and standing up the qualifying layer. If it isn&#8217;t live by then, Shlomo keeps working at no extra cost until it is.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Our Guarantee &#8212; Slide 21</strong></p>
+        <p><strong>Our Guarantee — Slide 21</strong></p>
         <p><strong>Beat:</strong> Reverse the risk on timeline, the thing most likely to worry him given the scope.</p>
-        <p><em><strong>Say:</strong> "Five to six weeks is the honest number for a build this size. If it runs long, that's on me, I keep working at no extra charge until it's live."</em></p>
-        <p><strong>Watch out:</strong> Don't promise results here, only the build timeline &#8212; no completed case study exists yet for this exact combination on Arnd's own list.</p>
+        <p><strong>Say:</strong> "Five to six weeks is the honest number for a build this size. If it runs long, that's on me &#8212; I keep working at no extra charge until it's live."</p>
+        <p><strong>Watch out:</strong> Don't promise results here, only the build timeline &#8212; no completed case study exists yet for this exact combination on a procurement broker's network.</p>
       </aside>
     </section>
 
-    <section data-bg-token="bg-light">
+    <section data-bg-token="bg-light" data-visibility="hidden">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Your Build Timeline</div>
-        <div class="timeline-grid">
-          <div class="ppd-card">
-            <div class="week-label">Week 2</div>
-            <div class="ppd-headline-sm">Dripify Live</div>
-            <p class="body ppd-body-md ppd-muted">Your LinkedIn subscribers start converting into your own Kit list.</p>
-          </div>
-          <div class="ppd-card">
-            <div class="week-label">Week 3</div>
-            <div class="ppd-headline-sm">Real Data Starts</div>
-            <p class="body ppd-body-md ppd-muted">RightMessage goes live &#8212; first real answers on who's ready.</p>
-          </div>
-          <div class="ppd-card">
-            <div class="week-label">Week 5</div>
-            <div class="ppd-headline-sm">Buyer Sort Live</div>
-            <p class="body ppd-body-md ppd-muted">The system starts flagging who's ready. Digests every 3 days.</p>
-          </div>
-          <div class="ppd-card">
-            <div class="week-label">Week 6</div>
-            <div class="ppd-headline-sm">Fully Live</div>
-            <p class="body ppd-body-md ppd-muted">Your list is sorted, owned, and ready for real conversations.</p>
-          </div>
+        <div class="ppd-eyebrow">Special Offer</div>
+        <div class="offer-card">
+          <div class="price">[Expiration time]:<br/><span class="ppd-strike">[$price]</span>[$discounted price]</div>
+          <div class="spots">7 <span class="ppd-strike">10</span> spots left</div>
+          <p>Here&#8217;s what I&#8217;m doing with the [offer name] in [month]:</p>
+          <p>The outcome is simple: To get you to [outcome], getting [outcome], and [outcome].</p>
+          <p>I&#8217;m only working with [total spots] [ICP], to help them with [success milestone] over a [timeline].</p>
+          <p>We&#8217;ll do it with the perfect mix of [inclusion], [inclusion] and [inclusion] with deep involvement from me and my team.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Buyers Already On The List</span>
+          <span class="ppd-footer-mid">Meetings Already Waiting</span>
           <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Your Build Timeline &#8212; Slide 22 (repurposed 2026-09-09)</strong></p>
-        <p><strong>Note on this slide:</strong> This slot was originally the kit's generic "Special Offer" urgency/scarcity template (unused placeholder text, always hidden). Shlomo asked for a real week-by-week timeline after the Key Outcomes slide overcommitted to "week one" for real data &#8212; repurposed this unused slot for it rather than inventing a new slide number. This is a manual, non-schema change (slides/manifest.json still lists this as archetype "hero-card"/role "urgency") &#8212; fine for this build, but flag it if the kit maintainer ever wants it registered properly for reuse on other decks.</p>
-        <p><strong>Beat:</strong> Make the guarantee concrete &#8212; exactly what happens and when, right after the guarantee slide reversed the risk.</p>
-        <p><em><strong>Say:</strong> "Here's exactly how the five to six weeks breaks down. Week two, your list starts converting. Week three, real data starts coming in on your subscribers. By week five, the system's flagging who's ready and you're getting a digest every 3 days. Week six, it's fully live &#8212; your list, sorted, ready for real conversations."</em></p>
-        <p><strong>Watch out:</strong> This timeline covers Phase 1+2 only (the $7,500 build). If Phase 3 (automated draft emails) ever gets folded into a build, this timeline needs to extend past week 6 and the price needs to change with it &#8212; don't quote this timeline for a build that includes Phase 3 without updating it first.</p>
+        <p><strong>Drop The Mic Again (Urgency &amp; Scarcity)</strong></p>
+        <p><strong>Purpose:</strong> Push for immediate action by emphasising limited availability and/or time-sensitive pricing.</p>
+        <p><strong>Example:</strong> "We're only taking on a few more clients this month to ensure everyone gets the attention they deserve, and the current offer price is only available for a short time. If this sounds like the right fit, secure your spot and lock in the special price before we fill up."</p>
+        <p><strong>Why:</strong> Combining real scarcity with a limited-time offer makes the deal feel exclusive, urgent, and too good to miss.</p>
       </aside>
     </section>
 
@@ -1674,23 +1624,23 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide" style="padding:0;">
         <div class="nextsteps-split">
           <div class="left">
-            <div class="ppd-eyebrow">Next steps&#8230;</div>
-            <h3>Let's get your list sorted before your first &#163;19,500 sale.</h3>
-            <p>$7,500 setup + $1,700/mo after launch. Plus Dripify + RightMessage, billed to you directly (roughly $250-450/mo). Shlomo starts this week.</p>
+            <div class="ppd-eyebrow">Next Steps</div>
+            <h3>Pick a plan, and we&#8217;ll start this week</h3>
+            <p>Three plans, no pricing to figure out later &#8212; Network Live, Smart Filter, or Full Pipeline. Say the word and Shlomo starts building.</p>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
             <div class="cta-card" id="ppd-cta-card" data-endpoint="/api/lead">
-              <p class="title">Ready to start?</p>
+              <p class="title">Ready to Start?</p>
               <div class="choices" role="radiogroup" aria-label="Your response">
                 <button type="button" class="choice-btn" data-choice="in" aria-pressed="false">
-                  <span>I&#8217;m in! Let&#8217;s go.</span><span class="check">&#10003;</span>
+                  <span>I&#8217;m in, let&#8217;s go</span><span class="check">&#10003;</span>
                 </button>
                 <button type="button" class="choice-btn" data-choice="question" aria-pressed="false">
-                  <span>Got a question, but looks good!</span><span class="check">&#10003;</span>
+                  <span>Got a question, but looks good</span><span class="check">&#10003;</span>
                 </button>
                 <button type="button" class="choice-btn" data-choice="out" aria-pressed="false">
-                  <span>Not now, but stay in touch.</span><span class="check">&#10003;</span>
+                  <span>Not now, but stay in touch</span><span class="check">&#10003;</span>
                 </button>
               </div>
               <form class="form" novalidate>
@@ -1719,32 +1669,21 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
               </form>
               <div class="success" role="status">
                 <div class="tick">&#10003;</div>
-                <h4 data-success-title>Thanks, talk soon.</h4>
-                <p data-success-body>Shlomo will follow up to get started.</p>
-                <a class="static-cta" data-static-cta>Let's talk next steps</a>
+                <h4 data-success-title>Thanks, you&#8217;re on the list.</h4>
+                <p data-success-body>Shlomo will follow up to lock in the start date.</p>
+                <a class="static-cta" data-static-cta>Let&#8217;s start</a>
               </div>
             </div>
             <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
-
+    
       <aside class="notes">
-        <p><strong>Clear Next Step &#8212; Slide 23</strong></p>
-        <p><strong>Beat:</strong> One ask, then stop talking.</p>
-        <p><em><strong>Say:</strong> "So, are you in? If yes, I start this week and we're live in five to six weeks."</em></p>
-        <p><strong>Watch out:</strong> No recap of the previous 22 slides &#8212; make the ask and hold the silence.</p>
-        <p><strong>Don't forget:</strong> You already flagged the rough monthly number back on slide 17 — this is where you give him the real decision. Say out loud that Dripify (~$39-59/mo) and RightMessage ($199/mo on Kit or GHL, $399/mo if he stays on HubSpot) are billed to him directly, on top of the $7,500. Be precise about the causality here: it's RightMessage's own integration fee that's cheaper on Kit or GHL ($199) than on HubSpot ($399) — that is not a claim that Kit/GHL is a cheaper platform than HubSpot itself, and don't let it come out that way. This is a real decision to make together, not something to gloss over.</p>
-        <p><strong>OPEN — needs confirmation before this goes to Arnd:</strong> If he moves off HubSpot onto Kit (or GHL), that platform carries its own separate subscription cost on top of RightMessage's fee, and that cost is not priced into the $250-450/mo range above. Don't quote a Kit/GHL subscription number to Arnd until it's confirmed — flag it to Shlomo first.</p>
-        <p><strong>On the $1,700/mo retainer:</strong> Already named on slide 17 and shown as two cards on slide 18 (Kickoff Call, Sync Calls) &#8212; this is where you confirm the breakdown, not where you introduce it for the first time. Three stacking pieces, not one flat number: Dripify re-scrape/re-upload upkeep is $500/mo; RightMessage tag upkeep plus forward builds &#8212; following the subscriber data to whatever the next lower-hanging-fruit build is &#8212; is $1,200/mo, decided together on a sync call every 2 weeks; and the retainer opens with a dedicated kickoff call to set priorities before any of that starts. All of it is ongoing work that keeps the system current and moving, not optional busywork.</p>
-        <p><strong>CORRECTED 2026-09-10 (Shlomo caught it) &#8212; if he checks the website and asks why it's not the $4,500 + $2,500/mo listed there:</strong> Two separate, unrelated differences &#8212; don't blend them into one story, and don't reach for Phase 3 as the explanation (the site's $2,500/mo tier never included Phase 3 either, so that comparison doesn't hold up if he actually checks).</p>
-        <p><strong>&#8226; $7,500 vs $4,500 (setup):</strong> this build combines two systems from a standing start &#8212; Dripify + RightMessage together, no existing list at all. Bigger scope of work up front, independent of list size.</p>
-        <p><strong>&#8226; $1,700 vs $2,500 (retainer):</strong> scoped to his list size. The site's $2,500/mo assumes the standard program scale; his 1,100-subscriber list is smaller, so the ongoing retainer is priced to match it, not the larger multi-thousand-subscriber programs the standard tier is built for. Say this plainly and confidently &#8212; it's a real, sizing-based number, not a discount.</p>
-        <p><strong>WATCH OUT &#8212; internal reasoning only, never say this to Arnd:</strong> part of why Shlomo kept this retainer lighter is that a smaller list carries more variance in results &#8212; if the qualification layer doesn't turn up much at this list size, a smaller ongoing commitment is a smaller loss for Arnd. That's Shlomo's own risk logic for how he priced it, not something to frame to Arnd as "in case it doesn't work." He hears "scoped to your list size," full stop.</p>
-        <p><strong>On Phase 3 and the roadmap (see also slide 20):</strong> if he adds Phase 3 later, that's new, additional scope with its own separate price &#8212; not "growing into the standard $2,500/mo," since that number was never about Phase 3 to begin with. Don't tie a future Phase 3 add-on to matching the site's number.</p>
-        <p><strong>OPEN &#8212; for the kickoff call, not this deck:</strong> Dripify also requires Arnd's 1st-degree LinkedIn connections to cover roughly as many people as his newsletter subscriber count, or Dripify can't actually reach everyone on the list. This is a real, heavier commitment (potentially a lot of new connection requests) that needs proper explanation and a plan &#8212; it belongs in the kickoff call Arnd is already paying for (slide 18), not dropped into the sales pitch. Don't forget to actually raise it there.</p>
-        <p><strong>Fixed 2026-09-10 (Shlomo, pricing-calc session):</strong> Raised retainer from $1,500/mo to $1,700/mo &#8212; the RightMessage upkeep + forward-builds component was underpriced at $1,000/mo against the actual scope (ongoing development steered by subscriber data, not just tag maintenance), moved to $1,200/mo. Dripify's $500/mo is unchanged.</p>
-        <p><strong>Fixed 2026-09-10 (Shlomo caught it):</strong> The "HubSpot keeps his setup as-is but costs meaningfully more every month" line mischaracterized the price difference &#8212; the $199 vs $399 gap is RightMessage's own integration fee, not HubSpot's platform cost vs Kit/GHL's. Also surfaced a real gap: if Arnd actually moves to Kit or GHL, that platform's own subscription cost isn't priced anywhere in this deck yet. Don't quote a number for it until Shlomo confirms one.</p>
+        <p><strong>Next Steps — Slide 23</strong></p>
+        <p><strong>Beat:</strong> One clear ask &#8212; which plan, not whether to buy at all.</p>
+        <p><strong>Say:</strong> "So &#8212; Network Live, Smart Filter, or Full Pipeline? Whichever one fits, I can start this week."</p>
+        <p><strong>Watch out:</strong> Don't re-pitch here. If he says yes to a plan, stop talking and move to logistics &#8212; invoice and start date.</p>
       </aside>
     </section>
   </div>
