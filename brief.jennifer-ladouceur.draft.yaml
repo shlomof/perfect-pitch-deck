@@ -1,0 +1,70 @@
+# brief.jennifer-ladouceur.draft.yaml — Dr. Jennifer Ladouceur, Call 2 walkthrough Fri 2026-10-30
+# DRAFT. Not yet copied to brief.yaml (brief.yaml is still the AI Salon brief).
+# Sources: regulars/tribes/c-suite-book-launch/calls/jennifer-ladouceur-2026-10-20.md (debrief)
+#          regulars/tribes/c-suite-book-launch/calls/jennifer-ladouceur-2026-10-20-transcript.md
+#          regulars/tribes/c-suite-book-launch/calls/jennifer-ladouceur-2026-10-30-call2-prep.html
+# Decided by Shlomo 2026-10-25: she has NO LinkedIn newsletter, so no subscriber harvest and no Dripify.
+#   Main offer: $7,500 setup + $1,500/mo (3-month minimum). Pledge page is NOT included at any tier;
+#   a plain page with a form is +$1,000, anything visible (signatory wall, badges, emailed certificates) is scoped separately.
+#   Fallback if she balks (live only, not on a slide): Foundation $2,200 = David Dayton's package
+#   (Kit, sign-up page on her domain, domain authentication, welcome sequence), no retainer.
+# Open: guarantee, proof-point confirmation, whether the 15K list can be mailed.
+
+company: "Asset Bolt"
+pitch_name: "Prepared for Dr. Jennifer Ladouceur"
+client_name: "Jennifer"
+
+offer:
+  name: "The Hybrid Serendipity List"
+  dream_outcome: "turn your LinkedIn following and your dormant 15,000-name list into one list you own, where each person says who they are, so your consulting and speaking conversations start with context"
+  timeframe: "start the week of Nov 9; sign-up live well before the January 2027 launch"
+  problem: "your audience sits on LinkedIn (about 12,000 followers) and a dormant Mailchimp list of 15,000+, none of it is working toward the consultancy you are building, and 'I can only focus on so much'"
+  unique_mechanism: "One sign-up and one or two questions. Every answer is saved as a tag, so you know who is a hybrid professional and who leads a company struggling with return-to-office."
+  price: "$7,500 setup + $1,500/mo (3-month minimum)"
+  guarantee: "[MISSING: not decided — slide 21 hidden]"
+
+proof_points:
+  testimonials:
+    - quote: "29 people came back. I had no idea they were there."
+      author: "Peter Sorgenfrei"
+      handle: "Advisor to CEOs"
+      metric: "29 buyers surfaced from his own list"
+      # Same proof point used in the AI Salon and Nadav decks. Shlomo to confirm it is still the
+      # right one for a consultant-author, and that the quote is verbatim.
+  logos: []
+
+cta:
+  url: "mailto:shlomo@assetbolt.com?subject=Let%27s%20start%20the%20week%20of%20Nov%209"
+  label: "Let's start"
+
+team:
+  - name: "Shlomo Freund"
+    role: "Founder, Asset Bolt"
+    bio: "Builds the list-and-sort system for people who already have an audience they haven't activated."
+
+bonus: []
+
+urgency: {}
+
+# Single main offer, so slide 19 (plans) is skipped. Foundation stays a live fallback.
+plans: []
+
+# What the main offer includes (for slide 18). Deliverables only, no timeframe.
+# Retainer cards required by deck rule 9: Kickoff Call + Sync Calls (biweekly).
+extra:
+  included:
+    - "Kit account, sign-up page on your own domain, domain authentication, testing"
+    - "Welcome sequence"
+    - "RightMessage question flow that sorts your list by who they are"
+    - "Reactivation plan for the 15,000-name list, if you can mail it"
+    - "Kickoff call"
+    - "Sync calls every 2 weeks: read the data, tune, build new flows"
+  not_included:
+    - "Pledge page (+$1,000 as a page with a form; anything visible is scoped separately)"
+    - "Writing your emails and content (you write, I build)"
+  pass_through_costs: "Kit from $39/mo and RightMessage $79-399/mo by plan, billed to you directly"
+
+config:
+  replace_footer_placeholders: true
+  strict_char_limits: true
+  dry_run: false

@@ -1,5 +1,7 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
 <script>
   // Tag the document when loaded inside Reveal's speaker-view iframes so CSS
   // can hide presenter chrome (HUD on the upcoming preview) and keep the
@@ -15,33 +17,33 @@
     }
   })();
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
 <!-- ─── SEO / Open Graph ───────────────────────────────────────────────
      Customise these for your deck. When deployed in public mode (no
      DECK_PASSWORD), search crawlers and social cards will pick these up. -->
-<title>Asset Bolt for AI Salon</title>
-<meta name="description" content="A plan to turn AI Salon’s event registrations into a list you own.">
-<link rel="canonical" href="https://example.com/">
+<title>Asset Bolt for Jennifer Ladouceur</title>
+<meta name="description" content="A walkthrough prepared for Dr. Jennifer Ladouceur: one list you own for the January 2027 launch." />
+<link rel="canonical" href="https://example.com/" />
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Asset Bolt for AI Salon">
-<meta property="og:description" content="A plan to turn AI Salon’s event registrations into a list you own.">
-<meta property="og:url" content="https://example.com/">
-<meta property="og:image" content="https://example.com/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Asset Bolt for Jennifer Ladouceur" />
+<meta property="og:description" content="One list you own, so your January launch brings consulting and speaking conversations." />
+<meta property="og:url" content="https://example.com/" />
+<meta property="og:image" content="https://example.com/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Asset Bolt for AI Salon">
-<meta name="twitter:description" content="A plan to turn AI Salon’s event registrations into a list you own.">
-<meta name="twitter:image" content="https://example.com/assets/og-image.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&amp;family=Mona+Sans:wght@700;800;900&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@28.1.0/dist/css/intlTelInput.css">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Asset Bolt for Jennifer Ladouceur" />
+<meta name="twitter:description" content="One list you own, so your January launch brings consulting and speaking conversations." />
+<meta name="twitter:image" content="https://example.com/assets/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Mona+Sans:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@28.1.0/dist/css/intlTelInput.css" />
 <style>
 :root {
   /* === BRAND KNOBS — only edit these for a rebrand =========================
@@ -457,7 +459,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .inclusions-grid .ppd-card .ppd-headline-sm { margin: 0 0 12px; }
 .inclusions-grid .ppd-card .body { margin: 0; }
 
-/* Slide 4 — Why {Company Name}? (dark) */
+/* Slide 4 — Why Asset Bolt? (dark) */
 .why-hero {
   position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -50%);
@@ -563,6 +565,20 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 .plans-grid .plan .plan-price { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 56px; line-height: 1.1; margin: 0 0 36px; }
 .plans-grid .plan ul { list-style: disc; padding-left: 22px; margin: 0; font-size: 20px; line-height: 1.7; text-align: left; }
 .plans-grid .plan ul ul { list-style: disc; padding-left: 22px; margin: 4px 0 0; }
+
+/* Compare table (Foundation vs Full Package) */
+.compare-wrap { position: absolute; left: 80px; right: 80px; top: 190px; bottom: 120px; display: flex; flex-direction: column; justify-content: center; }
+.compare-table { width: 100%; border-collapse: separate; border-spacing: 0; font-family: 'Inter', sans-serif; }
+.compare-table th, .compare-table td { padding: 15px 24px; font-size: 26px; line-height: 1.25; border-bottom: 1px solid var(--border-card); text-align: center; }
+.compare-table th:first-child, .compare-table td:first-child { text-align: left; width: 50%; }
+.compare-table thead th { font-family: 'Mona Sans', 'Inter', sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.015em; padding-bottom: 20px; vertical-align: bottom; }
+.compare-table thead th .sub { display: block; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 22px; margin-top: 6px; opacity: 0.75; }
+.compare-table .full { background: var(--surface); border-left: 1px solid var(--border-card); border-right: 1px solid var(--border-card); }
+.compare-table thead .full { border-top: 4px solid var(--accent-blue); border-radius: 12px 12px 0 0; }
+.compare-table .yes { font-weight: 800; color: var(--accent-blue); }
+.compare-table .no { opacity: 0.4; }
+.compare-table .addon { font-size: 22px; }
+.compare-note { margin: 22px 0 0; font-size: 20px; line-height: 1.5; opacity: 0.8; }
 
 /* Slide 17 — Today's Offer (single card) */
 .todays-offer {
@@ -753,7 +769,6 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   border: 1px solid var(--border-card);
   gap: 32px;
 }
-.wins-grid.single { grid-template-columns: 450px; }
 .wins-grid .stat,
 .wins-grid .label {
   font-family: 'Inter', sans-serif; font-weight: 600;
@@ -985,118 +1000,118 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-white">
         <div class="ppd-cover">
           <div class="poster">
-            <img src="assets/brand/asset_bolt_logo.svg" alt="Asset Bolt">
+            <img src="assets/brand/asset_bolt_logo.svg" alt="Asset Bolt" />
           </div>
           <div class="content">
-            <h1 class="title">Your AI Salon List</h1>
-            <p class="lede">From 148,579 cold event registrations to a list you own and can actually reach.</p>
+            <h1 class="title">For Jennifer</h1>
+            <p class="lede">One list you own, so your January launch brings consulting and speaking conversations.</p>
             <ul class="ppd-check-list">
-              <li>One honest email to people who came to your events</li>
-              <li>One question that sorts who is who</li>
-              <li>A list a sponsor can say yes to</li>
+              <li>Your LinkedIn followers and your old list, together</li>
+              <li>Every sign-up tells you who they are</li>
+              <li>Built for your January 2027 launch</li>
             </ul>
             <div class="ppd-cta-row">
-              <a class="ppd-pill-cta" href="#/1">See the plan for AI Salon</a>
+              <a class="ppd-pill-cta" href="#/1">Let&#8217;s talk next steps</a>
             </div>
           </div>
         </div>
         <div class="cover-branding">
-          <img src="assets/brand/wordmark.svg" alt="Asset Bolt">
+          <img src="assets/brand/wordmark.svg" alt="Asset Bolt" />
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Cover — Slide 1</strong></p>
-        <p><strong>Beat:</strong> Read the title and let them see it is about their list, not about you.</p>
-        <p><strong>Say:</strong> "This is built around what Nicky told me: 148,579 people registered across your chapters, and nobody emails them. I’ll show you a small first step, and what comes after it."</p>
-        <p><strong>Watch out:</strong> Jeff has not told us what he wants. Ask him on slide 2, before you show anything else. Source: 09-30 call with Nicole, 148,579 records, never mailed by the global team.</p>
+        <p><strong>Cover, Slide 1</strong></p>
+        <p><strong>Beat:</strong> Open warm and short. This is the walkthrough you promised on Call 1.</p>
+        <p><strong>Say:</strong> "Thanks for making time. Last time you promised me pricing and a timeline, so I built this around your January launch. Twenty minutes, then I stop talking and you tell me what you think."</p>
+        <p><strong>Watch out:</strong> Say early that this is your own offer, not Ease of Mind&#8217;s. She may assume James and Rory are behind it or expect a discount. Nothing here is discounted.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-dark">
       <div class="ppd-slide bg-dark">
         <div class="intro-slide">
-          <h1>Nice to<br>meet you<br>Jeff &amp; Nicky!</h1>
-          <div class="subhead">Asset Bolt for AI Salon</div>
+          <h1>Nice to<br/>meet you<br/>Jennifer!</h1>
+          <div class="subhead">Asset Bolt</div>
         </div>
         <div class="intro-brand">
-          <svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>
+          <svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>
           <span>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Nice To Meet You — Slide 2</strong></p>
-        <p><strong>Beat:</strong> Short. This is the moment to ask, not to tell.</p>
-        <p><strong>Say:</strong> "Jeff, good to finally get you. Before I show anything, what were you hoping this would do for AI Salon?" Then: "And if it worked, what’s different a year from now?"</p>
-        <p><strong>Watch out:</strong> Write his exact words. His answer decides how much of slides 3 to 6 to use: newsletter, sponsors, membership or the book. Also ask: is there a real email list anywhere besides Luma, and who decides, you and Nicky together or you? If Jeff is not on by minute 5, run the Nicky-only plan from the call prep and do not quote.</p>
+        <p><strong>Icebreaker, Slide 2</strong></p>
+        <p><strong>Beat:</strong> One real rapport thread, then straight in. No small talk.</p>
+        <p><strong>Say:</strong> "I keep coming back to your trade mission to Israel, the mayor and the 23 businesses. That is how I think about this too: you take a few specific people and make the introductions count."</p>
+        <p><strong>Watch out:</strong> Do not mention James, Rory or their pricing. Keep this to one sentence and move to Slide 3.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent-tint">
       <div class="ppd-slide bg-blue-tint">
         <div class="quote-slide tint">
-          <p class="quote">“148,579 people registered for your events, and none of them gets a newsletter from you.”</p>
+          <p class="quote">&#8220;Your book launches in January. Nothing yet tells you which of your followers want to hire you.&#8221;</p>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>The Problem — Slide 3</strong></p>
-        <p><strong>Beat:</strong> Say it plainly and let it sit for one beat.</p>
-        <p><strong>Say:</strong> "Nicky said it herself: ‘for the moment, we are just like an event system. We are not sending any newsletter to this database.’"</p>
-        <p><strong>Watch out:</strong> Say "from you" or "global." Chapter organizers may mail their own people, so do not say nobody ever emails them. Source: 09-30 call.</p>
+        <p><strong>The Problem, Slide 3</strong></p>
+        <p><strong>Beat:</strong> Ask the pain question Call 1 skipped, so her cost of the current setup comes in her words.</p>
+        <p><strong>Say:</strong> "Your book is at the printer and launches in January. When someone reads it and then goes quiet, what happens to them today?" Then wait.</p>
+        <p><strong>Watch out:</strong> Her Call 1 was a plan, not a pain. Do not tell her what hurts. Listen for "nothing happens" or "they find me on LinkedIn" and write it down. You quote it back at the price.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent-tint">
       <div class="ppd-slide bg-blue-tint">
-        <div class="ppd-eyebrow">And It Gets Colder…</div>
+        <div class="ppd-eyebrow">And To Make Things Worse&#8230;</div>
         <div class="agitators-grid">
           <div>
-            <div class="ppd-headline-md">Cold Data</div>
-            <p>148,579 contacts sit in Luma and spreadsheets, and more join with every event. None of them hears from you.</p>
+            <div class="ppd-headline-md">A Dormant 15,000</div>
+            <p>Your Women Leadership Nation list sits on Mailchimp. It isn&#8217;t mailed and it isn&#8217;t growing.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Unsorted</div>
-            <p>People tick investor, founder and corporate all at once, so you can’t tell who is truly interested.</p>
+            <div class="ppd-headline-md">A Rented Audience</div>
+            <p>About 12,000 followers live on LinkedIn. You can&#8217;t email them and you can&#8217;t sort them.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Sponsors</div>
-            <p>You’re looking for sponsors. A list you can’t describe is hard to put in front of one.</p>
+            <div class="ppd-headline-md">Your Time Is Taken</div>
+            <p>You&#8217;re finishing the audiobook and writing Book 2. &#8220;I can only focus on so much.&#8221;</p>
           </div>
         </div>
         <div class="ppd-footer" style="color: var(--accent-blue);">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>And It Gets Colder — Slide 4</strong></p>
-        <p><strong>Beat:</strong> Three short beats, one sentence each.</p>
-        <p><strong>Say:</strong> "Nicky called it cold data. People tick investor, founder and corporate all at once, her words were ‘multiple heads.’ And you’re looking for sponsors."</p>
-        <p><strong>Watch out:</strong> The sponsor line is the one to test with Jeff. Ask if sponsors are actually in talks before you lean on it. "Cold data" and "multiple heads" are Nicole’s phrases from 09-30; the sponsor point is her "right now, we’re looking for sponsorships."</p>
+        <p><strong>Agitate, Slide 4</strong></p>
+        <p><strong>Beat:</strong> All three cards are her own facts from Call 1: the 15,000 Mailchimp list, the 12,000 LinkedIn followers, and "I can only focus on so much."</p>
+        <p><strong>Say:</strong> "Three things you told me. The Women Leadership Nation list is not being mailed. About 12,000 people follow you on LinkedIn and you cannot email or sort them. And you are finishing the audiobook and writing Book 2."</p>
+        <p><strong>Watch out:</strong> Do not say the 15,000 list is unusable. Ownership and consent were never checked on Call 1. Ask: who owns it now, can you mail it, when was the last send.</p>
       </aside>
     </section>
 
     <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">“Turn 148,579 event registrations into a list you own, where each person tells you who they are, so your first newsletter goes to people who asked for it.”</p>
+          <p class="quote">&#8220;In about six weeks, people start joining a list you own, and each one tells you who they are.&#8221;</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>The Promise — Slide 5</strong></p>
-        <p><strong>Beat:</strong> Read it once, then stop talking.</p>
-        <p><strong>Say:</strong> "What I’d build is simple: your registrations become a list you own, each person tells you who they are, and your first newsletter goes to people who asked for it."</p>
-        <p><strong>Watch out:</strong> No timeframe and no guarantee on this slide because neither is decided. Do not add one out loud. Nicole’s first stated intent was "first, we want to do a newsletter."</p>
+        <p><strong>The Promise, Slide 5</strong></p>
+        <p><strong>Beat:</strong> One plain sentence: about six weeks from the start, people are joining a list she owns, and each one says who they are.</p>
+        <p><strong>Say:</strong> "I start the week of Nov 9. About six weeks later, people are joining a list you own, and each one tells you whether they are a hybrid professional or a leader at a company struggling with return-to-office."</p>
+        <p><strong>Watch out:</strong> Six weeks is build and go-live, not a promise of sign-ups. Volume depends on her posting and the launch. No guarantee in this deck (Slide 21 is hidden). I am away the week of Nov 2, so Nov 9 is the real start.</p>
       </aside>
     </section>
 
@@ -1105,29 +1120,29 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">Key Outcomes</div>
         <div class="outcomes-cols">
           <div>
-            <div class="ppd-headline-md">A List You Own</div>
-            <p>Your registrations, invited onto a list in Kit, not left sitting in Luma. Only people who say yes join.</p>
+            <div class="ppd-headline-md">Know Who&#8217;s Who</div>
+            <p>Each sign-up answers a question or two, so you see who is a hybrid professional, who leads a company stuck on return-to-office, and who books speakers.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Know Who Is Who</div>
-            <p>Each person answers one question, so you stop guessing who is a founder, an investor or a student.</p>
+            <div class="ppd-headline-md">Own Your Audience</div>
+            <p>Your followers and your old list become one list that&#8217;s yours, whatever LinkedIn does next.</p>
           </div>
           <div>
-            <div class="ppd-headline-md">Sponsor Ready</div>
-            <p>Counts you can quote: how many opted in, and how many are founders, investors or corporate.</p>
+            <div class="ppd-headline-md">Calls With Context</div>
+            <p>Your consulting and speaking calls start with what each person told you, not a cold intro.</p>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Key Outcomes — Slide 6</strong></p>
-        <p><strong>Beat:</strong> Three outcomes, each tied to something Nicky said.</p>
-        <p><strong>Say:</strong> "A list you own in Kit instead of Luma. Each person answers one question so you know who is a founder, an investor or a student. And you can tell a sponsor how many opted in and who they are."</p>
-        <p><strong>Watch out:</strong> If Jeff says sponsors are not a goal, skip card 3 and spend the time on the newsletter. The profile options (investor, government, founder, corporate, student) are the ones already on the Luma form.</p>
+        <p><strong>Key Outcomes, Slide 6</strong></p>
+        <p><strong>Beat:</strong> Three outcomes: know who is who, own the audience, calls with context.</p>
+        <p><strong>Say:</strong> "First, you know who is a hybrid professional, who leads a company stuck on return-to-office, and who books speakers. Second, your followers and your old list become one list that is yours. Third, a speaking or consulting call starts with what the person told you."</p>
+        <p><strong>Watch out:</strong> Ask before the price: what one consulting engagement or speaking booking is worth to her, who is paying, and how many people she expects to join in the first six weeks and from where. The offer sorts and captures people, it does not bring them. You told her on Call 1 that you do not do the outreach. Her sources: the LinkedIn group (about five join requests a day, ask who owns it), her curated connections, the pledge, and the presale campaign.</p>
       </aside>
     </section>
 
@@ -1138,7 +1153,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <div class="ppd-eyebrow">Key Outcomes</div>
             <div class="msg">
               <div class="ppd-headline-sm">Key Message #1.</div>
-              <p class="body">What makes your product different? What you offer that your competitors don’t. (Or better yet, can’t.)</p>
+              <p class="body">What makes your product different? What you offer that your competitors don&#8217;t. (Or better yet, can&#8217;t.)</p>
             </div>
             <div class="msg">
               <div class="ppd-headline-sm">Key Message #2.</div>
@@ -1146,7 +1161,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             </div>
             <div class="msg">
               <div class="ppd-headline-sm">Key Message #3.</div>
-              <p class="body">Make sure these tie back to the customers’ challenges to make sure they really hit home.</p>
+              <p class="body">Make sure these tie back to the customers&#8217; challenges to make sure they really hit home.</p>
             </div>
           </div>
           <div class="right">
@@ -1161,8 +1176,10 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Key Outcomes (images) — Slide 7 (hidden)</strong></p>
-        <p><strong>Not used in this deck:</strong> Template placeholder, no images built for this deck.</p>
+        <p><strong>Hidden, Slide 7</strong></p>
+        <p><strong>Beat:</strong> Hidden on purpose. Same role as Slide 6 (outcomes) and it needs images that do not exist for this client. Slide 6 carries the content.</p>
+        <p><strong>Say:</strong> Do not present this slide.</p>
+        <p><strong>Watch out:</strong> Un-hiding it shows empty image boxes.</p>
       </aside>
     </section>
 
@@ -1176,125 +1193,128 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
             <ul>
               <li>Use bullets.</li>
               <li>Keep text to a minimum.</li>
-              <li>Google the ‘Rule of 3’ if you don’t know it.</li>
+              <li>Google the &#8216;Rule of 3&#8217; if you don&#8217;t know it.</li>
             </ul>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
             <div class="ph"></div>
-            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</div>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>How It Works (split) — Slide 8 (hidden)</strong></p>
-        <p><strong>Not used in this deck:</strong> Template placeholder, no images built for this deck.</p>
-      </aside>
-    </section>
-
-    <section data-bg-token="bg-light" data-visibility="hidden">
-      <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">How It Works</div>
-        <div class="howitworks">
-          <div class="left">
-            <h3>Show Off Your Demos, Process, Portfolio etc.</h3>
-            <p>This is an optional slide to explain how you deliver the solution. Duplicate if needed. Segue into a Notion doc, portfolio of work, or other relevant files.</p>
-            <ul>
-              <li>Use bullets.</li>
-              <li>Keep text to a minimum.</li>
-              <li>Google the ‘Rule of 3’ if you don’t know it.</li>
-            </ul>
-          </div>
-          <div class="right ph"></div>
-        </div>
-        <div class="ppd-footer">
-          <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
-        </div>
-      </div>
-      <aside class="notes">
-        <p><strong>How It Works — Slide 9 (hidden)</strong></p>
-        <p><strong>Not used in this deck:</strong> Template placeholder, no images built for this deck.</p>
+        <p><strong>Hidden, Slide 8</strong></p>
+        <p><strong>Beat:</strong> Hidden on purpose. It shares the "how it works" role with Slide 9 and needs a demo image. The process is told in Slides 17 and 18 instead.</p>
+        <p><strong>Say:</strong> Do not present this slide.</p>
+        <p><strong>Watch out:</strong> Un-hiding it shows an empty image box.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">You Might Be Thinking…</div>
+        <div class="ppd-eyebrow">The First Six Weeks</div>
+        <div class="inclusions-grid" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr);">
+          <div class="ppd-card"><div class="ppd-headline-sm">Week 1</div><p class="body ppd-body-md ppd-muted">Kickoff call. Your Kit account and domain set up.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Week 2</div><p class="body ppd-body-md ppd-muted">Your sign-up page and welcome email, from copy you write.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Week 3</div><p class="body ppd-body-md ppd-muted">RightMessage asks each sign-up who they are.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Week 4</div><p class="body ppd-body-md ppd-muted">Answers become tags in Kit. All of it tested end to end.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Week 5</div><p class="body ppd-body-md ppd-muted">Your sign-up page goes live. People start joining.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Week 6</div><p class="body ppd-body-md ppd-muted">Sync call: read the first data, tune, plan the next flow.</p></div>
+        </div>
+        <div class="ppd-footer">
+          <span class="ppd-footer-left">Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
+        </div>
+      </div>
+      <aside class="notes">
+        <p><strong>The First Six Weeks, Slide 9</strong></p>
+        <p><strong>Beat:</strong> Week by week, from kickoff to the first read of the data. Syncs land on weeks 2, 4 and 6.</p>
+        <p><strong>Say:</strong> "It takes about six weeks. Week one is the kickoff call and the accounts. Two and three, your sign-up page, welcome email and the questions. Week four, the answers become tags and I test all of it. Week five it goes live, and people start joining. Week six we read the first data together."</p>
+        <p><strong>Watch out:</strong> This is the plan for the build, not a promise of results. If the 15,000 list can be mailed, the re-invite is planned after go-live; do not put a date on it until you know who owns it. Her approvals can move a week.</p>
+      </aside>
+    </section>
+
+    <section data-bg-token="bg-light">
+      <div class="ppd-slide bg-light">
+        <div class="ppd-eyebrow">You Might Be Thinking&#8230;</div>
         <div class="objections-grid">
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Who Writes It?</div>
-            <p>You do. We build the list. The newsletter is yours.</p>
+            <div class="ppd-headline-sm">Isn&#8217;t this just marketing?</div>
+            <p>It&#8217;s data: who is ready to talk to you.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Will It Spam?</div>
-            <p>No. One email first, and only the people who say yes join.</p>
+            <div class="ppd-headline-sm">Will people answer questions?</div>
+            <p>One or two questions, answered with a click at sign-up.</p>
           </div>
           <div class="ppd-card">
-            <div class="ppd-headline-sm">Chapters?</div>
-            <p>Stage 1 starts with the global list. Chapters can join in later.</p>
+            <div class="ppd-headline-sm">Will this eat my time?</div>
+            <p>You write the content. I build it. A couple of approvals a week.</p>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>You Might Be Thinking — Slide 10</strong></p>
-        <p><strong>Beat:</strong> Answer the three questions before they ask them.</p>
-        <p><strong>Say:</strong> "You write the newsletter, I build the list. Only people who say yes join, so nobody gets spammed. And stage one is the global list; chapters can come in later."</p>
-        <p><strong>Watch out:</strong> Consent is unknown. Ask: when someone registers on Luma, is there a line saying they will hear from AI Salon? Do not give legal advice, and registrants outside the US are on this list. Writing the newsletter is outside what you do, say it plainly.</p>
+        <p><strong>Objections, Slide 10</strong></p>
+        <p><strong>Beat:</strong> Handle three doubts before she raises them: marketing, answering questions, her time.</p>
+        <p><strong>Say:</strong> "You might be thinking this is just more marketing. It is not, it is data on who is ready to talk to you. You might wonder if people will answer questions: it is one or two, answered with a click when they sign up. And your time: you write the content, I build it, and I need a couple of approvals a week."</p>
+        <p><strong>Watch out:</strong> The old list is not on this slide on purpose. She never raised it as a worry. It is your question, not her objection: who owns it, can she mail it, when was the last send. If she cannot mail it, say "Then we build from zero, and that is what the pledge and the LinkedIn group are for."</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Real Results</div>
-        <div class="wins-grid single">
+        <div class="ppd-eyebrow">A Client Result</div>
+        <div class="wins-grid">
+          <div class="ppd-card">
+            <div class="stat">70,000</div>
+            <div class="label">Followers</div>
+            <p class="body">Peter Sorgenfrei, advisor to CEOs, had no idea who was ready to hire him.</p>
+          </div>
           <div class="ppd-card">
             <div class="stat">29</div>
-            <div class="label">Right Fits</div>
-            <p class="body">Peter asked his audience three questions. 29 came back as right fits he never knew were there.</p>
-            <div class="proof-circle"><img src="https://cdn.prod.website-files.com/62729ca9393e4e7139e2d68a/62b42ab5a08ac70ea088b31c_PeterSorgenfrei_01.jpg" alt="Peter Sorgenfrei"></div>
-            <div class="proof-name">Peter Sorgenfrei</div>
+            <div class="label">Qualified prospects</div>
+            <p class="body">Found with three questions, before any cold message.</p>
           </div>
-          
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Real Results — Slide 11</strong></p>
-        <p><strong>Beat:</strong> One proof point, told as a story.</p>
-        <p><strong>Say:</strong> "Peter Sorgenfrei asked his audience three questions. 29 people came back as right fits he never knew were there."</p>
-        <p><strong>Watch out:</strong> Check the 29 against the Peter Sorgenfrei case-study PDF before Thursday. Do not add numbers. His case is a LinkedIn audience, theirs is an event list, so say it is the same idea: ask people who they are.</p>
+        <p><strong>A Client Result, Slide 11</strong></p>
+        <p><strong>Beat:</strong> Peter Sorgenfrei, from his case study: 70,000 followers, three questions, 29 qualified prospects before any cold message.</p>
+        <p><strong>Say:</strong> "This is Peter Sorgenfrei, an advisor to CEOs and founders. He had 70,000 followers and no idea who was ready to hire him. We asked three questions and found 29 qualified prospects before a single cold message."</p>
+        <p><strong>Watch out:</strong> Both numbers are from the case study. Do not promise 29 for her; her audience is smaller. No logo and no second client on purpose: only Peter is sourced.</p>
       </aside>
     </section>
 
-    <section data-bg-token="accent" data-visibility="hidden">
+    <section data-bg-token="accent">
       <div class="ppd-slide bg-blue">
         <div class="quote-slide">
-          <p class="quote">29 people came back. I had no idea they were there.</p>
+          <p class="quote">&#8220;I had no idea they were sitting there.&#8221;</p>
           <div class="quote-author">
-            <img src="assets/steve.webp" alt="Steve Butler">
-            <div class="meta">Peter Sorgenfrei<br>Advisor to CEOs</div>
+            <div class="meta">Peter Sorgenfrei<br/>Advisor to CEOs</div>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Customer Quote — Slide 12 (hidden)</strong></p>
-        <p><strong>Not used in this deck:</strong> Duplicate of slide 11, kept hidden so the proof is shown once.</p>
+        <p><strong>Customer Quote, Slide 12</strong></p>
+        <p><strong>Beat:</strong> Peter, in his own words, from his case study.</p>
+        <p><strong>Say:</strong> "That was Peter. When he saw who had answered, he said: I had no idea they were sitting there."</p>
+        <p><strong>Watch out:</strong> The quote is verbatim from the case study PDF. His photo is left out on purpose, because no photo is on file in the repo. Do not claim results for Jennifer.</p>
       </aside>
     </section>
 
@@ -1302,7 +1322,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Our Customers</div>
         <div class="customers-headline">
-          <h2 class="ppd-headline-md">Asset Bolt builds list-and-sort systems for people with an audience they haven’t activated.</h2>
+          <h2 class="ppd-headline-md">Name-Drop, Share a Story, and Explain How You&#8217;ve Solved Problems for Similar Customers.</h2>
         </div>
         <div class="customers-grid">
           <div class="logo-circle"></div>
@@ -1320,34 +1340,36 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Our Customers — Slide 13 (hidden)</strong></p>
-        <p><strong>Not used in this deck:</strong> No logos to show.</p>
+        <p><strong>Hidden, Slide 13</strong></p>
+        <p><strong>Beat:</strong> Hidden on purpose. Empty logo circles, and no client logos are cleared for this deck.</p>
+        <p><strong>Say:</strong> Do not present this slide.</p>
+        <p><strong>Watch out:</strong> Un-hiding it shows twelve empty circles.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-dark">
       <div class="ppd-slide bg-dark">
-        <div class="ppd-eyebrow">Why This Works</div>
+        <div class="ppd-eyebrow">Why Asset Bolt?</div>
         <div class="why-hero">
-          <h2 class="ppd-headline-md">Your events already did the hard part: 148,579 people raised their hand once.</h2>
-          <p class="ppd-body-lg ppd-muted-inv">This gives each one an easy way to say what they care about, and gives you a list you can email without guessing who is on it. We start with the people most likely to say yes.</p>
+          <h2 class="ppd-headline-md">Everyone says who they are first, so you can reach the right people.</h2>
+          <p class="ppd-body-lg ppd-muted-inv">Every sign-up answers a question or two, so your first conversation starts with context. You write the content, I build the system, and we tune it together every two weeks.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Why This Works — Slide 14</strong></p>
-        <p><strong>Beat:</strong> Land the idea that they already did the hard part.</p>
-        <p><strong>Say:</strong> "Your events already did the hard part. 148,579 people raised their hand once. This just gives each one an easy way to say what they care about."</p>
-        <p><strong>Watch out:</strong> We start with the most recent registrants because they are the most likely to say yes. Nicole is still gathering the split by chapter and by profile answered versus blank; if she has it, use it here.</p>
+        <p><strong>Why Asset Bolt, Slide 14</strong></p>
+        <p><strong>Beat:</strong> The method, in one line: every sign-up says who they are. The split of the work: you write, I build.</p>
+        <p><strong>Say:</strong> "Your list is smaller than Peter&#8217;s. The method is the same: everyone says who they are first, so your first conversation starts with context. You write the content, I build the system, and we tune it together every two weeks."</p>
+        <p><strong>Watch out:</strong> Say the method, not the scale. Keep the split clear: she does not expect copywriting from you.</p>
       </aside>
     </section>
 
@@ -1357,26 +1379,28 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="team-grid">
           <div class="person">
             <div class="avatar"></div>
-            <div class="name">Shlomo Freund</div>
-            <div class="role">Founder</div>
-            <p>Builds the list-and-sort system for people who already have an audience they haven’t activated.</p>
+            <div class="name">FULL NAME</div>
+            <div class="role">ROLE</div>
+            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
           </div>
           <div class="person">
             <div class="avatar"></div>
             <div class="name">FULL NAME</div>
             <div class="role">ROLE</div>
-            <p>Say who this person is, what they do, and how they’ll help the customer be successful.</p>
+            <p>Say who this person is, what they do, and how they&#8217;ll help the customer be successful.</p>
           </div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>The Team — Slide 15 (hidden)</strong></p>
-        <p><strong>Not used in this deck:</strong> Solo founder, no team to show.</p>
+        <p><strong>Hidden, Slide 15</strong></p>
+        <p><strong>Beat:</strong> Hidden on purpose. The brief has one team member and this slide is built for two, with empty avatar circles.</p>
+        <p><strong>Say:</strong> Do not present this slide.</p>
+        <p><strong>Watch out:</strong> Un-hiding it shows two template people.</p>
       </aside>
     </section>
 
@@ -1384,116 +1408,112 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide" style="padding:0;">
         <div class="future-split">
           <div class="left">
-            <h1>The List,<br>Finally<br>Awake.</h1>
+            <h1>Your<br/>January<br/>Launch,<br/>Ready.</h1>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
-            <p>Your registrations stop being cold data. You have a list you own, and you know who the founders and investors are.</p>
-            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</div>
+            <p>By January, everyone who signs up is on your list, sorted by who they are, and you know exactly who to invite to a conversation.</p>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>The Future — Slide 16</strong></p>
-        <p><strong>Beat:</strong> Slow down and let them picture it.</p>
-        <p><strong>Say:</strong> "A few weeks after this starts, those registrations stop being cold data. You have a list you own, and you know who the founders and investors are."</p>
-        <p><strong>Watch out:</strong> Do not put a date on this. The stage 1 timeline is not set. If Jeff asks "how long," say you will confirm it in the recap.</p>
+        <p><strong>The Future, Slide 16</strong></p>
+        <p><strong>Beat:</strong> Future-pace to her January launch.</p>
+        <p><strong>Say:</strong> "Picture January. Everyone who signed up is already on your list, sorted by who they are, and you know exactly who to invite to a conversation."</p>
+        <p><strong>Watch out:</strong> Keep it to what the system does. Do not say clients or bookings will arrive.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Today’s Offer - Start Small</div>
+        <div class="ppd-eyebrow">Today&#8217;s Offer - Hybrid Serendipity List</div>
         <div class="todays-offer">
-          <h3>Start small: wake up your most recent registrants first.</h3>
-          <p>Your signup page, one permission email and one profile question, built and sent. Kit (from $39/mo, by list size) and RightMessage ($79-399/mo by plan) are paid by you directly.</p>
-          <p class="closer">Here’s exactly what’s included, and the two stages that come after it.</p>
+          <h3>Know who&#8217;s who in your audience before January, for $7,500 and then $1,500 a month.</h3>
+          <p>Your LinkedIn followers and your old list become one list you own, sorted by who they are, so your consulting and speaking conversations start with context.</p>
+          <p class="closer">Kit and RightMessage plans are billed to you directly. Here&#8217;s what&#8217;s included.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Today’s Offer — Slide 17</strong></p>
-        <p><strong>Beat:</strong> Say the small version first.</p>
-        <p><strong>Say:</strong> "Start small. Your signup page, one permission email and one profile question, built and sent to your most recent registrants. Kit and RightMessage are paid by you directly."</p>
-        <p><strong>Watch out:</strong> The price is not on this slide. Say it live only if Jeff has told you his goal and is the decider. Say the platform costs at the first price mention: Kit from $39/mo by list size (check the 148K tier before saying a number), RightMessage $79-399/mo by plan.</p>
+        <p><strong>Today&#8217;s Offer, Slide 17</strong></p>
+        <p><strong>Beat:</strong> Price and the cost picture in the same breath: $7,500 setup, then $1,500/mo, plus the platform plans billed to her directly.</p>
+        <p><strong>Say:</strong> "Setup is $7,500, one time. After that, $1,500 a month, three months minimum. Kit and RightMessage are separate plans you pay directly. Kit starts at $39 a month and RightMessage runs $79 to $399 depending on the plan."</p>
+        <p><strong>Watch out:</strong> Say the platform costs at the first price mention, not at the close. Confirm her actual RightMessage plan before quoting one number. Use her number from the engagement-value question: "If it brings one, it has paid for itself."</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">What’s Included?</div>
+        <div class="ppd-eyebrow">What&#8217;s Included?</div>
         <div class="inclusions-grid">
-          <div class="ppd-card"><div class="ppd-headline-sm">Kit Setup</div><p class="body ppd-body-md ppd-muted">Your Kit account, set up and branded, done for you.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Signup Page</div><p class="body ppd-body-md ppd-muted">A signup page on your own domain, in your branding.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Domain Setup</div><p class="body ppd-body-md ppd-muted">Emails authenticated so they land in the inbox.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Permission</div><p class="body ppd-body-md ppd-muted">One email asking recent registrants to opt in.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Profile Ask</div><p class="body ppd-body-md ppd-muted">One question that tells you who each person is.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Kit Tags</div><p class="body ppd-body-md ppd-muted">Every answer saved as a tag in Kit, ready to use.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Full Testing</div><p class="body ppd-body-md ppd-muted">Everything tested end to end before it goes live.</p></div>
-          <div class="ppd-card"><div class="ppd-headline-sm">Kickoff Call</div><p class="body ppd-body-md ppd-muted">A call to agree priorities before building starts.</p></div>
-          
-          
-          
-          
+          <div class="ppd-card"><div class="ppd-headline-sm">Kit Build</div><p class="body ppd-body-md ppd-muted">A home for your list, with your pledge sign-up page on your own domain.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Domain Setup</div><p class="body ppd-body-md ppd-muted">Sending authenticated and tested end to end.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Welcome Flow</div><p class="body ppd-body-md ppd-muted">Your welcome email set up in Kit, from copy you write.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Question Flow</div><p class="body ppd-body-md ppd-muted">RightMessage asks each sign-up who they are.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Buyer Sort</div><p class="body ppd-body-md ppd-muted">Professionals, leaders and event organizers, tagged in Kit.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">List Revival</div><p class="body ppd-body-md ppd-muted">A plan to re-invite your 15,000 names, if you can mail them.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Kickoff Call</div><p class="body ppd-body-md ppd-muted">A first call to set priorities before we build.</p></div>
+          <div class="ppd-card"><div class="ppd-headline-sm">Sync Calls</div><p class="body ppd-body-md ppd-muted">Every 2 weeks: read the data, tune, build the next flow.</p></div>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>What’s Included — Slide 18</strong></p>
-        <p><strong>Beat:</strong> Walk the eight cards in about 30 seconds.</p>
-        <p><strong>Say:</strong> "Kit set up and branded, a signup page on your domain, emails authenticated, one permission email, one profile question, answers saved as tags, full testing and a kickoff call."</p>
-        <p><strong>Watch out:</strong> Deliverables only, no timeframes. PROPOSED scope, confirm with yourself before presenting: the permission email (is writing it in scope?) and the kickoff call. Nothing here promises a newsletter, you do not write or send those.</p>
+        <p><strong>What&#8217;s Included, Slide 18</strong></p>
+        <p><strong>Beat:</strong> Eight deliverables. The retainer shows up as Kickoff Call and Sync Calls. The pledge is the sign-up page.</p>
+        <p><strong>Say:</strong> "Kit build, with your pledge as the sign-up page on your own domain. Domain setup, your welcome flow, the question flow, the buyer sort, a plan to revive the old list if you can mail it, a kickoff call, and a sync call every two weeks."</p>
+        <p><strong>Watch out:</strong> Deliverables only. No timeframe here. The pledge sign-up page is included: one page, one form. A signatory wall, badges or emailed certificates are scoped and priced separately; ask what she pictures when someone signs. The old list: ask who owns it and whether she can mail it. She is in Canada and CASL is stricter than the US rules, so she should check before any re-invite.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">Three Stages</div>
-        <div class="plans-grid">
-          <div class="plan">
-            <div class="plan-title">★ Start Small</div>
-            <div class="plan-result">One permission email and one sorting question</div>
-            <div class="plan-price">[MISSING]</div>
-            <ul><li>Kit account, signup page, domain setup</li><li>One email asking recent registrants to opt in</li><li>One profile question, answers saved as tags in Kit</li></ul>
-          </div>
-          <div class="plan">
-            <div class="plan-title">Roll Out</div>
-            <div class="plan-result">Open it to the whole list, then the chapters</div>
-            <div class="plan-price">To scope</div>
-            <ul><li>Everything in Start Small, plus:<ul><li>The rest of the 148,579, invited in waves</li><li>Chapter lists added where organizers agree</li></ul></li></ul>
-          </div>
-          <div class="plan">
-            <div class="plan-title">Keep It Growing</div>
-            <div class="plan-result">New registrants invited and sorted every month</div>
-            <div class="plan-price">To scope</div>
-            <ul><li>Everything in Roll Out, plus:<ul><li>New event registrants invited each month</li><li>Kickoff call + a sync every 2 weeks</li></ul></li></ul>
-          </div>
+        <div class="ppd-eyebrow">Two Ways To Start</div>
+        <div class="compare-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Foundation<span class="sub">$2,200, one time</span></th>
+                <th class="full">Full Package<span class="sub">$7,500, then $1,500/mo</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Kit build, pledge sign-up page on your domain, domain setup</td><td><span class="yes">&#10003;</span></td><td class="full"><span class="yes">&#10003;</span></td></tr>
+              <tr><td>Welcome email sequence</td><td><span class="yes">&#10003;</span></td><td class="full"><span class="yes">&#10003;</span></td></tr>
+              <tr><td>Questions that ask each sign-up who they are</td><td><span class="no">-</span></td><td class="full"><span class="yes">&#10003;</span></td></tr>
+              <tr><td>Buyer sort, tagged in Kit</td><td><span class="no">-</span></td><td class="full"><span class="yes">&#10003;</span></td></tr>
+              <tr><td>Plan to revive your 15,000-name list</td><td><span class="no">-</span></td><td class="full"><span class="yes">&#10003;</span></td></tr>
+              <tr><td>Kickoff call and sync calls every 2 weeks</td><td><span class="no">-</span></td><td class="full"><span class="yes">&#10003;</span></td></tr>
+            </tbody>
+          </table>
+          <p class="compare-note">Visible pledge features, like a signatory wall, and inviting your LinkedIn connections to join are priced once we talk. Kit (and RightMessage with the Full Package) are billed to you directly. Full Package has a 3-month minimum.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Three Stages — Slide 19</strong></p>
-        <p><strong>Beat:</strong> Make clear this is one small step with a path, not a menu.</p>
-        <p><strong>Say:</strong> "Start Small is the first step. If it works, Roll Out opens the whole list and the chapters. Keep It Growing invites new registrants every month."</p>
-        <p><strong>Watch out:</strong> The stage 1 price is missing and shows as [MISSING] on the slide. Fill it before the call or cover it. Stages 2 and 3 say "To scope" on purpose. Do not push stage 2. Stage 3 follows the usual retainer shape (upkeep plus a sync every 2 weeks).</p>
+        <p><strong>Two Ways To Start, Slide 19</strong></p>
+        <p><strong>Beat:</strong> Foundation next to the Full Package, so she sees what the extra money buys.</p>
+        <p><strong>Say:</strong> "Two ways to start. Foundation is the Kit build with your pledge sign-up page, and the welcome email. You have a home for the list and you run it yourself. The Full Package adds the questions, the sort, a plan for the old list and a call every two weeks, and that is the part that tells you who is who."</p>
+        <p><strong>Watch out:</strong> Do not push Foundation. Read the table once, then ask which fits and stop talking. Foundation has no question flow, so it does not deliver the who-is-who promise from Slide 5: say that plainly. Not in either column: visible pledge features, and inviting her LinkedIn connections to join (Dripify, her account, billed to her; only first-degree connections; she sends the follow-up herself). Price both once you know her connection count. The 3-month minimum is Full Package only.</p>
       </aside>
     </section>
 
     <section data-bg-token="bg-light" data-visibility="hidden">
       <div class="ppd-slide bg-light">
-        <div class="ppd-eyebrow">48-Hour Bonus Offer 🎁</div>
+        <div class="ppd-eyebrow">48-Hour Bonus Offer &#127873;</div>
         <div class="bonus-grid">
           <div class="ppd-card">
             <div class="ppd-headline-sm">Bonus #1</div>
@@ -1510,13 +1530,15 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Bonus Offer — Slide 20 (hidden)</strong></p>
-        <p><strong>Not used in this deck:</strong> No bonus.</p>
+        <p><strong>Hidden, Slide 20</strong></p>
+        <p><strong>Beat:</strong> Hidden on purpose. No bonus in the brief and no deadline in play.</p>
+        <p><strong>Say:</strong> Do not present this slide.</p>
+        <p><strong>Watch out:</strong> Inventing a 48-hour bonus here would be a fabricated claim.</p>
       </aside>
     </section>
 
@@ -1525,18 +1547,20 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
         <div class="ppd-eyebrow">Our Guarantee</div>
         <div class="guarantee-hero">
           <h2 class="ppd-headline-md">A program we stand behind with a 90-day money-back guarantee</h2>
-          <p class="body ppd-body-lg">If you implement the system for 90 days, making sure you create your offer, make an effort to join the calls, and do everything our program show you to do, and you’re not happy, I’ll give you your money back.</p>
-          <p class="fine">Small print: The only catch is that you’ll have to jump on a 10 min call because it’d be weird if it didn’t work, and I’d be curious to know what went wrong, and why you couldn’t acheive your goals.</p>
+          <p class="body ppd-body-lg">If you implement the system for 90 days, making sure you create your offer, make an effort to join the calls, and do everything our program show you to do, and you&#8217;re not happy, I&#8217;ll give you your money back.</p>
+          <p class="fine">Small print: The only catch is that you&#8217;ll have to jump on a 10 min call because it&#8217;d be weird if it didn&#8217;t work, and I&#8217;d be curious to know what went wrong, and why you couldn&#8217;t acheive your goals.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Guarantee — Slide 21 (hidden)</strong></p>
-        <p><strong>Not used in this deck:</strong> No guarantee has been decided for this deal. Unhide only if you set one.</p>
+        <p><strong>Hidden, Slide 21</strong></p>
+        <p><strong>Beat:</strong> Hidden on purpose. No guarantee has been decided, and the template guarantee is a 90-day money-back that does not exist.</p>
+        <p><strong>Say:</strong> Do not present this slide.</p>
+        <p><strong>Watch out:</strong> If you set a guarantee later, add it to the brief first, then fill this slide.</p>
       </aside>
     </section>
 
@@ -1544,22 +1568,24 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide bg-light">
         <div class="ppd-eyebrow">Special Offer</div>
         <div class="offer-card">
-          <div class="price">[Expiration time]:<br><span class="ppd-strike">[$price]</span>[$discounted price]</div>
+          <div class="price">[Expiration time]:<br/><span class="ppd-strike">[$price]</span>[$discounted price]</div>
           <div class="spots">7 <span class="ppd-strike">10</span> spots left</div>
-          <p>Here’s what I’m doing with the [offer name] in [month]:</p>
+          <p>Here&#8217;s what I&#8217;m doing with the [offer name] in [month]:</p>
           <p>The outcome is simple: To get you to [outcome], getting [outcome], and [outcome].</p>
-          <p>I’m only working with [total spots] [ICP], to help them with [success milestone] over a [timeline].</p>
-          <p>We’ll do it with the perfect mix of [inclusion], [inclusion] and [inclusion] with deep involvement from me and my team.</p>
+          <p>I&#8217;m only working with [total spots] [ICP], to help them with [success milestone] over a [timeline].</p>
+          <p>We&#8217;ll do it with the perfect mix of [inclusion], [inclusion] and [inclusion] with deep involvement from me and my team.</p>
         </div>
         <div class="ppd-footer">
           <span class="ppd-footer-left">Asset Bolt</span>
-          <span class="ppd-footer-mid">Prepared for AI Salon</span>
-          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</span>
+          <span class="ppd-footer-mid">The Hybrid Serendipity List</span>
+          <span class="ppd-footer-right"><svg class="ppd-sparkle-icon" viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</span>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Special Offer — Slide 22 (hidden)</strong></p>
-        <p><strong>Not used in this deck:</strong> No urgency or spots limit.</p>
+        <p><strong>Hidden, Slide 22</strong></p>
+        <p><strong>Beat:</strong> Hidden on purpose. No real scarcity or expiry for this offer.</p>
+        <p><strong>Say:</strong> Do not present this slide.</p>
+        <p><strong>Watch out:</strong> Fake spots-left would break trust.</p>
       </aside>
     </section>
 
@@ -1567,43 +1593,43 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
       <div class="ppd-slide" style="padding:0;">
         <div class="nextsteps-split">
           <div class="left">
-            <div class="ppd-eyebrow">Next Steps</div>
-            <h3>Say the word and we start with stage 1</h3>
-            <p>Stage 1 first. Stages 2 and 3 only if it works and you want more. Shlomo starts building as soon as you say go.</p>
+            <div class="ppd-eyebrow">Next steps&#8230;</div>
+            <h3>Let&#8217;s start the week of Nov 9.</h3>
+            <p>$7,500 setup, then $1,500/mo (3-month minimum). Plus Kit from $39/mo and RightMessage $79-399/mo, billed to you directly.</p>
             <div class="ppd-footer-mini">Asset Bolt</div>
           </div>
           <div class="right">
             <div class="cta-card" id="ppd-cta-card" data-endpoint="/api/lead">
-              <p class="title">Ready to Start?</p>
+              <p class="title">Ready to start?</p>
               <div class="choices" role="radiogroup" aria-label="Your response">
                 <button type="button" class="choice-btn" data-choice="in" aria-pressed="false">
-                  <span>I’m in, let’s start</span><span class="check">✓</span>
+                  <span>I&#8217;m in! Let&#8217;s go.</span><span class="check">&#10003;</span>
                 </button>
                 <button type="button" class="choice-btn" data-choice="question" aria-pressed="false">
-                  <span>Got a question, but looks good</span><span class="check">✓</span>
+                  <span>Got a question, but looks good!</span><span class="check">&#10003;</span>
                 </button>
                 <button type="button" class="choice-btn" data-choice="out" aria-pressed="false">
-                  <span>Not now, but stay in touch</span><span class="check">✓</span>
+                  <span>Not now, but stay in touch.</span><span class="check">&#10003;</span>
                 </button>
               </div>
-              <form class="form" novalidate="">
+              <form class="form" novalidate>
                 <div class="field" data-field="name">
                   <label for="ppd-name">Name</label>
-                  <input id="ppd-name" name="name" type="text" autocomplete="name" required="" maxlength="100">
+                  <input id="ppd-name" name="name" type="text" autocomplete="name" required maxlength="100">
                   <div class="err">Please enter your name.</div>
                 </div>
                 <div class="field" data-field="email">
                   <label for="ppd-email">Email</label>
-                  <input id="ppd-email" name="email" type="email" autocomplete="email" required="" maxlength="254">
+                  <input id="ppd-email" name="email" type="email" autocomplete="email" required maxlength="254">
                   <div class="err">Please enter a valid email.</div>
                 </div>
                 <div class="field" data-field="phone">
                   <label for="ppd-phone">Phone</label>
-                  <input id="ppd-phone" name="phone" type="tel" autocomplete="tel" required="" placeholder="+1 555 123 4567" maxlength="20">
+                  <input id="ppd-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+1 555 123 4567" maxlength="20">
                   <div class="err">Please enter a valid phone number (with country code).</div>
                 </div>
-                <div class="field" data-field="message" hidden="">
-                  <label for="ppd-message"><span data-message-label="">Anything to add? (optional)</span></label>
+                <div class="field" data-field="message" hidden>
+                  <label for="ppd-message"><span data-message-label>Anything to add? (optional)</span></label>
                   <textarea id="ppd-message" name="message" maxlength="2000" rows="3"></textarea>
                   <div class="err">Please share a bit more so we can help.</div>
                 </div>
@@ -1611,21 +1637,21 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
                 <div class="form-message" role="status" aria-live="polite"></div>
               </form>
               <div class="success" role="status">
-                <div class="tick">✓</div>
-                <h4 data-success-title="">Thanks, you’re on the list.</h4>
-                <p data-success-body="">Shlomo will follow up to lock in the start date.</p>
-                <a class="static-cta" data-static-cta="">Book a call</a>
+                <div class="tick">&#10003;</div>
+                <h4 data-success-title>Thanks, talk soon.</h4>
+                <p data-success-body>Shlomo will follow up to get started.</p>
+                <a class="static-cta" data-static-cta>Book a call</a>
               </div>
             </div>
-            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"></path></svg>Asset Bolt</div>
+            <div class="corner-brand"><svg viewBox="0 0 44 44" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 22C13.9836 22 22 13.9836 22 0C22 13.9836 30.0164 22 44 22C30.0164 22 22 30.0164 22 44C22 30.0164 13.9836 22 0 22Z"/></svg>Asset Bolt</div>
           </div>
         </div>
       </div>
       <aside class="notes">
-        <p><strong>Next Steps — Slide 23</strong></p>
-        <p><strong>Beat:</strong> Make the ask, then stop talking.</p>
-        <p><strong>Say:</strong> "If this fits, say the word and we start with stage 1. Stages 2 and 3 only if it works and you want more. I’ll send a short recap right after this call."</p>
-        <p><strong>Watch out:</strong> Get a yes, a named blocker, or a dated next step. If Jeff needs to talk to his team, ask who and when. Pitch live, do not send a written price before a decision.</p>
+        <p><strong>Next Steps, Slide 23</strong></p>
+        <p><strong>Beat:</strong> One ask, then stop talking: "Want to start the week of Nov 9?"</p>
+        <p><strong>Say:</strong> "If yes, I send a one-page agreement today with the first invoice, and I need your Mailchimp access and the link to your LinkedIn group. If not yet, when will you know? I will check in on that date."</p>
+        <p><strong>Watch out:</strong> Do not recap. A "maybe" gets a dated check-in booked before she hangs up. The retainer covers a call every two weeks, reading the data, tuning and new flows. The 15,000 list: ask who owns it, can she mail it, last send.</p>
       </aside>
     </section>
   </div>
@@ -1633,14 +1659,14 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 
 <!-- Keyboard shortcut HUD -->
 <div class="deck-hud" aria-hidden="true">
-  <span class="hud-shortcut"><kbd>←</kbd><kbd>→</kbd> navigate</span>
-  <span class="hud-sep">·</span>
+  <span class="hud-shortcut"><kbd>&larr;</kbd><kbd>&rarr;</kbd> navigate</span>
+  <span class="hud-sep">&middot;</span>
   <span class="hud-shortcut hide-on-mobile"><kbd>ESC</kbd> overview</span>
-  <span class="hud-sep hide-on-mobile">·</span>
+  <span class="hud-sep hide-on-mobile">&middot;</span>
   <span class="hud-shortcut hide-on-mobile"><kbd>F</kbd> fullscreen</span>
-  <span class="hud-sep hide-on-mobile">·</span>
-  <span class="hud-shortcut hide-on-mobile" data-notes-shortcut="">
-    <span class="lock-ico" data-locked-icon="" hidden="">🔒</span><kbd>S</kbd> speaker notes
+  <span class="hud-sep hide-on-mobile">&middot;</span>
+  <span class="hud-shortcut hide-on-mobile" data-notes-shortcut>
+    <span class="lock-ico" data-locked-icon hidden>&#128274;</span><kbd>S</kbd> speaker notes
   </span>
 </div>
 
@@ -1649,8 +1675,8 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
   <div class="panel">
     <h2>Speaker notes are locked</h2>
     <p>Enter the passphrase to unlock presenter notes for this deck.</p>
-    <input type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Passphrase">
-    <div class="err">Wrong passphrase — try again.</div>
+    <input type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Passphrase" />
+    <div class="err">Wrong passphrase &mdash; try again.</div>
     <div class="actions">
       <button type="button" class="ghost" data-action="cancel">Cancel</button>
       <button type="button" data-action="unlock">Unlock</button>
@@ -1661,7 +1687,7 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
 <!-- Portrait-phone rotate hint -->
 <div class="rotate-hint" role="dialog" aria-label="Rotate device for best view">
   <div>
-    <div class="ico">⟳</div>
+    <div class="ico">&#10227;</div>
     <h2>Rotate for the best view</h2>
     <p>This deck is designed widescreen. Turn your phone sideways, or tap below to continue in portrait.</p>
     <button type="button">Continue anyway</button>
@@ -2150,6 +2176,5 @@ html.is-current .deck-hud .hud-shortcut { white-space: nowrap; }
     });
   })();
 </script>
-
-
-</body></html>
+</body>
+</html>
